@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8br3cr26rf1a"]
+[gd_scene load_steps=4 format=3 uid="uid://c8br3cr26rf1a"]
 
 [ext_resource type="Texture2D" uid="uid://cquu0v8sope1c" path="res://Sprite Assets/Character Sprite.png" id="1_eecym"]
+[ext_resource type="Script" path="res://Scenes/character_body_2d.gd" id="1_vkjrs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_31tk3"]
 size = Vector2(32, 63)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 texture_filter = 1
+script = ExtResource("1_vkjrs")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(48, 63.5)
