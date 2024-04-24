@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const SPEED = 300
-const JUMP = -650
+const JUMP = -550
 var GRAVITY_VALUE = 1100
 
 
@@ -22,6 +22,9 @@ func _process(delta):
 	#is pressed.
 	if direction:
 		velocity.x = SPEED * direction
+	else:
+		#requires move_towards to enable stopping movement
+		velocity.x  = move_toward(1, 0, 1)
 	
 	
 	
