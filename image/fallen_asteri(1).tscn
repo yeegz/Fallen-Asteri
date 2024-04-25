@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1k4blpmr5qqu"]
+
+[ext_resource type="Texture2D" uid="uid://crokyna5sdj1r" path="res://image/Fallen Asteri (1).png" id="1_3vqxq"]
+
+[node name="FallenAsteri(1)" type="Sprite2D"]
+position = Vector2(403, 371)
+rotation = -0.003706
+texture = ExtResource("1_3vqxq")
