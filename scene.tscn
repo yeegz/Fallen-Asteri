@@ -42,4 +42,4 @@ texture = ExtResource("3_i8t2b")
 stretch_mode = 1
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_uge1f")]
-position = Vector2(-19, 400)
+position = Vector2(563, 351)
