@@ -5,9 +5,6 @@ const JUMP = -550
 var GRAVITY_VALUE = 1100
 @onready var animation = $AnimationPlayer
 
-
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 
@@ -21,6 +18,7 @@ func _process(delta):
 	
 	#Added buttons A and D to the left and right axis respectively
 	var direction = Input.get_axis("ui_left", "ui_right")
+	
 	#Movement. 
 	if direction:
 		velocity.x = SPEED * direction
@@ -32,6 +30,7 @@ func _process(delta):
 		#requires move_towards to enable stopping movement
 		velocity.x  = move_toward(1, 0, 1)
 	
+	#move_and_slide required for basic physics functions to work
 	move_and_slide()
 	
 	#Animation
@@ -39,4 +38,3 @@ func _process(delta):
 		animation.play("idle")
 	else:
 		animation.stop()
-
