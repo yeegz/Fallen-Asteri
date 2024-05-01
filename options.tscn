@@ -37,8 +37,10 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Exit_Button" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Back_Button" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-text = "Exit"
+text = "Back"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back_Button" to="." method="_on_back_button_pressed"]
