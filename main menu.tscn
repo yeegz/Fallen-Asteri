@@ -54,10 +54,35 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_vertical = 10
 
-[node name="Start" type="Button" parent="MarginContainer/VBoxContainer/Buttons_v_box"]
+[node name="BackImage2" type="Sprite2D" parent="."]
+position = Vector2(961.5, 539)
+scale = Vector2(1.00052, 1.00185)
+texture = ExtResource("3_im2da")
+
+[node name="PressStart2p(2)" type="Sprite2D" parent="."]
+position = Vector2(992, 1031)
+scale = Vector2(0.183333, 0.164583)
+texture = ExtResource("5_lor76")
+
+[node name="PressStart2p(1)" type="Sprite2D" parent="."]
+position = Vector2(992, 992)
+scale = Vector2(0.188542, 0.153704)
+texture = ExtResource("6_flofn")
+
+[node name="PressStart2p(3)" type="Sprite2D" parent="."]
+position = Vector2(992, 954)
+scale = Vector2(0.1875, 0.175)
+texture = ExtResource("6_tdopv")
+
+[node name="Start" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
 visibility_layer = 512
 layout_mode = 2
-size_flags_horizontal = 4
+offset_left = 920.0
+offset_top = 933.0
+offset_right = 1066.0
+offset_bottom = 975.0
+size_flags_horizontal = 5
 size_flags_vertical = 4
 focus_neighbor_top = NodePath(".")
 focus_neighbor_bottom = NodePath(".")
@@ -65,8 +90,13 @@ focus_next = NodePath(".")
 focus_previous = NodePath(".")
 text = "Start"
 
-[node name="quit" type="Button" parent="MarginContainer/VBoxContainer/Buttons_v_box"]
+[node name="quit" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+offset_left = 920.0
+offset_top = 978.0
+offset_right = 1064.0
+offset_bottom = 1009.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 focus_neighbor_top = NodePath("../options")
@@ -76,8 +106,13 @@ focus_previous = NodePath("../options")
 text = "exit"
 icon_alignment = 2
 
-[node name="options" type="Button" parent="MarginContainer/VBoxContainer/Buttons_v_box"]
+[node name="options" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0.0392157)
 layout_mode = 2
+offset_left = 921.0
+offset_top = 1013.0
+offset_right = 1063.0
+offset_bottom = 1044.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 focus_neighbor_top = NodePath("../quit")
@@ -86,26 +121,6 @@ focus_next = NodePath("../quit")
 focus_previous = NodePath("../quit")
 text = "Options"
 
-[node name="BackImage2" type="Sprite2D" parent="."]
-position = Vector2(579, 321)
-scale = Vector2(0.599479, 0.597454)
-texture = ExtResource("3_im2da")
-
-[node name="PressStart2p(2)" type="Sprite2D" parent="."]
-position = Vector2(585, 593)
-scale = Vector2(0.183333, 0.149884)
-texture = ExtResource("5_lor76")
-
-[node name="PressStart2p(1)" type="Sprite2D" parent="."]
-position = Vector2(585.5, 555)
-scale = Vector2(0.182812, 0.153704)
-texture = ExtResource("6_flofn")
-
-[node name="PressStart2p(3)" type="Sprite2D" parent="."]
-position = Vector2(585, 516)
-scale = Vector2(0.1875, 0.175)
-texture = ExtResource("6_tdopv")
-
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Buttons_v_box/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Buttons_v_box/quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Buttons_v_box/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="options" to="." method="_on_options_pressed"]

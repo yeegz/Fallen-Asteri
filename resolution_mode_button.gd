@@ -3,9 +3,8 @@ extends Control
 @onready var option_button = $HBoxContainer/OptionButton
 
 const RESOLUTION_DICTIONARY : Dictionary ={
-	"1152 * 648" :Vector2i(1152,648),
-	"1280 * 720" :Vector2i(1152,648),
-	"1920 * 1080" :Vector2i(1152,648),
+	"1920 * 1080" :Vector2i(1920,1080),
+	"1280 * 720" :Vector2i(1280,720),
 }
 
 func _ready():
