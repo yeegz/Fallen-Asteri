@@ -46,4 +46,5 @@ stretch_mode = 1
 position = Vector2(563, 351)
 
 [node name="enemy12D" parent="." instance=ExtResource("5_qhj3c")]
+texture_filter = 1
 position = Vector2(816, 132)
