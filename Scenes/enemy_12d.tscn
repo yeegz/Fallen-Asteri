@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbttsnhtdb1k5"]
+
+[ext_resource type="Script" path="res://Scenes/enemy_12d.gd" id="1_685w0"]
+[ext_resource type="Texture2D" uid="uid://2h4hoec3d8ju" path="res://Temporary Files/idle/crab_idle_1.png" id="1_xxmt4"]
+[ext_resource type="Script" path="res://Scenes/DetectionArea.gd" id="3_7ex3k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6yb7h"]
+size = Vector2(96, 48)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vo5qx"]
+radius = 187.451
+
+[node name="enemy12D" type="CharacterBody2D"]
+script = ExtResource("1_685w0")
+
+[node name="EnemySprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(48, 47)
+scale = Vector2(4, 4.13333)
+texture = ExtResource("1_xxmt4")
+
+[node name="EnemyPhysics" type="CollisionShape2D" parent="."]
+position = Vector2(48, 57)
+shape = SubResource("RectangleShape2D_6yb7h")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_7ex3k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+position = Vector2(48, 58)
+shape = SubResource("CircleShape2D_vo5qx")
+
+[connection signal="body_entered" from="DetectionArea" to="DetectionArea" method="_on_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="DetectionArea" method="_on_body_exited"]
