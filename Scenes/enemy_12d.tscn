@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbttsnhtdb1k5"]
+
+[ext_resource type="Texture2D" uid="uid://2h4hoec3d8ju" path="res://Temporary Files/idle/crab_idle_1.png" id="1_xxmt4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6yb7h"]
+size = Vector2(99, 57)
+
+[node name="enemy12D" type="CharacterBody2D"]
+
+[node name="EnemySprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(48, 47)
+scale = Vector2(4, 4.13333)
+texture = ExtResource("1_xxmt4")
+
+[node name="EnemyCollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(50.5, 57.5)
+shape = SubResource("RectangleShape2D_6yb7h")
