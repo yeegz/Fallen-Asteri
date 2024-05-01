@@ -1,9 +1,9 @@
 [gd_scene load_steps=27 format=3 uid="uid://c8br3cr26rf1a"]
 
 [ext_resource type="Script" path="res://Scenes/character_body_2d.gd" id="1_vkjrs"]
-[ext_resource type="Texture2D" uid="uid://b21kkulhea1qm" path="res://Sprite Assets/animsheet2.png" id="2_jupm6"]
+[ext_resource type="Texture2D" uid="uid://ch7wlun4eu863" path="res://Sprite Assets/animsheet2.png" id="2_jupm6"]
 [ext_resource type="Texture2D" uid="uid://dn05j1cs3expf" path="res://Sprite Assets/AnimationSheet_Character.png" id="3_b43xp"]
-[ext_resource type="Texture2D" uid="uid://b6w1ojbruu21q" path="res://Sprite Assets/AnimationSheet_Character_4th_line.png" id="4_oiore"]
+[ext_resource type="Texture2D" uid="uid://dmsvs4i7q6yxp" path="res://Sprite Assets/AnimationSheet_Character_4th_line.png" id="4_oiore"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x6m50"]
 atlas = ExtResource("3_b43xp")
@@ -193,5 +193,4 @@ shape = SubResource("RectangleShape2D_31tk3")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(63, 86)
-scale = Vector2(1, 1)
 zoom = Vector2(1.8, 1.8)
