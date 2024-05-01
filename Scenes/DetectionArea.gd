@@ -1,14 +1,15 @@
 extends Area2D
 
 var player = null
+var player_chase = false
+var SPEED = 250
+var JUMP = -500
 
 func _on_body_entered(body):
 	player = body
-	print("In Detection Area")
-	
-
-
+	player_chase = true
 
 func _on_body_exited(body):
 	player = null
-	print("Out of detection area")
+	player_chase = false
+

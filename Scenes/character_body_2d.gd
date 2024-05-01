@@ -25,9 +25,9 @@ func _process(delta):
 	if direction:
 		velocity.x = SPEED * direction
 		if direction == 1:
-			$Player.flip_h = false
+			$player.flip_h = false
 		elif direction == -1:
-			$Player.flip_h = true
+			$player.flip_h = true
 	else:
 		#requires move_towards to enable stopping movement
 		velocity.x  = move_toward(1, 0, 1)
