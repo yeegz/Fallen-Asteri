@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const GRAVITY_VALUE = 1100
 var SPEED = 50
+var JUMP = 50
 var player = null
 var player_chase = false
 
@@ -24,3 +25,7 @@ func _on_detection_area_body_exited(body):
 func _physics_process(delta):
 	if player_chase == true:
 		position += (player.position - position)/ SPEED
+		if not player.is_on_floor() and not is_on_floor():
+			velocity.y = JUMP
+
+	
