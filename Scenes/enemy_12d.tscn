@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bbttsnhtdb1k5"]
+[gd_scene load_steps=5 format=3 uid="uid://bbttsnhtdb1k5"]
 
 [ext_resource type="Script" path="res://Scenes/enemy_12d.gd" id="1_685w0"]
 [ext_resource type="Texture2D" uid="uid://2h4hoec3d8ju" path="res://Temporary Files/idle/crab_idle_1.png" id="1_xxmt4"]
-[ext_resource type="Script" path="res://Scenes/DetectionArea.gd" id="3_7ex3k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6yb7h"]
 size = Vector2(96, 48)
@@ -26,11 +25,10 @@ shape = SubResource("RectangleShape2D_6yb7h")
 [node name="DetectionArea" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("3_7ex3k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 position = Vector2(48, 58)
 shape = SubResource("CircleShape2D_vo5qx")
 
-[connection signal="body_entered" from="DetectionArea" to="DetectionArea" method="_on_body_entered"]
-[connection signal="body_exited" from="DetectionArea" to="DetectionArea" method="_on_body_exited"]
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
