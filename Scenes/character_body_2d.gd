@@ -5,7 +5,7 @@ const JUMP = -550
 var GRAVITY_VALUE = 1100
 var PLAYER_HP = 100
 var PLAYER_STAMINA = 100
-@onready var animation = $AnimationPlayer
+@onready var animation = $AnimatedSprite2D
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -24,11 +24,16 @@ func _process(delta):
 	#Movement. 
 	if direction:
 		velocity.x = SPEED * direction
+		animation.play("run")
 		if direction == 1:
-			$player.flip_h = false
+			$AnimatedSprite2D.flip_h = false
 		elif direction == -1:
-			$player.flip_h = true
-	else:
+			$AnimatedSprite2D.flip_h = true
+	elif direction == 0 or velocity.x == 0:
+		animation.play("idle")
+		
+		
+		
 		#requires move_towards to enable stopping movement
 		velocity.x  = move_toward(1, 0, 1)
 	
@@ -36,10 +41,9 @@ func _process(delta):
 	move_and_slide()
 	
 	#Animation
-	if direction == 0:
+	if velocity.x == 0:
 		animation.play("idle")
-	else:
-		animation.stop()
+	
 	
 	#Attack
 	if Input.is_action_just_pressed("ui_attack") and direction == 1:
