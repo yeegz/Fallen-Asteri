@@ -1,10 +1,11 @@
 extends CharacterBody2D
 
 const GRAVITY_VALUE = 1100
-var SPEED = 50
+var SPEED = 70
 var JUMP = 50
 var player = null
 var player_chase = false
+@onready var animation = $AnimatedSprite2D
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -27,5 +28,12 @@ func _physics_process(delta):
 		position += (player.position - position)/ SPEED
 		if not player.is_on_floor() and not is_on_floor():
 			velocity.y = JUMP
+	
+	#Animation
+	if player_chase == false:
+		animation.play("crab_idle")
+	else:
+		animation.play("crab_attack")
+
 
 	
