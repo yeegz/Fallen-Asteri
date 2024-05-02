@@ -58,7 +58,7 @@ offset_bottom = 649.0
 texture = ExtResource("5_x83yh")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_uge1f")]
-position = Vector2(563, 351)
+position = Vector2(560, 316)
 
 [node name="enemy12D" parent="." instance=ExtResource("5_qhj3c")]
 texture_filter = 1

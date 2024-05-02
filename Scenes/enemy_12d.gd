@@ -2,7 +2,8 @@ extends CharacterBody2D
 
 const GRAVITY_VALUE = 1100
 var SPEED = 70
-var JUMP = 50
+var JUMP = -50
+var ENEMY_HP = 90
 var player = null
 var player_chase = false
 @onready var animation = $AnimatedSprite2D
@@ -26,14 +27,14 @@ func _on_detection_area_body_exited(body):
 func _physics_process(delta):
 	if player_chase == true:
 		position += (player.position - position)/ SPEED
-		if not player.is_on_floor() and not is_on_floor():
-			velocity.y = JUMP
+		
 	
 	#Animation
 	if player_chase == false:
 		animation.play("crab_idle")
 	else:
 		animation.play("crab_attack")
-
-
 	
+	
+
+
