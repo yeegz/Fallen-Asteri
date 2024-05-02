@@ -1,9 +1,9 @@
 [gd_scene load_steps=35 format=3 uid="uid://c8br3cr26rf1a"]
 
 [ext_resource type="Script" path="res://Scenes/character_body_2d.gd" id="1_vkjrs"]
-[ext_resource type="Texture2D" uid="uid://b21kkulhea1qm" path="res://Sprite Assets/animsheet2.png" id="2_jupm6"]
+[ext_resource type="Texture2D" uid="uid://haxobx80xo05" path="res://Sprite Assets/animsheet2.png" id="2_jupm6"]
 [ext_resource type="Texture2D" uid="uid://dn05j1cs3expf" path="res://Sprite Assets/AnimationSheet_Character.png" id="3_b43xp"]
-[ext_resource type="Texture2D" uid="uid://b6w1ojbruu21q" path="res://Sprite Assets/AnimationSheet_Character_4th_line.png" id="4_oiore"]
+[ext_resource type="Texture2D" uid="uid://dml1td8qsgcd7" path="res://Sprite Assets/AnimationSheet_Character_4th_line.png" id="4_oiore"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ynahq"]
 atlas = ExtResource("3_b43xp")
@@ -229,7 +229,7 @@ size = Vector2(47, 76)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 texture_filter = 1
-collision_layer = 3
+collision_layer = 2
 script = ExtResource("1_vkjrs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

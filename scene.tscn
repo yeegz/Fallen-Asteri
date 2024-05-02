@@ -2,11 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://byeqfi2rn1i6f" path="res://Sprite Assets/dirt.png" id="1_jjdho"]
 [ext_resource type="Texture2D" uid="uid://dtu1hwjhxyxuo" path="res://Sprite Assets/grass.png" id="2_nfj14"]
-[ext_resource type="Texture2D" uid="uid://bjnr7ys4qs6kt" path="res://Temporary Files/pixil-frame-0-3.png" id="3_jvkg3"]
-[ext_resource type="Texture2D" uid="uid://qlbgwdylyusy" path="res://Temporary Files/pixil-frame-0.png" id="4_36fch"]
+[ext_resource type="Texture2D" uid="uid://cdr0sp56r18m1" path="res://Temporary Files/pixil-frame-0-3.png" id="3_jvkg3"]
+[ext_resource type="Texture2D" uid="uid://ddlp0h2ovn2ef" path="res://Temporary Files/pixil-frame-0.png" id="4_36fch"]
 [ext_resource type="PackedScene" uid="uid://c8br3cr26rf1a" path="res://Scenes/character_body_2d.tscn" id="4_uge1f"]
 [ext_resource type="PackedScene" uid="uid://bbttsnhtdb1k5" path="res://Scenes/enemy_12d.tscn" id="5_qhj3c"]
-[ext_resource type="Texture2D" uid="uid://dq6yre8hxhy4g" path="res://Temporary Files/pixil-frame-0-2.png" id="5_x83yh"]
+[ext_resource type="Texture2D" uid="uid://dqvwid1fvvdqu" path="res://Temporary Files/pixil-frame-0-2.png" id="5_x83yh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jovnk"]
 texture = ExtResource("1_jjdho")
