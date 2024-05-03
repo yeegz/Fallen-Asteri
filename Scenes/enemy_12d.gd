@@ -31,11 +31,13 @@ func _on_detection_area_body_exited(body):
 func _on_enemy_hitbox_body_entered(body):
 	if body.has_method("hero"):
 		attack_range = true
+		
 
 
 func _on_enemy_hitbox_body_exited(body):
 	if body.has_method("hero"):
 		attack_range = false
+		
 
 func enemy_attack():
 	if attack_range == true:
