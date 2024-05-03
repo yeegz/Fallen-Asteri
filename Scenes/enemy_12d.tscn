@@ -5,11 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://dkyid5oc0hh7f" path="res://Temporary Files/idle/crab_idle.png" id="3_lehdf"]
 [ext_resource type="Texture2D" uid="uid://b0c70kjk4k5ou" path="res://Temporary Files/attack/crab_attack.png" id="3_onv81"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_spctw"]
-size = Vector2(66, 3)
+[sub_resource type="CircleShape2D" id="CircleShape2D_1g2fj"]
+radius = 19.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vo5qx"]
-radius = 220.036
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5i1fk"]
+radius = 121.0
+height = 484.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_idln1"]
 atlas = ExtResource("3_onv81")
@@ -100,8 +101,8 @@ scale = Vector2(4, 4.13333)
 texture = ExtResource("1_xxmt4")
 
 [node name="EnemyPhysics" type="CollisionShape2D" parent="."]
-position = Vector2(49, 75.5)
-shape = SubResource("RectangleShape2D_spctw")
+position = Vector2(49, 57)
+shape = SubResource("CircleShape2D_1g2fj")
 
 [node name="DetectionArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -109,7 +110,8 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 position = Vector2(48, 58)
-shape = SubResource("CircleShape2D_vo5qx")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_5i1fk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

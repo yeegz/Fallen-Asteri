@@ -33,7 +33,7 @@ func _process(delta):
 	elif direction == 0 or velocity.x == 0:
 		
 		#requires move_towards to enable stopping movement
-		velocity.x  = move_toward(1, 0, 1)
+		velocity.x  = move_toward(1, 0, delta)
 	
 	
 	#move_and_slide required for basic physics functions to work
