@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://c8br3cr26rf1a"]
+[gd_scene load_steps=36 format=3 uid="uid://c8br3cr26rf1a"]
 
 [ext_resource type="Script" path="res://Scenes/character_body_2d.gd" id="1_vkjrs"]
 [ext_resource type="Texture2D" uid="uid://haxobx80xo05" path="res://Sprite Assets/animsheet2.png" id="2_jupm6"]
@@ -228,6 +228,9 @@ animations = [{
 radius = 21.5
 height = 77.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_xy3k0"]
+radius = 36.1248
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 texture_filter = 1
 collision_layer = 2
@@ -256,3 +259,9 @@ shape = SubResource("CapsuleShape2D_wvvr1")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(137, 91)
 zoom = Vector2(1.8, 1.8)
+
+[node name="player_hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox"]
+position = Vector2(60, 87)
+shape = SubResource("CircleShape2D_xy3k0")
