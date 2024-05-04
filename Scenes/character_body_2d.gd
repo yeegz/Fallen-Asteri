@@ -6,7 +6,6 @@ const JUMP = -550
 var GRAVITY_VALUE = 1100
 var PLAYER_HP = 100
 var PLAYER_STAMINA = 100
-var player_alive = true
 @onready var animation = $AnimatedSprite2D
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

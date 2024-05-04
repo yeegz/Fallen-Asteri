@@ -8,6 +8,7 @@ var player = null
 var player_chase = false
 var attack_range = false
 var attack_cooldown = true
+var player_alive = true
 @onready var animation = $AnimatedSprite2D
 
 
@@ -16,6 +17,9 @@ func _physics_process(delta):
 	enemy_attack()
 	var anim = animations(player_chase)
 	var path = pathing(player_chase, delta, SPEED, JUMP)
+
+func enemy():
+	pass
 
 #when player enters DetectionArea
 func _on_detection_area_body_entered(body):
@@ -31,18 +35,18 @@ func _on_detection_area_body_exited(body):
 func _on_enemy_hitbox_body_entered(body):
 	if body.has_method("hero"):
 		attack_range = true
-		
 
 
 func _on_enemy_hitbox_body_exited(body):
 	if body.has_method("hero"):
 		attack_range = false
-		
 
 func enemy_attack():
-	if attack_range == true:
-		#print("Player taking damage")
-		pass
+	if attack_range == true and attack_cooldown == true:
+		player.PLAYER_HP -= 20 
+		attack_cooldown = false
+		$cooldown.start()
+		print(player.PLAYER_HP)
 
 func gravity(delta):
 	#Gravity
@@ -54,7 +58,7 @@ func animations(player_chase):
 	#Animation
 	if player_chase == false:
 		animation.play("crab_idle")
-	else:
+	elif attack_range == true:
 		animation.play("crab_attack")
 
 func pathing(player_chase, delta, SPEED, JUMP):
@@ -73,3 +77,12 @@ func pathing(player_chase, delta, SPEED, JUMP):
 		#jumping func
 		if not player.is_on_floor() and is_on_floor():
 			velocity.y = JUMP
+
+
+func _on_cooldown_timeout():
+	attack_cooldown = true
+
+
+func end_screen():
+	if player.PLAYER_HP <= 0:
+		player_alive = false #endscreen for later
