@@ -8,7 +8,7 @@ var PLAYER_HP = 100
 var PLAYER_STAMINA = 100
 @onready var animation = $AnimatedSprite2D
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+#main function
 func _process(delta):
 	var control = controls(delta)
 	var grav = gravity(delta)
@@ -25,6 +25,7 @@ func _process(delta):
 func hero():
 	pass
 
+#player controls and sprite flipping according to direction
 func controls(delta):
 	#Added buttons A and D to the left and right axis respectively
 	var direction = Input.get_axis("ui_left", "ui_right")
@@ -50,11 +51,13 @@ func controls(delta):
 	move_and_slide()
 	return direction
 
+#basic gravity
 func gravity(delta):
 	#Gravity
 	if not is_on_floor():
 		velocity.y += GRAVITY_VALUE * delta
 
+#animations
 func animations(control):
 	#Animation
 	if control and velocity.y == 0:
