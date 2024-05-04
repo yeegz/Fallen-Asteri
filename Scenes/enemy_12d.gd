@@ -41,7 +41,8 @@ func _on_enemy_hitbox_body_exited(body):
 
 func enemy_attack():
 	if attack_range == true:
-		print("Player taking damage")
+		#print("Player taking damage")
+		pass
 
 func gravity(delta):
 	#Gravity
@@ -62,6 +63,13 @@ func pathing(player_chase, delta, SPEED, JUMP):
 		position += (player.position - position)/ SPEED
 		#to prevent enemy from sliding
 		move_toward(1, 0, delta)
+		
+		#Flip sprite according to direction
+		if player.position < position:
+			$AnimatedSprite2D.flip_h = false
+		elif player.position > position:
+			$AnimatedSprite2D.flip_h = true
+		
 		#jumping func
 		if not player.is_on_floor() and is_on_floor():
 			velocity.y = JUMP
