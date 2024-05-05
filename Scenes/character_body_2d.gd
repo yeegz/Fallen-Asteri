@@ -16,11 +16,8 @@ func _process(delta):
 	var control = controls(delta)
 	var grav = gravity(delta)
 	var anim = animations(control)
+	player_attack()
 	
-	#Attack
-	if Input.is_action_just_pressed("ui_attack") and player_attack_range == true:
-		enemy.ENEMY_HP -= 20
-		print("enemy hp = ", enemy.ENEMY_HP)
 	
 
 #Easiest way for enemy hitbox to idintify player is through methods. Creating throwaway
@@ -81,3 +78,15 @@ func _on_player_attack_range_body_exited(body):
 	if body.has_method("enemy"):
 		enemy = null
 		player_attack_range = false
+
+func player_attack():
+	#Attack
+	if Input.is_action_just_pressed("ui_attack") and player_attack_range == true and player_attack_cooldown == true:
+		enemy.ENEMY_HP -= 20
+		player_attack_cooldown = false
+		$player_cooldown.start()
+		print("enemy hp = ", enemy.ENEMY_HP)
+
+
+func _on_player_cooldown_timeout():
+	player_attack_cooldown = true

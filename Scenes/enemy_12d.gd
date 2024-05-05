@@ -11,6 +11,7 @@ var attack_range = false
 var attack_cooldown = true
 var player_alive = true
 var knockback = 1500
+var alive_status = true
 @onready var animation = $AnimatedSprite2D
 
 #main function
@@ -18,7 +19,7 @@ func _physics_process(delta):
 	var grav = gravity(delta)
 	var anim = animations(player_chase)
 	var path = pathing(player_chase, delta, SPEED, JUMP)
-	enemy_attack(delta)
+	enemy_attack()
 
 #throwaway function, might or might not find use later
 func enemy():
@@ -45,7 +46,7 @@ func _on_enemy_hitbox_body_exited(body):
 		attack_range = false
 
 #enemy attack, attack cooldown and knockback
-func enemy_attack(delta):
+func enemy_attack():
 	if attack_range == true and attack_cooldown == true:
 		player.PLAYER_HP -= 20 
 		attack_cooldown = false
