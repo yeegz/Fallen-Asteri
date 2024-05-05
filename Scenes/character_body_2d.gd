@@ -3,6 +3,7 @@ extends CharacterBody2D
 #variable declaration
 const SPEED = 300
 const JUMP = -550
+var enemy = null
 var GRAVITY_VALUE = 1100
 var PLAYER_HP = 100
 var PLAYER_STAMINA = 100
@@ -17,13 +18,9 @@ func _process(delta):
 	var anim = animations(control)
 	
 	#Attack
-	if Input.is_action_just_pressed("ui_attack") and control == 1:
-		print("Attack to right")
-	elif Input.is_action_just_pressed("ui_attack") and control == -1:
-		print("Attack to left")
-	
-	
-	
+	if Input.is_action_just_pressed("ui_attack") and player_attack_range == true:
+		enemy.ENEMY_HP -= 20
+		print("enemy hp = ", enemy.ENEMY_HP)
 	
 
 #Easiest way for enemy hitbox to idintify player is through methods. Creating throwaway
@@ -76,11 +73,11 @@ func animations(control):
 
 func _on_player_attack_range_body_entered(body):
 	if body.has_method("enemy"):
+		enemy = body
 		player_attack_range = true
-	
-	print(player_attack_range)
 
 
 func _on_player_attack_range_body_exited(body):
 	if body.has_method("enemy"):
+		enemy = null
 		player_attack_range = false
