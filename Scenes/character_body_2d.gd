@@ -6,6 +6,8 @@ const JUMP = -550
 var GRAVITY_VALUE = 1100
 var PLAYER_HP = 100
 var PLAYER_STAMINA = 100
+var player_attack_range = false
+var player_attack_cooldown = true
 @onready var animation = $AnimatedSprite2D
 
 #main function
@@ -19,6 +21,10 @@ func _process(delta):
 		print("Attack to right")
 	elif Input.is_action_just_pressed("ui_attack") and control == -1:
 		print("Attack to left")
+	
+	
+	
+	
 
 #Easiest way for enemy hitbox to idintify player is through methods. Creating throwaway
 #function temporarily
@@ -66,3 +72,15 @@ func animations(control):
 		animation.play("jump")
 	elif control == 0 or velocity.x == 0:
 		animation.play("idle")
+
+
+func _on_player_attack_range_body_entered(body):
+	if body.has_method("enemy"):
+		player_attack_range = true
+	
+	print(player_attack_range)
+
+
+func _on_player_attack_range_body_exited(body):
+	if body.has_method("enemy"):
+		player_attack_range = false

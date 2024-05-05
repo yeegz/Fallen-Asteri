@@ -229,7 +229,7 @@ radius = 21.5
 height = 77.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xy3k0"]
-radius = 36.1248
+radius = 49.0102
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 texture_filter = 1
@@ -241,8 +241,8 @@ script = ExtResource("1_vkjrs")
 position = Vector2(63.129, 81.5)
 scale = Vector2(2.36694, 2.65625)
 sprite_frames = SubResource("SpriteFrames_ccfa5")
-animation = &"idle"
-frame_progress = 0.0821379
+animation = &"attack"
+frame_progress = 0.143384
 
 [node name="player" type="Sprite2D" parent="."]
 visible = false
@@ -260,8 +260,13 @@ shape = SubResource("CapsuleShape2D_wvvr1")
 position = Vector2(137, 91)
 zoom = Vector2(1.8, 1.8)
 
-[node name="player_hitbox" type="Area2D" parent="."]
+[node name="player_attack_range" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_attack_range"]
 position = Vector2(60, 87)
 shape = SubResource("CircleShape2D_xy3k0")
+
+[connection signal="body_entered" from="player_attack_range" to="." method="_on_player_attack_range_body_entered"]
+[connection signal="body_exited" from="player_attack_range" to="." method="_on_player_attack_range_body_exited"]
