@@ -341,7 +341,7 @@ position = Vector2(52.25, 54.5)
 scale = Vector2(2.33594, 2.39062)
 sprite_frames = SubResource("SpriteFrames_ex4hy")
 animation = &"enemy_attack"
-frame_progress = 0.686546
+frame_progress = 0.357362
 
 [node name="enemy_hitbox" type="Area2D" parent="."]
 collision_layer = 4
