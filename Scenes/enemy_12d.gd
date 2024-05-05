@@ -51,7 +51,6 @@ func enemy_attack():
 		player.PLAYER_HP -= 20 
 		attack_cooldown = false
 		$cooldown.start()
-		print(player.PLAYER_HP)
 
 func gravity(delta):
 	#Gravity

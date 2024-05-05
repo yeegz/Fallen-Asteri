@@ -17,8 +17,7 @@ func _process(delta):
 	var grav = gravity(delta)
 	var anim = animations(control)
 	player_attack()
-	
-	
+	print(PLAYER_STAMINA)
 
 #Easiest way for enemy hitbox to idintify player is through methods. Creating throwaway
 #function temporarily
@@ -80,13 +79,21 @@ func _on_player_attack_range_body_exited(body):
 		player_attack_range = false
 
 func player_attack():
-	#Attack
-	if Input.is_action_just_pressed("ui_attack") and player_attack_range == true and player_attack_cooldown == true:
+	var stamina_requirement = 30
+	if Input.is_action_just_pressed("ui_attack") and player_attack_range == true and player_attack_cooldown == true and PLAYER_STAMINA > stamina_requirement:
 		enemy.ENEMY_HP -= 20
+		PLAYER_STAMINA -= stamina_requirement
 		player_attack_cooldown = false
 		$player_cooldown.start()
-		print("enemy hp = ", enemy.ENEMY_HP)
+		if PLAYER_STAMINA < 100:
+			$player_stamina.start()
 
 
 func _on_player_cooldown_timeout():
 	player_attack_cooldown = true
+
+
+func _on_player_stamina_timeout():
+	PLAYER_STAMINA += 10
+
+

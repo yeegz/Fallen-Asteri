@@ -242,7 +242,7 @@ position = Vector2(63.129, 81.5)
 scale = Vector2(2.36694, 2.65625)
 sprite_frames = SubResource("SpriteFrames_ccfa5")
 animation = &"attack"
-frame_progress = 0.443609
+frame_progress = 0.199917
 
 [node name="player" type="Sprite2D" parent="."]
 visible = false
@@ -270,6 +270,9 @@ shape = SubResource("CircleShape2D_xy3k0")
 
 [node name="player_cooldown" type="Timer" parent="."]
 
+[node name="player_stamina" type="Timer" parent="."]
+
 [connection signal="body_entered" from="player_attack_range" to="." method="_on_player_attack_range_body_entered"]
 [connection signal="body_exited" from="player_attack_range" to="." method="_on_player_attack_range_body_exited"]
 [connection signal="timeout" from="player_cooldown" to="." method="_on_player_cooldown_timeout"]
+[connection signal="timeout" from="player_stamina" to="." method="_on_player_stamina_timeout"]
