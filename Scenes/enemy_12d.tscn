@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bdrn15gp760df" path="res://Temporary Files/Skeleton enemy.png" id="5_btf1u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1g2fj"]
-radius = 39.3192
+radius = 37.054
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5i1fk"]
 radius = 121.0
@@ -308,7 +308,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rm23o"]
-radius = 41.4367
+radius = 40.0
 
 [node name="enemy12D" type="CharacterBody2D"]
 collision_layer = 4
@@ -341,7 +341,7 @@ position = Vector2(52.25, 54.5)
 scale = Vector2(2.33594, 2.39062)
 sprite_frames = SubResource("SpriteFrames_ex4hy")
 animation = &"enemy_attack"
-frame_progress = 0.929049
+frame_progress = 0.686546
 
 [node name="enemy_hitbox" type="Area2D" parent="."]
 collision_layer = 4
