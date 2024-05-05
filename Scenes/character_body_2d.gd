@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 #variable declaration
-const SPEED = 300
+const SPEED = 400
 const JUMP = -550
 var GRAVITY_VALUE = 1100
 var PLAYER_HP = 100

@@ -62,13 +62,14 @@ func gravity(delta):
 func animations(player_chase):
 	#Animation
 	if player_chase == false:
-		animation.play("crab_idle")
+		animation.play("enemy_idle")
 	elif attack_range == true:
-		animation.play("crab_attack")
+		animation.play("enemy_attack")
 
 #pathfinding
 func pathing(player_chase, delta, SPEED, JUMP):
 	if player_chase == true:
+		
 		#move towards player if in detection area
 		position += (player.position - position)/ SPEED
 		#to prevent enemy from sliding
@@ -76,9 +77,9 @@ func pathing(player_chase, delta, SPEED, JUMP):
 		
 		#Flip sprite according to direction
 		if player.position < position:
-			$AnimatedSprite2D.flip_h = false
-		elif player.position > position:
 			$AnimatedSprite2D.flip_h = true
+		elif player.position > position:
+			$AnimatedSprite2D.flip_h = false
 		
 		#jumping func
 		if not player.is_on_floor() and is_on_floor():
