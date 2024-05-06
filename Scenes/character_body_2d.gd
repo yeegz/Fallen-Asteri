@@ -95,5 +95,3 @@ func _on_player_cooldown_timeout():
 
 func _on_player_stamina_timeout():
 	PLAYER_STAMINA += 10
-
-
