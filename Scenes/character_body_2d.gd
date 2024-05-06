@@ -3,9 +3,12 @@ extends CharacterBody2D
 #variable declaration
 var SPEED = 320
 const JUMP = -550
+var enemy = null
 var GRAVITY_VALUE = 1100
 var PLAYER_HP = 100
 var PLAYER_STAMINA = 100
+var player_attack_range = false
+var player_attack_cooldown = true
 @onready var animation = $AnimatedSprite2D
 
 #main function
@@ -13,12 +16,7 @@ func _process(delta):
 	var control = controls(delta)
 	var grav = gravity(delta)
 	var anim = animations(control)
-	
-	#Attack
-	if Input.is_action_just_pressed("ui_attack") and control == 1:
-		print("Attack to right")
-	elif Input.is_action_just_pressed("ui_attack") and control == -1:
-		print("Attack to left")
+	player_attack()
 
 #Easiest way for enemy hitbox to idintify player is through methods. Creating throwaway
 #function temporarily
@@ -66,3 +64,33 @@ func animations(control):
 		animation.play("jump")
 	elif control == 0 or velocity.x == 0:
 		animation.play("idle")
+
+
+func _on_player_attack_range_body_entered(body):
+	if body.has_method("enemy"):
+		enemy = body
+		player_attack_range = true
+
+
+func _on_player_attack_range_body_exited(body):
+	if body.has_method("enemy"):
+		enemy = null
+		player_attack_range = false
+
+func player_attack():
+	var stamina_requirement = 30
+	if Input.is_action_just_pressed("ui_attack") and player_attack_range == true and player_attack_cooldown == true and PLAYER_STAMINA > stamina_requirement:
+		enemy.ENEMY_HP -= 20
+		PLAYER_STAMINA -= stamina_requirement
+		player_attack_cooldown = false
+		$player_cooldown.start()
+		if PLAYER_STAMINA < 100:
+			$player_stamina.start()
+
+
+func _on_player_cooldown_timeout():
+	player_attack_cooldown = true
+
+
+func _on_player_stamina_timeout():
+	PLAYER_STAMINA += 10

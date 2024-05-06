@@ -8,9 +8,10 @@ var ENEMY_HP = 100
 var player = null
 var player_chase = false
 var attack_range = false
-var attack_cooldown = true
+var attack_cooldown = false
 var player_alive = true
 var knockback = 1500
+var alive_status = true
 @onready var animation = $AnimatedSprite2D
 
 #main function
@@ -18,7 +19,8 @@ func _physics_process(delta):
 	var grav = gravity(delta)
 	var anim = animations(player_chase)
 	var path = pathing(player_chase, delta, SPEED, JUMP)
-	enemy_attack(delta)
+	enemy_attack()
+	print(attack_cooldown)
 
 #throwaway function, might or might not find use later
 func enemy():
@@ -44,13 +46,12 @@ func _on_enemy_hitbox_body_exited(body):
 	if body.has_method("hero"):
 		attack_range = false
 
-#enemy attack, attack cooldown and knockback
-func enemy_attack(delta):
+#enemy attack, attack cooldown
+func enemy_attack():
 	if attack_range == true and attack_cooldown == true:
 		player.PLAYER_HP -= 20 
 		attack_cooldown = false
 		$cooldown.start()
-		print(player.PLAYER_HP)
 
 func gravity(delta):
 	#Gravity
@@ -66,7 +67,7 @@ func animations(player_chase):
 	elif attack_range == true:
 		animation.play("enemy_attack")
 
-#pathfinding
+#pathfinding, knockback
 func pathing(player_chase, delta, SPEED, JUMP):
 	if player_chase == true:
 		
@@ -99,3 +100,9 @@ func _on_cooldown_timeout():
 func end_screen():
 	if player.PLAYER_HP <= 0:
 		player_alive = false #endscreen for later
+
+
+
+
+
+
