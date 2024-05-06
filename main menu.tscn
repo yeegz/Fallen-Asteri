@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://main menu.gd" id="1_g3b4x"]
 [ext_resource type="Theme" uid="uid://cyr3cl0yytsk6" path="res://themes.tres" id="2_wk16h"]
-[ext_resource type="Texture2D" uid="uid://vp7n0d16yop5" path="res://image/back image 2.png" id="3_im2da"]
-[ext_resource type="Texture2D" uid="uid://bjehs0yllb3tk" path="res://image/Press Start 2P (2).png" id="5_lor76"]
-[ext_resource type="Texture2D" uid="uid://uvebjj3ntnmr" path="res://image/Press Start 2P (1).png" id="6_flofn"]
-[ext_resource type="Texture2D" uid="uid://d1mlf8q565r4d" path="res://image/Press Start 2P (3).png" id="6_tdopv"]
+[ext_resource type="Texture2D" uid="uid://c0im7lsc11knm" path="res://image/back image 2.png" id="3_im2da"]
+[ext_resource type="Texture2D" uid="uid://c3hhcgm3jxvg0" path="res://image/Press Start 2P (2).png" id="5_lor76"]
+[ext_resource type="Texture2D" uid="uid://vrf37v7c6gkx" path="res://image/Press Start 2P (1).png" id="6_flofn"]
+[ext_resource type="Texture2D" uid="uid://hndpng1qfkdt" path="res://image/Press Start 2P (3).png" id="6_tdopv"]
 
 [node name="main menu" type="Control"]
 layout_mode = 3

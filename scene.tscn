@@ -1,16 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://bplxua7pm7t3m"]
+[gd_scene load_steps=15 format=3 uid="uid://bplxua7pm7t3m"]
 
 [ext_resource type="Texture2D" uid="uid://byeqfi2rn1i6f" path="res://Sprite Assets/dirt.png" id="1_jjdho"]
 [ext_resource type="Texture2D" uid="uid://dtu1hwjhxyxuo" path="res://Sprite Assets/grass.png" id="2_nfj14"]
-[ext_resource type="Texture2D" uid="uid://qlbgwdylyusy" path="res://Temporary Files/pixil-frame-0.png" id="4_36fch"]
+[ext_resource type="Texture2D" uid="uid://ddlp0h2ovn2ef" path="res://Temporary Files/pixil-frame-0.png" id="4_36fch"]
 [ext_resource type="PackedScene" uid="uid://c8br3cr26rf1a" path="res://Scenes/character_body_2d.tscn" id="4_uge1f"]
-[ext_resource type="Texture2D" uid="uid://bjqlijx22o454" path="res://Temporary Files/pixil-frame-0-5.png" id="5_3j0kt"]
 [ext_resource type="PackedScene" uid="uid://bbttsnhtdb1k5" path="res://Scenes/enemy_12d.tscn" id="5_qhj3c"]
-[ext_resource type="Texture2D" uid="uid://btftfls8731wb" path="res://Temporary Files/pixil-frame-0-6.png" id="6_hmtka"]
-[ext_resource type="Texture2D" uid="uid://6jffmmqpdqk2" path="res://Temporary Files/pixil-frame-0-10.png" id="6_oruos"]
-[ext_resource type="Texture2D" uid="uid://dqdul3cgh8ayr" path="res://Temporary Files/pixil-frame-0-11.png" id="7_sol3l"]
-[ext_resource type="Texture2D" uid="uid://bp323ddxndkco" path="res://Temporary Files/pixil-frame-0-12.png" id="8_5bkco"]
-[ext_resource type="Texture2D" uid="uid://b35xy2012x4rj" path="res://Temporary Files/pixil-frame-0-9.png" id="9_mvaw1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jovnk"]
 texture = ExtResource("1_jjdho")
@@ -33,31 +27,26 @@ texture = ExtResource("4_36fch")
 0:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5nu7w"]
-texture = ExtResource("5_3j0kt")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ocel6"]
-texture = ExtResource("6_hmtka")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uowap"]
-texture = ExtResource("6_oruos")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tbaaf"]
-texture = ExtResource("7_sol3l")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wrsax"]
-texture = ExtResource("8_5bkco")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -89,7 +78,6 @@ offset_left = -119.0
 offset_top = -49.0
 offset_right = 1442.0
 offset_bottom = 702.0
-texture = ExtResource("9_mvaw1")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_uge1f")]
 position = Vector2(560, 316)
