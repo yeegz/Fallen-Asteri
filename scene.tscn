@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bplxua7pm7t3m"]
+[gd_scene load_steps=10 format=3 uid="uid://bplxua7pm7t3m"]
 
 [ext_resource type="Texture2D" uid="uid://byeqfi2rn1i6f" path="res://Sprite Assets/dirt.png" id="1_jjdho"]
 [ext_resource type="Texture2D" uid="uid://dtu1hwjhxyxuo" path="res://Sprite Assets/grass.png" id="2_nfj14"]
 [ext_resource type="Texture2D" uid="uid://tsvhuippqr6w" path="res://Sprite Assets/sky.png" id="3_i8t2b"]
 [ext_resource type="PackedScene" uid="uid://c8br3cr26rf1a" path="res://Scenes/character_body_2d.tscn" id="4_uge1f"]
 [ext_resource type="PackedScene" path="res://Scenes/enemy_12d.tscn" id="5_qhj3c"]
+[ext_resource type="PackedScene" uid="uid://dsrbpbwd065ue" path="res://pause_menu.tscn" id="6_22hrl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jovnk"]
 texture = ExtResource("1_jjdho")
@@ -48,3 +49,8 @@ position = Vector2(563, 351)
 [node name="enemy12D" parent="." instance=ExtResource("5_qhj3c")]
 texture_filter = 1
 position = Vector2(816, 132)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("6_22hrl")]
+visible = false

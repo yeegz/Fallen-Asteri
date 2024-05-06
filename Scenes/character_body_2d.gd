@@ -55,3 +55,7 @@ func _process(delta):
 	elif Input.is_action_just_pressed("ui_attack") and direction == -1:
 		print("Attack to left")
 	
+
+
+func _on_button_pressed():
+	get_tree().change_scene_to_file("res://main menu.tscn")

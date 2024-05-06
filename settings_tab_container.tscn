@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://v4ag1ndob1rb"]
+[gd_scene load_steps=4 format=3 uid="uid://v4ag1ndob1rb"]
 
 [ext_resource type="PackedScene" uid="uid://bmexm3typrptj" path="res://window_mode_button.tscn" id="1_qwxlb"]
 [ext_resource type="PackedScene" uid="uid://ma3pxnk85j10" path="res://resolution_mode_button.tscn" id="2_6lcci"]
+[ext_resource type="Texture2D" uid="uid://b7fmoaji81tgp" path="res://tii.png" id="3_duvgi"]
 
 [node name="Settings_Tab_Container" type="Control"]
 layout_mode = 3
@@ -22,15 +23,13 @@ anchor_right = 1.206
 anchor_bottom = 1.0
 offset_left = 134.0
 offset_top = 148.0
-offset_right = -443.584
+offset_right = -519.584
 offset_bottom = -66.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 1
 
 [node name="Sound" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 drag_to_rearrange_enabled = true
 
@@ -39,6 +38,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 24
@@ -47,6 +50,7 @@ theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
 [node name="Graphics" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 drag_to_rearrange_enabled = true
 
@@ -90,6 +94,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 24
@@ -119,41 +124,7 @@ layout_mode = 2
 [node name="Label6" type="Label" parent="TabContainer/Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Accessibility" type="TabBar" parent="TabContainer"]
-visible = false
-layout_mode = 2
-drag_to_rearrange_enabled = true
-
-[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Accessibility"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 24
-theme_override_constants/margin_top = 24
-theme_override_constants/margin_right = 24
-theme_override_constants/margin_bottom = 24
-
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Accessibility/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 64
-
-[node name="Label" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label2" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label3" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label4" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label5" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label6" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
-layout_mode = 2
+[node name="Tii" type="Sprite2D" parent="TabContainer/Control"]
+position = Vector2(856, 419)
+scale = Vector2(0.891667, 0.777778)
+texture = ExtResource("3_duvgi")
