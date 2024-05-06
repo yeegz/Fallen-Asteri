@@ -17,7 +17,6 @@ func _process(delta):
 	var grav = gravity(delta)
 	var anim = animations(control)
 	player_attack()
-	print(PLAYER_STAMINA)
 
 #Easiest way for enemy hitbox to idintify player is through methods. Creating throwaway
 #function temporarily

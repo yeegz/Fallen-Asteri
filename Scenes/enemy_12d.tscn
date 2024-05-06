@@ -353,6 +353,7 @@ shape = SubResource("CircleShape2D_rm23o")
 
 [node name="cooldown" type="Timer" parent="."]
 wait_time = 2.0
+autostart = true
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
