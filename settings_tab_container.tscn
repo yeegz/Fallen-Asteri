@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://v4ag1ndob1rb"]
+[gd_scene load_steps=4 format=3 uid="uid://v4ag1ndob1rb"]
 
 [ext_resource type="PackedScene" uid="uid://bmexm3typrptj" path="res://window_mode_button.tscn" id="1_qwxlb"]
 [ext_resource type="PackedScene" uid="uid://ma3pxnk85j10" path="res://resolution_mode_button.tscn" id="2_6lcci"]
+[ext_resource type="Texture2D" uid="uid://b82xxrffovdrv" path="res://tii (1).png" id="3_1jslh"]
 
 [node name="Settings_Tab_Container" type="Control"]
 layout_mode = 3
@@ -10,7 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -84.0
 offset_top = -10.0
-offset_right = -40.0
+offset_right = -12.0
 offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -20,14 +21,14 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.206
 anchor_bottom = 1.0
-offset_left = 134.0
+offset_left = 250.0
 offset_top = 148.0
-offset_right = -443.584
+offset_right = -551.584
 offset_bottom = -66.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 1
+current_tab = 2
 
 [node name="Sound" type="TabBar" parent="TabContainer"]
 visible = false
@@ -47,6 +48,7 @@ theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
 [node name="Graphics" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 drag_to_rearrange_enabled = true
 
@@ -81,15 +83,21 @@ size_flags_vertical = 4
 layout_mode = 2
 
 [node name="Control" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 drag_to_rearrange_enabled = true
+
+[node name="Tii(1)" type="Sprite2D" parent="TabContainer/Control"]
+position = Vector2(799.5, 420.5)
+scale = Vector2(0.830729, 0.776852)
+texture = ExtResource("3_1jslh")
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -11.0
+offset_right = 0.231934
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 24
@@ -119,12 +127,12 @@ layout_mode = 2
 [node name="Label6" type="Label" parent="TabContainer/Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Accessibility" type="TabBar" parent="TabContainer"]
+[node name="Load" type="TabBar" parent="TabContainer"]
 visible = false
 layout_mode = 2
 drag_to_rearrange_enabled = true
 
-[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Accessibility"]
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Load"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -136,24 +144,24 @@ theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Accessibility/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Load/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 64
 
-[node name="Label" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="TabContainer/Load/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="TabContainer/Load/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label3" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
+[node name="Label3" type="Label" parent="TabContainer/Load/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label4" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
+[node name="Label4" type="Label" parent="TabContainer/Load/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label5" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
+[node name="Label5" type="Label" parent="TabContainer/Load/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label6" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
+[node name="Label6" type="Label" parent="TabContainer/Load/MarginContainer/VBoxContainer"]
 layout_mode = 2
