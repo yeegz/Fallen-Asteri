@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://bplxua7pm7t3m"]
+[gd_scene load_steps=16 format=3 uid="uid://bplxua7pm7t3m"]
 
 [ext_resource type="Texture2D" uid="uid://byeqfi2rn1i6f" path="res://Sprite Assets/dirt.png" id="1_jjdho"]
 [ext_resource type="Texture2D" uid="uid://dtu1hwjhxyxuo" path="res://Sprite Assets/grass.png" id="2_nfj14"]
-[ext_resource type="Texture2D" path="res://Temporary Files/pixil-frame-0.png" id="4_36fch"]
+[ext_resource type="Texture2D" uid="uid://uguu0mvxlppm" path="res://Temporary Files/pixil-frame-0.png" id="4_36fch"]
 [ext_resource type="PackedScene" uid="uid://c8br3cr26rf1a" path="res://Scenes/character_body_2d.tscn" id="4_uge1f"]
 [ext_resource type="PackedScene" uid="uid://bbttsnhtdb1k5" path="res://Scenes/enemy_12d.tscn" id="5_qhj3c"]
+[ext_resource type="PackedScene" uid="uid://d0kv8oi3d4d22" path="res://pause_menu.tscn" id="6_61ind"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jovnk"]
 texture = ExtResource("1_jjdho")
@@ -85,3 +86,8 @@ position = Vector2(560, 316)
 [node name="enemy12D" parent="." instance=ExtResource("5_qhj3c")]
 texture_filter = 1
 position = Vector2(1012, 360)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="pause_menu" parent="CanvasLayer" instance=ExtResource("6_61ind")]
+visible = false
