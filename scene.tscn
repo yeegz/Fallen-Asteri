@@ -2,15 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://byeqfi2rn1i6f" path="res://Sprite Assets/dirt.png" id="1_jjdho"]
 [ext_resource type="Texture2D" uid="uid://dtu1hwjhxyxuo" path="res://Sprite Assets/grass.png" id="2_nfj14"]
-[ext_resource type="Texture2D" uid="uid://qlbgwdylyusy" path="res://Temporary Files/pixil-frame-0.png" id="4_36fch"]
+[ext_resource type="Texture2D" path="res://Temporary Files/pixil-frame-0.png" id="4_36fch"]
 [ext_resource type="PackedScene" uid="uid://c8br3cr26rf1a" path="res://Scenes/character_body_2d.tscn" id="4_uge1f"]
-[ext_resource type="Texture2D" uid="uid://bjqlijx22o454" path="res://Temporary Files/pixil-frame-0-5.png" id="5_3j0kt"]
+[ext_resource type="Texture2D" path="res://Temporary Files/pixil-frame-0-5.png" id="5_3j0kt"]
 [ext_resource type="PackedScene" uid="uid://bbttsnhtdb1k5" path="res://Scenes/enemy_12d.tscn" id="5_qhj3c"]
-[ext_resource type="Texture2D" uid="uid://btftfls8731wb" path="res://Temporary Files/pixil-frame-0-6.png" id="6_hmtka"]
-[ext_resource type="Texture2D" uid="uid://6jffmmqpdqk2" path="res://Temporary Files/pixil-frame-0-10.png" id="6_oruos"]
-[ext_resource type="Texture2D" uid="uid://dqdul3cgh8ayr" path="res://Temporary Files/pixil-frame-0-11.png" id="7_sol3l"]
-[ext_resource type="Texture2D" uid="uid://bp323ddxndkco" path="res://Temporary Files/pixil-frame-0-12.png" id="8_5bkco"]
-[ext_resource type="Texture2D" uid="uid://b35xy2012x4rj" path="res://Temporary Files/pixil-frame-0-9.png" id="9_mvaw1"]
+[ext_resource type="Texture2D" path="res://Temporary Files/pixil-frame-0-6.png" id="6_hmtka"]
+[ext_resource type="Texture2D" path="res://Temporary Files/pixil-frame-0-10.png" id="6_oruos"]
+[ext_resource type="Texture2D" path="res://Temporary Files/pixil-frame-0-11.png" id="7_sol3l"]
+[ext_resource type="Texture2D" path="res://Temporary Files/pixil-frame-0-12.png" id="8_5bkco"]
+[ext_resource type="Texture2D" path="res://Temporary Files/pixil-frame-0-9.png" id="9_mvaw1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jovnk"]
 texture = ExtResource("1_jjdho")
