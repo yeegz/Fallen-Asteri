@@ -2,14 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://byeqfi2rn1i6f" path="res://Sprite Assets/dirt.png" id="1_jjdho"]
 [ext_resource type="Texture2D" uid="uid://dtu1hwjhxyxuo" path="res://Sprite Assets/grass.png" id="2_nfj14"]
-[ext_resource type="Texture2D" uid="uid://b72a7tndw62iq" path="res://Temporary Files/pixil-frame-0-12.png" id="3_mfda8"]
-[ext_resource type="Texture2D" uid="uid://cuc8rw0uplrju" path="res://Temporary Files/pixil-frame-0.png" id="4_36fch"]
+[ext_resource type="Texture2D" uid="uid://bp323ddxndkco" path="res://Temporary Files/pixil-frame-0-12.png" id="3_mfda8"]
+[ext_resource type="Texture2D" uid="uid://qlbgwdylyusy" path="res://Temporary Files/pixil-frame-0.png" id="4_36fch"]
 [ext_resource type="PackedScene" uid="uid://c8br3cr26rf1a" path="res://Scenes/character_body_2d.tscn" id="4_uge1f"]
-[ext_resource type="Texture2D" uid="uid://wpds5hvscqm7" path="res://Temporary Files/pixil-frame-0-10.png" id="5_kso4v"]
+[ext_resource type="Texture2D" uid="uid://6jffmmqpdqk2" path="res://Temporary Files/pixil-frame-0-10.png" id="5_kso4v"]
 [ext_resource type="PackedScene" uid="uid://bbttsnhtdb1k5" path="res://Scenes/enemy_12d.tscn" id="5_qhj3c"]
-[ext_resource type="Texture2D" uid="uid://3hvmmgsycvg3" path="res://Temporary Files/pixil-frame-0-11.png" id="6_4p2ce"]
+[ext_resource type="Texture2D" uid="uid://dqdul3cgh8ayr" path="res://Temporary Files/pixil-frame-0-11.png" id="6_4p2ce"]
 [ext_resource type="PackedScene" uid="uid://d0kv8oi3d4d22" path="res://pause_menu.tscn" id="6_61ind"]
-[ext_resource type="Texture2D" uid="uid://cduu7dpttmc4u" path="res://Temporary Files/pixil-frame-0-9.png" id="7_smshe"]
+[ext_resource type="Texture2D" uid="uid://b35xy2012x4rj" path="res://Temporary Files/pixil-frame-0-9.png" id="7_smshe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jovnk"]
 texture = ExtResource("1_jjdho")
