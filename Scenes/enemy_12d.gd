@@ -20,7 +20,6 @@ func _physics_process(delta):
 	var anim = animations(player_chase)
 	var path = pathing(player_chase, delta, SPEED, JUMP)
 	enemy_attack()
-	print(attack_cooldown)
 
 #throwaway function, might or might not find use later
 func enemy():
