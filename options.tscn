@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://options.gd" id="1_c026u"]
 [ext_resource type="PackedScene" uid="uid://v4ag1ndob1rb" path="res://settings_tab_container.tscn" id="2_jpafd"]
-[ext_resource type="Texture2D" uid="uid://f63nxd55afhh" path="res://options.png" id="2_tb6g6"]
-[ext_resource type="Texture2D" uid="uid://blu45lrmtuc7u" path="res://back button.png" id="4_b7b4o"]
+[ext_resource type="Texture2D" uid="uid://crpp8e0x3plw3" path="res://options.png" id="2_tb6g6"]
+[ext_resource type="Texture2D" uid="uid://oyfe57atrike" path="res://back button.png" id="4_b7b4o"]
 
 [node name="Options_Menu" type="Control"]
 layout_mode = 3
@@ -15,8 +15,8 @@ grow_vertical = 2
 script = ExtResource("1_c026u")
 
 [node name="Options" type="Sprite2D" parent="."]
-position = Vector2(962, 541)
-scale = Vector2(0.996875, 1)
+position = Vector2(962, 532.5)
+scale = Vector2(0.996875, 1.01574)
 texture = ExtResource("2_tb6g6")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -44,17 +44,17 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="BackButton" type="Sprite2D" parent="."]
-position = Vector2(985, 1049)
+position = Vector2(1022, 1052)
 scale = Vector2(0.731343, 0.605263)
 texture = ExtResource("4_b7b4o")
 
 [node name="Back_Button" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0.180392)
 layout_mode = 2
-offset_left = 893.0
-offset_top = 1029.0
-offset_right = 1080.0
-offset_bottom = 1066.0
+offset_left = 924.0
+offset_top = 1031.0
+offset_right = 1111.0
+offset_bottom = 1068.0
 size_flags_horizontal = 4
 size_flags_vertical = 8
 text = "Back"

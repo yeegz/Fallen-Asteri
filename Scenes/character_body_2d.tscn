@@ -1,7 +1,7 @@
 [gd_scene load_steps=35 format=3 uid="uid://c8br3cr26rf1a"]
 
 [ext_resource type="Script" path="res://Scenes/character_body_2d.gd" id="1_vkjrs"]
-[ext_resource type="Texture2D" uid="uid://b21kkulhea1qm" path="res://Sprite Assets/animsheet2.png" id="2_jupm6"]
+[ext_resource type="Texture2D" uid="uid://dsae1j3412f81" path="res://Sprite Assets/animsheet2.png" id="2_jupm6"]
 [ext_resource type="Texture2D" uid="uid://dn05j1cs3expf" path="res://Sprite Assets/AnimationSheet_Character.png" id="3_b43xp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ynahq"]
@@ -228,7 +228,7 @@ radius = 13.0
 height = 58.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xy3k0"]
-radius = 36.1248
+radius = 47.0106
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 texture_filter = 1
@@ -240,8 +240,9 @@ script = ExtResource("1_vkjrs")
 position = Vector2(53.629, 91.5)
 scale = Vector2(1.77319, 2.03125)
 sprite_frames = SubResource("SpriteFrames_ccfa5")
-animation = &"run"
-frame_progress = 0.280584
+animation = &"attack"
+frame = 5
+frame_progress = 0.38306
 
 [node name="player" type="Sprite2D" parent="."]
 visible = false
@@ -259,8 +260,19 @@ shape = SubResource("CapsuleShape2D_wvvr1")
 position = Vector2(137, 91)
 zoom = Vector2(1.8, 1.8)
 
-[node name="player_hitbox" type="Area2D" parent="."]
+[node name="player_attack_range" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_attack_range"]
 position = Vector2(53, 96)
 shape = SubResource("CircleShape2D_xy3k0")
+
+[node name="player_stamina" type="Timer" parent="."]
+
+[node name="player_cooldown" type="Timer" parent="."]
+
+[connection signal="body_entered" from="player_attack_range" to="." method="_on_player_attack_range_body_entered"]
+[connection signal="body_exited" from="player_attack_range" to="." method="_on_player_attack_range_body_exited"]
+[connection signal="timeout" from="player_stamina" to="." method="_on_player_stamina_timeout"]
+[connection signal="timeout" from="player_cooldown" to="." method="_on_player_cooldown_timeout"]
