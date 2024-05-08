@@ -10,7 +10,7 @@ var player_chase = false
 var attack_range = false
 var attack_cooldown = false
 var player_alive = true
-var knockback = 1500
+var knockback = 4000
 var alive_status = true
 @onready var animation = $AnimatedSprite2D
 
@@ -20,6 +20,8 @@ func _physics_process(delta):
 	var anim = animations(player_chase)
 	var path = pathing(player_chase, delta, SPEED, JUMP)
 	enemy_attack()
+	death()
+	print(ENEMY_HP)
 
 #throwaway function, might or might not find use later
 func enemy():
@@ -84,8 +86,8 @@ func pathing(player_chase, delta, SPEED, JUMP):
 			$AnimatedSprite2D.flip_h = false
 		
 		#jumping func
-		if not player.is_on_floor() and is_on_floor():
-			velocity.y = JUMP
+		#if not player.is_on_floor() and is_on_floor():
+			#velocity.y = JUMP
 		
 		#Knockback
 		if player.position < position and attack_range == true and attack_cooldown == true:
@@ -98,9 +100,9 @@ func _on_cooldown_timeout():
 	attack_cooldown = true
 
 #implement later
-func end_screen(hp):
-	if player.PLAYER_HP <= 0:
-		player_alive = false
+func death():
+	if ENEMY_HP <= 0:
+		queue_free()
 
 
 
