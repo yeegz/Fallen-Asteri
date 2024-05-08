@@ -98,9 +98,9 @@ func _on_cooldown_timeout():
 	attack_cooldown = true
 
 #implement later
-func end_screen():
+func end_screen(hp):
 	if player.PLAYER_HP <= 0:
-		player_alive = false #endscreen for later
+		player_alive = false
 
 
 

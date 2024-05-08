@@ -18,6 +18,8 @@ func _process(delta):
 	var grav = gravity(delta)
 	var anim = animations(control)
 	player_attack()
+	death()
+	print(PLAYER_HP)
 
 #Easiest way for enemy hitbox to idintify player is through methods. Creating throwaway
 #function temporarily
@@ -73,6 +75,7 @@ func animations(control):
 		animation.play("idle")
 
 
+
 func _on_player_attack_range_body_entered(body):
 	if body.has_method("enemy"):
 		enemy = body
@@ -99,3 +102,7 @@ func _on_player_cooldown_timeout():
 func _on_player_stamina_timeout():
 	if PLAYER_STAMINA < 100:
 		PLAYER_STAMINA += 10
+
+func death():
+	if PLAYER_HP <= 0:
+		queue_free()
