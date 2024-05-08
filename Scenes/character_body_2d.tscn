@@ -240,8 +240,9 @@ script = ExtResource("1_vkjrs")
 position = Vector2(53.629, 91.5)
 scale = Vector2(1.77319, 2.03125)
 sprite_frames = SubResource("SpriteFrames_ccfa5")
-animation = &"run"
-frame_progress = 0.280584
+animation = &"attack"
+frame = 5
+frame_progress = 0.38306
 
 [node name="player" type="Sprite2D" parent="."]
 visible = false

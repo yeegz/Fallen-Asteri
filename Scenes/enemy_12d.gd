@@ -65,6 +65,8 @@ func animations(player_chase):
 		animation.play("enemy_idle")
 	elif attack_range == true:
 		animation.play("enemy_attack")
+	elif attack_cooldown == true:
+		animation.play("enemy_walk")
 
 #pathfinding, knockback
 func pathing(player_chase, delta, SPEED, JUMP):

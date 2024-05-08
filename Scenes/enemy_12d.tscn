@@ -340,8 +340,9 @@ texture_filter = 1
 position = Vector2(52.25, 54.5)
 scale = Vector2(2.33594, 2.39062)
 sprite_frames = SubResource("SpriteFrames_ex4hy")
-animation = &"enemy_attack"
-frame_progress = 0.990873
+animation = &"enemy_walk"
+frame = 2
+frame_progress = 0.463232
 
 [node name="enemy_hitbox" type="Area2D" parent="."]
 collision_layer = 4
