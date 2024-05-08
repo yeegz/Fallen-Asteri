@@ -1,7 +1,7 @@
 [gd_scene load_steps=35 format=3 uid="uid://c8br3cr26rf1a"]
 
 [ext_resource type="Script" path="res://Scenes/character_body_2d.gd" id="1_vkjrs"]
-[ext_resource type="Texture2D" uid="uid://dsae1j3412f81" path="res://Sprite Assets/animsheet2.png" id="2_jupm6"]
+[ext_resource type="Texture2D" uid="uid://b21kkulhea1qm" path="res://Sprite Assets/animsheet2.png" id="2_jupm6"]
 [ext_resource type="Texture2D" uid="uid://dn05j1cs3expf" path="res://Sprite Assets/AnimationSheet_Character.png" id="3_b43xp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ynahq"]
@@ -119,28 +119,28 @@ region = Rect2(224, 96, 32, 32)
 [sub_resource type="SpriteFrames" id="SpriteFrames_ccfa5"]
 animations = [{
 "frames": [{
-"duration": 0.6,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_ynahq")
 }, {
-"duration": 0.6,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_bhky5")
 }, {
-"duration": 0.6,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_6j00j")
 }, {
-"duration": 0.6,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_iaxtm")
 }, {
-"duration": 0.6,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_amtrp")
 }, {
-"duration": 0.6,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_4xwrl")
 }, {
-"duration": 0.6,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_wgvho")
 }, {
-"duration": 0.6,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_teesj")
 }],
 "loop": true,
