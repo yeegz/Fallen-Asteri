@@ -119,28 +119,28 @@ region = Rect2(224, 96, 32, 32)
 [sub_resource type="SpriteFrames" id="SpriteFrames_ccfa5"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_ynahq")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_bhky5")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_6j00j")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_iaxtm")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_amtrp")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_4xwrl")
 }, {
-"duration": 1.0,
+"duration": 0.4,
 "texture": SubResource("AtlasTexture_wgvho")
 }, {
-"duration": 1.0,
+"duration": 0.4,
 "texture": SubResource("AtlasTexture_teesj")
 }],
 "loop": true,
@@ -225,7 +225,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wvvr1"]
 radius = 13.0
-height = 58.0
+height = 52.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xy3k0"]
 radius = 47.0106
@@ -240,9 +240,7 @@ script = ExtResource("1_vkjrs")
 position = Vector2(53.629, 91.5)
 scale = Vector2(1.77319, 2.03125)
 sprite_frames = SubResource("SpriteFrames_ccfa5")
-animation = &"attack"
-frame = 5
-frame_progress = 0.38306
+animation = &"idle"
 
 [node name="player" type="Sprite2D" parent="."]
 visible = false
