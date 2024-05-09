@@ -1,16 +1,21 @@
-[gd_scene load_steps=24 format=3 uid="uid://bplxua7pm7t3m"]
+[gd_scene load_steps=34 format=3 uid="uid://bplxua7pm7t3m"]
 
 [ext_resource type="Texture2D" uid="uid://byeqfi2rn1i6f" path="res://Sprite Assets/dirt.png" id="1_jjdho"]
 [ext_resource type="Texture2D" uid="uid://dtu1hwjhxyxuo" path="res://Sprite Assets/grass.png" id="2_nfj14"]
 [ext_resource type="Texture2D" uid="uid://bkew02lpauc1i" path="res://Temporary Files/TileCraftGroundSetVersion2.png" id="3_chleh"]
 [ext_resource type="Texture2D" uid="uid://bp323ddxndkco" path="res://Temporary Files/pixil-frame-0-12.png" id="3_mfda8"]
 [ext_resource type="Texture2D" uid="uid://qlbgwdylyusy" path="res://Temporary Files/pixil-frame-0.png" id="4_36fch"]
+[ext_resource type="Texture2D" uid="uid://csl6yr3yckoov" path="res://Temporary Files/Tree only/tree001.png" id="4_ttnju"]
 [ext_resource type="PackedScene" uid="uid://c8br3cr26rf1a" path="res://Scenes/character_body_2d.tscn" id="4_uge1f"]
 [ext_resource type="Texture2D" uid="uid://6jffmmqpdqk2" path="res://Temporary Files/pixil-frame-0-10.png" id="5_kso4v"]
+[ext_resource type="Texture2D" uid="uid://ds2rub8h2mymj" path="res://Temporary Files/Tree only/bush 0011.png" id="5_lmtss"]
 [ext_resource type="PackedScene" uid="uid://bbttsnhtdb1k5" path="res://Scenes/enemy_12d.tscn" id="5_qhj3c"]
 [ext_resource type="Texture2D" uid="uid://dqdul3cgh8ayr" path="res://Temporary Files/pixil-frame-0-11.png" id="6_4p2ce"]
 [ext_resource type="PackedScene" uid="uid://d0kv8oi3d4d22" path="res://pause_menu.tscn" id="6_61ind"]
-[ext_resource type="Texture2D" uid="uid://bso4emepordn6" path="res://Temporary Files/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 2/1.png" id="8_p07tk"]
+[ext_resource type="Texture2D" uid="uid://jxaigf6ri8sq" path="res://Temporary Files/Tree only/bush 0021.png" id="6_fqyec"]
+[ext_resource type="Texture2D" uid="uid://bhctrinkcjjxg" path="res://Temporary Files/Tree only/bush 0031.png" id="7_q6niq"]
+[ext_resource type="Texture2D" uid="uid://3t8bqfwyeio4" path="res://Temporary Files/Tree only/bush 0041.png" id="8_878ux"]
+[ext_resource type="Texture2D" uid="uid://cfbbjc35jdjjd" path="res://Temporary Files/Sky textures/Clouds/Clouds 3/1.png" id="8_rbjml"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jovnk"]
 texture = ExtResource("1_jjdho")
@@ -353,6 +358,40 @@ texture = ExtResource("3_chleh")
 8:8/0/physics_layer_0/angular_velocity = 0.0
 8:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vmwuv"]
+texture = ExtResource("4_ttnju")
+texture_region_size = Vector2i(16, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8550e"]
+texture = ExtResource("5_lmtss")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ffxjj"]
+texture = ExtResource("6_fqyec")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jtl86"]
+texture = ExtResource("7_q6niq")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kph6u"]
+texture = ExtResource("8_878ux")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ikwgt"]
 texture = ExtResource("3_mfda8")
 0:0/0 = 0
@@ -414,15 +453,26 @@ sources/9 = SubResource("TileSetAtlasSource_wrsax")
 sources/2 = SubResource("TileSetAtlasSource_ikwgt")
 sources/6 = SubResource("TileSetAtlasSource_lf6yv")
 sources/10 = SubResource("TileSetAtlasSource_yi3pe")
+sources/11 = SubResource("TileSetAtlasSource_vmwuv")
+sources/12 = SubResource("TileSetAtlasSource_8550e")
+sources/13 = SubResource("TileSetAtlasSource_ffxjj")
+sources/14 = SubResource("TileSetAtlasSource_jtl86")
+sources/15 = SubResource("TileSetAtlasSource_kph6u")
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Tree001" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1010, 467.5)
+scale = Vector2(7.75, 7.71875)
+texture = ExtResource("4_ttnju")
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
 scale = Vector2(4, 4)
 tile_set = SubResource("TileSet_6lngs")
 format = 2
-layer_0/tile_data = PackedInt32Array(655360, 65546, 1, 655361, 65546, 1, 655362, 65546, 1, 655363, 65546, 1, 655364, 65546, 1, 655365, 65546, 1, 655372, 65546, 1, 655373, 65546, 1, 655374, 65546, 1, 655375, 65546, 1, 655376, 65546, 1, 655377, 65546, 1, 589841, 458762, 0, 589840, 458762, 0, 589839, 458762, 0, 589838, 458762, 0, 589837, 458762, 0, 589836, 458762, 0, 589830, 458762, 0, 589824, 458762, 1, 655366, 65546, 1, 589829, 458762, 0, 524288, 524298, 0, 655367, 65546, 1, 655368, 65546, 1, 655369, 65546, 1, 655370, 65546, 1, 655371, 65546, 1, 327686, 1, 0, 327685, 1, 0, 327684, 1, 0, 65536, 131082, 2, 655378, 65546, 1, 655379, 65546, 1, 655380, 65546, 1, 589823, 65546, 1, 655359, 65546, 1, 524287, 131082, 1, 393215, 131082, 1, 327679, 131082, 1, 262143, 131082, 1, 196607, 131082, 1, 131071, 65546, 1, 65535, 65546, 1, -65535, 65546, 1, -65534, 65546, 2, -65532, 65546, 2, -65533, 65546, 2, -65531, 65546, 2, -65530, 65546, 2, -65529, 65546, 2, -65528, 65546, 2, -65527, 65546, 2, -65526, 65546, 2, -65524, 65546, 2, -65525, 65546, 2, -65522, 65546, 2, -65523, 65546, 2, -65521, 65546, 2, -65520, 65546, 2, 458773, 65546, 1, 393237, 10, 1, 327701, 10, 1, 262165, 10, 1, 196629, 10, 1, 131093, 65546, 1, 65557, 65546, 1, -65519, 65546, 2, -65518, 65546, 1, -65517, 65546, 1, 589842, 458762, 1, 589843, 458762, 1, 589844, 65546, 1, 327683, 1, 0, 327682, 1, 0, 524306, 393226, 0, 524307, 458762, 0, 524308, 458762, 1, 458772, 393226, 0, 1, 131082, 2, 0, 65546, 1, 65556, 65546, 1, 65555, 10, 2, 19, 65546, 1, 20, 65546, 1, 18, 10, 2, 131092, 10, 2, 589834, 458762, 0, 589832, 458762, 0, 458763, 1, 0, 589835, 458762, 0, 589833, 458762, 0, 589831, 458762, 0, 458760, 1, 0, 458761, 1, 0, 458762, 1, 0, 196616, 1, 0, 196617, 1, 0, 196618, 1, 0, 196619, 1, 0, 458751, 131082, 1, 589825, 458762, 0, 589826, 458762, 0, 589827, 458762, 0, 589828, 458762, 0, 589845, 65546, 1, 524309, 65546, 1, 655381, 65546, 1, -65516, 65546, 1, -65515, 65546, 1, 21, 65546, 1, -65536, 65546, 1, -1, 65546, 1, 720895, 65546, 1)
+layer_0/tile_data = PackedInt32Array(655360, 65546, 1, 655361, 65546, 1, 655362, 65546, 1, 655363, 65546, 1, 655364, 65546, 1, 655365, 65546, 1, 655372, 65546, 1, 655373, 65546, 1, 655374, 65546, 1, 655375, 65546, 1, 655376, 65546, 1, 655377, 65546, 1, 589841, 65546, 0, 589840, 65546, 0, 589839, 65546, 0, 589838, 65546, 0, 589837, 65546, 0, 589836, 65546, 0, 589830, 65546, 0, 589824, 65546, 1, 655366, 65546, 1, 589829, 65546, 0, 524288, 131082, 0, 655367, 65546, 1, 655368, 65546, 1, 655369, 65546, 1, 655370, 65546, 1, 655371, 65546, 1, 327686, 10, 5, 327685, 10, 5, 327684, 10, 5, 65536, 131082, 2, 655378, 65546, 1, 655379, 65546, 1, 655380, 65546, 1, 589823, 65546, 1, 655359, 65546, 1, 524287, 131082, 1, 393215, 131082, 1, 327679, 131082, 1, 262143, 131082, 1, 196607, 131082, 1, 131071, 65546, 1, 65535, 65546, 1, -65535, 65546, 1, -65534, 65546, 2, -65532, 65546, 2, -65533, 65546, 2, -65531, 65546, 2, -65530, 65546, 2, -65529, 65546, 2, -65528, 65546, 2, -65527, 65546, 2, -65526, 65546, 2, -65524, 65546, 2, -65525, 65546, 2, -65522, 65546, 2, -65523, 65546, 2, -65521, 65546, 2, -65520, 65546, 2, 458773, 65546, 1, 393237, 10, 1, 327701, 10, 1, 262165, 10, 1, 196629, 10, 1, 131093, 65546, 1, 65557, 65546, 1, -65519, 65546, 2, -65518, 65546, 1, -65517, 65546, 1, 589842, 65546, 1, 589843, 65546, 1, 589844, 65546, 1, 327683, 10, 5, 327682, 10, 5, 524306, 10, 0, 524307, 65546, 0, 524308, 65546, 1, 458772, 10, 0, 1, 131082, 2, 0, 65546, 1, 65556, 65546, 1, 65555, 10, 2, 19, 65546, 1, 20, 65546, 1, 18, 10, 2, 131092, 10, 2, 589834, 65546, 0, 589832, 65546, 0, 458763, 10, 5, 589835, 65546, 0, 589833, 65546, 0, 589831, 65546, 0, 458760, 10, 5, 458761, 10, 5, 458762, 10, 5, 196616, 10, 5, 196617, 10, 5, 196618, 10, 5, 196619, 10, 5, 458751, 131082, 1, 589825, 65546, 0, 589826, 65546, 0, 589827, 65546, 0, 589828, 65546, 0, 589845, 65546, 1, 524309, 65546, 1, 655381, 65546, 1, -65516, 65546, 1, -65515, 65546, 1, 21, 65546, 1, -65536, 65546, 1, -1, 65546, 1, 720895, 65546, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 show_behind_parent = true
@@ -431,7 +481,7 @@ offset_left = -18.0
 offset_top = -44.0
 offset_right = 1366.0
 offset_bottom = 697.0
-texture = ExtResource("8_p07tk")
+texture = ExtResource("8_rbjml")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_uge1f")]
 position = Vector2(560, 316)
