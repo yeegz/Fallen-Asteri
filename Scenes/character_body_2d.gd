@@ -5,7 +5,7 @@ var SPEED = 320
 const JUMP = -550
 var enemy = null
 var GRAVITY_VALUE = 1100
-var PLAYER_HP = 250
+var PLAYER_HP = 200
 var PLAYER_STAMINA = 100
 var is_attacking = false
 var player_attack_range = false
@@ -20,7 +20,7 @@ func _process(delta):
 	var anim = animations(control)
 	player_attack()
 	death()
-	print("player stamina = ", PLAYER_STAMINA)
+	print("player stamina = ", PLAYER_STAMINA, " player hp = ", PLAYER_HP)
 	
 
 
