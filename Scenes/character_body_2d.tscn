@@ -281,6 +281,15 @@ scale = Vector2(0.7, 0.7)
 max_value = 200.0
 show_percentage = false
 
+[node name="stamina" type="ProgressBar" parent="."]
+modulate = Color(0, 0, 1, 1)
+offset_left = -388.0
+offset_top = -183.0
+offset_right = -144.0
+offset_bottom = -161.0
+scale = Vector2(0.5, 0.5)
+show_percentage = false
+
 [connection signal="body_entered" from="player_attack_range" to="." method="_on_player_attack_range_body_entered"]
 [connection signal="body_exited" from="player_attack_range" to="." method="_on_player_attack_range_body_exited"]
 [connection signal="timeout" from="player_stamina" to="." method="_on_player_stamina_timeout"]
