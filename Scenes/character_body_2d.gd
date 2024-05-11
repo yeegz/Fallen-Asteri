@@ -19,6 +19,8 @@ func _process(delta):
 	var anim = animations(control)
 	player_attack()
 	death()
+	healthbar()
+	print(PLAYER_HP)
 
 #Easiest way for enemy hitbox to idintify player is through methods. Creating throwaway
 #function temporarily
@@ -108,3 +110,8 @@ func _on_player_stamina_timeout():
 func death():
 	if PLAYER_HP <= 0:
 		queue_free()
+
+
+func healthbar():
+	var healthbar_parameters = $health
+	healthbar_parameters.value = PLAYER_HP
