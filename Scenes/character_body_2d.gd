@@ -21,7 +21,6 @@ func _process(delta):
 	death()
 	healthbar()
 	staminabar()
-	print(PLAYER_STAMINA)
 
 #Easiest way for enemy hitbox to idintify player is through methods. Creating throwaway
 #function temporarily
