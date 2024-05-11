@@ -1,7 +1,7 @@
 [gd_scene load_steps=35 format=3 uid="uid://c8br3cr26rf1a"]
 
 [ext_resource type="Script" path="res://Scenes/character_body_2d.gd" id="1_vkjrs"]
-[ext_resource type="Texture2D" uid="uid://b21kkulhea1qm" path="res://Sprite Assets/animsheet2.png" id="2_jupm6"]
+[ext_resource type="Texture2D" uid="uid://dsae1j3412f81" path="res://Sprite Assets/animsheet2.png" id="2_jupm6"]
 [ext_resource type="Texture2D" uid="uid://dn05j1cs3expf" path="res://Sprite Assets/AnimationSheet_Character.png" id="3_b43xp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ynahq"]
@@ -240,7 +240,8 @@ script = ExtResource("1_vkjrs")
 position = Vector2(53.629, 91.5)
 scale = Vector2(1.77319, 2.03125)
 sprite_frames = SubResource("SpriteFrames_ccfa5")
-animation = &"idle"
+animation = &"attack"
+frame_progress = 0.560428
 
 [node name="player" type="Sprite2D" parent="."]
 visible = false
@@ -269,6 +270,25 @@ shape = SubResource("CircleShape2D_xy3k0")
 [node name="player_stamina" type="Timer" parent="."]
 
 [node name="player_cooldown" type="Timer" parent="."]
+
+[node name="health" type="ProgressBar" parent="."]
+modulate = Color(0, 1, 0, 1)
+offset_left = -388.0
+offset_top = -205.0
+offset_right = -202.0
+offset_bottom = -188.0
+scale = Vector2(0.7, 0.7)
+max_value = 200.0
+show_percentage = false
+
+[node name="stamina" type="ProgressBar" parent="."]
+modulate = Color(0, 0, 1, 1)
+offset_left = -388.0
+offset_top = -192.0
+offset_right = -144.0
+offset_bottom = -176.0
+scale = Vector2(0.5, 0.5)
+show_percentage = false
 
 [connection signal="body_entered" from="player_attack_range" to="." method="_on_player_attack_range_body_entered"]
 [connection signal="body_exited" from="player_attack_range" to="." method="_on_player_attack_range_body_exited"]

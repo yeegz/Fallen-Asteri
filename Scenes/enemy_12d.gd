@@ -21,7 +21,7 @@ func _physics_process(delta):
 	var path = pathing(player_chase, delta, SPEED, JUMP)
 	enemy_attack()
 	death()
-	print(ENEMY_HP)
+	enemy_healthbar()
 
 #throwaway function, might or might not find use later
 func enemy():
@@ -99,13 +99,12 @@ func pathing(player_chase, delta, SPEED, JUMP):
 func _on_cooldown_timeout():
 	attack_cooldown = true
 
-#implement later
+#handles enemy death. Essentially deletes the sprite off the scene if hp = 0 or less
 func death():
 	if ENEMY_HP <= 0:
 		queue_free()
 
-
-
-
-
-
+#links enemy healthbar GUI to ENEMY_HP
+func enemy_healthbar():
+	var enemy_heathbar_parameters = $enemy_health
+	enemy_heathbar_parameters.value = ENEMY_HP

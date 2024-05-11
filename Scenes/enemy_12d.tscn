@@ -1,10 +1,10 @@
 [gd_scene load_steps=48 format=3 uid="uid://bbttsnhtdb1k5"]
 
 [ext_resource type="Script" path="res://Scenes/enemy_12d.gd" id="1_685w0"]
-[ext_resource type="Texture2D" uid="uid://dth6r6p41n5yh" path="res://Temporary Files/idle/crab_idle_1.png" id="1_xxmt4"]
-[ext_resource type="Texture2D" uid="uid://bfaq26c7f6g10" path="res://Temporary Files/idle/crab_idle.png" id="3_lehdf"]
-[ext_resource type="Texture2D" uid="uid://cdam6cmpo18tv" path="res://Temporary Files/attack/crab_attack.png" id="3_onv81"]
-[ext_resource type="Texture2D" uid="uid://bdrn15gp760df" path="res://Temporary Files/Skeleton enemy.png" id="5_btf1u"]
+[ext_resource type="Texture2D" uid="uid://b48h5xrsueebe" path="res://Temporary Files/idle/crab_idle_1.png" id="1_xxmt4"]
+[ext_resource type="Texture2D" uid="uid://briarml85biy8" path="res://Temporary Files/idle/crab_idle.png" id="3_lehdf"]
+[ext_resource type="Texture2D" uid="uid://b4a76xdbl35o6" path="res://Temporary Files/attack/crab_attack.png" id="3_onv81"]
+[ext_resource type="Texture2D" uid="uid://bc81fob1xulo7" path="res://Temporary Files/Skeleton enemy.png" id="5_btf1u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1g2fj"]
 radius = 33.0151
@@ -355,6 +355,15 @@ shape = SubResource("CircleShape2D_rm23o")
 [node name="cooldown" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
+
+[node name="enemy_health" type="ProgressBar" parent="."]
+modulate = Color(1, 0, 0, 1)
+offset_left = 14.0
+offset_top = 6.0
+offset_right = 194.0
+offset_bottom = 33.0
+scale = Vector2(0.4, 0.4)
+show_percentage = false
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]

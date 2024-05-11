@@ -5,9 +5,8 @@ var SPEED = 320
 const JUMP = -550
 var enemy = null
 var GRAVITY_VALUE = 1100
-var PLAYER_HP = 250
+var PLAYER_HP = 200
 var PLAYER_STAMINA = 100
-var is_attacking = false
 var player_attack_range = false
 var player_attack_cooldown = true
 var stamina_requirement = 30
@@ -20,12 +19,10 @@ func _process(delta):
 	var anim = animations(control)
 	player_attack()
 	death()
-	print("player stamina = ", PLAYER_STAMINA)
-	
+	healthbar()
+	staminabar()
 
-
-#Easiest way for enemy hitbox to idintify player is through methods. Creating throwaway
-#function temporarily
+#Easiest way for enemy hitbox to idintify player is through methods.
 func hero():
 	pass
 
@@ -75,22 +72,21 @@ func animations(control):
 	elif control == 0 or velocity.x == 0:
 		animation.play("idle")
 
-
-
+#when any interactible object with the method "enemy" enters
 func _on_player_attack_range_body_entered(body):
 	if body.has_method("enemy"):
 		enemy = body
 		player_attack_range = true
 
-
+#when any interactible object with the method "enemy" exits
 func _on_player_attack_range_body_exited(body):
 	if body.has_method("enemy"):
 		enemy = null
 		player_attack_range = false
 
+#handle dealing damage, player attack cooldown, player stamina calculation and cooldown
 func player_attack():
 	if Input.is_action_just_pressed("ui_attack") and player_attack_range == true and player_attack_cooldown == true and PLAYER_STAMINA > stamina_requirement:
-		is_attacking = true
 		animation.play("attack")
 		enemy.ENEMY_HP -= 20
 		PLAYER_STAMINA -= stamina_requirement
@@ -101,16 +97,26 @@ func player_attack():
 		elif PLAYER_STAMINA == 100:
 			player_attack_cooldown = false
 
-
-
+#what player being able to attack on cooldown timeout
 func _on_player_cooldown_timeout():
 	player_attack_cooldown = true
 
-
+#player regenerating stamina upon stamina depletion
 func _on_player_stamina_timeout():
 	if PLAYER_STAMINA < 100:
 		PLAYER_STAMINA += 10
 
+#handles character death temporarily. An end screen is more fitting
 func death():
 	if PLAYER_HP <= 0:
 		queue_free()
+
+#function to link healthbar GUI to PLAYER_HP
+func healthbar():
+	var healthbar_parameters = $health
+	healthbar_parameters.value = PLAYER_HP
+
+#function to link staminabar GUI to PLAYER_STAMINA
+func staminabar():
+	var staminabar_parameters = $stamina
+	staminabar_parameters.value = PLAYER_STAMINA
