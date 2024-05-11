@@ -21,7 +21,6 @@ func _physics_process(delta):
 	var path = pathing(player_chase, delta, SPEED, JUMP)
 	enemy_attack()
 	death()
-	print("enemy hp = ", ENEMY_HP)
 
 #throwaway function, might or might not find use later
 func enemy():
@@ -103,9 +102,4 @@ func _on_cooldown_timeout():
 func death():
 	if ENEMY_HP <= 0:
 		queue_free()
-
-
-
-
-
 
