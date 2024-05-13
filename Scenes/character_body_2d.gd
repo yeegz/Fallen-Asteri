@@ -17,8 +17,8 @@ var attack_animation = false
 #main function
 func _process(delta):
 	var control = controls(delta)
-	var grav = gravity(delta)
-	var anim = animations(control)
+	gravity(delta)
+	animations(control)
 	player_attack()
 	death()
 	healthbar()
@@ -90,7 +90,7 @@ func _on_player_attack_range_body_exited(body):
 		enemy = null
 		player_attack_range = false
 
-#handle dealing damage, player attack cooldown, player stamina calculation and cooldown
+#player attack cooldown, player stamina calculation and cooldown
 func player_attack():
 	if Input.is_action_just_pressed("ui_attack") and PLAYER_STAMINA >= stamina_requirement:
 		player_attack_cooldown = true
@@ -127,13 +127,13 @@ func staminabar():
 	var staminabar_parameters = $stamina
 	staminabar_parameters.value = PLAYER_STAMINA
 
-
+#able to sync attack to animation, player attack
 func _on_pre_attack_timeout():
 	if pre_attack_cooldown == true and player_attack_range == true:
 		enemy.ENEMY_HP -= 20
 	
 	pre_attack_cooldown = false
 
-
+#Handle timing for attack animation
 func _on_attack_anim_timer_timeout():
 	attack_animation = false
