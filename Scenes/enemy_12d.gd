@@ -16,9 +16,9 @@ var alive_status = true
 
 #main function
 func _physics_process(delta):
-	var grav = gravity(delta)
-	var anim = animations(player_chase)
-	var path = pathing(player_chase, delta, SPEED, JUMP)
+	gravity(delta)
+	animations(player_chase)
+	pathing(player_chase, delta, SPEED)
 	enemy_attack()
 	death()
 	enemy_healthbar()
@@ -71,7 +71,7 @@ func animations(player_chase):
 		animation.play("enemy_walk")
 
 #pathfinding, knockback
-func pathing(player_chase, delta, SPEED, JUMP):
+func pathing(player_chase, delta, SPEED):
 	if player_chase == true:
 		
 		#move towards player if in detection area
@@ -90,10 +90,10 @@ func pathing(player_chase, delta, SPEED, JUMP):
 			#velocity.y = JUMP
 		
 		#Knockback
-		if player.position < position and attack_range == true and attack_cooldown == true:
-			player.position.x += -knockback * delta
-		elif player.position > position and attack_range == true and attack_cooldown == true:
-			player.position.x += knockback * delta
+		#if player.position < position and attack_range == true and attack_cooldown == true:
+			#player.position.x += -knockback * delta
+		#elif player.position > position and attack_range == true and attack_cooldown == true:
+			#player.position.x += knockback * delta
 
 #cooldown node
 func _on_cooldown_timeout():

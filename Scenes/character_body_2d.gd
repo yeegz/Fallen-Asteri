@@ -8,15 +8,17 @@ var GRAVITY_VALUE = 1100
 var PLAYER_HP = 200
 var PLAYER_STAMINA = 100
 var player_attack_range = false
-var player_attack_cooldown = true
+var player_attack_cooldown = false
 var stamina_requirement = 30
+var pre_attack_cooldown = false
+var attack_animation = false
 @onready var animation = $AnimatedSprite2D
 
 #main function
 func _process(delta):
 	var control = controls(delta)
-	var grav = gravity(delta)
-	var anim = animations(control)
+	gravity(delta)
+	animations(control)
 	player_attack()
 	death()
 	healthbar()
@@ -65,12 +67,16 @@ func animations(control):
 	#Animation
 	if control and velocity.y == 0:
 		animation.play("run")
-	elif player_attack_range == true and PLAYER_STAMINA >= 10 and player_attack_cooldown == false:
-		animation.play("attack")
+	elif Input.is_action_just_pressed("ui_attack") and PLAYER_STAMINA >= stamina_requirement:
+		attack_animation = true
+		$attack_anim_timer.start()
+		if attack_animation == true:
+			animation.play("attack")
 	elif velocity.y != 0:
 		animation.play("jump")
 	elif control == 0 or velocity.x == 0:
-		animation.play("idle")
+		if attack_animation == false:
+			animation.play("idle")
 
 #when any interactible object with the method "enemy" enters
 func _on_player_attack_range_body_entered(body):
@@ -84,18 +90,18 @@ func _on_player_attack_range_body_exited(body):
 		enemy = null
 		player_attack_range = false
 
-#handle dealing damage, player attack cooldown, player stamina calculation and cooldown
+#player attack cooldown, player stamina calculation and cooldown
 func player_attack():
-	if Input.is_action_just_pressed("ui_attack") and player_attack_range == true and player_attack_cooldown == true and PLAYER_STAMINA > stamina_requirement:
-		animation.play("attack")
-		enemy.ENEMY_HP -= 20
-		PLAYER_STAMINA -= stamina_requirement
-		player_attack_cooldown = false
+	if Input.is_action_just_pressed("ui_attack") and PLAYER_STAMINA >= stamina_requirement:
+		player_attack_cooldown = true
 		$player_cooldown.start()
+		if player_attack_cooldown == true and PLAYER_STAMINA >= stamina_requirement:
+			PLAYER_STAMINA -= stamina_requirement
 		if PLAYER_STAMINA < 100:
 			$player_stamina.start()
-		elif PLAYER_STAMINA == 100:
-			player_attack_cooldown = false
+		if player_attack_cooldown == true and player_attack_range == true:
+			pre_attack_cooldown = true
+			$pre_attack.start()
 
 #what player being able to attack on cooldown timeout
 func _on_player_cooldown_timeout():
@@ -120,3 +126,14 @@ func healthbar():
 func staminabar():
 	var staminabar_parameters = $stamina
 	staminabar_parameters.value = PLAYER_STAMINA
+
+#able to sync attack to animation, player attack
+func _on_pre_attack_timeout():
+	if pre_attack_cooldown == true and player_attack_range == true:
+		enemy.ENEMY_HP -= 20
+	
+	pre_attack_cooldown = false
+
+#Handle timing for attack animation
+func _on_attack_anim_timer_timeout():
+	attack_animation = false

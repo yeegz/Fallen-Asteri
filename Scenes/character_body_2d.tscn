@@ -290,7 +290,15 @@ offset_bottom = -176.0
 scale = Vector2(0.5, 0.5)
 show_percentage = false
 
+[node name="pre_attack" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="attack_anim_timer" type="Timer" parent="."]
+wait_time = 0.8
+
 [connection signal="body_entered" from="player_attack_range" to="." method="_on_player_attack_range_body_entered"]
 [connection signal="body_exited" from="player_attack_range" to="." method="_on_player_attack_range_body_exited"]
 [connection signal="timeout" from="player_stamina" to="." method="_on_player_stamina_timeout"]
 [connection signal="timeout" from="player_cooldown" to="." method="_on_player_cooldown_timeout"]
+[connection signal="timeout" from="pre_attack" to="." method="_on_pre_attack_timeout"]
+[connection signal="timeout" from="attack_anim_timer" to="." method="_on_attack_anim_timer_timeout"]
