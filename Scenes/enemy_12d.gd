@@ -3,7 +3,6 @@ extends CharacterBody2D
 #variable declaration
 const GRAVITY_VALUE = 1100
 var SPEED = 70
-var JUMP = -500
 var ENEMY_HP = 100
 var player = null
 var player_chase = false
