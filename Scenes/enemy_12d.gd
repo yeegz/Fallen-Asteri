@@ -90,10 +90,10 @@ func pathing(player_chase, delta, SPEED, JUMP):
 			#velocity.y = JUMP
 		
 		#Knockback
-		if player.position < position and attack_range == true and attack_cooldown == true:
-			player.position.x += -knockback * delta
-		elif player.position > position and attack_range == true and attack_cooldown == true:
-			player.position.x += knockback * delta
+		#if player.position < position and attack_range == true and attack_cooldown == true:
+			#player.position.x += -knockback * delta
+		#elif player.position > position and attack_range == true and attack_cooldown == true:
+			#player.position.x += knockback * delta
 
 #cooldown node
 func _on_cooldown_timeout():
