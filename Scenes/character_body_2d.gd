@@ -11,6 +11,7 @@ var player_attack_range = false
 var player_attack_cooldown = false
 var stamina_requirement = 30
 var pre_attack_cooldown = false
+var attack_animation = false
 @onready var animation = $AnimatedSprite2D
 
 #main function
@@ -66,12 +67,16 @@ func animations(control):
 	#Animation
 	if control and velocity.y == 0:
 		animation.play("run")
-	elif player_attack_range == true and PLAYER_STAMINA >= 10 and player_attack_cooldown == false:
-		animation.play("attack")
+	elif Input.is_action_just_pressed("ui_attack") and PLAYER_STAMINA >= stamina_requirement:
+		attack_animation = true
+		$attack_anim_timer.start()
+		if attack_animation == true:
+			animation.play("attack")
 	elif velocity.y != 0:
 		animation.play("jump")
 	elif control == 0 or velocity.x == 0:
-		animation.play("idle")
+		if attack_animation == false:
+			animation.play("idle")
 
 #when any interactible object with the method "enemy" enters
 func _on_player_attack_range_body_entered(body):
@@ -128,3 +133,7 @@ func _on_pre_attack_timeout():
 		enemy.ENEMY_HP -= 20
 	
 	pre_attack_cooldown = false
+
+
+func _on_attack_anim_timer_timeout():
+	attack_animation = false
