@@ -8,8 +8,9 @@ var GRAVITY_VALUE = 1100
 var PLAYER_HP = 200
 var PLAYER_STAMINA = 100
 var player_attack_range = false
-var player_attack_cooldown = true
+var player_attack_cooldown = false
 var stamina_requirement = 30
+var pre_attack_cooldown = false
 @onready var animation = $AnimatedSprite2D
 
 #main function
@@ -86,16 +87,16 @@ func _on_player_attack_range_body_exited(body):
 
 #handle dealing damage, player attack cooldown, player stamina calculation and cooldown
 func player_attack():
-	if Input.is_action_just_pressed("ui_attack") and player_attack_range == true and player_attack_cooldown == true and PLAYER_STAMINA > stamina_requirement:
-		animation.play("attack")
-		enemy.ENEMY_HP -= 20
-		PLAYER_STAMINA -= stamina_requirement
-		player_attack_cooldown = false
+	if Input.is_action_just_pressed("ui_attack") and PLAYER_STAMINA >= stamina_requirement:
+		player_attack_cooldown = true
 		$player_cooldown.start()
+		if player_attack_cooldown == true and PLAYER_STAMINA >= stamina_requirement:
+			PLAYER_STAMINA -= stamina_requirement
 		if PLAYER_STAMINA < 100:
 			$player_stamina.start()
-		elif PLAYER_STAMINA == 100:
-			player_attack_cooldown = false
+		if player_attack_cooldown == true and player_attack_range == true:
+			pre_attack_cooldown = true
+			$pre_attack.start()
 
 #what player being able to attack on cooldown timeout
 func _on_player_cooldown_timeout():
@@ -120,3 +121,10 @@ func healthbar():
 func staminabar():
 	var staminabar_parameters = $stamina
 	staminabar_parameters.value = PLAYER_STAMINA
+
+
+func _on_pre_attack_timeout():
+	if pre_attack_cooldown == true and player_attack_range == true:
+		enemy.ENEMY_HP -= 20
+	
+	pre_attack_cooldown = false
