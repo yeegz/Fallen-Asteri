@@ -523,10 +523,10 @@ layer_0/tile_data = PackedInt32Array(655360, 20, 0, 655361, 20, 0, 655362, 20, 0
 [node name="TextureRect" type="TextureRect" parent="."]
 show_behind_parent = true
 texture_filter = 1
-offset_left = -329.0
-offset_top = -295.0
-offset_right = 1585.0
-offset_bottom = 707.0
+offset_left = -214.0
+offset_top = -384.0
+offset_right = 1700.0
+offset_bottom = 618.0
 texture = ExtResource("16_mx0a5")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_uge1f")]
