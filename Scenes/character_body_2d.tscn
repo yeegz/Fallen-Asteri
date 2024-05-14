@@ -143,8 +143,8 @@ script = ExtResource("1_vkjrs")
 position = Vector2(63, 88)
 scale = Vector2(1.77319, 2.03125)
 sprite_frames = SubResource("SpriteFrames_ccfa5")
-animation = &"attack"
-frame_progress = 0.485457
+animation = &"idle"
+frame_progress = 0.405188
 
 [node name="player" type="Sprite2D" parent="."]
 visible = false
@@ -176,20 +176,20 @@ shape = SubResource("CircleShape2D_xy3k0")
 
 [node name="health" type="ProgressBar" parent="."]
 modulate = Color(0, 1, 0, 1)
-offset_left = -241.0
-offset_top = -120.0
-offset_right = -55.0
-offset_bottom = -103.0
+offset_left = -223.0
+offset_top = -115.0
+offset_right = -84.0
+offset_bottom = -98.0
 scale = Vector2(0.7, 0.7)
 max_value = 200.0
 show_percentage = false
 
 [node name="stamina" type="ProgressBar" parent="."]
 modulate = Color(0, 0, 1, 1)
-offset_left = 34.0
-offset_top = 55.0
-offset_right = 120.0
-offset_bottom = 71.0
+offset_left = 33.0
+offset_top = 56.0
+offset_right = 119.0
+offset_bottom = 72.0
 scale = Vector2(0.5, 0.5)
 show_percentage = false
 
