@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://bplxua7pm7t3m"]
+[gd_scene load_steps=46 format=3 uid="uid://bplxua7pm7t3m"]
 
 [ext_resource type="Texture2D" uid="uid://byeqfi2rn1i6f" path="res://Sprite Assets/dirt.png" id="1_jjdho"]
 [ext_resource type="Texture2D" uid="uid://dtu1hwjhxyxuo" path="res://Sprite Assets/grass.png" id="2_nfj14"]
@@ -13,13 +13,14 @@
 [ext_resource type="Texture2D" uid="uid://dqdul3cgh8ayr" path="res://Temporary Files/pixil-frame-0-11.png" id="6_4p2ce"]
 [ext_resource type="PackedScene" uid="uid://d0kv8oi3d4d22" path="res://pause_menu.tscn" id="6_61ind"]
 [ext_resource type="Texture2D" uid="uid://jxaigf6ri8sq" path="res://Temporary Files/Tree only/bush 0021.png" id="6_fqyec"]
-[ext_resource type="Texture2D" uid="uid://bhctrinkcjjxg" path="res://Temporary Files/Tree only/bush 0031.png" id="7_q6niq"]
+[ext_resource type="Texture2D" uid="uid://bhctrinkcjjxg" path="res://Temporary Files/bush 0031.png" id="7_q6niq"]
 [ext_resource type="Texture2D" uid="uid://3t8bqfwyeio4" path="res://Temporary Files/Tree only/bush 0041.png" id="8_878ux"]
 [ext_resource type="Texture2D" uid="uid://bsc0swnsuwue" path="res://Temporary Files/pixil-frame-0-13.png" id="9_tmmfb"]
 [ext_resource type="Texture2D" uid="uid://du30ix25um8aw" path="res://Temporary Files/pixil-frame-0-17.png" id="10_igqc5"]
 [ext_resource type="Texture2D" uid="uid://b7e1ah81daocp" path="res://Temporary Files/pixil-frame-0-14.png" id="10_udav4"]
 [ext_resource type="Texture2D" uid="uid://cludaowqnjpdc" path="res://Temporary Files/pixil-frame-0-18.png" id="13_jsepk"]
 [ext_resource type="Texture2D" uid="uid://cjnls4aw15pyn" path="res://Temporary Files/pixil-frame-0-16.png" id="14_q8vim"]
+[ext_resource type="Texture2D" uid="uid://bbpuwgixfmpsl" path="res://Temporary Files/pixil-frame-0-19.png" id="15_brjeq"]
 [ext_resource type="Texture2D" uid="uid://bav61loiseqyj" path="res://Temporary Files/Sky textures/Clouds/Clouds 1/1.png" id="16_mx0a5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jovnk"]
@@ -408,7 +409,7 @@ texture = ExtResource("10_igqc5")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.28125, -6.8125, 8, -8, 8, 8, -8, 8, -8, -8)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.40625, -8, 8, -8, 8, 8, -8, 8, -8, -8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ikwgt"]
 texture = ExtResource("3_mfda8")
@@ -435,6 +436,13 @@ texture = ExtResource("14_q8vim")
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0qojn"]
+texture = ExtResource("15_brjeq")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.40625, -8, 8, -8, 8, 8, -8, 8, -8, -8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_frqtq"]
 texture = ExtResource("4_36fch")
@@ -501,6 +509,7 @@ sources/19 = SubResource("TileSetAtlasSource_5b4j8")
 sources/20 = SubResource("TileSetAtlasSource_t4v4h")
 sources/21 = SubResource("TileSetAtlasSource_0keok")
 sources/22 = SubResource("TileSetAtlasSource_lktaf")
+sources/23 = SubResource("TileSetAtlasSource_0qojn")
 
 [node name="Node2D" type="Node2D"]
 
@@ -509,7 +518,7 @@ texture_filter = 1
 scale = Vector2(4, 4)
 tile_set = SubResource("TileSet_6lngs")
 format = 2
-layer_0/tile_data = PackedInt32Array(655360, 20, 0, 655361, 20, 0, 655362, 20, 0, 655363, 20, 0, 655364, 20, 0, 655365, 20, 0, 655372, 20, 0, 655373, 20, 0, 655374, 20, 0, 655375, 20, 0, 655376, 20, 0, 655377, 20, 0, 589841, 19, 0, 589840, 19, 0, 589839, 19, 0, 589838, 19, 0, 589837, 19, 0, 589836, 19, 0, 589830, 19, 0, 589824, 20, 0, 655366, 20, 0, 589829, 19, 0, 655367, 20, 0, 655368, 20, 0, 655369, 20, 0, 655370, 20, 0, 655371, 20, 0, 327686, 10, 5, 327685, 10, 5, 327684, 10, 5, 655378, 20, 0, 655379, 20, 0, 655380, 20, 0, 655359, 20, 0, -65535, 65546, 1, -65534, 65546, 2, -65532, 65546, 2, -65533, 65546, 2, -65531, 65546, 2, -65530, 65546, 2, -65529, 65546, 2, -65528, 65546, 2, -65527, 65546, 2, -65526, 65546, 2, -65524, 65546, 2, -65525, 65546, 2, -65522, 65546, 2, -65523, 65546, 2, -65521, 65546, 2, -65520, 65546, 2, -65519, 65546, 2, -65518, 65546, 1, -65517, 65546, 1, 589842, 20, 0, 589843, 20, 0, 589844, 65546, 1, 327683, 10, 5, 327682, 10, 5, 524306, 21, 0, 524307, 19, 0, 524308, 65546, 1, 458772, 10, 0, 1, 131082, 2, 589834, 19, 0, 589832, 19, 0, 458763, 10, 5, 589835, 19, 0, 589833, 19, 0, 589831, 19, 0, 458760, 10, 5, 458761, 10, 5, 458762, 10, 5, 196616, 10, 5, 196617, 10, 5, 196618, 10, 5, 196619, 10, 5, 589825, 19, 0, 589826, 19, 0, 589827, 19, 0, 589845, 65546, 1, 524309, 65546, 1, 655381, 65546, 1, -65516, 65546, 1, -65515, 65546, 1, 720895, 20, 0, 458773, 65546, 0, 393237, 13, 0, 589828, 22, 0)
+layer_0/tile_data = PackedInt32Array(655360, 20, 0, 655361, 20, 0, 655362, 20, 0, 655363, 20, 0, 655364, 20, 0, 655365, 20, 0, 655372, 20, 0, 655373, 20, 0, 655374, 20, 0, 655375, 20, 0, 655376, 20, 0, 655377, 20, 0, 589841, 19, 0, 589840, 19, 0, 589839, 19, 0, 589838, 19, 0, 589837, 19, 0, 589836, 19, 0, 589830, 19, 0, 589824, 20, 0, 655366, 20, 0, 589829, 19, 0, 655367, 20, 0, 655368, 20, 0, 655369, 20, 0, 655370, 20, 0, 655371, 20, 0, 655378, 20, 0, 655379, 20, 0, 655380, 20, 0, 655359, 20, 0, 589842, 20, 0, 589843, 20, 0, 589844, 20, 0, 524306, 21, 0, 524307, 19, 0, 524308, 19, 0, 589834, 19, 0, 589832, 19, 0, 589835, 19, 0, 589833, 19, 0, 589831, 19, 0, 589825, 19, 0, 589826, 19, 0, 589827, 19, 0, 589845, 20, 0, 655381, 20, 0, 720895, 20, 0, 458773, 10, 1, 589828, 22, 0, 524309, 20, 0, 393237, 65546, 1, 327701, 10, 1, 262165, 10, 1, 196629, 65546, 1, 131093, 10, 0, 393236, 10, 5, 327697, 10, 5, 327696, 10, 5, 196628, 10, 5)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 show_behind_parent = true
@@ -525,9 +534,15 @@ position = Vector2(237, 431)
 
 [node name="enemy12D" parent="." instance=ExtResource("5_qhj3c")]
 texture_filter = 1
-position = Vector2(1012, 360)
+position = Vector2(1028, 225)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="pause_menu" parent="CanvasLayer" instance=ExtResource("6_61ind")]
 visible = false
+
+[node name="Bush0041" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1383, 114)
+scale = Vector2(2.75, 2.9375)
+texture = ExtResource("8_878ux")

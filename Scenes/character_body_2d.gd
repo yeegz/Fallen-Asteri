@@ -72,7 +72,7 @@ func animations(control):
 		$attack_anim_timer.start()
 		if attack_animation == true:
 			animation.play("attack")
-	elif velocity.y != 0:
+	elif velocity.y != 0 and Input.is_action_just_pressed("ui_accept"):
 		animation.play("jump")
 	elif control == 0 or velocity.x == 0:
 		if attack_animation == false:
