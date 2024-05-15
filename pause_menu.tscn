@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0kv8oi3d4d22"]
+[gd_scene load_steps=3 format=3 uid="uid://d0kv8oi3d4d22"]
 
 [ext_resource type="Script" path="res://pause_menu.gd" id="1_qd0wf"]
+[ext_resource type="Texture2D" uid="uid://dki3vuh5y7lw" path="res://Temporary Files/awesomeCavePixelArt.png" id="2_80c7h"]
 
 [node name="pause_menu" type="Control"]
 process_mode = 3
@@ -20,6 +21,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.619608, 0.380392, 0.952941, 1)
+
+[node name="AwesomeCavePixelArt" type="Sprite2D" parent="."]
+position = Vector2(959.5, 540)
+scale = Vector2(1.50234, 1.5)
+texture = ExtResource("2_80c7h")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
