@@ -1,31 +1,32 @@
-[gd_scene load_steps=62 format=3 uid="uid://bplxua7pm7t3m"]
+[gd_scene load_steps=63 format=3 uid="uid://bplxua7pm7t3m"]
 
 [ext_resource type="Texture2D" uid="uid://byeqfi2rn1i6f" path="res://Sprite Assets/dirt.png" id="1_jjdho"]
 [ext_resource type="Texture2D" uid="uid://dtu1hwjhxyxuo" path="res://Sprite Assets/grass.png" id="2_nfj14"]
-[ext_resource type="Texture2D" uid="uid://bkew02lpauc1i" path="res://Temporary Files/TileCraftGroundSetVersion2.png" id="3_chleh"]
-[ext_resource type="Texture2D" uid="uid://bp323ddxndkco" path="res://Temporary Files/pixil-frame-0-12.png" id="3_mfda8"]
-[ext_resource type="Texture2D" uid="uid://qlbgwdylyusy" path="res://Temporary Files/pixil-frame-0.png" id="4_36fch"]
-[ext_resource type="Texture2D" uid="uid://csl6yr3yckoov" path="res://Temporary Files/Tree only/tree001.png" id="4_ttnju"]
+[ext_resource type="Texture2D" uid="uid://byamde6voqopf" path="res://Temporary Files/TileCraftGroundSetVersion2.png" id="3_chleh"]
+[ext_resource type="Texture2D" uid="uid://qisbviangfr3" path="res://Temporary Files/pixil-frame-0-12.png" id="3_mfda8"]
+[ext_resource type="Texture2D" uid="uid://di6nkdcjh1q0r" path="res://Temporary Files/pixil-frame-0.png" id="4_36fch"]
+[ext_resource type="Texture2D" uid="uid://bo3ptjay2t6l" path="res://Temporary Files/Tree only/tree001.png" id="4_ttnju"]
 [ext_resource type="PackedScene" uid="uid://c8br3cr26rf1a" path="res://Scenes/character_body_2d.tscn" id="4_uge1f"]
-[ext_resource type="Texture2D" uid="uid://6jffmmqpdqk2" path="res://Temporary Files/pixil-frame-0-10.png" id="5_kso4v"]
-[ext_resource type="Texture2D" uid="uid://ds2rub8h2mymj" path="res://Temporary Files/Tree only/bush 0011.png" id="5_lmtss"]
+[ext_resource type="Texture2D" uid="uid://bewo8bw7wqra7" path="res://Temporary Files/pixil-frame-0-10.png" id="5_kso4v"]
+[ext_resource type="Texture2D" uid="uid://tba6ohbex2uy" path="res://Temporary Files/Tree only/bush 0011.png" id="5_lmtss"]
 [ext_resource type="PackedScene" uid="uid://bbttsnhtdb1k5" path="res://Scenes/enemy_12d.tscn" id="5_qhj3c"]
-[ext_resource type="Texture2D" uid="uid://dqdul3cgh8ayr" path="res://Temporary Files/pixil-frame-0-11.png" id="6_4p2ce"]
+[ext_resource type="Texture2D" uid="uid://cf1rj8skpy47p" path="res://Temporary Files/pixil-frame-0-11.png" id="6_4p2ce"]
 [ext_resource type="PackedScene" uid="uid://d0kv8oi3d4d22" path="res://pause_menu.tscn" id="6_61ind"]
-[ext_resource type="Texture2D" uid="uid://jxaigf6ri8sq" path="res://Temporary Files/Tree only/bush 0021.png" id="6_fqyec"]
-[ext_resource type="Texture2D" uid="uid://bhctrinkcjjxg" path="res://Temporary Files/bush 0031.png" id="7_q6niq"]
-[ext_resource type="Texture2D" uid="uid://3t8bqfwyeio4" path="res://Temporary Files/Tree only/bush 0041.png" id="8_878ux"]
-[ext_resource type="Texture2D" uid="uid://bsc0swnsuwue" path="res://Temporary Files/pixil-frame-0-13.png" id="9_tmmfb"]
-[ext_resource type="Texture2D" uid="uid://du30ix25um8aw" path="res://Temporary Files/pixil-frame-0-17.png" id="10_igqc5"]
-[ext_resource type="Texture2D" uid="uid://cahh5thndeqt6" path="res://Temporary Files/SideView_Grass.png" id="10_o6wlq"]
-[ext_resource type="Texture2D" uid="uid://b7e1ah81daocp" path="res://Temporary Files/pixil-frame-0-14.png" id="10_udav4"]
-[ext_resource type="Texture2D" uid="uid://cludaowqnjpdc" path="res://Temporary Files/pixil-frame-0-18.png" id="13_jsepk"]
-[ext_resource type="Texture2D" uid="uid://cjnls4aw15pyn" path="res://Temporary Files/pixil-frame-0-16.png" id="14_q8vim"]
-[ext_resource type="Texture2D" uid="uid://bbpuwgixfmpsl" path="res://Temporary Files/pixil-frame-0-19.png" id="15_brjeq"]
-[ext_resource type="Texture2D" uid="uid://dsoom67e1n22v" path="res://Temporary Files/tf_beach_tileset/beach_tileset.png" id="16_ehwxa"]
-[ext_resource type="Texture2D" uid="uid://bav61loiseqyj" path="res://Temporary Files/Sky textures/Clouds/Clouds 1/1.png" id="16_mx0a5"]
-[ext_resource type="Texture2D" uid="uid://c8bc8nchlpcrj" path="res://Temporary Files/pixil-frame-0-23.png" id="25_gyok2"]
-[ext_resource type="Texture2D" uid="uid://cpicvyy0xyp7c" path="res://Temporary Files/pixil-frame-0-22.png" id="26_5i6pc"]
+[ext_resource type="Texture2D" uid="uid://cn2m7kstbt3rl" path="res://Temporary Files/Tree only/bush 0021.png" id="6_fqyec"]
+[ext_resource type="Texture2D" uid="uid://ba1aqj8vve82" path="res://Temporary Files/bush 0031.png" id="7_q6niq"]
+[ext_resource type="Texture2D" uid="uid://dbxetem025b5l" path="res://Temporary Files/Tree only/bush 0041.png" id="8_878ux"]
+[ext_resource type="Texture2D" uid="uid://yfcr68gfgaji" path="res://Temporary Files/pixil-frame-0-13.png" id="9_tmmfb"]
+[ext_resource type="Texture2D" uid="uid://o2ag76jftu7d" path="res://Temporary Files/pixil-frame-0-17.png" id="10_igqc5"]
+[ext_resource type="Texture2D" uid="uid://dxo3dwxqh1a66" path="res://Temporary Files/SideView_Grass.png" id="10_o6wlq"]
+[ext_resource type="Texture2D" uid="uid://dj6ejof6lq0k6" path="res://Temporary Files/pixil-frame-0-14.png" id="10_udav4"]
+[ext_resource type="Texture2D" uid="uid://3dd54brjuc1o" path="res://Temporary Files/pixil-frame-0-18.png" id="13_jsepk"]
+[ext_resource type="Texture2D" uid="uid://cv1m65kgki5s6" path="res://Temporary Files/pixil-frame-0-16.png" id="14_q8vim"]
+[ext_resource type="Texture2D" uid="uid://com2a555lgjlx" path="res://Temporary Files/pixil-frame-0-19.png" id="15_brjeq"]
+[ext_resource type="Texture2D" uid="uid://cv8kkoejfullu" path="res://Temporary Files/tf_beach_tileset/beach_tileset.png" id="16_ehwxa"]
+[ext_resource type="Texture2D" uid="uid://vu00cmwwq8wr" path="res://Temporary Files/Sky textures/Clouds/Clouds 1/1.png" id="16_mx0a5"]
+[ext_resource type="Texture2D" uid="uid://dd6po5006dram" path="res://Temporary Files/pixil-frame-0-23.png" id="25_gyok2"]
+[ext_resource type="Texture2D" uid="uid://dl1kh3ujsb74b" path="res://Temporary Files/pixil-frame-0-22.png" id="26_5i6pc"]
+[ext_resource type="AudioStream" uid="uid://cx1nciinvnpso" path="res://mists-in-the-elven-lands-127808.mp3" id="27_1e7a0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jovnk"]
 texture = ExtResource("1_jjdho")
@@ -2511,6 +2512,11 @@ sources/1 = SubResource("TileSetAtlasSource_mcyq0")
 
 [node name="Node2D" type="Node2D"]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="pause_menu" parent="CanvasLayer" instance=ExtResource("6_61ind")]
+visible = false
+
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
 scale = Vector2(4, 4)
@@ -2534,11 +2540,6 @@ position = Vector2(310, 444)
 texture_filter = 1
 position = Vector2(1028, 225)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="pause_menu" parent="CanvasLayer" instance=ExtResource("6_61ind")]
-visible = false
-
 [node name="TileMap4" type="TileMap" parent="."]
 texture_filter = 1
 scale = Vector2(4, 4)
@@ -2559,3 +2560,9 @@ scale = Vector2(5, 5)
 tile_set = SubResource("TileSet_qi537")
 format = 2
 layer_0/tile_data = PackedInt32Array(458755, 524289, 22, 458754, 458753, 22, 393219, 524289, 23, 393218, 458753, 23, 327684, 589825, 20, 327683, 524289, 20, 262148, 589825, 19, 262147, 524289, 19, 262146, 458753, 19, 327682, 458753, 20)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("27_1e7a0")
+volume_db = 14.915
+autoplay = true
+bus = &"Music"
