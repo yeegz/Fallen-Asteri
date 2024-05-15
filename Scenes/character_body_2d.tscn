@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://c8br3cr26rf1a"]
+[gd_scene load_steps=43 format=3 uid="uid://c8br3cr26rf1a"]
 
 [ext_resource type="Script" path="res://Scenes/character_body_2d.gd" id="1_vkjrs"]
 [ext_resource type="Texture2D" uid="uid://cpuhjs0exq1r7" path="res://Temporary Files/Individual Sprite/Attack/Warrior_Attack_1.png" id="2_0x37v"]
@@ -19,14 +19,26 @@
 [ext_resource type="Texture2D" uid="uid://b0i1mqtayci3" path="res://Temporary Files/Individual Sprite/Jump/Warrior_Jump_1.png" id="9_n0opx"]
 [ext_resource type="Texture2D" uid="uid://c2odrghfu68k6" path="res://Temporary Files/Individual Sprite/Run/Warrior_Run_1.png" id="9_okddd"]
 [ext_resource type="Texture2D" uid="uid://b6msjnrlibanb" path="res://Temporary Files/Individual Sprite/Run/Warrior_Run_2.png" id="10_ha2p6"]
+[ext_resource type="Texture2D" uid="uid://0pryfcgmj8op" path="res://Temporary Files/Individual Sprite/Death-Effect/Warrior_Death_1.png" id="10_mjjnx"]
 [ext_resource type="Texture2D" uid="uid://dv88x6xcgc61p" path="res://Temporary Files/Individual Sprite/Jump/Warrior_Jump_2.png" id="10_opwso"]
 [ext_resource type="Texture2D" uid="uid://bf7m7ek3dwy5i" path="res://Temporary Files/Individual Sprite/Run/Warrior_Run_3.png" id="11_ne70d"]
+[ext_resource type="Texture2D" uid="uid://cceifjewh17gh" path="res://Temporary Files/Individual Sprite/Death-Effect/Warrior_Death_2.png" id="11_qxpsc"]
 [ext_resource type="Texture2D" uid="uid://sgfgsd75d1y0" path="res://Temporary Files/Individual Sprite/Jump/Warrior_Jump_3.png" id="11_uuhev"]
 [ext_resource type="Texture2D" uid="uid://blovhlyhgsexq" path="res://Temporary Files/Individual Sprite/Run/Warrior_Run_4.png" id="12_2mhp8"]
+[ext_resource type="Texture2D" uid="uid://cveuv8daeywn3" path="res://Temporary Files/Individual Sprite/Death-Effect/Warrior_Death_3.png" id="12_x2kp3"]
+[ext_resource type="Texture2D" uid="uid://bmwm5xum4a3m4" path="res://Temporary Files/Individual Sprite/Death-Effect/Warrior_Death_4.png" id="13_dmn08"]
 [ext_resource type="Texture2D" uid="uid://dywpp5bjp3qn0" path="res://Temporary Files/Individual Sprite/Run/Warrior_Run_5.png" id="13_ls0y6"]
+[ext_resource type="Texture2D" uid="uid://cupag76bernyt" path="res://Temporary Files/Individual Sprite/Death-Effect/Warrior_Death_5.png" id="14_5qchl"]
 [ext_resource type="Texture2D" uid="uid://ctui7gw6ke0wv" path="res://Temporary Files/Individual Sprite/Run/Warrior_Run_6.png" id="14_pajia"]
 [ext_resource type="Texture2D" uid="uid://cn485pdrcofgy" path="res://Temporary Files/Individual Sprite/Run/Warrior_Run_7.png" id="15_44gbc"]
+[ext_resource type="Texture2D" uid="uid://dpnpupmy8sxa1" path="res://Temporary Files/Individual Sprite/Death-Effect/Warrior_Death_6.png" id="15_k8il5"]
+[ext_resource type="Texture2D" uid="uid://xvp4iwgws27j" path="res://Temporary Files/Individual Sprite/Death-Effect/Warrior_Death_7.png" id="16_05fid"]
 [ext_resource type="Texture2D" uid="uid://bmkosbqfrnoue" path="res://Temporary Files/Individual Sprite/Run/Warrior_Run_8.png" id="16_8os8x"]
+[ext_resource type="Texture2D" uid="uid://cyucn2lamuk2d" path="res://Temporary Files/Individual Sprite/Death-Effect/Warrior_Death_8.png" id="17_pq5cc"]
+[ext_resource type="Texture2D" uid="uid://cmde7dd6ei4kr" path="res://Temporary Files/Individual Sprite/Death-Effect/Warrior_Death_9.png" id="18_ymlo4"]
+[ext_resource type="Texture2D" uid="uid://nnyao6jilrk1" path="res://Temporary Files/Individual Sprite/Death-Effect/Warrior_Death_10.png" id="19_yd78p"]
+[ext_resource type="Texture2D" uid="uid://c3f8pfk6yuexr" path="res://Temporary Files/Individual Sprite/Death-Effect/Warrior_Death_11.png" id="20_7r6y8"]
+[ext_resource type="Texture2D" uid="uid://ch0fdang145je" path="res://Temporary Files/pixil-frame-0-20.png" id="21_h5v13"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ccfa5"]
 animations = [{
@@ -57,6 +69,47 @@ animations = [{
 }],
 "loop": true,
 "name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.6,
+"texture": ExtResource("10_mjjnx")
+}, {
+"duration": 0.6,
+"texture": ExtResource("11_qxpsc")
+}, {
+"duration": 0.6,
+"texture": ExtResource("12_x2kp3")
+}, {
+"duration": 0.4,
+"texture": ExtResource("13_dmn08")
+}, {
+"duration": 0.4,
+"texture": ExtResource("14_5qchl")
+}, {
+"duration": 0.4,
+"texture": ExtResource("15_k8il5")
+}, {
+"duration": 0.4,
+"texture": ExtResource("16_05fid")
+}, {
+"duration": 0.4,
+"texture": ExtResource("17_pq5cc")
+}, {
+"duration": 0.4,
+"texture": ExtResource("18_ymlo4")
+}, {
+"duration": 0.4,
+"texture": ExtResource("19_yd78p")
+}, {
+"duration": 0.4,
+"texture": ExtResource("20_7r6y8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_h5v13")
+}],
+"loop": true,
+"name": &"dead",
 "speed": 5.0
 }, {
 "frames": [{
@@ -143,8 +196,8 @@ script = ExtResource("1_vkjrs")
 position = Vector2(63, 88)
 scale = Vector2(1.77319, 2.03125)
 sprite_frames = SubResource("SpriteFrames_ccfa5")
-animation = &"idle"
-frame_progress = 0.405188
+animation = &"dead"
+frame_progress = 0.0890955
 
 [node name="player" type="Sprite2D" parent="."]
 visible = false
@@ -175,11 +228,11 @@ shape = SubResource("CircleShape2D_xy3k0")
 [node name="player_cooldown" type="Timer" parent="."]
 
 [node name="health" type="ProgressBar" parent="."]
-modulate = Color(0, 1, 0, 1)
+modulate = Color(0.980392, 0, 0.054902, 1)
 offset_left = -223.0
 offset_top = -115.0
-offset_right = -84.0
-offset_bottom = -98.0
+offset_right = -82.0
+offset_bottom = -105.0
 scale = Vector2(0.7, 0.7)
 max_value = 200.0
 show_percentage = false

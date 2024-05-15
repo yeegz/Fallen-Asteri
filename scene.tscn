@@ -3,24 +3,24 @@
 [ext_resource type="Texture2D" uid="uid://byeqfi2rn1i6f" path="res://Sprite Assets/dirt.png" id="1_jjdho"]
 [ext_resource type="Texture2D" uid="uid://dtu1hwjhxyxuo" path="res://Sprite Assets/grass.png" id="2_nfj14"]
 [ext_resource type="Texture2D" uid="uid://bkew02lpauc1i" path="res://Temporary Files/TileCraftGroundSetVersion2.png" id="3_chleh"]
-[ext_resource type="Texture2D" uid="uid://bp323ddxndkco" path="res://Temporary Files/pixil-frame-0-12.png" id="3_mfda8"]
-[ext_resource type="Texture2D" uid="uid://qlbgwdylyusy" path="res://Temporary Files/pixil-frame-0.png" id="4_36fch"]
+[ext_resource type="Texture2D" path="res://Temporary Files/pixil-frame-0-12.png" id="3_mfda8"]
+[ext_resource type="Texture2D" path="res://Temporary Files/pixil-frame-0.png" id="4_36fch"]
 [ext_resource type="Texture2D" uid="uid://csl6yr3yckoov" path="res://Temporary Files/Tree only/tree001.png" id="4_ttnju"]
 [ext_resource type="PackedScene" uid="uid://c8br3cr26rf1a" path="res://Scenes/character_body_2d.tscn" id="4_uge1f"]
-[ext_resource type="Texture2D" uid="uid://6jffmmqpdqk2" path="res://Temporary Files/pixil-frame-0-10.png" id="5_kso4v"]
+[ext_resource type="Texture2D" path="res://Temporary Files/pixil-frame-0-10.png" id="5_kso4v"]
 [ext_resource type="Texture2D" uid="uid://ds2rub8h2mymj" path="res://Temporary Files/Tree only/bush 0011.png" id="5_lmtss"]
 [ext_resource type="PackedScene" uid="uid://bbttsnhtdb1k5" path="res://Scenes/enemy_12d.tscn" id="5_qhj3c"]
-[ext_resource type="Texture2D" uid="uid://dqdul3cgh8ayr" path="res://Temporary Files/pixil-frame-0-11.png" id="6_4p2ce"]
+[ext_resource type="Texture2D" path="res://Temporary Files/pixil-frame-0-11.png" id="6_4p2ce"]
 [ext_resource type="PackedScene" uid="uid://d0kv8oi3d4d22" path="res://pause_menu.tscn" id="6_61ind"]
 [ext_resource type="Texture2D" uid="uid://jxaigf6ri8sq" path="res://Temporary Files/Tree only/bush 0021.png" id="6_fqyec"]
 [ext_resource type="Texture2D" uid="uid://bhctrinkcjjxg" path="res://Temporary Files/bush 0031.png" id="7_q6niq"]
 [ext_resource type="Texture2D" uid="uid://3t8bqfwyeio4" path="res://Temporary Files/Tree only/bush 0041.png" id="8_878ux"]
-[ext_resource type="Texture2D" uid="uid://bsc0swnsuwue" path="res://Temporary Files/pixil-frame-0-13.png" id="9_tmmfb"]
-[ext_resource type="Texture2D" uid="uid://du30ix25um8aw" path="res://Temporary Files/pixil-frame-0-17.png" id="10_igqc5"]
-[ext_resource type="Texture2D" uid="uid://b7e1ah81daocp" path="res://Temporary Files/pixil-frame-0-14.png" id="10_udav4"]
-[ext_resource type="Texture2D" uid="uid://cludaowqnjpdc" path="res://Temporary Files/pixil-frame-0-18.png" id="13_jsepk"]
-[ext_resource type="Texture2D" uid="uid://cjnls4aw15pyn" path="res://Temporary Files/pixil-frame-0-16.png" id="14_q8vim"]
-[ext_resource type="Texture2D" uid="uid://bbpuwgixfmpsl" path="res://Temporary Files/pixil-frame-0-19.png" id="15_brjeq"]
+[ext_resource type="Texture2D" path="res://Temporary Files/pixil-frame-0-13.png" id="9_tmmfb"]
+[ext_resource type="Texture2D" path="res://Temporary Files/pixil-frame-0-17.png" id="10_igqc5"]
+[ext_resource type="Texture2D" path="res://Temporary Files/pixil-frame-0-14.png" id="10_udav4"]
+[ext_resource type="Texture2D" path="res://Temporary Files/pixil-frame-0-18.png" id="13_jsepk"]
+[ext_resource type="Texture2D" path="res://Temporary Files/pixil-frame-0-16.png" id="14_q8vim"]
+[ext_resource type="Texture2D" path="res://Temporary Files/pixil-frame-0-19.png" id="15_brjeq"]
 [ext_resource type="Texture2D" uid="uid://dsoom67e1n22v" path="res://Temporary Files/tf_beach_tileset/beach_tileset.png" id="16_ehwxa"]
 [ext_resource type="Texture2D" uid="uid://bav61loiseqyj" path="res://Temporary Files/Sky textures/Clouds/Clouds 1/1.png" id="16_mx0a5"]
 
@@ -1011,6 +1011,7 @@ texture = ExtResource("16_ehwxa")
 18:10/0 = 0
 18:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 18:10/0/physics_layer_0/angular_velocity = 0.0
+18:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.90625, -8, 8, -8, 8, 8, -0.84375, 8)
 19:10/0 = 0
 19:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 19:10/0/physics_layer_0/angular_velocity = 0.0
@@ -1974,7 +1975,7 @@ texture_filter = 1
 scale = Vector2(4, 4)
 tile_set = SubResource("TileSet_6lngs")
 format = 2
-layer_0/tile_data = PackedInt32Array(655360, 589848, 9, 655361, 786456, 10, 655362, 524312, 10, 655363, 786456, 9, 655364, 589848, 9, 655365, 20, 0, 655372, 20, 0, 655373, 20, 0, 655374, 20, 0, 655375, 20, 0, 655376, 20, 0, 655377, 20, 0, 589841, 655384, 9, 589840, 589848, 11, 589836, 786456, 9, 589830, 655384, 9, 589824, 786456, 10, 655366, 589848, 9, 589829, 589848, 9, 655367, 589848, 9, 655368, 589848, 9, 655369, 20, 0, 655370, 20, 0, 655371, 20, 0, 655378, 20, 0, 655379, 20, 0, 655380, 20, 0, 655359, 720920, 9, 589842, 655384, 9, 589843, 851992, 9, 589844, 851992, 9, 524307, 720920, 9, 524308, 851992, 9, 589834, 589848, 9, 589832, 720920, 11, 589835, 655384, 9, 589833, 524312, 9, 589831, 655384, 11, 589825, 983064, 15, 589826, 917528, 10, 589827, 524312, 9, 589845, 720920, 10, 655381, 20, 0, 720895, 786456, 9, 458773, 786456, 9, 589828, 720920, 10, 524309, 851992, 10, 393237, 65546, 1, 131093, 10, 0, 327697, 10, 5, 327696, 10, 5, 589823, 524312, 9, 524287, 524312, 9, 458751, 524312, 9, 458752, 917528, 10, 393215, 524312, 9, 131094, 65546, 0, 131095, 65546, 0, 131096, 65546, 0, 196630, 65546, 1, 196631, 65546, 1, 196632, 65546, 1, 262167, 65546, 1, 262166, 65546, 1, 262168, 458762, 1, 327702, 65546, 1, 327703, 65546, 1, 327704, 458762, 1, 393239, 458762, 1, 393238, 65546, 1, 458774, 458762, 1, 458775, 458762, 1, 393240, 458762, 1, 458776, 458762, 1, 524310, 458762, 1, 589846, 458762, 1, 655382, 458762, 1, 655383, 458762, 1, 589847, 458762, 1, 524311, 458762, 1, 524312, 458762, 1, 589848, 458762, 1, 655384, 458762, 1, 720917, 20, 0, 720916, 20, 0, 720915, 20, 0, 720914, 20, 0, 720913, 20, 0, 720912, 20, 0, 720911, 20, 0, 720910, 20, 0, 720909, 20, 0, 720908, 20, 0, 720907, 20, 0, 720906, 20, 0, 720905, 20, 0, 720904, 20, 0, 720903, 20, 0, 720902, 20, 0, 720901, 720920, 9, 720900, 20, 0, 720899, 20, 0, 720898, 851992, 10, 720897, 655384, 10, 720896, 851992, 9, 786431, 655384, 10, 851967, 917528, 10, 786432, 524312, 10, 786433, 851992, 10, 786434, 720920, 9, 786435, 20, 0, 786436, 851992, 9, 786437, 20, 0, 786438, 524312, 9, 786439, 589848, 9, 786440, 851992, 9, 786442, 851992, 9, 786441, 786456, 9, 786443, 20, 0, 786444, 20, 0, 786445, 20, 0, 786446, 20, 0, 786447, 851992, 9, 786448, 851992, 9, 786452, 20, 0, 786453, 20, 0, 786451, 20, 0, 786450, 20, 0, 786449, 524312, 10, 720918, 458762, 1, 786454, 458762, 1, 720919, 458762, 1, 720920, 458762, 1, 786456, 458762, 1, 786455, 458762, 1, 524306, 720920, 9, 589839, 589848, 10, 589838, 720920, 9, 589837, 720920, 9, 458770, 1179672, 9, 458771, 1245208, 9, 458772, 1245208, 9)
+layer_0/tile_data = PackedInt32Array(655360, 589848, 9, 655361, 786456, 10, 655362, 524312, 10, 655363, 786456, 9, 655364, 589848, 9, 655365, 20, 0, 655372, 20, 0, 655373, 20, 0, 655374, 20, 0, 655375, 20, 0, 655376, 20, 0, 655377, 20, 0, 589841, 655384, 9, 589840, 589848, 11, 589836, 786456, 9, 589830, 655384, 9, 589824, 786456, 10, 655366, 589848, 9, 589829, 589848, 9, 655367, 589848, 9, 655368, 589848, 9, 655369, 20, 0, 655370, 20, 0, 655371, 20, 0, 655378, 20, 0, 655379, 20, 0, 655380, 20, 0, 655359, 720920, 9, 589842, 655384, 9, 589843, 851992, 9, 589844, 851992, 9, 524307, 720920, 9, 524308, 851992, 9, 589834, 589848, 9, 589832, 720920, 11, 589835, 655384, 9, 589833, 524312, 9, 589831, 655384, 11, 589825, 983064, 15, 589826, 917528, 10, 589827, 524312, 9, 589845, 720920, 10, 655381, 20, 0, 720895, 786456, 9, 458773, 786456, 9, 589828, 720920, 10, 524309, 851992, 10, 393237, 65546, 1, 131093, 10, 0, 327697, 10, 5, 327696, 10, 5, 589823, 524312, 9, 524287, 524312, 9, 458751, 524312, 9, 458752, 917528, 10, 393215, 524312, 9, 131094, 65546, 0, 131095, 65546, 0, 131096, 65546, 0, 196630, 65546, 1, 196631, 65546, 1, 196632, 65546, 1, 262167, 65546, 1, 262166, 65546, 1, 262168, 458762, 1, 327702, 65546, 1, 327703, 65546, 1, 327704, 458762, 1, 393239, 458762, 1, 393238, 65546, 1, 458774, 458762, 1, 458775, 458762, 1, 393240, 458762, 1, 458776, 458762, 1, 524310, 458762, 1, 589846, 458762, 1, 655382, 458762, 1, 655383, 458762, 1, 589847, 458762, 1, 524311, 458762, 1, 524312, 458762, 1, 589848, 458762, 1, 655384, 458762, 1, 720917, 20, 0, 720916, 20, 0, 720915, 20, 0, 720914, 20, 0, 720913, 20, 0, 720912, 20, 0, 720911, 20, 0, 720910, 20, 0, 720909, 20, 0, 720908, 20, 0, 720907, 20, 0, 720906, 20, 0, 720905, 20, 0, 720904, 20, 0, 720903, 20, 0, 720902, 20, 0, 720901, 720920, 9, 720900, 20, 0, 720899, 20, 0, 720898, 851992, 10, 720897, 655384, 10, 720896, 851992, 9, 786431, 655384, 10, 851967, 917528, 10, 786432, 524312, 10, 786433, 851992, 10, 786434, 720920, 9, 786435, 20, 0, 786436, 851992, 9, 786437, 20, 0, 786438, 524312, 9, 786439, 589848, 9, 786440, 851992, 9, 786442, 851992, 9, 786441, 786456, 9, 786443, 20, 0, 786444, 20, 0, 786445, 20, 0, 786446, 20, 0, 786447, 851992, 9, 786448, 851992, 9, 786452, 20, 0, 786453, 20, 0, 786451, 20, 0, 786450, 20, 0, 786449, 524312, 10, 720918, 458762, 1, 786454, 458762, 1, 720919, 458762, 1, 720920, 458762, 1, 786456, 458762, 1, 786455, 458762, 1, 589839, 589848, 10, 589838, 720920, 9, 589837, 720920, 9, 458770, 1179672, 9, 458771, 1245208, 9, 458772, 1245208, 9, 524306, 1179672, 10)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 show_behind_parent = true

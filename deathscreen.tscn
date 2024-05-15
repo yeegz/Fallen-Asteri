@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://blrguiuqp03i5"]
+
+[ext_resource type="Texture2D" uid="uid://dctipjb5a4d5y" path="res://Temporary Files/pixil-frame-0-21.png" id="1_vrthn"]
+[ext_resource type="Texture2D" uid="uid://bs044yee62jsi" path="res://Temporary Files/Daco_4932087.png" id="2_uufp0"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1084.0
+texture = ExtResource("1_vrthn")
+
+[node name="you died" type="Sprite2D" parent="."]
+position = Vector2(968, 301)
+texture = ExtResource("2_uufp0")
