@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://options.gd" id="1_c026u"]
 [ext_resource type="PackedScene" uid="uid://v4ag1ndob1rb" path="res://settings_tab_container.tscn" id="2_jpafd"]
-[ext_resource type="Texture2D" uid="uid://dki3vuh5y7lw" path="res://Temporary Files/awesomeCavePixelArt.png" id="2_yxxav"]
-[ext_resource type="Texture2D" uid="uid://cdiwvgpdlsd03" path="res://back button.png" id="4_b7b4o"]
-[ext_resource type="Texture2D" uid="uid://camrenpfsqabp" path="res://Sprite Assets/Logo.png" id="5_ph0yx"]
+[ext_resource type="Texture2D" uid="uid://b8wyehumyjp3p" path="res://Temporary Files/awesomeCavePixelArt.png" id="2_yxxav"]
+[ext_resource type="Texture2D" uid="uid://ci800hla0uqlm" path="res://back button.png" id="4_b7b4o"]
+[ext_resource type="Texture2D" uid="uid://lbhalx04ggvf" path="res://Sprite Assets/Logo.png" id="5_ph0yx"]
 
 [node name="Options_Menu" type="Control"]
 layout_mode = 3

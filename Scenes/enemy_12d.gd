@@ -13,6 +13,7 @@ var player_alive = true
 var knockback = 4000
 var alive_status = true
 @onready var animation = $AnimatedSprite2D
+@onready var audio_stream_player_2D = $AudioStreamPlayer2D as AudioStreamPlayer2D
 
 #main function
 func _physics_process(delta):
@@ -50,6 +51,7 @@ func _on_enemy_hitbox_body_exited(body):
 #enemy attack, attack cooldown
 func enemy_attack():
 	if attack_range == true and attack_cooldown == true:
+		audio_stream_player_2D.play()
 		player.PLAYER_HP -= 20 
 		attack_cooldown = false
 		$cooldown.start()
