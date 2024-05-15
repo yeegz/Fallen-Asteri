@@ -1,10 +1,11 @@
-[gd_scene load_steps=61 format=3 uid="uid://bbttsnhtdb1k5"]
+[gd_scene load_steps=62 format=3 uid="uid://bbttsnhtdb1k5"]
 
 [ext_resource type="Script" path="res://Scenes/enemy_12d.gd" id="1_685w0"]
 [ext_resource type="Texture2D" uid="uid://dth6r6p41n5yh" path="res://Temporary Files/idle/crab_idle_1.png" id="1_xxmt4"]
 [ext_resource type="Texture2D" uid="uid://bfaq26c7f6g10" path="res://Temporary Files/idle/crab_idle.png" id="3_lehdf"]
 [ext_resource type="Texture2D" uid="uid://cdam6cmpo18tv" path="res://Temporary Files/attack/crab_attack.png" id="3_onv81"]
 [ext_resource type="Texture2D" uid="uid://bdrn15gp760df" path="res://Temporary Files/Skeleton enemy.png" id="5_btf1u"]
+[ext_resource type="Texture2D" uid="uid://ccelllrtrqtip" path="res://Temporary Files/greenbar (3).png" id="6_t4rbb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1g2fj"]
 radius = 33.0151
@@ -450,12 +451,16 @@ shape = SubResource("CircleShape2D_rm23o")
 wait_time = 2.0
 autostart = true
 
+[node name="Greenbar(3)" type="Sprite2D" parent="."]
+position = Vector2(67, 28)
+texture = ExtResource("6_t4rbb")
+
 [node name="enemy_health" type="ProgressBar" parent="."]
-modulate = Color(1, 0, 0, 1)
-offset_left = 14.0
-offset_top = 6.0
-offset_right = 194.0
-offset_bottom = 33.0
+modulate = Color(1, 0.402497, 0.333969, 1)
+offset_left = 13.0
+offset_top = 8.0
+offset_right = 261.0
+offset_bottom = 28.0
 scale = Vector2(0.4, 0.4)
 show_percentage = false
 
