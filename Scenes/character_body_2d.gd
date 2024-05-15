@@ -41,9 +41,6 @@ func controls(delta):
 		velocity.y = JUMP
 		audio_stream_player_2D.play()
 	
-	#Health condition
-	
-	
 	#Movement. 
 	if direction:
 		velocity.x = SPEED * direction
