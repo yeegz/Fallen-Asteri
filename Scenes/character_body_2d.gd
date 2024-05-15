@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-
-
 #variable declaration
 var SPEED = 320
 const JUMP = -550
@@ -16,6 +14,7 @@ var pre_attack_cooldown = false
 var attack_animation = false
 @onready var animation = $AnimatedSprite2D
 @onready var  audio_stream_player_2D = $AudioStreamPlayer2D as AudioStreamPlayer2D
+@onready var  combat_audio_stream_player_2D = $AudioStreamPlayer2D2 as AudioStreamPlayer2D
 
 #main function
 func _process(delta):
@@ -26,6 +25,7 @@ func _process(delta):
 	death()
 	healthbar()
 	staminabar()
+	audio_functions()
 
 #Easiest way for enemy hitbox to idintify player is through methods.
 func hero():
@@ -39,7 +39,7 @@ func controls(delta):
 	#Jump
 	if is_on_floor() and Input.is_action_just_pressed("ui_accept"):
 		velocity.y = JUMP
-		audio_stream_player_2D.play()
+		#audio_stream_player_2D.play()
 	
 	#Movement. 
 	if direction:
@@ -56,8 +56,6 @@ func controls(delta):
 	#move_and_slide required for basic physics functions to work
 	move_and_slide()
 	
-
-
 	return direction
 
 #basic gravity
@@ -76,7 +74,6 @@ func animations(control):
 		$attack_anim_timer.start()
 		if attack_animation == true:
 			animation.play("attack")
-			audio_stream_player_2D.play()
 	elif velocity.y != 0:
 		animation.play("jump")
 	elif control == 0 or velocity.x == 0:
@@ -140,9 +137,16 @@ func staminabar():
 func _on_pre_attack_timeout():
 	if pre_attack_cooldown == true and player_attack_range == true:
 		enemy.ENEMY_HP -= 20
+		
 	
 	pre_attack_cooldown = false
 
 #Handle timing for attack animation
 func _on_attack_anim_timer_timeout():
 	attack_animation = false
+
+func audio_functions():
+	if Input.is_action_just_pressed("ui_attack"):
+		combat_audio_stream_player_2D.play()
+	elif Input.is_action_just_pressed("ui_accept"):
+		audio_stream_player_2D.play()
