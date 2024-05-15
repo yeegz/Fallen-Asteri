@@ -8,7 +8,7 @@ var ENEMY_HP = 60
 var player = null
 var player_chase = false
 var attack_range = false
-var attack_cooldown = false
+var attack_cooldown = true
 var player_alive = true
 var knockback = 4000
 var alive_status = true
@@ -20,7 +20,7 @@ func _physics_process(delta):
 	gravity(delta)
 	animations(player_chase)
 	pathing(player_chase, delta, SPEED)
-	enemy_attack()
+	#enemy_attack()
 	death()
 	enemy_healthbar()
 
@@ -42,6 +42,10 @@ func _on_detection_area_body_exited(body):
 func _on_enemy_hitbox_body_entered(body):
 	if body.has_method("hero"):
 		attack_range = true
+		if attack_range == true:
+			attack_cooldown = false
+		if attack_cooldown == false and attack_range == true:
+			$pre_attack_enemy_cooldown.start()
 
 #when player exits hitbox area
 func _on_enemy_hitbox_body_exited(body):
@@ -50,10 +54,10 @@ func _on_enemy_hitbox_body_exited(body):
 
 #enemy attack, attack cooldown
 func enemy_attack():
-	if attack_range == true and attack_cooldown == true:
+	if attack_cooldown == false and attack_range == true:
+		player.PLAYER_HP -= 20
 		audio_stream_player_2D.play()
-		player.PLAYER_HP -= 20 
-		attack_cooldown = false
+		attack_cooldown = true
 		$cooldown.start()
 
 func gravity(delta):
@@ -99,7 +103,7 @@ func pathing(player_chase, delta, SPEED):
 
 #cooldown node
 func _on_cooldown_timeout():
-	attack_cooldown = true
+	attack_cooldown = false
 
 #handles enemy death. Essentially deletes the sprite off the scene if hp = 0 or less
 func death():
@@ -111,3 +115,7 @@ func death():
 func enemy_healthbar():
 	var enemy_heathbar_parameters = $enemy_health
 	enemy_heathbar_parameters.value = ENEMY_HP
+
+
+func _on_pre_attack_enemy_cooldown_timeout():
+	enemy_attack()
