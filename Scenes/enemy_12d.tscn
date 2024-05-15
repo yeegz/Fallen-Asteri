@@ -1,10 +1,11 @@
-[gd_scene load_steps=61 format=3 uid="uid://bbttsnhtdb1k5"]
+[gd_scene load_steps=58 format=3 uid="uid://bbttsnhtdb1k5"]
 
 [ext_resource type="Script" path="res://Scenes/enemy_12d.gd" id="1_685w0"]
 [ext_resource type="Texture2D" uid="uid://dth6r6p41n5yh" path="res://Temporary Files/idle/crab_idle_1.png" id="1_xxmt4"]
 [ext_resource type="Texture2D" uid="uid://bfaq26c7f6g10" path="res://Temporary Files/idle/crab_idle.png" id="3_lehdf"]
 [ext_resource type="Texture2D" uid="uid://cdam6cmpo18tv" path="res://Temporary Files/attack/crab_attack.png" id="3_onv81"]
 [ext_resource type="Texture2D" uid="uid://bdrn15gp760df" path="res://Temporary Files/Skeleton enemy.png" id="5_btf1u"]
+[ext_resource type="Texture2D" uid="uid://ccelllrtrqtip" path="res://Temporary Files/greenbar (3).png" id="6_t4rbb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1g2fj"]
 radius = 33.0151
@@ -80,22 +81,6 @@ region = Rect2(384, 0, 64, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_isfau"]
 atlas = ExtResource("5_btf1u")
 region = Rect2(448, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uioy2"]
-atlas = ExtResource("5_btf1u")
-region = Rect2(512, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jhvte"]
-atlas = ExtResource("5_btf1u")
-region = Rect2(576, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d2b0d"]
-atlas = ExtResource("5_btf1u")
-region = Rect2(640, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fjmw7"]
-atlas = ExtResource("5_btf1u")
-region = Rect2(704, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l4ps1"]
 atlas = ExtResource("5_btf1u")
@@ -257,43 +242,31 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_qll2q")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_jvub7")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_0i3d1")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_70mll")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_cn5ew")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_2b27r")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_jnktw")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_isfau")
 }, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uioy2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jhvte")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d2b0d")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fjmw7")
-}, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_l4ps1")
 }],
 "loop": true,
@@ -436,7 +409,7 @@ texture_filter = 1
 position = Vector2(51, 57)
 scale = Vector2(1.96485, 2.05469)
 sprite_frames = SubResource("SpriteFrames_ex4hy")
-animation = &"enemy_dead"
+animation = &"enemy_attack"
 
 [node name="enemy_hitbox" type="Area2D" parent="."]
 collision_layer = 4
@@ -450,13 +423,18 @@ shape = SubResource("CircleShape2D_rm23o")
 wait_time = 2.0
 autostart = true
 
+[node name="Greenbar(3)" type="Sprite2D" parent="."]
+position = Vector2(67, 28)
+texture = ExtResource("6_t4rbb")
+
 [node name="enemy_health" type="ProgressBar" parent="."]
-modulate = Color(1, 0, 0, 1)
-offset_left = 14.0
-offset_top = 6.0
-offset_right = 194.0
-offset_bottom = 33.0
+modulate = Color(1, 0.402497, 0.333969, 1)
+offset_left = 13.0
+offset_top = 8.0
+offset_right = 261.0
+offset_bottom = 28.0
 scale = Vector2(0.4, 0.4)
+max_value = 60.0
 show_percentage = false
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]

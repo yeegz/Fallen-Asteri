@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://c8br3cr26rf1a"]
+[gd_scene load_steps=44 format=3 uid="uid://c8br3cr26rf1a"]
 
 [ext_resource type="Script" path="res://Scenes/character_body_2d.gd" id="1_vkjrs"]
 [ext_resource type="Texture2D" uid="uid://cpuhjs0exq1r7" path="res://Temporary Files/Individual Sprite/Attack/Warrior_Attack_1.png" id="2_0x37v"]
@@ -39,29 +39,30 @@
 [ext_resource type="Texture2D" uid="uid://nnyao6jilrk1" path="res://Temporary Files/Individual Sprite/Death-Effect/Warrior_Death_10.png" id="19_yd78p"]
 [ext_resource type="Texture2D" uid="uid://c3f8pfk6yuexr" path="res://Temporary Files/Individual Sprite/Death-Effect/Warrior_Death_11.png" id="20_7r6y8"]
 [ext_resource type="Texture2D" uid="uid://ch0fdang145je" path="res://Temporary Files/pixil-frame-0-20.png" id="21_h5v13"]
+[ext_resource type="Texture2D" uid="uid://ccelllrtrqtip" path="res://Temporary Files/greenbar (3).png" id="40_p7skp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ccfa5"]
 animations = [{
 "frames": [{
-"duration": 0.6,
+"duration": 0.5,
 "texture": ExtResource("2_0x37v")
 }, {
-"duration": 0.6,
+"duration": 0.5,
 "texture": ExtResource("3_5qr61")
 }, {
-"duration": 0.6,
+"duration": 0.5,
 "texture": ExtResource("4_enwpg")
 }, {
-"duration": 0.6,
+"duration": 0.5,
 "texture": ExtResource("5_ghsrx")
 }, {
-"duration": 0.6,
+"duration": 0.5,
 "texture": ExtResource("6_uonxj")
 }, {
-"duration": 0.6,
+"duration": 0.4,
 "texture": ExtResource("7_a6jxr")
 }, {
-"duration": 0.6,
+"duration": 0.4,
 "texture": ExtResource("8_kb2id")
 }, {
 "duration": 0.6,
@@ -159,19 +160,19 @@ animations = [{
 "duration": 0.6,
 "texture": ExtResource("11_ne70d")
 }, {
-"duration": 0.6,
+"duration": 0.5,
 "texture": ExtResource("12_2mhp8")
 }, {
-"duration": 0.6,
+"duration": 0.5,
 "texture": ExtResource("13_ls0y6")
 }, {
-"duration": 0.6,
+"duration": 0.5,
 "texture": ExtResource("14_pajia")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": ExtResource("15_44gbc")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": ExtResource("16_8os8x")
 }],
 "loop": true,
@@ -184,7 +185,7 @@ radius = 13.0
 height = 72.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xy3k0"]
-radius = 47.0106
+radius = 65.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 texture_filter = 1
@@ -196,8 +197,7 @@ script = ExtResource("1_vkjrs")
 position = Vector2(63, 88)
 scale = Vector2(1.77319, 2.03125)
 sprite_frames = SubResource("SpriteFrames_ccfa5")
-animation = &"dead"
-frame_progress = 0.0890955
+animation = &"run"
 
 [node name="player" type="Sprite2D" parent="."]
 visible = false
@@ -227,11 +227,15 @@ shape = SubResource("CircleShape2D_xy3k0")
 
 [node name="player_cooldown" type="Timer" parent="."]
 
+[node name="Greenbar(3)" type="Sprite2D" parent="."]
+position = Vector2(-168, -95)
+texture = ExtResource("40_p7skp")
+
 [node name="health" type="ProgressBar" parent="."]
-modulate = Color(0.980392, 0, 0.054902, 1)
+modulate = Color(0, 0.631373, 0, 1)
 offset_left = -223.0
 offset_top = -115.0
-offset_right = -82.0
+offset_right = -80.0
 offset_bottom = -105.0
 scale = Vector2(0.7, 0.7)
 max_value = 200.0
@@ -239,10 +243,10 @@ show_percentage = false
 
 [node name="stamina" type="ProgressBar" parent="."]
 modulate = Color(0, 0, 1, 1)
-offset_left = 33.0
-offset_top = 56.0
-offset_right = 119.0
-offset_bottom = 72.0
+offset_left = 28.0
+offset_top = 55.0
+offset_right = 134.0
+offset_bottom = 71.0
 scale = Vector2(0.5, 0.5)
 show_percentage = false
 
