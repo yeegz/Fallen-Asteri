@@ -160,19 +160,19 @@ animations = [{
 "duration": 0.6,
 "texture": ExtResource("11_ne70d")
 }, {
-"duration": 0.6,
+"duration": 0.5,
 "texture": ExtResource("12_2mhp8")
 }, {
-"duration": 0.6,
+"duration": 0.5,
 "texture": ExtResource("13_ls0y6")
 }, {
-"duration": 0.6,
+"duration": 0.5,
 "texture": ExtResource("14_pajia")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": ExtResource("15_44gbc")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": ExtResource("16_8os8x")
 }],
 "loop": true,
@@ -197,8 +197,7 @@ script = ExtResource("1_vkjrs")
 position = Vector2(63, 88)
 scale = Vector2(1.77319, 2.03125)
 sprite_frames = SubResource("SpriteFrames_ccfa5")
-animation = &"attack"
-frame_progress = 0.848585
+animation = &"run"
 
 [node name="player" type="Sprite2D" parent="."]
 visible = false
@@ -244,10 +243,10 @@ show_percentage = false
 
 [node name="stamina" type="ProgressBar" parent="."]
 modulate = Color(0, 0, 1, 1)
-offset_left = 33.0
-offset_top = 56.0
-offset_right = 119.0
-offset_bottom = 72.0
+offset_left = 28.0
+offset_top = 55.0
+offset_right = 134.0
+offset_bottom = 71.0
 scale = Vector2(0.5, 0.5)
 show_percentage = false
 
