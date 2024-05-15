@@ -44,25 +44,25 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_ccfa5"]
 animations = [{
 "frames": [{
-"duration": 0.6,
+"duration": 0.5,
 "texture": ExtResource("2_0x37v")
 }, {
-"duration": 0.6,
+"duration": 0.5,
 "texture": ExtResource("3_5qr61")
 }, {
-"duration": 0.6,
+"duration": 0.5,
 "texture": ExtResource("4_enwpg")
 }, {
-"duration": 0.6,
+"duration": 0.5,
 "texture": ExtResource("5_ghsrx")
 }, {
-"duration": 0.6,
+"duration": 0.5,
 "texture": ExtResource("6_uonxj")
 }, {
-"duration": 0.6,
+"duration": 0.4,
 "texture": ExtResource("7_a6jxr")
 }, {
-"duration": 0.6,
+"duration": 0.4,
 "texture": ExtResource("8_kb2id")
 }, {
 "duration": 0.6,
@@ -198,7 +198,7 @@ position = Vector2(63, 88)
 scale = Vector2(1.77319, 2.03125)
 sprite_frames = SubResource("SpriteFrames_ccfa5")
 animation = &"attack"
-frame_progress = 0.83255
+frame_progress = 0.848585
 
 [node name="player" type="Sprite2D" parent="."]
 visible = false
