@@ -37,6 +37,9 @@ func controls(delta):
 	if is_on_floor() and Input.is_action_just_pressed("ui_accept"):
 		velocity.y = JUMP
 	
+	#Health condition
+	
+	
 	#Movement. 
 	if direction:
 		velocity.x = SPEED * direction
@@ -106,6 +109,7 @@ func player_attack():
 #what player being able to attack on cooldown timeout
 func _on_player_cooldown_timeout():
 	player_attack_cooldown = true
+	
 
 #player regenerating stamina upon stamina depletion
 func _on_player_stamina_timeout():
@@ -116,6 +120,9 @@ func _on_player_stamina_timeout():
 func death():
 	if PLAYER_HP <= 0:
 		queue_free()
+		get_tree().change_scene_to_file("res://deathscreen.tscn")
+		
+		
 
 #function to link healthbar GUI to PLAYER_HP
 func healthbar():

@@ -3,7 +3,8 @@ extends CharacterBody2D
 #variable declaration
 const GRAVITY_VALUE = 1100
 var SPEED = 70
-var ENEMY_HP = 100
+var JUMP = -500
+var ENEMY_HP = 60
 var player = null
 var player_chase = false
 var attack_range = false
@@ -101,6 +102,7 @@ func _on_cooldown_timeout():
 #handles enemy death. Essentially deletes the sprite off the scene if hp = 0 or less
 func death():
 	if ENEMY_HP <= 0:
+		player.PLAYER_HP = 200
 		queue_free()
 
 #links enemy healthbar GUI to ENEMY_HP

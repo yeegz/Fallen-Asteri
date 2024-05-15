@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://earvxfl8soch"]
+[gd_scene load_steps=6 format=3 uid="uid://earvxfl8soch"]
 
 [ext_resource type="Script" path="res://options.gd" id="1_c026u"]
 [ext_resource type="PackedScene" uid="uid://v4ag1ndob1rb" path="res://settings_tab_container.tscn" id="2_jpafd"]
-[ext_resource type="Texture2D" uid="uid://crpp8e0x3plw3" path="res://options.png" id="2_tb6g6"]
-[ext_resource type="Texture2D" uid="uid://oyfe57atrike" path="res://back button.png" id="4_b7b4o"]
+[ext_resource type="Texture2D" uid="uid://dki3vuh5y7lw" path="res://Temporary Files/awesomeCavePixelArt.png" id="2_yxxav"]
+[ext_resource type="Texture2D" uid="uid://cdiwvgpdlsd03" path="res://back button.png" id="4_b7b4o"]
+[ext_resource type="Texture2D" uid="uid://camrenpfsqabp" path="res://Sprite Assets/Logo.png" id="5_ph0yx"]
 
 [node name="Options_Menu" type="Control"]
 layout_mode = 3
@@ -15,9 +16,9 @@ grow_vertical = 2
 script = ExtResource("1_c026u")
 
 [node name="Options" type="Sprite2D" parent="."]
-position = Vector2(962, 532.5)
-scale = Vector2(0.996875, 1.01574)
-texture = ExtResource("2_tb6g6")
+position = Vector2(960.5, 540.5)
+scale = Vector2(1.49922, 1.49861)
+texture = ExtResource("2_yxxav")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -58,5 +59,10 @@ offset_bottom = 1068.0
 size_flags_horizontal = 4
 size_flags_vertical = 8
 text = "Back"
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(157, 100)
+scale = Vector2(0.413542, 0.412963)
+texture = ExtResource("5_ph0yx")
 
 [connection signal="pressed" from="Back_Button" to="." method="_on_back_button_pressed"]
