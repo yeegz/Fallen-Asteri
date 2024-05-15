@@ -4,7 +4,7 @@ extends CharacterBody2D
 const GRAVITY_VALUE = 1100
 var SPEED = 70
 var JUMP = -500
-var ENEMY_HP = 100
+var ENEMY_HP = 60
 var player = null
 var player_chase = false
 var attack_range = false

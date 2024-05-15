@@ -185,7 +185,7 @@ radius = 13.0
 height = 72.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xy3k0"]
-radius = 47.0106
+radius = 65.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 texture_filter = 1
@@ -197,8 +197,8 @@ script = ExtResource("1_vkjrs")
 position = Vector2(63, 88)
 scale = Vector2(1.77319, 2.03125)
 sprite_frames = SubResource("SpriteFrames_ccfa5")
-animation = &"dead"
-frame_progress = 0.0890955
+animation = &"attack"
+frame_progress = 0.871076
 
 [node name="player" type="Sprite2D" parent="."]
 visible = false

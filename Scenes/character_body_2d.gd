@@ -109,6 +109,7 @@ func player_attack():
 #what player being able to attack on cooldown timeout
 func _on_player_cooldown_timeout():
 	player_attack_cooldown = true
+	
 
 #player regenerating stamina upon stamina depletion
 func _on_player_stamina_timeout():
