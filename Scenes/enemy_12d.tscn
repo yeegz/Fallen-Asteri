@@ -440,7 +440,6 @@ show_percentage = false
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_06u5b")
-volume_db = 6.058
 autoplay = true
 
 [node name="pre_attack_enemy_cooldown" type="Timer" parent="."]

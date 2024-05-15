@@ -150,3 +150,5 @@ func audio_functions():
 		combat_audio_stream_player_2D.play()
 	elif Input.is_action_just_pressed("ui_accept"):
 		audio_stream_player_2D.play()
+
+
