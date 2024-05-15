@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dlqcqmwpdvmbd"]
+[gd_scene load_steps=9 format=3 uid="uid://dlqcqmwpdvmbd"]
 
 [ext_resource type="Script" path="res://main menu.gd" id="1_g3b4x"]
 [ext_resource type="Theme" uid="uid://cyr3cl0yytsk6" path="res://themes.tres" id="2_wk16h"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bta7a68re2gs1" path="res://image/Press Start 2P (1).png" id="6_flofn"]
 [ext_resource type="Texture2D" uid="uid://bga00r7ghauis" path="res://image/Press Start 2P (3).png" id="6_tdopv"]
 [ext_resource type="Texture2D" uid="uid://lbhalx04ggvf" path="res://Sprite Assets/Logo.png" id="7_kuc6t"]
+[ext_resource type="AudioStream" uid="uid://cu2swspjoox6o" path="res://MAin menu.mp3" id="8_opso0"]
 
 [node name="main menu" type="Control"]
 layout_mode = 3
@@ -125,6 +126,11 @@ text = "Options"
 [node name="Logo" type="Sprite2D" parent="."]
 position = Vector2(1521, 253)
 texture = ExtResource("7_kuc6t")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_opso0")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+
+
 #variable declaration
 var SPEED = 320
 const JUMP = -550
@@ -13,6 +15,7 @@ var stamina_requirement = 30
 var pre_attack_cooldown = false
 var attack_animation = false
 @onready var animation = $AnimatedSprite2D
+@onready var  audio_stream_player_2D = $AudioStreamPlayer2D as AudioStreamPlayer2D
 
 #main function
 func _process(delta):
@@ -36,6 +39,7 @@ func controls(delta):
 	#Jump
 	if is_on_floor() and Input.is_action_just_pressed("ui_accept"):
 		velocity.y = JUMP
+		audio_stream_player_2D.play()
 	
 	#Health condition
 	
@@ -75,6 +79,7 @@ func animations(control):
 		$attack_anim_timer.start()
 		if attack_animation == true:
 			animation.play("attack")
+			audio_stream_player_2D.play()
 	elif velocity.y != 0:
 		animation.play("jump")
 	elif control == 0 or velocity.x == 0:
