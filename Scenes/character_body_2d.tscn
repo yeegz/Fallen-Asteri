@@ -198,7 +198,7 @@ position = Vector2(63, 88)
 scale = Vector2(1.77319, 2.03125)
 sprite_frames = SubResource("SpriteFrames_ccfa5")
 animation = &"attack"
-frame_progress = 0.871076
+frame_progress = 0.83255
 
 [node name="player" type="Sprite2D" parent="."]
 visible = false
