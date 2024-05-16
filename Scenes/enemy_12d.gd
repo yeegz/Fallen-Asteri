@@ -22,7 +22,6 @@ func _physics_process(delta):
 	gravity(delta)
 	animations(player_chase)
 	pathing(player_chase, delta, SPEED)
-	#enemy_attack()
 	death()
 	enemy_healthbar()
 
@@ -125,11 +124,11 @@ func enemy_healthbar():
 	var enemy_heathbar_parameters = $enemy_health
 	enemy_heathbar_parameters.value = ENEMY_HP
 
-
+#to sync animation and attack
 func _on_pre_attack_enemy_cooldown_timeout():
 	enemy_attack()
 
-
+#to handle attacks to the left and be seperate from the right
 func _on_enemy_hitbox_left_body_entered(body):
 	if body.has_method("hero"):
 		attack_range_left = true
@@ -138,15 +137,15 @@ func _on_enemy_hitbox_left_body_entered(body):
 		if attack_cooldown_left == false and attack_range_left == true:
 			$pre_attack_enemy_cooldown_left.start()
 
-
+#to handle attacks to the left and be seperate from the right
 func _on_enemy_hitbox_left_body_exited(body):
 	if body.has_method("hero"):
 		attack_range_left = false
 
-
+#to handle attacks to the left and be seperate from the right
 func _on_pre_attack_enemy_cooldown_left_timeout():
 	enemy_attack_left()
 
-
+#to handle attacks to the left and be seperate from the right
 func _on_cooldown_left_timeout():
 	attack_cooldown_left = false

@@ -34,7 +34,7 @@ func _process(delta):
 	staminabar()
 	audio_functions()
 
-#Easiest way for enemy hitbox to idintify player is through methods.
+#Easiest way for enemy hitbox to identify player is through methods.
 func hero():
 	pass
 
@@ -151,24 +151,26 @@ func _on_pre_attack_timeout():
 func _on_attack_anim_timer_timeout():
 	attack_animation = false
 
+#handle audio
 func audio_functions():
 	if Input.is_action_just_pressed("ui_attack"):
 		combat_audio_stream_player_2D.play()
 	elif Input.is_action_just_pressed("ui_accept"):
 		audio_stream_player_2D.play()
 
-
+#handle attacks to the left
 func _on_player_attack_range_left_body_entered(body):
 	if body.has_method("enemy"):
 		enemy = body
 		player_attack_range_left = true
 
-
+#handle attacks to the left
 func _on_player_attack_range_left_body_exited(body):
 	if body.has_method("enemy"):
 		enemy = null
 		player_attack_range_left = false
 
+#handle attacks to the left
 func player_attack_left():
 	if Input.is_action_just_pressed("ui_attack") and PLAYER_STAMINA >= stamina_requirement:
 		player_attack_cooldown_left = true
@@ -181,11 +183,11 @@ func player_attack_left():
 			pre_attack_cooldown_left = true
 			$pre_attack_left.start()
 
-
+#handle attacks to the left
 func _on_player_cooldown_left_timeout():
 	player_attack_cooldown_left = true
 
-
+#handle attacks to the left
 func _on_pre_attack_left_timeout():
 	if pre_attack_cooldown_left == true and player_attack_range_left == true:
 		enemy.ENEMY_HP -= 20
