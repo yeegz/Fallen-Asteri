@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://v4ag1ndob1rb"]
+[gd_scene load_steps=5 format=3 uid="uid://v4ag1ndob1rb"]
 
 [ext_resource type="PackedScene" uid="uid://d2biacf8e1lwq" path="res://audio_sliders.tscn" id="1_5mnx8"]
-[ext_resource type="Script" path="res://settings_tab_container.gd" id="1_pbahf"]
 [ext_resource type="PackedScene" uid="uid://bmexm3typrptj" path="res://window_mode_button.tscn" id="1_qwxlb"]
 [ext_resource type="PackedScene" uid="uid://ma3pxnk85j10" path="res://resolution_mode_button.tscn" id="2_6lcci"]
 [ext_resource type="Texture2D" uid="uid://bkdridqtkr8ix" path="res://tii (1).png" id="3_1jslh"]
@@ -17,7 +16,6 @@ offset_right = -12.0
 offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_pbahf")
 
 [node name="TabContainer" type="TabContainer" parent="."]
 layout_mode = 1
