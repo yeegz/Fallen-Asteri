@@ -8,10 +8,14 @@ var GRAVITY_VALUE = 1100
 var PLAYER_HP = 200
 var PLAYER_STAMINA = 100
 var player_attack_range = false
+var player_attack_range_left = false
 var player_attack_cooldown = false
+var player_attack_cooldown_left = false
 var stamina_requirement = 30
 var pre_attack_cooldown = false
+var pre_attack_cooldown_left = false
 var attack_animation = false
+var facing_right = null
 @onready var animation = $AnimatedSprite2D
 @onready var  audio_stream_player_2D = $AudioStreamPlayer2D as AudioStreamPlayer2D
 @onready var  combat_audio_stream_player_2D = $AudioStreamPlayer2D2 as AudioStreamPlayer2D
@@ -21,13 +25,16 @@ func _process(delta):
 	var control = controls(delta)
 	gravity(delta)
 	animations(control)
-	player_attack()
+	if facing_right == true:
+		player_attack_right()
+	elif facing_right == false:
+		player_attack_left()
 	death()
 	healthbar()
 	staminabar()
 	audio_functions()
 
-#Easiest way for enemy hitbox to idintify player is through methods.
+#Easiest way for enemy hitbox to identify player is through methods.
 func hero():
 	pass
 
@@ -46,8 +53,10 @@ func controls(delta):
 		velocity.x = SPEED * direction
 		if direction == 1:
 			$AnimatedSprite2D.flip_h = false
+			facing_right = true
 		elif direction == -1:
 			$AnimatedSprite2D.flip_h = true
+			facing_right = false
 	elif direction == 0 or velocity.x == 0:
 		
 		#requires move_towards to enable stopping movement
@@ -55,7 +64,6 @@ func controls(delta):
 	
 	#move_and_slide required for basic physics functions to work
 	move_and_slide()
-	
 	return direction
 
 #basic gravity
@@ -93,7 +101,7 @@ func _on_player_attack_range_body_exited(body):
 		player_attack_range = false
 
 #player attack cooldown, player stamina calculation and cooldown
-func player_attack():
+func player_attack_right():
 	if Input.is_action_just_pressed("ui_attack") and PLAYER_STAMINA >= stamina_requirement:
 		player_attack_cooldown = true
 		$player_cooldown.start()
@@ -108,7 +116,6 @@ func player_attack():
 #what player being able to attack on cooldown timeout
 func _on_player_cooldown_timeout():
 	player_attack_cooldown = true
-	
 
 #player regenerating stamina upon stamina depletion
 func _on_player_stamina_timeout():
@@ -120,8 +127,7 @@ func death():
 	if PLAYER_HP <= 0:
 		queue_free()
 		get_tree().change_scene_to_file("res://deathscreen.tscn")
-		
-		
+
 
 #function to link healthbar GUI to PLAYER_HP
 func healthbar():
@@ -135,7 +141,7 @@ func staminabar():
 
 #able to sync attack to animation, player attack
 func _on_pre_attack_timeout():
-	if pre_attack_cooldown == true and player_attack_range == true:
+	if pre_attack_cooldown == true and player_attack_range == true or player_attack_range_left == true:
 		enemy.ENEMY_HP -= 20
 		
 	
@@ -145,10 +151,46 @@ func _on_pre_attack_timeout():
 func _on_attack_anim_timer_timeout():
 	attack_animation = false
 
+#handle audio
 func audio_functions():
 	if Input.is_action_just_pressed("ui_attack"):
 		combat_audio_stream_player_2D.play()
 	elif Input.is_action_just_pressed("ui_accept"):
 		audio_stream_player_2D.play()
 
+#handle attacks to the left
+func _on_player_attack_range_left_body_entered(body):
+	if body.has_method("enemy"):
+		enemy = body
+		player_attack_range_left = true
 
+#handle attacks to the left
+func _on_player_attack_range_left_body_exited(body):
+	if body.has_method("enemy"):
+		enemy = null
+		player_attack_range_left = false
+
+#handle attacks to the left
+func player_attack_left():
+	if Input.is_action_just_pressed("ui_attack") and PLAYER_STAMINA >= stamina_requirement:
+		player_attack_cooldown_left = true
+		$player_cooldown_left.start()
+		if player_attack_cooldown_left == true and PLAYER_STAMINA >= stamina_requirement:
+			PLAYER_STAMINA -= stamina_requirement
+		if PLAYER_STAMINA < 100:
+			$player_stamina.start()
+		if player_attack_cooldown_left == true and player_attack_range_left == true:
+			pre_attack_cooldown_left = true
+			$pre_attack_left.start()
+
+#handle attacks to the left
+func _on_player_cooldown_left_timeout():
+	player_attack_cooldown_left = true
+
+#handle attacks to the left
+func _on_pre_attack_left_timeout():
+	if pre_attack_cooldown_left == true and player_attack_range_left == true:
+		enemy.ENEMY_HP -= 20
+		
+	
+	pre_attack_cooldown_left = false

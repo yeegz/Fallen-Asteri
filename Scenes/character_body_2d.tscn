@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://c8br3cr26rf1a"]
+[gd_scene load_steps=45 format=3 uid="uid://c8br3cr26rf1a"]
 
 [ext_resource type="Script" path="res://Scenes/character_body_2d.gd" id="1_vkjrs"]
 [ext_resource type="Texture2D" uid="uid://dhuenj858ohb8" path="res://Temporary Files/Individual Sprite/Attack/Warrior_Attack_1.png" id="2_0x37v"]
@@ -186,9 +186,6 @@ animations = [{
 radius = 13.0
 height = 72.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_xy3k0"]
-radius = 65.0
-
 [node name="CharacterBody2D" type="CharacterBody2D"]
 texture_filter = 1
 collision_layer = 2
@@ -199,7 +196,9 @@ script = ExtResource("1_vkjrs")
 position = Vector2(63, 88)
 scale = Vector2(1.77319, 2.03125)
 sprite_frames = SubResource("SpriteFrames_ccfa5")
-animation = &"run"
+animation = &"attack"
+frame = 3
+frame_progress = 0.910618
 
 [node name="player" type="Sprite2D" parent="."]
 visible = false
@@ -221,9 +220,8 @@ zoom = Vector2(2.5, 2.5)
 collision_layer = 2
 collision_mask = 5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player_attack_range"]
-position = Vector2(53, 95)
-shape = SubResource("CircleShape2D_xy3k0")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="player_attack_range"]
+polygon = PackedVector2Array(32, 71, 61, 60, 75, 71, 80, 86, 81, 97, 81, 106, 80, 111, 101, 115, 107, 116, 111, 107, 115, 100, 116, 82, 105, 66, 90, 51, 74, 45, 51, 48, 37, 57)
 
 [node name="player_stamina" type="Timer" parent="."]
 
@@ -268,9 +266,26 @@ volume_db = 8.0
 pitch_scale = 3.25
 autoplay = true
 
+[node name="player_attack_range_left" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 5
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="player_attack_range_left"]
+position = Vector2(2, 3)
+polygon = PackedVector2Array(68, 69, 62, 63, 54, 61, 38, 70, 33, 81, 31, 92, 31, 105, 31, 114, 2, 116, 4, 94, 2, 86, 7, 74, 19, 59, 25, 53, 32, 49, 51, 48, 66, 50, 73, 66)
+
+[node name="player_cooldown_left" type="Timer" parent="."]
+
+[node name="pre_attack_left" type="Timer" parent="."]
+wait_time = 0.5
+
 [connection signal="body_entered" from="player_attack_range" to="." method="_on_player_attack_range_body_entered"]
 [connection signal="body_exited" from="player_attack_range" to="." method="_on_player_attack_range_body_exited"]
 [connection signal="timeout" from="player_stamina" to="." method="_on_player_stamina_timeout"]
 [connection signal="timeout" from="player_cooldown" to="." method="_on_player_cooldown_timeout"]
 [connection signal="timeout" from="pre_attack" to="." method="_on_pre_attack_timeout"]
 [connection signal="timeout" from="attack_anim_timer" to="." method="_on_attack_anim_timer_timeout"]
+[connection signal="body_entered" from="player_attack_range_left" to="." method="_on_player_attack_range_left_body_entered"]
+[connection signal="body_exited" from="player_attack_range_left" to="." method="_on_player_attack_range_left_body_exited"]
+[connection signal="timeout" from="player_cooldown_left" to="." method="_on_player_cooldown_left_timeout"]
+[connection signal="timeout" from="pre_attack_left" to="." method="_on_pre_attack_left_timeout"]
