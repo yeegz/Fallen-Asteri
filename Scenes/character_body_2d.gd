@@ -61,7 +61,7 @@ func controls(delta):
 	elif direction == 0 or velocity.x == 0:
 		
 		#requires move_towards to enable stopping movement
-		velocity.x  = move_toward(1, 0, delta)
+		velocity.x  = move_toward(1, 0, 1)
 	
 	#move_and_slide required for basic physics functions to work
 	move_and_slide()
