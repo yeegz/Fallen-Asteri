@@ -33,6 +33,7 @@ func _process(delta):
 	healthbar()
 	staminabar()
 	audio_functions()
+	print(player_attack_cooldown_left, player_attack_range_left)
 
 #Easiest way for enemy hitbox to identify player is through methods.
 func hero():
@@ -83,6 +84,7 @@ func animations(control):
 		$attack_anim_timer.start()
 		if attack_animation == true:
 			animation.play("attack")
+			combat_audio_stream_player_2D.play()
 	elif velocity.y != 0:
 		animation.play("jump")
 	elif control == 0 or velocity.x == 0:
@@ -142,7 +144,7 @@ func staminabar():
 
 #able to sync attack to animation, player attack
 func _on_pre_attack_timeout():
-	if pre_attack_cooldown == true and player_attack_range == true or player_attack_range_left == true:
+	if pre_attack_cooldown == true and player_attack_range == true:
 		enemy.ENEMY_HP -= 20
 		
 	
@@ -155,6 +157,8 @@ func _on_attack_anim_timer_timeout():
 #handle audio
 func audio_functions():
 	#if Input.is_action_just_pressed("ui_attack") and PLAYER_STAMINA >= 20:
+
+	#if Input.is_action_just_pressed("ui_attack"):
 		#combat_audio_stream_player_2D.play()
 	if Input.is_action_just_pressed("ui_accept"):
 		audio_stream_player_2D.play()

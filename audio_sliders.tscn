@@ -15,6 +15,7 @@ offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_p67h5")
+bus_name = "Master"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
@@ -37,6 +38,8 @@ layout_mode = 2
 custom_minimum_size = Vector2(200, 32)
 layout_mode = 2
 size_flags_vertical = 1
+max_value = 1.0
+step = 0.001
 
 [node name="VSeparator2" type="VSeparator" parent="HBoxContainer"]
 layout_mode = 2

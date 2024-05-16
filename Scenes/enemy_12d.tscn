@@ -408,8 +408,8 @@ position = Vector2(51, 57)
 scale = Vector2(1.96485, 2.05469)
 sprite_frames = SubResource("SpriteFrames_ex4hy")
 animation = &"enemy_attack"
-frame = 1
-frame_progress = 0.523267
+frame = 5
+frame_progress = 0.320054
 
 [node name="enemy_hitbox" type="Area2D" parent="."]
 collision_layer = 4
@@ -438,7 +438,7 @@ show_percentage = false
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_06u5b")
-volume_db = 3.0
+volume_db = 2.0
 autoplay = true
 
 [node name="pre_attack_enemy_cooldown" type="Timer" parent="."]
