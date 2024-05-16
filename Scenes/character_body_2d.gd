@@ -33,7 +33,6 @@ func _process(delta):
 	healthbar()
 	staminabar()
 	audio_functions()
-	print(facing_right)
 
 #Easiest way for enemy hitbox to idintify player is through methods.
 func hero():

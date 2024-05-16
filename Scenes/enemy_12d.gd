@@ -8,7 +8,9 @@ var ENEMY_HP = 60
 var player = null
 var player_chase = false
 var attack_range = false
+var attack_range_left = false
 var attack_cooldown = true
+var attack_cooldown_left = true
 var player_alive = true
 var knockback = 4000
 var alive_status = true
@@ -60,6 +62,13 @@ func enemy_attack():
 		attack_cooldown = true
 		$cooldown.start()
 
+func enemy_attack_left():
+	if attack_cooldown == false and attack_range_left == true:
+		player.PLAYER_HP -= 20
+		audio_stream_player_2D.play()
+		attack_cooldown = true
+		$cooldown_left.start()
+
 func gravity(delta):
 	#Gravity
 	if not is_on_floor():
@@ -71,7 +80,7 @@ func animations(player_chase):
 	#Animation
 	if player_chase == false:
 		animation.play("enemy_idle")
-	elif attack_range == true:
+	elif attack_range == true or attack_range_left:
 		animation.play("enemy_attack")
 	elif attack_cooldown == true:
 		animation.play("enemy_walk")
@@ -119,3 +128,25 @@ func enemy_healthbar():
 
 func _on_pre_attack_enemy_cooldown_timeout():
 	enemy_attack()
+
+
+func _on_enemy_hitbox_left_body_entered(body):
+	if body.has_method("hero"):
+		attack_range_left = true
+		if attack_range_left == true:
+			attack_cooldown_left = false
+		if attack_cooldown_left == false and attack_range_left == true:
+			$pre_attack_enemy_cooldown_left.start()
+
+
+func _on_enemy_hitbox_left_body_exited(body):
+	if body.has_method("hero"):
+		attack_range_left = false
+
+
+func _on_pre_attack_enemy_cooldown_left_timeout():
+	enemy_attack_left()
+
+
+func _on_cooldown_left_timeout():
+	attack_cooldown_left = false

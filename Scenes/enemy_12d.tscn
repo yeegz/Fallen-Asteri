@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://bbttsnhtdb1k5"]
+[gd_scene load_steps=58 format=3 uid="uid://bbttsnhtdb1k5"]
 
 [ext_resource type="Script" path="res://Scenes/enemy_12d.gd" id="1_685w0"]
 [ext_resource type="Texture2D" uid="uid://b48h5xrsueebe" path="res://Temporary Files/idle/crab_idle_1.png" id="1_xxmt4"]
@@ -377,9 +377,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_rm23o"]
-radius = 36.0139
-
 [node name="enemy12D" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 3
@@ -397,7 +394,7 @@ position = Vector2(49, 57)
 shape = SubResource("CircleShape2D_1g2fj")
 
 [node name="DetectionArea" type="Area2D" parent="."]
-collision_layer = 2
+collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
@@ -411,14 +408,15 @@ position = Vector2(51, 57)
 scale = Vector2(1.96485, 2.05469)
 sprite_frames = SubResource("SpriteFrames_ex4hy")
 animation = &"enemy_attack"
+frame = 1
+frame_progress = 0.523267
 
 [node name="enemy_hitbox" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_hitbox"]
-position = Vector2(48, 55)
-shape = SubResource("CircleShape2D_rm23o")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="enemy_hitbox"]
+polygon = PackedVector2Array(68, 69, 78, 67, 92, 63, 101, 58, 110, 52, 115, 43, 112, 28, 103, 20, 89, 15, 75, 11, 60, 7, 51, 4, 39, 4, 32, 6, 24, 9, 21, 15, 22, 21, 25, 25, 29, 26, 34, 26, 37, 25, 43, 24, 52, 23, 61, 25, 79, 27, 89, 31, 97, 38, 97, 44, 92, 51, 82, 57)
 
 [node name="cooldown" type="Timer" parent="."]
 wait_time = 0.9
@@ -446,9 +444,27 @@ autoplay = true
 [node name="pre_attack_enemy_cooldown" type="Timer" parent="."]
 wait_time = 0.5
 
+[node name="enemy_hitbox_left" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="enemy_hitbox_left"]
+position = Vector2(25, 2)
+polygon = PackedVector2Array(8, 64, 3, 72, -8, 70, -22, 67, -33, 60, -42, 47, -38, 33, -30, 21, -17, 11, 0, 6, 21, 5, 20, 25, -8, 29, -23, 37, -14, 52, -2, 57)
+
+[node name="pre_attack_enemy_cooldown_left" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="cooldown_left" type="Timer" parent="."]
+wait_time = 0.9
+
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
 [connection signal="body_entered" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_entered"]
 [connection signal="body_exited" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_exited"]
 [connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]
 [connection signal="timeout" from="pre_attack_enemy_cooldown" to="." method="_on_pre_attack_enemy_cooldown_timeout"]
+[connection signal="body_entered" from="enemy_hitbox_left" to="." method="_on_enemy_hitbox_left_body_entered"]
+[connection signal="body_exited" from="enemy_hitbox_left" to="." method="_on_enemy_hitbox_left_body_exited"]
+[connection signal="timeout" from="pre_attack_enemy_cooldown_left" to="." method="_on_pre_attack_enemy_cooldown_left_timeout"]
+[connection signal="timeout" from="cooldown_left" to="." method="_on_cooldown_left_timeout"]
