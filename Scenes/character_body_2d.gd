@@ -106,13 +106,13 @@ func player_attack_right():
 	if Input.is_action_just_pressed("ui_attack") and PLAYER_STAMINA >= stamina_requirement:
 		player_attack_cooldown = true
 		$player_cooldown.start()
-		'''if player_attack_cooldown == true and PLAYER_STAMINA >= stamina_requirement:
+		if player_attack_cooldown == true and PLAYER_STAMINA >= stamina_requirement:
 			PLAYER_STAMINA -= stamina_requirement
 		if PLAYER_STAMINA < 100:
 			$player_stamina.start()
 		if player_attack_cooldown == true and player_attack_range == true:
 			pre_attack_cooldown = true
-			$pre_attack.start()'''
+			$pre_attack.start()
 
 #what player being able to attack on cooldown timeout
 func _on_player_cooldown_timeout():
