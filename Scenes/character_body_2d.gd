@@ -79,6 +79,7 @@ func animations(control):
 		animation.play("run")
 	elif Input.is_action_just_pressed("ui_attack") and PLAYER_STAMINA >= stamina_requirement:
 		attack_animation = true
+		combat_audio_stream_player_2D.play()
 		$attack_anim_timer.start()
 		if attack_animation == true:
 			animation.play("attack")
@@ -153,9 +154,9 @@ func _on_attack_anim_timer_timeout():
 
 #handle audio
 func audio_functions():
-	if Input.is_action_just_pressed("ui_attack"):
-		combat_audio_stream_player_2D.play()
-	elif Input.is_action_just_pressed("ui_accept"):
+	#if Input.is_action_just_pressed("ui_attack") and PLAYER_STAMINA >= 20:
+		#combat_audio_stream_player_2D.play()
+	if Input.is_action_just_pressed("ui_accept"):
 		audio_stream_player_2D.play()
 
 #handle attacks to the left
