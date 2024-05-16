@@ -41,6 +41,7 @@ text = "RESTART"
 stream = ExtResource("4_iruns")
 volume_db = 9.37
 autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]

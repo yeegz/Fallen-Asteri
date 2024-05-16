@@ -8,4 +8,4 @@ func _on_yes_pressed():
 
 
 func _on_no_pressed():
-	get_tree().change_scene_to_file("res://scene.tscn")
+	get_tree().change_scene_to_file("res://pause_menu.tscn")

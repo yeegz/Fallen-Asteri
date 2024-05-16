@@ -152,6 +152,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Load" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 drag_to_rearrange_enabled = true
 
