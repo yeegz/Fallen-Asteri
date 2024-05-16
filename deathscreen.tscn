@@ -39,7 +39,6 @@ text = "RESTART"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_iruns")
-volume_db = 9.37
 autoplay = true
 bus = &"Music"
 

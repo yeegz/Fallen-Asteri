@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bta7a68re2gs1" path="res://image/Press Start 2P (1).png" id="6_flofn"]
 [ext_resource type="Texture2D" uid="uid://bga00r7ghauis" path="res://image/Press Start 2P (3).png" id="6_tdopv"]
 [ext_resource type="Texture2D" uid="uid://lbhalx04ggvf" path="res://Sprite Assets/Logo.png" id="7_kuc6t"]
-[ext_resource type="AudioStream" uid="uid://cu2swspjoox6o" path="res://MAin menu.mp3" id="8_opso0"]
+[ext_resource type="AudioStream" uid="uid://bxwh1i4knn03v" path="res://waiting-time-175800.mp3" id="8_tbhuk"]
 
 [node name="main menu" type="Control"]
 layout_mode = 3
@@ -128,7 +128,7 @@ position = Vector2(1521, 253)
 texture = ExtResource("7_kuc6t")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_opso0")
+stream = ExtResource("8_tbhuk")
 autoplay = true
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
