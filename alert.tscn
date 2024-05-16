@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7liwlmlyl408"]
+[gd_scene load_steps=2 format=3 uid="uid://b7liwlmlyl408"]
 
 [ext_resource type="Script" path="res://alert.gd" id="1_hvg77"]
-[ext_resource type="PackedScene" uid="uid://d0kv8oi3d4d22" path="res://pause_menu.tscn" id="2_ok6wg"]
 
 [node name="Alert" type="Control"]
 layout_mode = 3
@@ -70,9 +69,6 @@ offset_bottom = -17.6
 grow_horizontal = 2
 grow_vertical = 2
 text = "NO"
-
-[node name="pause_menu" parent="." instance=ExtResource("2_ok6wg")]
-layout_mode = 1
 
 [connection signal="pressed" from="Yes" to="." method="_on_yes_pressed"]
 [connection signal="pressed" from="NO" to="." method="_on_no_pressed"]
