@@ -33,6 +33,7 @@ func _process(delta):
 	healthbar()
 	staminabar()
 	audio_functions()
+	print(player_attack_cooldown_left, player_attack_range_left)
 
 #Easiest way for enemy hitbox to identify player is through methods.
 func hero():
@@ -142,7 +143,7 @@ func staminabar():
 
 #able to sync attack to animation, player attack
 func _on_pre_attack_timeout():
-	if pre_attack_cooldown == true and player_attack_range == true or player_attack_range_left == true:
+	if pre_attack_cooldown == true and player_attack_range == true:
 		enemy.ENEMY_HP -= 20
 		
 	
