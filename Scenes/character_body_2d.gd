@@ -82,6 +82,7 @@ func animations(control):
 		$attack_anim_timer.start()
 		if attack_animation == true:
 			animation.play("attack")
+			combat_audio_stream_player_2D.play()
 	elif velocity.y != 0:
 		animation.play("jump")
 	elif control == 0 or velocity.x == 0:
@@ -105,13 +106,13 @@ func player_attack_right():
 	if Input.is_action_just_pressed("ui_attack") and PLAYER_STAMINA >= stamina_requirement:
 		player_attack_cooldown = true
 		$player_cooldown.start()
-		if player_attack_cooldown == true and PLAYER_STAMINA >= stamina_requirement:
+		'''if player_attack_cooldown == true and PLAYER_STAMINA >= stamina_requirement:
 			PLAYER_STAMINA -= stamina_requirement
 		if PLAYER_STAMINA < 100:
 			$player_stamina.start()
 		if player_attack_cooldown == true and player_attack_range == true:
 			pre_attack_cooldown = true
-			$pre_attack.start()
+			$pre_attack.start()'''
 
 #what player being able to attack on cooldown timeout
 func _on_player_cooldown_timeout():
@@ -153,9 +154,9 @@ func _on_attack_anim_timer_timeout():
 
 #handle audio
 func audio_functions():
-	if Input.is_action_just_pressed("ui_attack"):
-		combat_audio_stream_player_2D.play()
-	elif Input.is_action_just_pressed("ui_accept"):
+	#if Input.is_action_just_pressed("ui_attack"):
+		#combat_audio_stream_player_2D.play()
+	if Input.is_action_just_pressed("ui_accept"):
 		audio_stream_player_2D.play()
 
 #handle attacks to the left
