@@ -16,13 +16,14 @@ var pre_attack_cooldown = false
 var pre_attack_cooldown_left = false
 var attack_animation = false
 var facing_right = null
+var dash_distance = 3000
 @onready var animation = $AnimatedSprite2D
 @onready var  audio_stream_player_2D = $AudioStreamPlayer2D as AudioStreamPlayer2D
 @onready var  combat_audio_stream_player_2D = $AudioStreamPlayer2D2 as AudioStreamPlayer2D
 
 #main function
 func _process(delta):
-	var control = controls(delta)
+	var control = controls()
 	gravity(delta)
 	animations(control)
 	if facing_right == true:
@@ -33,21 +34,19 @@ func _process(delta):
 	healthbar()
 	staminabar()
 	audio_functions()
-	print(player_attack_cooldown_left, player_attack_range_left)
 
 #Easiest way for enemy hitbox to identify player is through methods.
 func hero():
 	pass
 
 #player controls and sprite flipping according to direction
-func controls(delta):
+func controls():
 	#Added buttons A and D to the left and right axis respectively
 	var direction = Input.get_axis("ui_left", "ui_right")
 	
 	#Jump
 	if is_on_floor() and Input.is_action_just_pressed("ui_accept"):
 		velocity.y = JUMP
-		#audio_stream_player_2D.play()
 	
 	#Movement. 
 	if direction:
@@ -62,6 +61,11 @@ func controls(delta):
 		
 		#requires move_towards to enable stopping movement
 		velocity.x  = move_toward(1, 0, 1)
+	
+	if Input.is_action_just_pressed("ui_dash") and facing_right == true:
+		velocity.x += dash_distance
+	elif Input.is_action_just_pressed("ui_dash") and facing_right == false:
+		velocity.x += -dash_distance
 	
 	#move_and_slide required for basic physics functions to work
 	move_and_slide()
@@ -140,6 +144,10 @@ func healthbar():
 func staminabar():
 	var staminabar_parameters = $stamina
 	staminabar_parameters.value = PLAYER_STAMINA
+	if PLAYER_STAMINA == 100:
+		staminabar_parameters.visible = false
+	else:
+		staminabar_parameters.visible = true
 
 #able to sync attack to animation, player attack
 func _on_pre_attack_timeout():
