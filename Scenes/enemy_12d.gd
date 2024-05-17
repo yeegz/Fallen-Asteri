@@ -90,7 +90,7 @@ func pathing(playerchase, delta, speed):
 		#move towards player if in detection area
 		position += (player.position - position)/ speed
 		#to prevent enemy from sliding
-		move_toward(1, 0, 1)
+		move_toward(1, 0, delta)
 		
 		#Flip sprite according to direction
 		if player.position < position:

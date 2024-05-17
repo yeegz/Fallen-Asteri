@@ -16,6 +16,7 @@ var pre_attack_cooldown = false
 var pre_attack_cooldown_left = false
 var attack_animation = false
 var facing_right = null
+var dash_distance = 3000
 @onready var animation = $AnimatedSprite2D
 @onready var  audio_stream_player_2D = $AudioStreamPlayer2D as AudioStreamPlayer2D
 @onready var  combat_audio_stream_player_2D = $AudioStreamPlayer2D2 as AudioStreamPlayer2D
@@ -60,6 +61,11 @@ func controls():
 		
 		#requires move_towards to enable stopping movement
 		velocity.x  = move_toward(1, 0, 1)
+	
+	if Input.is_action_just_pressed("ui_dash") and facing_right == true:
+		velocity.x += dash_distance
+	elif Input.is_action_just_pressed("ui_dash") and facing_right == false:
+		velocity.x += -dash_distance
 	
 	#move_and_slide required for basic physics functions to work
 	move_and_slide()
