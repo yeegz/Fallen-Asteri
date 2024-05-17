@@ -144,6 +144,10 @@ func healthbar():
 func staminabar():
 	var staminabar_parameters = $stamina
 	staminabar_parameters.value = PLAYER_STAMINA
+	if PLAYER_STAMINA == 100:
+		staminabar_parameters.visible = false
+	else:
+		staminabar_parameters.visible = true
 
 #able to sync attack to animation, player attack
 func _on_pre_attack_timeout():
