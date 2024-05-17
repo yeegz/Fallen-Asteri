@@ -22,7 +22,7 @@ var facing_right = null
 
 #main function
 func _process(delta):
-	var control = controls(delta)
+	var control = controls()
 	gravity(delta)
 	animations(control)
 	if facing_right == true:
@@ -33,21 +33,19 @@ func _process(delta):
 	healthbar()
 	staminabar()
 	audio_functions()
-	print(player_attack_cooldown_left, player_attack_range_left)
 
 #Easiest way for enemy hitbox to identify player is through methods.
 func hero():
 	pass
 
 #player controls and sprite flipping according to direction
-func controls(delta):
+func controls():
 	#Added buttons A and D to the left and right axis respectively
 	var direction = Input.get_axis("ui_left", "ui_right")
 	
 	#Jump
 	if is_on_floor() and Input.is_action_just_pressed("ui_accept"):
 		velocity.y = JUMP
-		#audio_stream_player_2D.play()
 	
 	#Movement. 
 	if direction:

@@ -12,7 +12,6 @@ var attack_range_left = false
 var attack_cooldown = true
 var attack_cooldown_left = true
 var player_alive = true
-var knockback = 4000
 var alive_status = true
 @onready var animation = $AnimatedSprite2D
 @onready var audio_stream_player_2D = $AudioStreamPlayer2D as AudioStreamPlayer2D
@@ -85,23 +84,19 @@ func animations(player_chase):
 		animation.play("enemy_walk")
 
 #pathfinding, knockback
-func pathing(player_chase, delta, SPEED):
-	if player_chase == true:
+func pathing(playerchase, delta, speed):
+	if playerchase == true:
 		
 		#move towards player if in detection area
-		position += (player.position - position)/ SPEED
+		position += (player.position - position)/ speed
 		#to prevent enemy from sliding
-		move_toward(1, 0, delta)
+		move_toward(1, 0, 1)
 		
 		#Flip sprite according to direction
 		if player.position < position:
 			$AnimatedSprite2D.flip_h = true
 		elif player.position > position:
 			$AnimatedSprite2D.flip_h = false
-		
-		#jumping func
-		#if not player.is_on_floor() and is_on_floor():
-			#velocity.y = JUMP
 		
 		#Knockback
 		#if player.position < position and attack_range == true and attack_cooldown == true:
