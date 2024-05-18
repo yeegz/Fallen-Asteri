@@ -64,8 +64,10 @@ func controls():
 	
 	if Input.is_action_just_pressed("ui_dash") and facing_right == true:
 		velocity.x += dash_distance
+		PLAYER_STAMINA = PLAYER_STAMINA - 50
 	elif Input.is_action_just_pressed("ui_dash") and facing_right == false:
 		velocity.x += -dash_distance
+		PLAYER_STAMINA = PLAYER_STAMINA - 50
 	
 	#move_and_slide required for basic physics functions to work
 	move_and_slide()
