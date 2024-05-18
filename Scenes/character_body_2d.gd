@@ -62,12 +62,16 @@ func controls():
 		#requires move_towards to enable stopping movement
 		velocity.x  = move_toward(1, 0, 1)
 	
-	if Input.is_action_just_pressed("ui_dash") and facing_right == true:
+	if Input.is_action_just_pressed("ui_dash") and facing_right == true and PLAYER_STAMINA >= 50:
 		velocity.x += dash_distance
 		PLAYER_STAMINA = PLAYER_STAMINA - 50
-	elif Input.is_action_just_pressed("ui_dash") and facing_right == false:
+		if PLAYER_STAMINA < 100:
+			$player_stamina.start()
+	elif Input.is_action_just_pressed("ui_dash") and facing_right == false and PLAYER_STAMINA >= 50:
 		velocity.x += -dash_distance
 		PLAYER_STAMINA = PLAYER_STAMINA - 50
+		if PLAYER_STAMINA < 100:
+			$player_stamina.start()
 	
 	#move_and_slide required for basic physics functions to work
 	move_and_slide()
