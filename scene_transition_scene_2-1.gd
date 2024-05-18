@@ -15,4 +15,4 @@ func _on_body_exited(body):
 
 func _physics_process(delta):
 	if player != null:
-		get_tree().change_scene_to_file("res://forest.tscn")
+		get_tree().change_scene_to_file("res://scene.tscn")
