@@ -221,7 +221,7 @@ height = 72.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 texture_filter = 1
-collision_layer = 2
+collision_layer = 10
 collision_mask = 5
 script = ExtResource("1_vkjrs")
 
@@ -230,7 +230,7 @@ position = Vector2(63, 88)
 scale = Vector2(1.77319, 2.03125)
 sprite_frames = SubResource("SpriteFrames_ccfa5")
 animation = &"dash"
-frame_progress = 0.384564
+frame_progress = 0.276114
 
 [node name="player" type="Sprite2D" parent="."]
 visible = false
