@@ -1,6 +1,8 @@
 extends Area2D
 
 var player = null
+var player_posx_on_transition = 1485
+var player_posy_on_transition = 60
 
 func _on_body_entered(body):
 	if body.has_method("hero"):
