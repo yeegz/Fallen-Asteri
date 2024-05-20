@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://d0kv8oi3d4d22"]
 
 [ext_resource type="Script" path="res://pause_menu.gd" id="1_qd0wf"]
-[ext_resource type="Texture2D" uid="uid://dki3vuh5y7lw" path="res://Temporary Files/awesomeCavePixelArt.png" id="2_80c7h"]
-[ext_resource type="AudioStream" uid="uid://w7hddanlj7ju" path="res://Awkward Pause Stop  Sound Effect FX for Gaming YouTubers Content Creators for Edits.mp3" id="3_h5fee"]
+[ext_resource type="Texture2D" uid="uid://b8wyehumyjp3p" path="res://Temporary Files/awesomeCavePixelArt.png" id="2_80c7h"]
+[ext_resource type="AudioStream" uid="uid://cudk1e55fwh54" path="res://Awkward Pause Stop  Sound Effect FX for Gaming YouTubers Content Creators for Edits.mp3" id="3_h5fee"]
 
 [node name="pause_menu" type="Control"]
 process_mode = 3
@@ -33,6 +33,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 5.0
+offset_right = 3.0
+offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
 

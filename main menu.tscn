@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://main menu.gd" id="1_g3b4x"]
 [ext_resource type="Theme" uid="uid://cyr3cl0yytsk6" path="res://themes.tres" id="2_wk16h"]
-[ext_resource type="Texture2D" uid="uid://dki3vuh5y7lw" path="res://Temporary Files/awesomeCavePixelArt.png" id="3_7s6aa"]
-[ext_resource type="Texture2D" uid="uid://bjehs0yllb3tk" path="res://image/Press Start 2P (2).png" id="5_lor76"]
-[ext_resource type="Texture2D" uid="uid://uvebjj3ntnmr" path="res://image/Press Start 2P (1).png" id="6_flofn"]
-[ext_resource type="Texture2D" uid="uid://d1mlf8q565r4d" path="res://image/Press Start 2P (3).png" id="6_tdopv"]
-[ext_resource type="Texture2D" uid="uid://camrenpfsqabp" path="res://Sprite Assets/Logo.png" id="7_kuc6t"]
-[ext_resource type="AudioStream" uid="uid://bvpc0xudf6kau" path="res://waiting-time-175800.mp3" id="8_tbhuk"]
+[ext_resource type="Texture2D" uid="uid://b8wyehumyjp3p" path="res://Temporary Files/awesomeCavePixelArt.png" id="3_7s6aa"]
+[ext_resource type="Texture2D" uid="uid://ctclbybs556og" path="res://image/Press Start 2P (2).png" id="5_lor76"]
+[ext_resource type="Texture2D" uid="uid://bta7a68re2gs1" path="res://image/Press Start 2P (1).png" id="6_flofn"]
+[ext_resource type="Texture2D" uid="uid://bga00r7ghauis" path="res://image/Press Start 2P (3).png" id="6_tdopv"]
+[ext_resource type="Texture2D" uid="uid://lbhalx04ggvf" path="res://Sprite Assets/Logo.png" id="7_kuc6t"]
+[ext_resource type="AudioStream" uid="uid://bxwh1i4knn03v" path="res://waiting-time-175800.mp3" id="8_tbhuk"]
 
 [node name="main menu" type="Control"]
 layout_mode = 3

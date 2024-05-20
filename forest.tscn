@@ -1,17 +1,18 @@
-[gd_scene load_steps=30 format=3 uid="uid://dcvfkhmy4rrj2"]
+[gd_scene load_steps=31 format=3 uid="uid://c37apr1hy8c7e"]
 
-[ext_resource type="Texture2D" uid="uid://cxjlbrj602ne0" path="res://Temporary Files/Sky textures/Clouds/Clouds 7/1.png" id="1_jnyrx"]
-[ext_resource type="Texture2D" uid="uid://b8glnyhqcpin4" path="res://Temporary Files/forest/bush.png" id="2_5alm7"]
-[ext_resource type="Texture2D" uid="uid://cw5ev5vvk5xkv" path="res://Temporary Files/forest/grass.png" id="3_v53lr"]
-[ext_resource type="Texture2D" uid="uid://dsku3jnm5xsny" path="res://Temporary Files/forest/tilesetgrass.png" id="4_3j55e"]
-[ext_resource type="Texture2D" uid="uid://dtho671bljhxn" path="res://Temporary Files/SideView_Grass.png" id="5_ae0qm"]
-[ext_resource type="Texture2D" uid="uid://b3w47sb4dctv8" path="res://Temporary Files/forest/tree.png" id="5_ojf8r"]
+[ext_resource type="Texture2D" uid="uid://drc0f343kimpo" path="res://Temporary Files/Sky textures/Clouds/Clouds 7/1.png" id="1_jnyrx"]
+[ext_resource type="Texture2D" uid="uid://bagiaajh5vwbi" path="res://Temporary Files/forest/bush.png" id="2_5alm7"]
+[ext_resource type="Texture2D" uid="uid://bbwqqjo5ag0yj" path="res://Temporary Files/forest/grass.png" id="3_v53lr"]
+[ext_resource type="Texture2D" uid="uid://ba5piec7dot3h" path="res://Temporary Files/forest/tilesetgrass.png" id="4_3j55e"]
+[ext_resource type="Texture2D" uid="uid://dxo3dwxqh1a66" path="res://Temporary Files/SideView_Grass.png" id="5_ae0qm"]
+[ext_resource type="Texture2D" uid="uid://c5a2fe881f06v" path="res://Temporary Files/forest/tree.png" id="5_ojf8r"]
 [ext_resource type="PackedScene" uid="uid://c8br3cr26rf1a" path="res://Scenes/character_body_2d.tscn" id="6_f6nur"]
-[ext_resource type="Texture2D" uid="uid://dd8fvkd2ldb68" path="res://Temporary Files/tree.png" id="6_yvl64"]
-[ext_resource type="Texture2D" uid="uid://dk3e4tkfihbmc" path="res://Temporary Files/bush.png" id="8_14hvm"]
-[ext_resource type="Texture2D" uid="uid://sdcgml6gwtp5" path="res://Temporary Files/grass-2.png" id="9_8dq40"]
+[ext_resource type="Texture2D" uid="uid://byqu28jng4fao" path="res://Temporary Files/tree.png" id="6_yvl64"]
+[ext_resource type="Texture2D" uid="uid://cko471vwu1pv" path="res://Temporary Files/bush.png" id="8_14hvm"]
+[ext_resource type="Texture2D" uid="uid://t34al010trpa" path="res://Temporary Files/grass-2.png" id="9_8dq40"]
 [ext_resource type="PackedScene" uid="uid://bbttsnhtdb1k5" path="res://Scenes/enemy_12d.tscn" id="11_1emib"]
 [ext_resource type="Script" path="res://scene_transition_scene_2-1.gd" id="12_lhyj6"]
+[ext_resource type="PackedScene" uid="uid://d0kv8oi3d4d22" path="res://pause_menu.tscn" id="13_tp65y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ut53t"]
 texture = ExtResource("2_5alm7")
@@ -974,10 +975,10 @@ height = 280.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
-offset_left = 173.0
-offset_top = 7.0
-offset_right = 2091.0
-offset_bottom = 1087.0
+offset_left = 178.0
+offset_top = 13.0
+offset_right = 2098.0
+offset_bottom = 1093.0
 texture = ExtResource("1_jnyrx")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1009,6 +1010,11 @@ script = ExtResource("12_lhyj6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene_transition_2_1"]
 position = Vector2(351, 760)
 shape = SubResource("CapsuleShape2D_7ve3s")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="pause_menu" parent="CanvasLayer" instance=ExtResource("13_tp65y")]
+visible = false
 
 [connection signal="body_entered" from="scene_transition_2_1" to="scene_transition_2_1" method="_on_body_entered"]
 [connection signal="body_exited" from="scene_transition_2_1" to="scene_transition_2_1" method="_on_body_exited"]
