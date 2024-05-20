@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://c37apr1hy8c7e"]
+[gd_scene load_steps=32 format=3 uid="uid://c37apr1hy8c7e"]
 
 [ext_resource type="Texture2D" uid="uid://dm2c6cwhh1io6" path="res://Temporary Files/539c483ff16585f1014ce8bff226bc56.png" id="1_sfl31"]
 [ext_resource type="Texture2D" uid="uid://cn82sq3d7mg8k" path="res://Temporary Files/forest/bush.png" id="2_5alm7"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bbttsnhtdb1k5" path="res://Scenes/enemy_12d.tscn" id="11_1emib"]
 [ext_resource type="Script" path="res://scene_transition_scene_2-1.gd" id="12_lhyj6"]
 [ext_resource type="PackedScene" uid="uid://d0kv8oi3d4d22" path="res://pause_menu.tscn" id="13_tp65y"]
+[ext_resource type="Script" path="res://cavescene2.gd" id="14_r2iwu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ut53t"]
 texture = ExtResource("2_5alm7")
@@ -1016,16 +1017,14 @@ shape = SubResource("CapsuleShape2D_7ve3s")
 [node name="pause_menu" parent="CanvasLayer" instance=ExtResource("13_tp65y")]
 visible = false
 
-[node name="scene_transition_2_2" type="Area2D" parent="."]
-collision_layer = 8
-collision_mask = 2
-script = ExtResource("12_lhyj6")
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("14_r2iwu")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="scene_transition_2_2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(1728, 1050)
 shape = SubResource("CapsuleShape2D_7ve3s")
 
 [connection signal="body_entered" from="scene_transition_2_1" to="scene_transition_2_1" method="_on_body_entered"]
 [connection signal="body_exited" from="scene_transition_2_1" to="scene_transition_2_1" method="_on_body_exited"]
-[connection signal="body_entered" from="scene_transition_2_2" to="scene_transition_2_2" method="_on_body_entered"]
-[connection signal="body_exited" from="scene_transition_2_2" to="scene_transition_2_2" method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
