@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 #variable declaration
-var SPEED = 320
 const JUMP = -550
+const SPEED = 320
 var enemy = null
 var GRAVITY_VALUE = 1100
 var PLAYER_HP = 200
@@ -11,18 +11,21 @@ var player_attack_range = false
 var player_attack_range_left = false
 var player_attack_cooldown = false
 var player_attack_cooldown_left = false
-var stamina_requirement = 30
+var stamina_requirement_attack = 30
 var pre_attack_cooldown = false
 var pre_attack_cooldown_left = false
 var attack_animation = false
 var facing_right = null
+var dash_distance = 500
+var is_dashing = false
+var dash_cooldown = false
 @onready var animation = $AnimatedSprite2D
 @onready var  audio_stream_player_2D = $AudioStreamPlayer2D as AudioStreamPlayer2D
 @onready var  combat_audio_stream_player_2D = $AudioStreamPlayer2D2 as AudioStreamPlayer2D
 
 #main function
 func _process(delta):
-	var control = controls(delta)
+	var control = controls()
 	gravity(delta)
 	animations(control)
 	if facing_right == true:
@@ -33,20 +36,20 @@ func _process(delta):
 	healthbar()
 	staminabar()
 	audio_functions()
+	dash(facing_right)
 
 #Easiest way for enemy hitbox to identify player is through methods.
 func hero():
 	pass
 
 #player controls and sprite flipping according to direction
-func controls(delta):
+func controls():
 	#Added buttons A and D to the left and right axis respectively
 	var direction = Input.get_axis("ui_left", "ui_right")
 	
 	#Jump
 	if is_on_floor() and Input.is_action_just_pressed("ui_accept"):
 		velocity.y = JUMP
-		#audio_stream_player_2D.play()
 	
 	#Movement. 
 	if direction:
@@ -60,7 +63,7 @@ func controls(delta):
 	elif direction == 0 or velocity.x == 0:
 		
 		#requires move_towards to enable stopping movement
-		velocity.x  = move_toward(1, 0, delta)
+		velocity.x  = move_toward(1, 0, 1)
 	
 	#move_and_slide required for basic physics functions to work
 	move_and_slide()
@@ -77,11 +80,13 @@ func animations(control):
 	#Animation
 	if control and velocity.y == 0:
 		animation.play("run")
-	elif Input.is_action_just_pressed("ui_attack") and PLAYER_STAMINA >= stamina_requirement:
+	elif Input.is_action_just_pressed("ui_attack") and PLAYER_STAMINA >= stamina_requirement_attack:
 		attack_animation = true
+		combat_audio_stream_player_2D.play()
 		$attack_anim_timer.start()
 		if attack_animation == true:
 			animation.play("attack")
+			combat_audio_stream_player_2D.play()
 	elif velocity.y != 0:
 		animation.play("jump")
 	elif control == 0 or velocity.x == 0:
@@ -102,11 +107,11 @@ func _on_player_attack_range_body_exited(body):
 
 #player attack cooldown, player stamina calculation and cooldown
 func player_attack_right():
-	if Input.is_action_just_pressed("ui_attack") and PLAYER_STAMINA >= stamina_requirement:
+	if Input.is_action_just_pressed("ui_attack") and PLAYER_STAMINA >= stamina_requirement_attack:
 		player_attack_cooldown = true
 		$player_cooldown.start()
-		if player_attack_cooldown == true and PLAYER_STAMINA >= stamina_requirement:
-			PLAYER_STAMINA -= stamina_requirement
+		if player_attack_cooldown == true and PLAYER_STAMINA >= stamina_requirement_attack:
+			PLAYER_STAMINA -= stamina_requirement_attack
 		if PLAYER_STAMINA < 100:
 			$player_stamina.start()
 		if player_attack_cooldown == true and player_attack_range == true:
@@ -138,10 +143,14 @@ func healthbar():
 func staminabar():
 	var staminabar_parameters = $stamina
 	staminabar_parameters.value = PLAYER_STAMINA
+	if PLAYER_STAMINA == 100:
+		staminabar_parameters.visible = false
+	else:
+		staminabar_parameters.visible = true
 
 #able to sync attack to animation, player attack
 func _on_pre_attack_timeout():
-	if pre_attack_cooldown == true and player_attack_range == true or player_attack_range_left == true:
+	if pre_attack_cooldown == true and player_attack_range == true:
 		enemy.ENEMY_HP -= 20
 		
 	
@@ -153,9 +162,11 @@ func _on_attack_anim_timer_timeout():
 
 #handle audio
 func audio_functions():
-	if Input.is_action_just_pressed("ui_attack"):
-		combat_audio_stream_player_2D.play()
-	elif Input.is_action_just_pressed("ui_accept"):
+	#if Input.is_action_just_pressed("ui_attack") and PLAYER_STAMINA >= 20:
+
+	#if Input.is_action_just_pressed("ui_attack"):
+		#combat_audio_stream_player_2D.play()
+	if Input.is_action_just_pressed("ui_accept"):
 		audio_stream_player_2D.play()
 
 #handle attacks to the left
@@ -172,11 +183,11 @@ func _on_player_attack_range_left_body_exited(body):
 
 #handle attacks to the left
 func player_attack_left():
-	if Input.is_action_just_pressed("ui_attack") and PLAYER_STAMINA >= stamina_requirement:
+	if Input.is_action_just_pressed("ui_attack") and PLAYER_STAMINA >= stamina_requirement_attack:
 		player_attack_cooldown_left = true
 		$player_cooldown_left.start()
-		if player_attack_cooldown_left == true and PLAYER_STAMINA >= stamina_requirement:
-			PLAYER_STAMINA -= stamina_requirement
+		if player_attack_cooldown_left == true and PLAYER_STAMINA >= stamina_requirement_attack:
+			PLAYER_STAMINA -= stamina_requirement_attack
 		if PLAYER_STAMINA < 100:
 			$player_stamina.start()
 		if player_attack_cooldown_left == true and player_attack_range_left == true:
@@ -194,3 +205,23 @@ func _on_pre_attack_left_timeout():
 		
 	
 	pre_attack_cooldown_left = false
+
+func dash(direction):
+	if Input.is_action_just_pressed("ui_dash"):
+		dash_cooldown = true
+		$dash_timer.start()
+	if dash_cooldown == true and direction == true:
+		velocity.x += dash_distance
+		move_and_slide()
+		animation.play("dash")
+	elif dash_cooldown == true and direction == false:
+		velocity.x = -dash_distance
+		move_and_slide()
+		animation.play("dash")
+	elif dash_cooldown ==  false:
+		velocity.x = SPEED
+	
+	
+
+func _on_dash_timer_timeout():
+	dash_cooldown = false
