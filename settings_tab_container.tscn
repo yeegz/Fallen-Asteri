@@ -60,7 +60,6 @@ theme_override_constants/separation = 64
 
 [node name="AudioSliders" parent="TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_5mnx8")]
 layout_mode = 2
-bus_name = "Master"
 
 [node name="AudioSliders2" parent="TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_5mnx8")]
 layout_mode = 2
