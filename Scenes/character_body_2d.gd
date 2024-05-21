@@ -5,8 +5,6 @@ const JUMP = -550
 const SPEED = 320
 var enemy = null
 var GRAVITY_VALUE = 1100
-var PLAYER_HP = 200
-var PLAYER_STAMINA = 100
 var player_attack_range = false
 var player_attack_range_left = false
 var player_attack_cooldown = false
@@ -80,7 +78,7 @@ func animations(control):
 	#Animation
 	if control and velocity.y == 0:
 		animation.play("run")
-	elif Input.is_action_just_pressed("ui_attack") and PLAYER_STAMINA >= stamina_requirement_attack:
+	elif Input.is_action_just_pressed("ui_attack") and global.PLAYER_STAMINA >= stamina_requirement_attack:
 		attack_animation = true
 		combat_audio_stream_player_2D.play()
 		$attack_anim_timer.start()
@@ -107,12 +105,12 @@ func _on_player_attack_range_body_exited(body):
 
 #player attack cooldown, player stamina calculation and cooldown
 func player_attack_right():
-	if Input.is_action_just_pressed("ui_attack") and PLAYER_STAMINA >= stamina_requirement_attack:
+	if Input.is_action_just_pressed("ui_attack") and global.PLAYER_STAMINA >= stamina_requirement_attack:
 		player_attack_cooldown = true
 		$player_cooldown.start()
-		if player_attack_cooldown == true and PLAYER_STAMINA >= stamina_requirement_attack:
-			PLAYER_STAMINA -= stamina_requirement_attack
-		if PLAYER_STAMINA < 100:
+		if player_attack_cooldown == true and global.PLAYER_STAMINA >= stamina_requirement_attack:
+			global.PLAYER_STAMINA -= stamina_requirement_attack
+		if global.PLAYER_STAMINA < 100:
 			$player_stamina.start()
 		if player_attack_cooldown == true and player_attack_range == true:
 			pre_attack_cooldown = true
@@ -124,12 +122,12 @@ func _on_player_cooldown_timeout():
 
 #player regenerating stamina upon stamina depletion
 func _on_player_stamina_timeout():
-	if PLAYER_STAMINA < 100:
-		PLAYER_STAMINA += 10
+	if global.PLAYER_STAMINA < 100:
+		global.PLAYER_STAMINA += 10
 
 #handles character death temporarily. An end screen is more fitting
 func death():
-	if PLAYER_HP <= 0:
+	if global.PLAYER_HP <= 0:
 		queue_free()
 		get_tree().change_scene_to_file("res://deathscreen.tscn")
 
@@ -137,13 +135,13 @@ func death():
 #function to link healthbar GUI to PLAYER_HP
 func healthbar():
 	var healthbar_parameters = $health
-	healthbar_parameters.value = PLAYER_HP
+	healthbar_parameters.value = global.PLAYER_HP
 
 #function to link staminabar GUI to PLAYER_STAMINA
 func staminabar():
 	var staminabar_parameters = $stamina
-	staminabar_parameters.value = PLAYER_STAMINA
-	if PLAYER_STAMINA == 100:
+	staminabar_parameters.value = global.PLAYER_STAMINA
+	if global.PLAYER_STAMINA == 100:
 		staminabar_parameters.visible = false
 	else:
 		staminabar_parameters.visible = true
@@ -183,12 +181,12 @@ func _on_player_attack_range_left_body_exited(body):
 
 #handle attacks to the left
 func player_attack_left():
-	if Input.is_action_just_pressed("ui_attack") and PLAYER_STAMINA >= stamina_requirement_attack:
+	if Input.is_action_just_pressed("ui_attack") and global.PLAYER_STAMINA >= stamina_requirement_attack:
 		player_attack_cooldown_left = true
 		$player_cooldown_left.start()
-		if player_attack_cooldown_left == true and PLAYER_STAMINA >= stamina_requirement_attack:
-			PLAYER_STAMINA -= stamina_requirement_attack
-		if PLAYER_STAMINA < 100:
+		if player_attack_cooldown_left == true and global.PLAYER_STAMINA >= stamina_requirement_attack:
+			global.PLAYER_STAMINA -= stamina_requirement_attack
+		if global.PLAYER_STAMINA < 100:
 			$player_stamina.start()
 		if player_attack_cooldown_left == true and player_attack_range_left == true:
 			pre_attack_cooldown_left = true

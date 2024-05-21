@@ -1,12 +1,12 @@
 [gd_scene load_steps=58 format=3 uid="uid://47cv482u1uad"]
 
 [ext_resource type="Script" path="res://Scenes/enemy_12d.gd" id="1_685w0"]
-[ext_resource type="Texture2D" uid="uid://dth6r6p41n5yh" path="res://Temporary Files/idle/crab_idle_1.png" id="1_xxmt4"]
-[ext_resource type="Texture2D" uid="uid://bfaq26c7f6g10" path="res://Temporary Files/idle/crab_idle.png" id="3_lehdf"]
-[ext_resource type="Texture2D" uid="uid://cdam6cmpo18tv" path="res://Temporary Files/attack/crab_attack.png" id="3_onv81"]
-[ext_resource type="Texture2D" uid="uid://bdrn15gp760df" path="res://Temporary Files/Skeleton enemy.png" id="5_btf1u"]
-[ext_resource type="Texture2D" uid="uid://ccelllrtrqtip" path="res://Temporary Files/greenbar (3).png" id="6_t4rbb"]
-[ext_resource type="AudioStream" uid="uid://5cbmarf1svbo" path="res://mixkit-fantasy-sword-slide-2798.wav" id="7_06u5b"]
+[ext_resource type="Texture2D" uid="uid://b48h5xrsueebe" path="res://Temporary Files/idle/crab_idle_1.png" id="1_xxmt4"]
+[ext_resource type="Texture2D" uid="uid://briarml85biy8" path="res://Temporary Files/idle/crab_idle.png" id="3_lehdf"]
+[ext_resource type="Texture2D" uid="uid://b4a76xdbl35o6" path="res://Temporary Files/attack/crab_attack.png" id="3_onv81"]
+[ext_resource type="Texture2D" uid="uid://bc81fob1xulo7" path="res://Temporary Files/Skeleton enemy.png" id="5_btf1u"]
+[ext_resource type="Texture2D" uid="uid://bqxvqgw8lm8dt" path="res://Temporary Files/greenbar (3).png" id="6_t4rbb"]
+[ext_resource type="AudioStream" uid="uid://dg8ndnrn57w3m" path="res://mixkit-fantasy-sword-slide-2798.wav" id="7_06u5b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1g2fj"]
 radius = 33.0151

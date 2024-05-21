@@ -257,6 +257,7 @@ collision_mask = 5
 polygon = PackedVector2Array(32, 71, 61, 60, 75, 71, 80, 86, 81, 97, 81, 106, 80, 111, 101, 115, 107, 116, 111, 107, 115, 100, 116, 82, 105, 66, 90, 51, 74, 45, 51, 48, 37, 57)
 
 [node name="player_stamina" type="Timer" parent="."]
+autostart = true
 
 [node name="player_cooldown" type="Timer" parent="."]
 
