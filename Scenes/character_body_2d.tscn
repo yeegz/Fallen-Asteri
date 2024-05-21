@@ -318,6 +318,7 @@ wait_time = 0.5
 
 [node name="dash_timer" type="Timer" parent="."]
 wait_time = 0.1
+one_shot = true
 
 [connection signal="body_entered" from="player_attack_range" to="." method="_on_player_attack_range_body_entered"]
 [connection signal="body_exited" from="player_attack_range" to="." method="_on_player_attack_range_body_exited"]
