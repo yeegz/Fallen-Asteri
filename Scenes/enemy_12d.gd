@@ -111,7 +111,7 @@ func _on_cooldown_timeout():
 #handles enemy death. Essentially deletes the sprite off the scene if hp = 0 or less
 func death():
 	if ENEMY_HP <= 0:
-		global.PLAYER_HP
+		global.PLAYER_HP += 50
 		queue_free()
 
 #links enemy healthbar GUI to ENEMY_HP
