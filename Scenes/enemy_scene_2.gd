@@ -9,6 +9,7 @@ var player = null
 var player_chase = false
 var attack_range = false
 var attack_cooldown = true
+@onready var animation = $AnimatedSprite2D
 
 func enemy():
 	pass
@@ -51,3 +52,20 @@ func pathing(playerchase, delta, speed):
 			#player.position.x += -knockback * delta
 		#elif player.position > position and attack_range == true and attack_cooldown == true:
 			#player.position.x += knockback * delta
+
+
+
+func _on_cooldown_right_timeout():
+	pass # Replace with function body.
+
+
+func _on_cooldown_left_timeout():
+	pass # Replace with function body.
+
+
+func _on_pre_attack_enemy_cooldown_right_timeout():
+	pass # Replace with function body.
+
+
+func _on_pre_attack_enemy_cooldown_left_timeout():
+	pass # Replace with function body.
