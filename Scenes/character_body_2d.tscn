@@ -317,7 +317,7 @@ polygon = PackedVector2Array(68, 69, 62, 63, 54, 61, 38, 70, 33, 81, 31, 92, 31,
 wait_time = 0.5
 
 [node name="dash_timer" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.2
 one_shot = true
 
 [connection signal="body_entered" from="player_attack_range" to="." method="_on_player_attack_range_body_entered"]
