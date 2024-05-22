@@ -407,7 +407,7 @@ texture_filter = 1
 position = Vector2(51, 57)
 scale = Vector2(1.96485, 2.05469)
 sprite_frames = SubResource("SpriteFrames_ex4hy")
-animation = &"enemy_dead"
+animation = &"enemy_idle"
 
 [node name="enemy_hitbox" type="Area2D" parent="."]
 collision_layer = 4
