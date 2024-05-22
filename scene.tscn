@@ -2543,7 +2543,7 @@ texture = ExtResource("23_inlfi")
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_uge1f")]
 position = Vector2(71, 433)
 
-[node name="enemy12D" parent="." instance=ExtResource("5_qhj3c")]
+[node name="enemy_scene_1" parent="." instance=ExtResource("5_qhj3c")]
 texture_filter = 1
 position = Vector2(850, 458)
 

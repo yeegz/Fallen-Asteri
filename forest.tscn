@@ -10,9 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://dd8fvkd2ldb68" path="res://Temporary Files/tree.png" id="6_yvl64"]
 [ext_resource type="Texture2D" uid="uid://dk3e4tkfihbmc" path="res://Temporary Files/bush.png" id="8_14hvm"]
 [ext_resource type="Texture2D" uid="uid://sdcgml6gwtp5" path="res://Temporary Files/grass-2.png" id="9_8dq40"]
-[ext_resource type="PackedScene" uid="uid://bbttsnhtdb1k5" path="res://Scenes/enemy_12d.tscn" id="11_1emib"]
 [ext_resource type="Script" path="res://scene_transition_scene_2-1.gd" id="12_lhyj6"]
 [ext_resource type="PackedScene" uid="uid://d0kv8oi3d4d22" path="res://pause_menu.tscn" id="13_tp65y"]
+[ext_resource type="PackedScene" uid="uid://5rxfhnekfkgs" path="res://Scenes/enemy_scene_2.tscn" id="14_0og2y"]
 [ext_resource type="Script" path="res://sideboss_area.gd" id="14_ommnm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ut53t"]
@@ -1002,10 +1002,6 @@ tile_set = SubResource("TileSet_iffr1")
 format = 2
 layer_0/tile_data = PackedInt32Array(851981, 131076, 5, 851980, 65540, 5, 851982, 196612, 5, 786446, 196612, 4, 786445, 131076, 4, 786447, 262148, 4, 786448, 327684, 4, 720912, 327684, 3, 720911, 262148, 3, 720910, 196612, 3, 720909, 131076, 3, 720908, 65540, 3, 720907, 4, 3, 655371, 4, 2, 655372, 65540, 2, 655373, 131076, 2, 655374, 196612, 2, 655375, 262148, 2, 655376, 327684, 2, 589840, 327684, 1, 589839, 262148, 1, 589838, 196612, 1, 589837, 131076, 1, 589836, 65540, 1, 524301, 131076, 0, 524300, 65540, 0, 524302, 196612, 0, 524303, 262148, 0, 851992, 589828, 5, 851991, 524292, 5, 786456, 589828, 4, 786455, 524292, 4, 786454, 458756, 4, 720918, 458756, 3, 720917, 393220, 3, 720919, 524292, 3, 720920, 589828, 3, 786457, 655364, 4, 720921, 655364, 3, 655385, 655364, 2, 655384, 589828, 2, 589848, 589828, 1, 655383, 524292, 2, 655382, 458756, 2, 589846, 458756, 1, 589847, 524292, 1, 851997, 131076, 5, 851998, 196612, 5, 786462, 196612, 4, 786461, 131076, 4, 786463, 262148, 4, 786464, 327684, 4, 720927, 262148, 3, 720928, 327684, 3, 655392, 327684, 2, 655391, 262148, 2, 655390, 196612, 2, 720926, 196612, 3, 720925, 131076, 3, 720924, 65540, 3, 720923, 4, 3, 655387, 4, 2, 655388, 65540, 2, 589852, 65540, 1, 655389, 131076, 2, 589856, 327684, 1, 589855, 262148, 1, 589854, 196612, 1, 589853, 131076, 1, 524316, 65540, 0, 524317, 131076, 0, 524318, 196612, 0, 524319, 262148, 0)
 
-[node name="enemy12D" parent="." instance=ExtResource("11_1emib")]
-texture_filter = 1
-position = Vector2(1300, 803)
-
 [node name="scene_transition_2_1" type="Area2D" parent="."]
 collision_layer = 8
 collision_mask = 2
@@ -1028,6 +1024,9 @@ script = ExtResource("14_ommnm")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sideboss_area"]
 position = Vector2(1731, 1036.5)
 shape = SubResource("RectangleShape2D_xtx1w")
+
+[node name="enemy_scene_2" parent="." instance=ExtResource("14_0og2y")]
+position = Vector2(1595, 849)
 
 [connection signal="body_entered" from="scene_transition_2_1" to="scene_transition_2_1" method="_on_body_entered"]
 [connection signal="body_exited" from="scene_transition_2_1" to="scene_transition_2_1" method="_on_body_exited"]
