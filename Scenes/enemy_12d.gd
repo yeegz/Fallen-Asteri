@@ -55,14 +55,14 @@ func _on_enemy_hitbox_body_exited(body):
 #enemy attack, attack cooldown
 func enemy_attack():
 	if attack_cooldown == false and attack_range == true:
-		player.PLAYER_HP -= 20
+		global.PLAYER_HP -= 20
 		audio_stream_player_2D.play()
 		attack_cooldown = true
 		$cooldown.start()
 
 func enemy_attack_left():
 	if attack_cooldown == false and attack_range_left == true:
-		player.PLAYER_HP -= 20
+		global.PLAYER_HP -= 20
 		audio_stream_player_2D.play()
 		attack_cooldown = true
 		$cooldown_left.start()
@@ -111,7 +111,7 @@ func _on_cooldown_timeout():
 #handles enemy death. Essentially deletes the sprite off the scene if hp = 0 or less
 func death():
 	if ENEMY_HP <= 0:
-		player.PLAYER_HP = player.PLAYER_HP + 50
+		global.PLAYER_HP
 		queue_free()
 
 #links enemy healthbar GUI to ENEMY_HP
