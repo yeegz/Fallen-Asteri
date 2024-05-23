@@ -1026,7 +1026,7 @@ position = Vector2(1731, 1036.5)
 shape = SubResource("RectangleShape2D_xtx1w")
 
 [node name="enemy_scene_2" parent="." instance=ExtResource("14_0og2y")]
-position = Vector2(1199, 743)
+position = Vector2(1213, 854)
 
 [connection signal="body_entered" from="scene_transition_2_1" to="scene_transition_2_1" method="_on_body_entered"]
 [connection signal="body_exited" from="scene_transition_2_1" to="scene_transition_2_1" method="_on_body_exited"]
