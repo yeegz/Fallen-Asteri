@@ -4,7 +4,7 @@ extends CharacterBody2D
 const GRAVITY_VALUE = 1100
 var SPEED = 70
 var JUMP = -500
-var ENEMY_HP = 60
+@onready var ENEMY_HP = 60
 var player = null
 var player_chase = false
 var attack_range = false
@@ -12,7 +12,6 @@ var attack_cooldown = true
 var attack_range_left = false
 var attack_cooldown_left = true
 var player_alive = true
-var alive_status = true
 @onready var animation = $AnimatedSprite2D
 
 func _physics_process(delta):
@@ -20,6 +19,7 @@ func _physics_process(delta):
 	pathing(player_chase, delta, SPEED)
 	animations(player_chase)
 	death()
+	death_on_sceen_transition()
 	enemy_healthbar()
 
 func enemy():
@@ -135,7 +135,13 @@ func death():
 	if ENEMY_HP <= 0:
 		global.PLAYER_HP += 50
 		queue_free()
+		global.alive_status_s2 = false
+
 
 func enemy_healthbar():
 	var enemy_heathbar_parameters = $enemy_health
 	enemy_heathbar_parameters.value = ENEMY_HP
+
+func death_on_sceen_transition():
+	if global.alive_status_s2 == false:
+		ENEMY_HP = 0

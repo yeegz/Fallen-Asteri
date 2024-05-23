@@ -3,6 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://bc81fob1xulo7" path="res://Temporary Files/Skeleton enemy.png" id="1_c7uam"]
 [ext_resource type="Script" path="res://Scenes/enemy_scene_2.gd" id="1_cdm1a"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_v1mo6"]
+radius = 36.0
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_cc544"]
 atlas = ExtResource("1_c7uam")
 region = Rect2(0, 0, 64, 64)
@@ -278,9 +281,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_v1mo6"]
-radius = 36.0
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bk57h"]
 radius = 71.0
 height = 450.0
@@ -290,6 +290,10 @@ collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_cdm1a")
 
+[node name="enemy_physics" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 6)
+shape = SubResource("CircleShape2D_v1mo6")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-6, 7)
@@ -298,10 +302,6 @@ sprite_frames = SubResource("SpriteFrames_duxi7")
 animation = &"attack"
 frame = 4
 frame_progress = 0.0132852
-
-[node name="enemy_physics" type="CollisionShape2D" parent="."]
-position = Vector2(-8, 6)
-shape = SubResource("CircleShape2D_v1mo6")
 
 [node name="detection_area" type="Area2D" parent="."]
 collision_layer = 4

@@ -7,4 +7,9 @@ extends Node
 @onready var PLAYER_STAMINA = 100
 
 #enemy variables
-@onready var enemy_hp_s1 = 60
+
+#scene 1
+@onready var alive_status_s1 = true
+
+#scene 2
+@onready var alive_status_s2 = true

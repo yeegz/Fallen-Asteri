@@ -229,9 +229,9 @@ script = ExtResource("1_vkjrs")
 position = Vector2(63, 88)
 scale = Vector2(1.77319, 2.03125)
 sprite_frames = SubResource("SpriteFrames_ccfa5")
-animation = &"dash"
-frame = 6
-frame_progress = 0.975543
+animation = &"attack"
+frame_progress = 0.455244
+flip_h = true
 
 [node name="player" type="Sprite2D" parent="."]
 visible = false
@@ -254,7 +254,7 @@ collision_layer = 2
 collision_mask = 5
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="player_attack_range"]
-polygon = PackedVector2Array(32, 71, 61, 60, 75, 71, 80, 86, 81, 97, 81, 106, 80, 111, 101, 115, 107, 116, 111, 107, 115, 100, 116, 82, 105, 66, 90, 51, 74, 45, 51, 48, 37, 57)
+polygon = PackedVector2Array(48, 62, 61, 60, 75, 71, 80, 86, 81, 97, 81, 106, 80, 111, 101, 115, 107, 116, 111, 107, 115, 100, 116, 82, 105, 66, 90, 51, 74, 45, 51, 48, 47, 55)
 
 [node name="player_stamina" type="Timer" parent="."]
 autostart = true
@@ -309,7 +309,7 @@ collision_mask = 5
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="player_attack_range_left"]
 position = Vector2(2, 3)
-polygon = PackedVector2Array(68, 69, 62, 63, 54, 61, 38, 70, 33, 81, 31, 92, 31, 105, 31, 114, 2, 116, 4, 94, 2, 86, 7, 74, 19, 59, 25, 53, 32, 49, 51, 48, 66, 50, 73, 66)
+polygon = PackedVector2Array(59, 60, 62, 63, 54, 61, 38, 70, 33, 81, 31, 92, 31, 105, 31, 114, 2, 116, 4, 94, 5, 87, 10, 76, 16, 68, 21, 60, 25, 53, 31, 46, 40, 46, 51, 48, 61, 49, 60, 54)
 
 [node name="player_cooldown_left" type="Timer" parent="."]
 
