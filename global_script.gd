@@ -8,3 +8,8 @@ extends Node
 
 #enemy variables
 
+#scene 1
+@onready var alive_status_s1 = true
+
+#scene 2
+@onready var alive_status_s2 = true

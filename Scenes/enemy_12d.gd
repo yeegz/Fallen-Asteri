@@ -12,7 +12,6 @@ var attack_range_left = false
 var attack_cooldown = true
 var attack_cooldown_left = true
 var player_alive = true
-var alive_status = true
 @onready var animation = $AnimatedSprite2D
 @onready var audio_stream_player_2D = $AudioStreamPlayer2D as AudioStreamPlayer2D
 
@@ -23,6 +22,7 @@ func _physics_process(delta):
 	pathing(player_chase, delta, SPEED)
 	death()
 	enemy_healthbar()
+	death_on_scene_transition()
 
 #throwaway function, might or might not find use later
 func enemy():
@@ -111,6 +111,7 @@ func _on_cooldown_timeout():
 #handles enemy death. Essentially deletes the sprite off the scene if hp = 0 or less
 func death():
 	if ENEMY_HP <= 0:
+		global.alive_status_s1 = false
 		global.PLAYER_HP += 50
 		queue_free()
 
@@ -144,3 +145,7 @@ func _on_pre_attack_enemy_cooldown_left_timeout():
 #to handle attacks to the left and be seperate from the right
 func _on_cooldown_left_timeout():
 	attack_cooldown_left = false
+
+func death_on_scene_transition():
+	if global.alive_status_s1 == false:
+		ENEMY_HP = 0

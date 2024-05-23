@@ -226,12 +226,12 @@ collision_mask = 13
 script = ExtResource("1_vkjrs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(63, 88)
+position = Vector2(9, -8)
 scale = Vector2(1.77319, 2.03125)
 sprite_frames = SubResource("SpriteFrames_ccfa5")
-animation = &"dash"
-frame = 6
-frame_progress = 0.975543
+animation = &"idle"
+frame = 4
+frame_progress = 0.563676
 
 [node name="player" type="Sprite2D" parent="."]
 visible = false
@@ -242,11 +242,9 @@ hframes = 9
 vframes = 8
 
 [node name="playerphysics" type="CollisionShape2D" parent="."]
-position = Vector2(53, 95)
 shape = SubResource("CapsuleShape2D_wvvr1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(147, 93)
 zoom = Vector2(2.5, 2.5)
 
 [node name="player_attack_range" type="Area2D" parent="."]
@@ -254,7 +252,8 @@ collision_layer = 2
 collision_mask = 5
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="player_attack_range"]
-polygon = PackedVector2Array(32, 71, 61, 60, 75, 71, 80, 86, 81, 97, 81, 106, 80, 111, 101, 115, 107, 116, 111, 107, 115, 100, 116, 82, 105, 66, 90, 51, 74, 45, 51, 48, 37, 57)
+position = Vector2(-61, -87)
+polygon = PackedVector2Array(48, 62, 61, 60, 75, 71, 80, 86, 81, 97, 81, 106, 80, 111, 101, 115, 107, 116, 111, 107, 115, 100, 116, 82, 105, 66, 90, 51, 74, 45, 51, 48, 47, 55)
 
 [node name="player_stamina" type="Timer" parent="."]
 autostart = true
@@ -262,25 +261,25 @@ autostart = true
 [node name="player_cooldown" type="Timer" parent="."]
 
 [node name="Greenbar(3)" type="Sprite2D" parent="."]
-position = Vector2(-168, -95)
+position = Vector2(-303, -185)
 texture = ExtResource("40_p7skp")
 
 [node name="health" type="ProgressBar" parent="."]
 modulate = Color(0, 0.631373, 0, 1)
-offset_left = -223.0
-offset_top = -115.0
-offset_right = -80.0
-offset_bottom = -105.0
+offset_left = -358.0
+offset_top = -206.0
+offset_right = -215.0
+offset_bottom = -196.0
 scale = Vector2(0.7, 0.7)
 max_value = 200.0
 show_percentage = false
 
 [node name="stamina" type="ProgressBar" parent="."]
 modulate = Color(0, 0, 1, 1)
-offset_left = 28.0
-offset_top = 55.0
-offset_right = 134.0
-offset_bottom = 71.0
+offset_left = -31.0
+offset_top = -42.0
+offset_right = 75.0
+offset_bottom = -26.0
 scale = Vector2(0.5, 0.5)
 show_percentage = false
 
@@ -297,7 +296,6 @@ autoplay = true
 bus = &"SFX"
 
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
-visible = false
 stream = ExtResource("42_pirss")
 volume_db = 5.0
 autoplay = true
@@ -308,8 +306,8 @@ collision_layer = 2
 collision_mask = 5
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="player_attack_range_left"]
-position = Vector2(2, 3)
-polygon = PackedVector2Array(68, 69, 62, 63, 54, 61, 38, 70, 33, 81, 31, 92, 31, 105, 31, 114, 2, 116, 4, 94, 2, 86, 7, 74, 19, 59, 25, 53, 32, 49, 51, 48, 66, 50, 73, 66)
+position = Vector2(-57, -91)
+polygon = PackedVector2Array(59, 60, 62, 63, 54, 61, 38, 70, 33, 81, 31, 92, 31, 105, 31, 114, 2, 116, 4, 94, 5, 87, 10, 76, 16, 68, 21, 60, 25, 53, 31, 46, 40, 46, 51, 48, 61, 49, 60, 54)
 
 [node name="player_cooldown_left" type="Timer" parent="."]
 

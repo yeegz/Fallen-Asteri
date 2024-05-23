@@ -525,7 +525,7 @@ layer_0/tile_data = PackedInt32Array(786436, 0, 7, 786437, 65536, 7, 786438, 0, 
 visible = false
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_sh67c")]
-position = Vector2(322, 377)
+position = Vector2(417, 409)
 
 [node name="enemy12D" parent="." instance=ExtResource("5_5gt20")]
 position = Vector2(941, 712)
