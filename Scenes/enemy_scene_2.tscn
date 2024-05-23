@@ -299,7 +299,8 @@ position = Vector2(2.86102e-06, 0)
 scale = Vector2(1.965, 2.055)
 sprite_frames = SubResource("SpriteFrames_duxi7")
 animation = &"attack"
-frame_progress = 0.299341
+frame = 2
+frame_progress = 0.318033
 
 [node name="detection_area" type="Area2D" parent="."]
 collision_layer = 4
