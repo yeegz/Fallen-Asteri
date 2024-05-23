@@ -291,24 +291,21 @@ collision_mask = 3
 script = ExtResource("1_cdm1a")
 
 [node name="enemy_physics" type="CollisionShape2D" parent="."]
-position = Vector2(-8, 6)
 shape = SubResource("CircleShape2D_v1mo6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-6, 7)
+position = Vector2(2.86102e-06, 0)
 scale = Vector2(1.965, 2.055)
 sprite_frames = SubResource("SpriteFrames_duxi7")
 animation = &"attack"
-frame = 4
-frame_progress = 0.0132852
+frame_progress = 0.299341
 
 [node name="detection_area" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
-position = Vector2(-10, 8)
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_bk57h")
 
@@ -330,21 +327,23 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="enemy_hitbox_right"]
-polygon = PackedVector2Array(14, 16, 27, 15, 35, 13, 42, 11, 49, 6, 54, 0, 57, -5, 56, -12, 52, -19, 45, -28, 34, -34, 19, -38, 8, -41, 0, -42, -10, -41, -17, -41, -21, -35, -18, -31, -11, -28, -5, -29, 4, -29, 13, -26, 22, -24, 38, -20, 41, -14, 45, -9, 45, -6, 43, -2, 39, 2, 31, 5, 21, 10)
+position = Vector2(4, -7)
+polygon = PackedVector2Array(14, 16, 27, 15, 35, 13, 42, 11, 49, 6, 54, 0, 57, -5, 56, -12, 52, -19, 45, -28, 34, -34, 19, -38, 8, -41, 0, -42, -10, -41, -17, -41, -21, -35, -18, -31, -11, -28, -5, -29, 4, -29, 13, -26, 22, -24, 38, -20, 41, -14, 45, -9, 45, -6, 43, -2, 39, 2, 31, 5, 23, 10)
 
 [node name="enemy_hitbox_left" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="enemy_hitbox_left"]
+position = Vector2(6, -8)
 polygon = PackedVector2Array(-25, 17, -34, 15, -44, 14, -52, 11, -62, 6, -68, -1, -69, -11, -66, -20, -58, -26, -50, -32, -40, -34, -26, -39, -11, -41, -4, -41, 4, -41, 10, -39, 10, -30, 5, -27, 0, -28, -4, -29, -12, -30, -24, -27, -34, -25, -42, -23, -50, -18, -55, -9, -56, -1, -47, 5)
 
 [node name="enemy_health" type="ProgressBar" parent="."]
 modulate = Color(1, 0, 0, 1)
-offset_left = -55.0
-offset_top = -43.0
-offset_right = 193.0
-offset_bottom = -16.0
+offset_left = -51.0
+offset_top = -55.0
+offset_right = 197.0
+offset_bottom = -28.0
 scale = Vector2(0.4, 0.4)
 max_value = 60.0
 show_percentage = false

@@ -2541,11 +2541,11 @@ offset_bottom = 833.0
 texture = ExtResource("23_inlfi")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_uge1f")]
-position = Vector2(71, 433)
+position = Vector2(164, 527)
 
 [node name="enemy_scene_1" parent="." instance=ExtResource("5_qhj3c")]
 texture_filter = 1
-position = Vector2(850, 458)
+position = Vector2(830, 538)
 
 [node name="TileMap4" type="TileMap" parent="."]
 texture_filter = 1

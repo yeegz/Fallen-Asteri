@@ -21,6 +21,7 @@ func _physics_process(delta):
 	death()
 	death_on_sceen_transition()
 	enemy_healthbar()
+	print("enemy position = ",position)
 
 func enemy():
 	pass
@@ -44,7 +45,7 @@ func pathing(playerchase, delta, speed):
 	if playerchase == true:
 		
 		#move towards player if in detection area
-		position += (player.position - position)/speed
+		position += (player.position - position)/ speed
 		#to prevent enemy from sliding
 		move_toward(1, 0, delta)
 		
