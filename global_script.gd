@@ -1,6 +1,7 @@
 extends Node
 
 @onready var transitioned = false
+@onready var current_scene = "beach"
 
 #Player variables
 @onready var PLAYER_HP = 200

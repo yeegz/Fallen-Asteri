@@ -35,6 +35,7 @@ func _process(delta):
 	staminabar()
 	audio_functions()
 	dash(facing_right)
+	print(global.current_scene)
 
 #Easiest way for enemy hitbox to identify player is through methods.
 func hero():
