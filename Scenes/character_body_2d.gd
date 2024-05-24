@@ -35,7 +35,6 @@ func _process(delta):
 	staminabar()
 	audio_functions()
 	dash(facing_right)
-	print(global.current_scene)
 
 #Easiest way for enemy hitbox to identify player is through methods.
 func hero():
@@ -111,7 +110,7 @@ func player_attack_right():
 		$player_cooldown.start()
 		if player_attack_cooldown == true and global.PLAYER_STAMINA >= stamina_requirement_attack:
 			global.PLAYER_STAMINA -= stamina_requirement_attack
-		if global.PLAYER_STAMINA < 100:
+		if global.PLAYER_STAMINA < global.PLAYER_MAX_STAMINA:
 			$player_stamina.start()
 		if player_attack_cooldown == true and player_attack_range == true:
 			pre_attack_cooldown = true
@@ -123,7 +122,7 @@ func _on_player_cooldown_timeout():
 
 #player regenerating stamina upon stamina depletion
 func _on_player_stamina_timeout():
-	if global.PLAYER_STAMINA < 100:
+	if global.PLAYER_STAMINA < global.PLAYER_MAX_STAMINA:
 		global.PLAYER_STAMINA += 10
 
 #handles character death temporarily. An end screen is more fitting
@@ -136,13 +135,17 @@ func death():
 #function to link healthbar GUI to PLAYER_HP
 func healthbar():
 	var healthbar_parameters = $health
+	healthbar_parameters.max_value = global.PLAYER_MAX_HP
 	healthbar_parameters.value = global.PLAYER_HP
+	if global.PLAYER_HP > global.PLAYER_MAX_HP:
+		global.PLAYER_HP = global.PLAYER_MAX_HP
 
 #function to link staminabar GUI to PLAYER_STAMINA
 func staminabar():
 	var staminabar_parameters = $stamina
+	staminabar_parameters.max_value = global.PLAYER_MAX_STAMINA
 	staminabar_parameters.value = global.PLAYER_STAMINA
-	if global.PLAYER_STAMINA == 100:
+	if global.PLAYER_STAMINA == global.PLAYER_MAX_STAMINA:
 		staminabar_parameters.visible = false
 	else:
 		staminabar_parameters.visible = true
@@ -187,7 +190,7 @@ func player_attack_left():
 		$player_cooldown_left.start()
 		if player_attack_cooldown_left == true and global.PLAYER_STAMINA >= stamina_requirement_attack:
 			global.PLAYER_STAMINA -= stamina_requirement_attack
-		if global.PLAYER_STAMINA < 100:
+		if global.PLAYER_STAMINA < global.PLAYER_MAX_STAMINA:
 			$player_stamina.start()
 		if player_attack_cooldown_left == true and player_attack_range_left == true:
 			pre_attack_cooldown_left = true

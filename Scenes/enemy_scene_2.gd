@@ -21,7 +21,6 @@ func _physics_process(delta):
 	death()
 	death_on_sceen_transition()
 	enemy_healthbar()
-	print("enemy position = ",position)
 
 func enemy():
 	pass
