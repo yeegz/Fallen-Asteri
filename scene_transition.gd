@@ -1,8 +1,8 @@
 extends Area2D
 
 var player = null
-var player_posx_on_transition = 1485
-var player_posy_on_transition = 60
+var player_posx_on_transition = 1545
+var player_posy_on_transition = 157
 var scene = "forest"
 
 func _on_body_entered(body):
