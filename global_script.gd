@@ -7,7 +7,7 @@ extends Node
 @onready var PLAYER_HP = 200
 @onready var PLAYER_MAX_HP = 200
 @onready var PLAYER_STAMINA = 100
-@onready var PLAYER_MAX_STAMINA = 200
+@onready var PLAYER_MAX_STAMINA = 100
 @onready var PLAYER_XP = 0
 @onready var PLAYER_ATTACK_DAMAGE = 20
 

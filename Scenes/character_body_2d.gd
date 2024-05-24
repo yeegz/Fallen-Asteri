@@ -17,6 +17,7 @@ var facing_right = null
 var dash_distance = 500
 var dash_cooldown = false
 var dash_stamina_requirement = 50
+var is_dashing = false
 @onready var animation = $AnimatedSprite2D
 @onready var  audio_stream_player_2D = $AudioStreamPlayer2D as AudioStreamPlayer2D
 @onready var  combat_audio_stream_player_2D = $AudioStreamPlayer2D2 as AudioStreamPlayer2D
@@ -209,8 +210,9 @@ func _on_pre_attack_left_timeout():
 	pre_attack_cooldown_left = false
 
 func dash(direction):
-	if Input.is_action_just_pressed("ui_dash") and global.PLAYER_STAMINA >= dash_stamina_requirement:
+	if Input.is_action_just_pressed("ui_dash") and global.PLAYER_STAMINA >= dash_stamina_requirement and is_dashing == false:
 		dash_cooldown = true
+		is_dashing = true
 		$dash_timer.start()
 	if dash_cooldown == true and direction == true:
 		velocity.x += dash_distance
@@ -225,4 +227,5 @@ func dash(direction):
 
 func _on_dash_timer_timeout():
 	dash_cooldown = false
+	is_dashing = false
 	global.PLAYER_STAMINA -= dash_stamina_requirement
