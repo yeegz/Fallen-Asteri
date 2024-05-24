@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://blrguiuqp03i5"]
 
-[ext_resource type="Texture2D" uid="uid://dctipjb5a4d5y" path="res://Temporary Files/pixil-frame-0-21.png" id="1_vrthn"]
+[ext_resource type="Texture2D" uid="uid://dfif6q4baglj5" path="res://Temporary Files/pixil-frame-0-21.png" id="1_vrthn"]
 [ext_resource type="Script" path="res://deathscreen.gd" id="1_w602i"]
-[ext_resource type="Texture2D" uid="uid://bs044yee62jsi" path="res://Temporary Files/Daco_4932087.png" id="2_uufp0"]
-[ext_resource type="AudioStream" uid="uid://i10j5jqj8eyh" path="res://Dark Souls ' You Died ' Sound Effect.mp3" id="4_iruns"]
+[ext_resource type="Texture2D" uid="uid://d3ylcy74jo36g" path="res://Temporary Files/Daco_4932087.png" id="2_uufp0"]
+[ext_resource type="AudioStream" uid="uid://d08ppspymh4ua" path="res://Dark Souls ' You Died ' Sound Effect.mp3" id="4_iruns"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_w602i")
@@ -39,8 +39,9 @@ text = "RESTART"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_iruns")
+volume_db = 5.0
 autoplay = true
-bus = &"Music"
+bus = &"SFX"
 
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
