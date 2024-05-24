@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dwnjok1fielaf" path="res://Temporary Files/cave_tileset.png" id="2_etqbr"]
 [ext_resource type="PackedScene" uid="uid://d0kv8oi3d4d22" path="res://pause_menu.tscn" id="3_oyuij"]
 [ext_resource type="PackedScene" uid="uid://c8br3cr26rf1a" path="res://Scenes/character_body_2d.tscn" id="4_sh67c"]
-[ext_resource type="PackedScene" uid="uid://47cv482u1uad" path="res://sideboss1.tscn" id="5_5gt20"]
+[ext_resource type="PackedScene" uid="uid://drpyr5g1rk2fw" path="res://Scenes/sideboss_2d.tscn" id="5_3pbj5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_sbwdf"]
 
@@ -527,5 +527,4 @@ visible = false
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_sh67c")]
 position = Vector2(417, 409)
 
-[node name="enemy12D" parent="." instance=ExtResource("5_5gt20")]
-position = Vector2(941, 712)
+[node name="sideboss2D" parent="." instance=ExtResource("5_3pbj5")]
