@@ -18,6 +18,8 @@ var dash_distance = 500
 var dash_cooldown = false
 var dash_stamina_requirement = 50
 var is_dashing = false
+var is_attacking_right = false
+var is_attacking_left = false
 @onready var animation = $AnimatedSprite2D
 @onready var  audio_stream_player_2D = $AudioStreamPlayer2D as AudioStreamPlayer2D
 @onready var  combat_audio_stream_player_2D = $AudioStreamPlayer2D2 as AudioStreamPlayer2D
@@ -79,9 +81,8 @@ func animations(control):
 	#Animation
 	if control and velocity.y == 0:
 		animation.play("run")
-	elif Input.is_action_just_pressed("ui_attack") and global.PLAYER_STAMINA >= stamina_requirement_attack:
+	elif Input.is_action_just_pressed("ui_attack") and global.PLAYER_STAMINA >= stamina_requirement_attack and is_attacking_right == false and is_attacking_left == false:
 		attack_animation = true
-		combat_audio_stream_player_2D.play()
 		$attack_anim_timer.start()
 		if attack_animation == true:
 			animation.play("attack")
@@ -106,7 +107,8 @@ func _on_player_attack_range_body_exited(body):
 
 #player attack cooldown, player stamina calculation and cooldown
 func player_attack_right():
-	if Input.is_action_just_pressed("ui_attack") and global.PLAYER_STAMINA >= stamina_requirement_attack:
+	if Input.is_action_just_pressed("ui_attack") and global.PLAYER_STAMINA >= stamina_requirement_attack and is_attacking_right == false:
+		is_attacking_right = true
 		player_attack_cooldown = true
 		$player_cooldown.start()
 		if player_attack_cooldown == true and global.PLAYER_STAMINA >= stamina_requirement_attack:
@@ -120,6 +122,7 @@ func player_attack_right():
 #what player being able to attack on cooldown timeout
 func _on_player_cooldown_timeout():
 	player_attack_cooldown = true
+	is_attacking_right = false
 
 #player regenerating stamina upon stamina depletion
 func _on_player_stamina_timeout():
@@ -186,7 +189,8 @@ func _on_player_attack_range_left_body_exited(body):
 
 #handle attacks to the left
 func player_attack_left():
-	if Input.is_action_just_pressed("ui_attack") and global.PLAYER_STAMINA >= stamina_requirement_attack:
+	if Input.is_action_just_pressed("ui_attack") and global.PLAYER_STAMINA >= stamina_requirement_attack and is_attacking_left == false:
+		is_attacking_left = true
 		player_attack_cooldown_left = true
 		$player_cooldown_left.start()
 		if player_attack_cooldown_left == true and global.PLAYER_STAMINA >= stamina_requirement_attack:
@@ -200,6 +204,7 @@ func player_attack_left():
 #handle attacks to the left
 func _on_player_cooldown_left_timeout():
 	player_attack_cooldown_left = true
+	is_attacking_left = false
 
 #handle attacks to the left
 func _on_pre_attack_left_timeout():
