@@ -650,8 +650,10 @@ visible = false
 position = Vector2(417, 409)
 
 [node name="sideboss2D" parent="." instance=ExtResource("5_3pbj5")]
+position = Vector2(0, 72)
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="sideboss2D"]
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="sideboss2D"]
+visible = false
 texture_filter = 1
 position = Vector2(1040, 653.75)
 scale = Vector2(2.87143, 3.32796)
