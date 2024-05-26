@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=3 uid="uid://drpyr5g1rk2fw"]
 
-[ext_resource type="Texture2D" uid="uid://b7t7ygyhypdjf" path="res://Temporary Files/NightBorne/NightBorne.png" id="1_fb4xm"]
+[ext_resource type="Texture2D" uid="uid://do25u1eid4l6r" path="res://Temporary Files/NightBorne/NightBorne.png" id="1_fb4xm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x0nah"]
 atlas = ExtResource("1_fb4xm")
@@ -216,5 +216,6 @@ texture_filter = 1
 position = Vector2(1081, 522.934)
 scale = Vector2(6.425, 6.59835)
 sprite_frames = SubResource("SpriteFrames_yejgm")
-animation = &"walk"
-frame_progress = 0.525464
+animation = &"attack"
+frame = 1
+frame_progress = 0.00858801
