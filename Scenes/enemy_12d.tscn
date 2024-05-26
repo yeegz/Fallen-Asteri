@@ -1,12 +1,9 @@
-[gd_scene load_steps=58 format=3 uid="uid://bbttsnhtdb1k5"]
+[gd_scene load_steps=46 format=3 uid="uid://bbttsnhtdb1k5"]
 
 [ext_resource type="Script" path="res://Scenes/enemy_12d.gd" id="1_685w0"]
-[ext_resource type="Texture2D" uid="uid://dth6r6p41n5yh" path="res://Temporary Files/idle/crab_idle_1.png" id="1_xxmt4"]
-[ext_resource type="Texture2D" uid="uid://bfaq26c7f6g10" path="res://Temporary Files/idle/crab_idle.png" id="3_lehdf"]
-[ext_resource type="Texture2D" uid="uid://cdam6cmpo18tv" path="res://Temporary Files/attack/crab_attack.png" id="3_onv81"]
-[ext_resource type="Texture2D" uid="uid://bdrn15gp760df" path="res://Temporary Files/Skeleton enemy.png" id="5_btf1u"]
-[ext_resource type="Texture2D" uid="uid://ccelllrtrqtip" path="res://Temporary Files/greenbar (3).png" id="6_t4rbb"]
-[ext_resource type="AudioStream" uid="uid://5cbmarf1svbo" path="res://mixkit-fantasy-sword-slide-2798.wav" id="7_06u5b"]
+[ext_resource type="Texture2D" uid="uid://bc81fob1xulo7" path="res://Temporary Files/Skeleton enemy.png" id="5_btf1u"]
+[ext_resource type="Texture2D" uid="uid://bqxvqgw8lm8dt" path="res://Temporary Files/greenbar (3).png" id="6_t4rbb"]
+[ext_resource type="AudioStream" uid="uid://dg8ndnrn57w3m" path="res://mixkit-fantasy-sword-slide-2798.wav" id="7_06u5b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1g2fj"]
 radius = 33.0151
@@ -14,42 +11,6 @@ radius = 33.0151
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5i1fk"]
 radius = 121.0
 height = 484.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_idln1"]
-atlas = ExtResource("3_onv81")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c5125"]
-atlas = ExtResource("3_onv81")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1iy1y"]
-atlas = ExtResource("3_onv81")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hj8pd"]
-atlas = ExtResource("3_onv81")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_haqg0"]
-atlas = ExtResource("3_onv81")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u231f"]
-atlas = ExtResource("3_lehdf")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5nnil"]
-atlas = ExtResource("3_lehdf")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cb8dd"]
-atlas = ExtResource("3_lehdf")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_go84o"]
-atlas = ExtResource("3_lehdf")
-region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qll2q"]
 atlas = ExtResource("5_btf1u")
@@ -206,43 +167,6 @@ region = Rect2(704, 128, 64, 64)
 [sub_resource type="SpriteFrames" id="SpriteFrames_ex4hy"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_idln1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c5125")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1iy1y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hj8pd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_haqg0")
-}],
-"loop": true,
-"name": &"crab_attack",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u231f")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5nnil")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cb8dd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_go84o")
-}],
-"loop": true,
-"name": &"crab_idle",
-"speed": 5.0
-}, {
-"frames": [{
 "duration": 0.5,
 "texture": SubResource("AtlasTexture_qll2q")
 }, {
@@ -382,13 +306,6 @@ collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_685w0")
 
-[node name="EnemySprite2D" type="Sprite2D" parent="."]
-visible = false
-texture_filter = 1
-position = Vector2(48, 47)
-scale = Vector2(4, 4.13333)
-texture = ExtResource("1_xxmt4")
-
 [node name="EnemyPhysics" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_1g2fj")
@@ -407,8 +324,7 @@ texture_filter = 1
 position = Vector2(3.8147e-06, 3.8147e-06)
 scale = Vector2(1.96485, 2.05469)
 sprite_frames = SubResource("SpriteFrames_ex4hy")
-animation = &"crab_idle"
-frame_progress = 0.847336
+animation = &"enemy_attack"
 
 [node name="enemy_hitbox" type="Area2D" parent="."]
 collision_layer = 4
