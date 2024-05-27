@@ -1,9 +1,9 @@
 [gd_scene load_steps=46 format=3 uid="uid://bbttsnhtdb1k5"]
 
 [ext_resource type="Script" path="res://Scenes/enemy_12d.gd" id="1_685w0"]
-[ext_resource type="Texture2D" uid="uid://bc81fob1xulo7" path="res://Temporary Files/Skeleton enemy.png" id="5_btf1u"]
-[ext_resource type="Texture2D" uid="uid://bqxvqgw8lm8dt" path="res://Temporary Files/greenbar (3).png" id="6_t4rbb"]
-[ext_resource type="AudioStream" uid="uid://dg8ndnrn57w3m" path="res://mixkit-fantasy-sword-slide-2798.wav" id="7_06u5b"]
+[ext_resource type="Texture2D" uid="uid://csb1y42ookare" path="res://Temporary Files/Skeleton enemy.png" id="5_btf1u"]
+[ext_resource type="Texture2D" uid="uid://dgtf60sedulcu" path="res://Temporary Files/greenbar (3).png" id="6_t4rbb"]
+[ext_resource type="AudioStream" uid="uid://qnhpodeutgiv" path="res://mixkit-fantasy-sword-slide-2798.wav" id="7_06u5b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1g2fj"]
 radius = 33.0151

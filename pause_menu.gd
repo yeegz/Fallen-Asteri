@@ -1,5 +1,9 @@
 extends Control
 
+
+
+
+
 var _is_paused:bool = false:
 		set = set_paused
 
@@ -26,3 +30,5 @@ func _on_resume_pressed():
 func _on_main_menu_pressed():
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://alert.tscn")
+
+
