@@ -1,6 +1,6 @@
 [gd_scene load_steps=42 format=3 uid="uid://5rxfhnekfkgs"]
 
-[ext_resource type="Texture2D" uid="uid://bc81fob1xulo7" path="res://Temporary Files/Skeleton enemy.png" id="1_c7uam"]
+[ext_resource type="Texture2D" uid="uid://csb1y42ookare" path="res://Temporary Files/Skeleton enemy.png" id="1_c7uam"]
 [ext_resource type="Script" path="res://Scenes/enemy_scene_2.gd" id="1_cdm1a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v1mo6"]

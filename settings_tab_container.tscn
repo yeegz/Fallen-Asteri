@@ -29,8 +29,10 @@ offset_bottom = -95.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
+current_tab = 2
 
 [node name="Sound" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 drag_to_rearrange_enabled = true
 
@@ -105,7 +107,6 @@ size_flags_vertical = 4
 layout_mode = 2
 
 [node name="Control" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 drag_to_rearrange_enabled = true
 
@@ -148,43 +149,4 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Label6" type="Label" parent="TabContainer/Control/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Load" type="TabBar" parent="TabContainer"]
-visible = false
-layout_mode = 2
-drag_to_rearrange_enabled = true
-
-[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Load"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 24
-theme_override_constants/margin_top = 24
-theme_override_constants/margin_right = 24
-theme_override_constants/margin_bottom = 24
-
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Load/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 64
-
-[node name="Label" type="Label" parent="TabContainer/Load/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label2" type="Label" parent="TabContainer/Load/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label3" type="Label" parent="TabContainer/Load/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label4" type="Label" parent="TabContainer/Load/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label5" type="Label" parent="TabContainer/Load/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label6" type="Label" parent="TabContainer/Load/MarginContainer/VBoxContainer"]
 layout_mode = 2

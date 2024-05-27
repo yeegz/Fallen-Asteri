@@ -1,7 +1,8 @@
 extends Node
 
-@onready var transitioned = false
-@onready var current_scene = "beach"
+
+@export var transitioned = false
+@export var current_scene = "beach"
 
 #Player variables
 @onready var PLAYER_HP = 200
@@ -21,3 +22,4 @@ extends Node
 #scene 2
 @onready var alive_status_s2 = true
 @onready var ENEMY_S2_XP = 10
+
