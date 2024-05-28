@@ -308,6 +308,10 @@ wait_time = 0.5
 wait_time = 0.2
 one_shot = true
 
+[node name="XPbar" type="ProgressBar" parent="."]
+offset_right = 4.0
+offset_bottom = 27.0
+
 [connection signal="body_entered" from="player_attack_range" to="." method="_on_player_attack_range_body_entered"]
 [connection signal="body_exited" from="player_attack_range" to="." method="_on_player_attack_range_body_exited"]
 [connection signal="timeout" from="player_stamina" to="." method="_on_player_stamina_timeout"]
