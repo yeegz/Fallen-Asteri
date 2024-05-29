@@ -528,4 +528,4 @@ visible = false
 position = Vector2(417, 409)
 
 [node name="sideboss2D" parent="." instance=ExtResource("5_3pbj5")]
-position = Vector2(0, 72)
+position = Vector2(1209, 747)

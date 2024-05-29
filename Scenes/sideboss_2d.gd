@@ -2,9 +2,8 @@ extends CharacterBody2D
 
 #variable declaration
 const GRAVITY_VALUE = 1100
-var SPEED = 70
-var JUMP = -500
 @onready var ENEMY_HP = 60
+var SPEED = 70
 var player = null
 var player_chase = false
 var attack_range = false
@@ -12,14 +11,13 @@ var attack_range_left = false
 var attack_cooldown = true
 var attack_cooldown_left = true
 var player_alive = true
-@onready var animation = $AnimatedSprite2D
+@onready var animation = $AnimatedSprite2D2
 
 func _physics_process(delta):
 	gravity(delta)
-	pathing(player_chase, delta, SPEED)
+	pathing(player_chase,delta,SPEED)
 	animations(player_chase)
 	death()
-	death_on_sceen_transition()
 	enemy_healthbar()
 
 func enemy():
@@ -34,6 +32,7 @@ func gravity(delta):
 func _on_detection_area_body_entered(body):
 	player = body
 	player_chase = true
+
 
 func _on_detection_area_body_exited(body):
 	player = null
@@ -50,17 +49,15 @@ func pathing(playerchase, delta, speed):
 		
 		#Flip sprite according to direction
 		if player.position < position:
-			$AnimatedSprite2D.flip_h = true
+			$AnimatedSprite2D2.flip_h = true
 		elif player.position > position:
-			$AnimatedSprite2D.flip_h = false
+			$AnimatedSprite2D2.flip_h = false
 		
 		#Knockback
 		#if player.position < position and attack_range == true and attack_cooldown == true:
 			#player.position.x += -knockback * delta
 		#elif player.position > position and attack_range == true and attack_cooldown == true:
 			#player.position.x += knockback * delta
-
-
 
 func _on_cooldown_right_timeout():
 	attack_cooldown = false
@@ -105,7 +102,6 @@ func _on_enemy_hitbox_left_body_exited(body):
 	if body.has_method("hero"):
 		attack_range_left = false
 
-#enemy attack, attack cooldown
 func enemy_attack():
 	if attack_cooldown == false and attack_range == true:
 		global.PLAYER_HP -= 20
@@ -120,7 +116,6 @@ func enemy_attack_left():
 		attack_cooldown = true
 		$cooldown_left.start()
 
-#enemy animations
 func animations(player_chase):
 	#Animation
 	if player_chase == false:
@@ -130,18 +125,12 @@ func animations(player_chase):
 	elif attack_cooldown == true:
 		animation.play("walk")
 
-#handles enemy death. Essentially deletes the sprite off the scene if hp = 0 or less
 func death():
 	if ENEMY_HP <= 0:
 		global.PLAYER_HP += 50
 		queue_free()
 		global.alive_status_s2 = false
 
-
 func enemy_healthbar():
 	var enemy_heathbar_parameters = $enemy_health
 	enemy_heathbar_parameters.value = ENEMY_HP
-
-func death_on_sceen_transition():
-	if global.alive_status_s2 == false:
-		ENEMY_HP = 0
