@@ -13,6 +13,7 @@ extends Node
 @onready var PLAYER_MAX_XP = 10
 @onready var PLAYER_LEVEL = 1
 @onready var PLAYER_ATTACK_DAMAGE = 20
+@onready var STAMINA_RECOVERY = 10
 
 #enemy variables
 

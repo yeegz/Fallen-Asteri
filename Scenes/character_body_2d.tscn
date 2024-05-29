@@ -309,8 +309,13 @@ wait_time = 0.2
 one_shot = true
 
 [node name="XPbar" type="ProgressBar" parent="."]
-offset_right = 4.0
-offset_bottom = 27.0
+modulate = Color(0.556863, 0.529412, 0, 1)
+offset_left = -366.0
+offset_top = -195.0
+offset_right = -212.0
+offset_bottom = -185.0
+scale = Vector2(0.7, 0.7)
+show_percentage = false
 
 [connection signal="body_entered" from="player_attack_range" to="." method="_on_player_attack_range_body_entered"]
 [connection signal="body_exited" from="player_attack_range" to="." method="_on_player_attack_range_body_exited"]
