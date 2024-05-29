@@ -130,7 +130,7 @@ func death():
 		global.PLAYER_HP += 50
 		global.PLAYER_XP += global.SIDEBOSS_XP_DROP
 		queue_free()
-		global.alive_status_s2 = false
+		global.sideboss_dead = true
 
 func enemy_healthbar():
 	var enemy_heathbar_parameters = $enemy_health
@@ -139,3 +139,4 @@ func enemy_healthbar():
 func death_on_sceen_transition():
 	if global.sideboss_dead == true:
 		queue_free()
+

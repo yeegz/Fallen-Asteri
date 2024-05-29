@@ -26,3 +26,7 @@ extends Node
 
 #scene 2
 @onready var alive_status_s2 = true
+
+#scene 3
+@onready var sideboss_dead = false
+
