@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 #variable declaration
 const GRAVITY_VALUE = 1100
+@onready var ENEMY_HP = 60
 var SPEED = 70
 var player = null
 var player_chase = false
@@ -16,6 +17,8 @@ func _physics_process(delta):
 	gravity(delta)
 	pathing(player_chase,delta,SPEED)
 	animations(player_chase)
+	death()
+	enemy_healthbar()
 
 func enemy():
 	pass
@@ -121,3 +124,13 @@ func animations(player_chase):
 		animation.play("attack")
 	elif attack_cooldown == true:
 		animation.play("walk")
+
+func death():
+	if ENEMY_HP <= 0:
+		global.PLAYER_HP += 50
+		queue_free()
+		global.alive_status_s2 = false
+
+func enemy_healthbar():
+	var enemy_heathbar_parameters = $enemy_health
+	enemy_heathbar_parameters.value = ENEMY_HP

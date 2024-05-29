@@ -269,6 +269,16 @@ collision_mask = 2
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="enemy_hitbox_left"]
 polygon = PackedVector2Array(-5, -70, -52, -49, -70, -28, -70, 27, -55, 38, -37, 41, -37, 74, -50, 71, -67, 64, -78, 56, -89, 45, -95, 32, -95, -22, -86, -39, -68, -53, -45, -66)
 
+[node name="enemy_health" type="ProgressBar" parent="."]
+modulate = Color(1, 0, 0, 1)
+offset_left = -68.0
+offset_top = -28.0
+offset_right = 272.0
+offset_bottom = -0.999998
+scale = Vector2(0.4, 0.4)
+max_value = 60.0
+show_percentage = false
+
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
 [connection signal="timeout" from="cooldown_right" to="." method="_on_cooldown_right_timeout"]
