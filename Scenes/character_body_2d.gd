@@ -42,7 +42,8 @@ func _process(delta):
 	healthbar()
 	staminabar()
 	audio_functions()
-	dash(facing_right)
+	if global.sideboss_dead == true:
+		dash(facing_right)
 	if Input.is_action_just_pressed("save"):
 		save()
 	if Input.is_action_just_pressed("load"):
