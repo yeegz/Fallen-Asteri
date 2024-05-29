@@ -244,16 +244,16 @@ rotation = -1.5708
 shape = SubResource("CapsuleShape2D_l5c5i")
 
 [node name="cooldown_right" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 1.22
 
 [node name="cooldown_left" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 1.22
 
 [node name="pre_attack_enemy_cooldown_right" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 1.2
 
 [node name="pre_attack_enemy_cooldown_left" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 1.2
 
 [node name="enemy_hitbox_right" type="Area2D" parent="."]
 collision_layer = 4
