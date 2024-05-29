@@ -10,10 +10,12 @@ var attack_range_left = false
 var attack_cooldown = true
 var attack_cooldown_left = true
 var player_alive = true
+@onready var animation = $AnimatedSprite2D2
 
 func _physics_process(delta):
 	gravity(delta)
 	pathing(player_chase,delta,SPEED)
+	animations(player_chase)
 
 func enemy():
 	pass
@@ -110,3 +112,12 @@ func enemy_attack_left():
 		#audio_stream_player_2D.play()
 		attack_cooldown = true
 		$cooldown_left.start()
+
+func animations(player_chase):
+	#Animation
+	if player_chase == false:
+		animation.play("idle")
+	elif attack_range == true or attack_range_left:
+		animation.play("attack")
+	elif attack_cooldown == true:
+		animation.play("walk")
