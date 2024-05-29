@@ -134,6 +134,7 @@ func animations(player_chase):
 func death():
 	if ENEMY_HP <= 0:
 		global.PLAYER_HP += 50
+		global.PLAYER_XP += global.SKELETON_ENEMY_XP_DROP
 		queue_free()
 		global.alive_status_s2 = false
 
@@ -144,4 +145,4 @@ func enemy_healthbar():
 
 func death_on_sceen_transition():
 	if global.alive_status_s2 == false:
-		ENEMY_HP = 0
+		queue_free()

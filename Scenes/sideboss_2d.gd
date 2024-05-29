@@ -128,6 +128,7 @@ func animations(player_chase):
 func death():
 	if ENEMY_HP <= 0:
 		global.PLAYER_HP += 50
+		global.PLAYER_XP += global.SIDEBOSS_XP_DROP
 		queue_free()
 		global.sideboss_dead = true
 
@@ -137,4 +138,5 @@ func enemy_healthbar():
 
 func death_on_sceen_transition():
 	if global.sideboss_dead == true:
-		ENEMY_HP = 0
+		queue_free()
+

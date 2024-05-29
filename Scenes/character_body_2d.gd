@@ -49,7 +49,8 @@ func _process(delta):
 	if Input.is_action_just_pressed("load"):
 		load_data()
 	playerData.UpdatePos(self.position)
-	
+	xp_calc()
+	xpbar()
 
 #Easiest way for enemy hitbox to identify player is through methods.
 func hero():
@@ -139,7 +140,7 @@ func _on_player_cooldown_timeout():
 #player regenerating stamina upon stamina depletion
 func _on_player_stamina_timeout():
 	if global.PLAYER_STAMINA < global.PLAYER_MAX_STAMINA:
-		global.PLAYER_STAMINA += 10
+		global.PLAYER_STAMINA += global.STAMINA_RECOVERY
 
 #handles character death temporarily. An end screen is more fitting
 func death():
@@ -169,7 +170,7 @@ func staminabar():
 #able to sync attack to animation, player attack
 func _on_pre_attack_timeout():
 	if pre_attack_cooldown == true and player_attack_range == true:
-		enemy.ENEMY_HP -= 20
+		enemy.ENEMY_HP -= global.PLAYER_ATTACK_DAMAGE
 		
 	
 	pre_attack_cooldown = false
@@ -217,7 +218,7 @@ func _on_player_cooldown_left_timeout():
 #handle attacks to the left
 func _on_pre_attack_left_timeout():
 	if pre_attack_cooldown_left == true and player_attack_range_left == true:
-		enemy.ENEMY_HP -= 20
+		enemy.ENEMY_HP -= global.PLAYER_ATTACK_DAMAGE
 		
 	
 	pre_attack_cooldown_left = false
@@ -248,23 +249,30 @@ func _ready():
 
 func verify_save_directory(path: String):
 	DirAccess.make_dir_absolute(path)
-	
-
-
 
 
 func load_data():
 	playerData = ResourceLoader.load(save_file_path + save_file_name).duplicate(true)
 	print("loaded")
 	on_start_load()
-	
+
 func  on_start_load():
 	self.position = playerData.SavePos
-	
+
 func save():
 	ResourceSaver.save(playerData,save_file_path + save_file_name)
 	print("save")
-	
 
+func xp_calc():
+	if global.PLAYER_XP >= global.PLAYER_MAX_XP:
+		global.PLAYER_LEVEL += 1
+		global.PLAYER_MAX_XP += 5
+		global.PLAYER_ATTACK_DAMAGE += 10
+		global.PLAYER_MAX_STAMINA += 10
+		global.STAMINA_RECOVERY += 5
+		global.PLAYER_XP = 0
 
-
+func xpbar():
+	var xpbar_parameters = $XPbar
+	xpbar_parameters.max_value = global.PLAYER_MAX_XP
+	xpbar_parameters.value = global.PLAYER_XP

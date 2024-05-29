@@ -113,6 +113,7 @@ func death():
 	if ENEMY_HP <= 0:
 		global.alive_status_s1 = false
 		global.PLAYER_HP += 50
+		global.PLAYER_XP += global.SKELETON_ENEMY_XP_DROP
 		queue_free()
 
 #links enemy healthbar GUI to ENEMY_HP
@@ -148,4 +149,4 @@ func _on_cooldown_left_timeout():
 
 func death_on_scene_transition():
 	if global.alive_status_s1 == false:
-		ENEMY_HP = 0
+		queue_free()
