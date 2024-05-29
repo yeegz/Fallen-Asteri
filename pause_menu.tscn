@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://d0kv8oi3d4d22"]
 
 [ext_resource type="Script" path="res://pause_menu.gd" id="1_qd0wf"]
-[ext_resource type="Texture2D" uid="uid://b8wyehumyjp3p" path="res://Temporary Files/awesomeCavePixelArt.png" id="2_80c7h"]
-[ext_resource type="AudioStream" uid="uid://cudk1e55fwh54" path="res://Awkward Pause Stop  Sound Effect FX for Gaming YouTubers Content Creators for Edits.mp3" id="3_h5fee"]
-[ext_resource type="FontFile" uid="uid://b80ckb0gxxnmv" path="res://Early GameBoy.ttf" id="4_y2pyg"]
-[ext_resource type="Texture2D" uid="uid://dt6xk57gjfrxl" path="res://resume for pause menu.png" id="5_2i2w1"]
-[ext_resource type="Texture2D" uid="uid://bgy5hd2vprwo1" path="res://main menu for pause menu.png" id="6_sfswf"]
+[ext_resource type="Texture2D" uid="uid://dki3vuh5y7lw" path="res://Temporary Files/awesomeCavePixelArt.png" id="2_80c7h"]
+[ext_resource type="AudioStream" uid="uid://w7hddanlj7ju" path="res://Awkward Pause Stop  Sound Effect FX for Gaming YouTubers Content Creators for Edits.mp3" id="3_h5fee"]
+[ext_resource type="FontFile" uid="uid://ow343njqyr0a" path="res://Early GameBoy.ttf" id="4_y2pyg"]
+[ext_resource type="Texture2D" uid="uid://nym4qfwcee13" path="res://resume for pause menu.png" id="5_2i2w1"]
+[ext_resource type="Texture2D" uid="uid://cvya6s01i6qhp" path="res://main menu for pause menu.png" id="6_sfswf"]
 
 [node name="pause_menu" type="Control"]
 process_mode = 3
