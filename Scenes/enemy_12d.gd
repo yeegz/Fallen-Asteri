@@ -149,4 +149,4 @@ func _on_cooldown_left_timeout():
 
 func death_on_scene_transition():
 	if global.alive_status_s1 == false:
-		ENEMY_HP = 0
+		queue_free()

@@ -145,4 +145,4 @@ func enemy_healthbar():
 
 func death_on_sceen_transition():
 	if global.alive_status_s2 == false:
-		ENEMY_HP = 0
+		queue_free()

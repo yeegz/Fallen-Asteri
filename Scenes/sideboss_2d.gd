@@ -135,3 +135,7 @@ func death():
 func enemy_healthbar():
 	var enemy_heathbar_parameters = $enemy_health
 	enemy_heathbar_parameters.value = ENEMY_HP
+
+func death_on_sceen_transition():
+	if global.sideboss_dead == true:
+		queue_free()
