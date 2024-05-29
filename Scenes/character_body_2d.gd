@@ -256,14 +256,17 @@ func load_data():
 	playerData = ResourceLoader.load(save_file_path + save_file_name).duplicate(true)
 	print("loaded")
 	on_start_load()
-	
+
 func  on_start_load():
 	self.position = playerData.SavePos
-	
+
 func save():
 	ResourceSaver.save(playerData,save_file_path + save_file_name)
 	print("save")
-	
 
-
+func xp_calc():
+	if global.PLAYER_XP >= global.PLAYER_MAX_XP:
+		global.PLAYER_LEVEL += 1
+		global.PLAYER_MAX_XP += 5
+		global.PLAYER_XP = 0
 

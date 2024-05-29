@@ -14,11 +14,11 @@ class_name PlayerData
 
 #scene 1
 @export var alive_status_s1 = global.alive_status_s1
-@export var ENEMY_S1_XP = global.ENEMY_S1_XP
+@export var ENEMY_S1_XP = global.SKELETON_ENEMY_XP_DROP
 
 #scene 2
 @export var alive_status_s2 = global.alive_status_s2
-@export var ENEMY_S2_XP = global.ENEMY_S2_XP
+@export var ENEMY_S2_XP = global.SKELETON_ENEMY_XP_DROP
 
 @export var SavePos:Vector2
 
