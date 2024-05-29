@@ -23,3 +23,5 @@ extends Node
 @onready var alive_status_s2 = true
 @onready var ENEMY_S2_XP = 10
 
+#scene 3
+@onready var sideboss_dead = false
