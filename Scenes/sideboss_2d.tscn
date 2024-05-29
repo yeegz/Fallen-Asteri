@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://drpyr5g1rk2fw"]
+[gd_scene load_steps=31 format=3 uid="uid://drpyr5g1rk2fw"]
 
 [ext_resource type="Texture2D" uid="uid://do25u1eid4l6r" path="res://Temporary Files/NightBorne/NightBorne.png" id="1_fb4xm"]
 
@@ -209,13 +209,20 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jv60d"]
+size = Vector2(69, 71)
+
 [node name="sideboss2D" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 3
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(1081, 522.934)
-scale = Vector2(6.425, 6.59835)
+rotation = 0.0872665
+scale = Vector2(2.5, 2.568)
 sprite_frames = SubResource("SpriteFrames_yejgm")
-animation = &"attack"
-frame = 1
-frame_progress = 0.00858801
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 24.5)
+shape = SubResource("RectangleShape2D_jv60d")
