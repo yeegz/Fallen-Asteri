@@ -226,7 +226,9 @@ script = ExtResource("1_7a2so")
 texture_filter = 1
 scale = Vector2(2.5, 2.568)
 sprite_frames = SubResource("SpriteFrames_yejgm")
-animation = &"idle"
+animation = &"attack"
+frame = 9
+frame_progress = 0.216785
 
 [node name="sideboss_physics" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, 24.5)
@@ -241,5 +243,39 @@ position = Vector2(-3, 24)
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_l5c5i")
 
+[node name="cooldown_right" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="cooldown_left" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="pre_attack_enemy_cooldown_right" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="pre_attack_enemy_cooldown_left" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="enemy_hitbox_right" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="enemy_hitbox_right"]
+polygon = PackedVector2Array(11, -68, 54, -49, 69, -33, 72, -16, 72, 24, 61, 33, 50, 39, 36, 41, 36, 74, 49, 73, 66, 65, 80, 55, 91, 44, 98, 31, 98, -16, 91, -31, 79, -47, 55, -64)
+
+[node name="enemy_hitbox_left" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="enemy_hitbox_left"]
+polygon = PackedVector2Array(-5, -70, -52, -49, -70, -28, -70, 27, -55, 38, -37, 41, -37, 74, -50, 71, -67, 64, -78, 56, -89, 45, -95, 32, -95, -22, -86, -39, -68, -53, -45, -66)
+
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
+[connection signal="timeout" from="cooldown_right" to="." method="_on_cooldown_right_timeout"]
+[connection signal="timeout" from="cooldown_left" to="." method="_on_cooldown_left_timeout"]
+[connection signal="timeout" from="pre_attack_enemy_cooldown_right" to="." method="_on_pre_attack_enemy_cooldown_right_timeout"]
+[connection signal="timeout" from="pre_attack_enemy_cooldown_left" to="." method="_on_pre_attack_enemy_cooldown_left_timeout"]
+[connection signal="body_entered" from="enemy_hitbox_right" to="." method="_on_enemy_hitbox_right_body_entered"]
+[connection signal="body_exited" from="enemy_hitbox_right" to="." method="_on_enemy_hitbox_right_body_exited"]
+[connection signal="body_entered" from="enemy_hitbox_left" to="." method="_on_enemy_hitbox_left_body_entered"]
+[connection signal="body_exited" from="enemy_hitbox_left" to="." method="_on_enemy_hitbox_left_body_exited"]
