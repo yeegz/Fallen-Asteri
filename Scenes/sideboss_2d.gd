@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 #variable declaration
 const GRAVITY_VALUE = 1100
-@onready var ENEMY_HP = 60
+@onready var ENEMY_HP = 260
 var SPEED = 70
 var player = null
 var player_chase = false
@@ -19,6 +19,7 @@ func _physics_process(delta):
 	animations(player_chase)
 	death()
 	enemy_healthbar()
+	death_on_sceen_transition()
 
 func enemy():
 	pass
@@ -104,14 +105,14 @@ func _on_enemy_hitbox_left_body_exited(body):
 
 func enemy_attack():
 	if attack_cooldown == false and attack_range == true:
-		global.PLAYER_HP -= 20
+		global.PLAYER_HP -= 50
 		#audio_stream_player_2D.play()
 		attack_cooldown = true
 		$cooldown_right.start()
 
 func enemy_attack_left():
 	if attack_cooldown == false and attack_range_left == true:
-		global.PLAYER_HP -= 20
+		global.PLAYER_HP -= 50
 		#audio_stream_player_2D.play()
 		attack_cooldown = true
 		$cooldown_left.start()

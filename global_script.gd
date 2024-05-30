@@ -1,8 +1,8 @@
 extends Node
 
 
-@export var transitioned = false
-@export var current_scene = "beach"
+@onready var transitioned = false
+@onready var current_scene = "beach"
 
 #Player variables
 @onready var PLAYER_HP = 200
