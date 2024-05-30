@@ -17,7 +17,7 @@ extends Node
 
 #enemy variables
 
-@onready var SKELETON_ENEMY_XP_DROP = 5
+@onready var SKELETON_ENEMY_XP_DROP = 10
 @onready var SIDEBOSS_XP_DROP = 20
 
 #scene 1

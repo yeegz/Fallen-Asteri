@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-var save_file_path = "user://save/"
+'''var save_file_path = "user://save/"
 var save_file_name = "PlayerSave.tres"
-var playerData = PlayerData.new()
+var playerData = PlayerData.new()'''
 
 #variable declaration
 const JUMP = -550
@@ -44,11 +44,11 @@ func _process(delta):
 	audio_functions()
 	if global.sideboss_dead == true:
 		dash(facing_right)
-	if Input.is_action_just_pressed("save"):
-		save()
-	if Input.is_action_just_pressed("load"):
-		load_data()
-	playerData.UpdatePos(self.position)
+	#if Input.is_action_just_pressed("save"):
+		#save()
+	#if Input.is_action_just_pressed("load"):
+		#load_data()
+	#playerData.UpdatePos(self.position)
 	xp_calc()
 	xpbar()
 
@@ -244,7 +244,7 @@ func _on_dash_timer_timeout():
 	is_dashing = false
 	global.PLAYER_STAMINA -= dash_stamina_requirement
 	
-func _ready():
+'''func _ready():
 	verify_save_directory(save_file_path)
 
 func verify_save_directory(path: String):
@@ -258,10 +258,11 @@ func load_data():
 
 func  on_start_load():
 	self.position = playerData.SavePos
+	global.PLAYER_HP = playerData.PLAYER_HP
 
 func save():
 	ResourceSaver.save(playerData,save_file_path + save_file_name)
-	print("save")
+	print("save")'''
 
 func xp_calc():
 	if global.PLAYER_XP >= global.PLAYER_MAX_XP:

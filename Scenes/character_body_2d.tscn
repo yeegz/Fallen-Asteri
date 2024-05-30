@@ -309,7 +309,7 @@ wait_time = 0.2
 one_shot = true
 
 [node name="XPbar" type="ProgressBar" parent="."]
-modulate = Color(1, 0.529412, 0, 1)
+modulate = Color(0.501961, 0.0431373, 0.564706, 1)
 offset_left = -366.0
 offset_top = -195.0
 offset_right = -212.0
