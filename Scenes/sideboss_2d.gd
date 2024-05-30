@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 #variable declaration
 const GRAVITY_VALUE = 1100
-@onready var ENEMY_HP = 60
+@onready var ENEMY_HP = 260
 var SPEED = 70
 var player = null
 var player_chase = false
@@ -19,6 +19,7 @@ func _physics_process(delta):
 	animations(player_chase)
 	death()
 	enemy_healthbar()
+	death_on_sceen_transition()
 
 func enemy():
 	pass
