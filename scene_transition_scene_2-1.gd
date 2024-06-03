@@ -1,7 +1,7 @@
 extends Area2D
 
 var player = null
-var scene = "beach"
+var scene = "res://scene.tscn"
 
 func _on_body_entered(body):
 	if body.has_method("hero"):

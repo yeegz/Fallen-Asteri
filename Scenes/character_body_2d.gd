@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name HERO
 
 '''var save_file_path = "user://save/"
 var save_file_name = "PlayerSave.tres"
@@ -44,13 +45,15 @@ func _process(delta):
 	audio_functions()
 	if global.sideboss_dead == true:
 		dash(facing_right)
-	#if Input.is_action_just_pressed("save"):
-		#save()
-	#if Input.is_action_just_pressed("load"):
-		#load_data()
+	if Input.is_action_just_pressed("save"):
+		global.save(global.data)
+	if Input.is_action_just_pressed("load"):
+		global.load()
 	#playerData.UpdatePos(self.position)
 	xp_calc()
 	xpbar()
+	global.updatepos(position)
+
 
 #Easiest way for enemy hitbox to identify player is through methods.
 func hero():
