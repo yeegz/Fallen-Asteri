@@ -1,0 +1,98 @@
+[gd_scene load_steps=11 format=3 uid="uid://odaqibm4bf52"]
+
+[ext_resource type="Texture2D" uid="uid://cfbbjc35jdjjd" path="res://Temporary Files/Sky textures/Clouds/Clouds 3/1.png" id="1_ar7fh"]
+[ext_resource type="Texture2D" uid="uid://cvno4bpes8p3y" path="res://Temporary Files/craftpix-net-801184-free-clouds-pixel-art-asset-pack/PNG/Clouds_gray/Shape3/cloud_shape3_1.png" id="2_dutpx"]
+[ext_resource type="Texture2D" uid="uid://cbn2ya3n4isi1" path="res://Temporary Files/craftpix-net-801184-free-clouds-pixel-art-asset-pack/PNG/Clouds_gray/Shape3/cloud_shape3_5.png" id="3_s2cbd"]
+[ext_resource type="Texture2D" uid="uid://cwt52k46yi5pk" path="res://Temporary Files/craftpix-net-801184-free-clouds-pixel-art-asset-pack/PNG/Clouds_gray/Shape3/cloud_shape3_4.png" id="4_7f4v6"]
+[ext_resource type="Texture2D" uid="uid://dyyqrp53u4pi5" path="res://Temporary Files/craftpix-net-801184-free-clouds-pixel-art-asset-pack/PNG/Clouds_gray/Shape3/cloud_shape3_3.png" id="5_bru7e"]
+[ext_resource type="PackedScene" uid="uid://c8br3cr26rf1a" path="res://Scenes/character_body_2d.tscn" id="6_d2ien"]
+[ext_resource type="Texture2D" uid="uid://chljuwm20t1fc" path="res://Temporary Files/craftpix-net-801184-free-clouds-pixel-art-asset-pack/PNG/Clouds_gray/Shape2/cloud_shape2_5.png" id="7_c4vla"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dtriq"]
+texture = ExtResource("2_dutpx")
+texture_region_size = Vector2i(32, 32)
+2:0/0 = 0
+3:0/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+4:0/0 = 0
+4:2/0 = 0
+3:2/0 = 0
+2:2/0 = 0
+3:3/0 = 0
+2:3/0 = 0
+4:3/0 = 0
+2:1/0 = 0
+1:1/0 = 0
+1:2/0 = 0
+1:3/0 = 0
+0:2/0 = 0
+0:1/0 = 0
+0:3/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0v8yg"]
+texture = ExtResource("3_s2cbd")
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_kgdh4"]
+sources/0 = SubResource("TileSetAtlasSource_dtriq")
+sources/3 = SubResource("TileSetAtlasSource_0v8yg")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1916.0
+offset_bottom = 1081.0
+texture = ExtResource("1_ar7fh")
+
+[node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+tile_set = SubResource("TileSet_kgdh4")
+format = 2
+
+[node name="CloudShape35" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1148, 695)
+scale = Vector2(2.32979, 2.2)
+texture = ExtResource("3_s2cbd")
+
+[node name="CloudShape34" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1375, 636)
+scale = Vector2(1.63889, 1.71569)
+texture = ExtResource("4_7f4v6")
+
+[node name="CloudShape33" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1043, 498)
+scale = Vector2(1.17677, 1.25)
+texture = ExtResource("5_bru7e")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("6_d2ien")]
+position = Vector2(485, 593)
+
+[node name="CloudShape36" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(833, 490)
+scale = Vector2(2.16667, 2.13725)
+texture = ExtResource("4_7f4v6")
+
+[node name="CloudShape25" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(649.531, 792.5)
+scale = Vector2(11.8606, 12.4375)
+texture = ExtResource("7_c4vla")
+
+[node name="CloudShape31" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(532.938, 797.625)
+scale = Vector2(2.8135, 2.58789)
+texture = ExtResource("2_dutpx")
+
+[node name="CloudShape37" type="Sprite2D" parent="."]
+position = Vector2(1689.69, 628)
+scale = Vector2(1.56187, 1.75)
+texture = ExtResource("5_bru7e")
