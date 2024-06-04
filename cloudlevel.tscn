@@ -71,9 +71,6 @@ position = Vector2(1043, 498)
 scale = Vector2(1.17677, 1.25)
 texture = ExtResource("5_bru7e")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("6_d2ien")]
-position = Vector2(485, 593)
-
 [node name="CloudShape36" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(833, 490)
@@ -96,3 +93,6 @@ texture = ExtResource("2_dutpx")
 position = Vector2(1689.69, 628)
 scale = Vector2(1.56187, 1.75)
 texture = ExtResource("5_bru7e")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("6_d2ien")]
+position = Vector2(540, 517)

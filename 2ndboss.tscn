@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpypgsd5e0fjb"]
+
+[ext_resource type="Texture2D" uid="uid://fgsklojgsijf" path="res://Temporary Files/bg_cave.png" id="1_u71sb"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 1145.0
+offset_bottom = 1080.0
+texture = ExtResource("1_u71sb")
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
