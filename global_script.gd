@@ -3,7 +3,6 @@ extends Node
 
 @onready var transitioned = false
 @onready var current_scene = "res://scene.tscn"
-
 #Player variables
 @onready var PLAYER_HP = 200
 @onready var PLAYER_MAX_HP = 200
@@ -14,7 +13,7 @@ extends Node
 @onready var PLAYER_LEVEL = 1
 @onready var PLAYER_ATTACK_DAMAGE = 20
 @onready var STAMINA_RECOVERY = 10
-@export var SavePos:Vector2
+
 
 #enemy variables
 
@@ -33,14 +32,15 @@ extends Node
 
 
 
-var data = [transitioned, current_scene, PLAYER_HP, PLAYER_MAX_HP, PLAYER_STAMINA, PLAYER_MAX_STAMINA, PLAYER_XP, PLAYER_MAX_XP, PLAYER_LEVEL, PLAYER_ATTACK_DAMAGE, STAMINA_RECOVERY, SKELETON_ENEMY_XP_DROP, SIDEBOSS_XP_DROP, alive_status_s1, alive_status_s2, sideboss_dead, SavePos]
 
-func updatepos(value:Vector2):
-	SavePos = value
+
+var data = [transitioned, current_scene, PLAYER_HP, PLAYER_MAX_HP, PLAYER_STAMINA, PLAYER_MAX_STAMINA, PLAYER_XP, PLAYER_MAX_XP, PLAYER_LEVEL, PLAYER_ATTACK_DAMAGE, STAMINA_RECOVERY, SKELETON_ENEMY_XP_DROP, SIDEBOSS_XP_DROP, alive_status_s1, alive_status_s2, sideboss_dead]
+
+
 
 func _physics_process(delta):
 	for x in range(0,2):
-		data = [transitioned, current_scene, PLAYER_HP, PLAYER_MAX_HP, PLAYER_STAMINA, PLAYER_MAX_STAMINA, PLAYER_XP, PLAYER_MAX_XP, PLAYER_LEVEL, PLAYER_ATTACK_DAMAGE, STAMINA_RECOVERY, SKELETON_ENEMY_XP_DROP, SIDEBOSS_XP_DROP, alive_status_s1, alive_status_s2, sideboss_dead, SavePos]
+		data = [transitioned, current_scene, PLAYER_HP, PLAYER_MAX_HP, PLAYER_STAMINA, PLAYER_MAX_STAMINA, PLAYER_XP, PLAYER_MAX_XP, PLAYER_LEVEL, PLAYER_ATTACK_DAMAGE, STAMINA_RECOVERY, SKELETON_ENEMY_XP_DROP, SIDEBOSS_XP_DROP, alive_status_s1, alive_status_s2, sideboss_dead]
 
 func save(info):
 	var file = FileAccess.open("user://saves/save.txt",FileAccess.WRITE)
@@ -68,4 +68,5 @@ func load():
 	alive_status_s1 = info[13]
 	alive_status_s2 = info[14]
 	sideboss_dead = info[15]
-	print(info[16])
+
+
