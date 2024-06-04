@@ -1,8 +1,7 @@
 extends CharacterBody2D
 
-'''var save_file_path = "user://save/"
-var save_file_name = "PlayerSave.tres"
-var playerData = PlayerData.new()'''
+
+
 
 #variable declaration
 const JUMP = -550
@@ -29,6 +28,9 @@ var is_attacking_left = false
 @onready var  combat_audio_stream_player_2D = $AudioStreamPlayer2D2 as AudioStreamPlayer2D
 
 
+
+
+
 #main function
 func _process(delta):
 	var control = controls()
@@ -44,13 +46,15 @@ func _process(delta):
 	audio_functions()
 	if global.sideboss_dead == true:
 		dash(facing_right)
-	#if Input.is_action_just_pressed("save"):
-		#save()
-	#if Input.is_action_just_pressed("load"):
-		#load_data()
-	#playerData.UpdatePos(self.position)
+	if Input.is_action_just_pressed("save"):
+		global.save(global.data)
+	if Input.is_action_just_pressed("load"):
+		global.load()
 	xp_calc()
 	xpbar()
+	
+
+
 
 #Easiest way for enemy hitbox to identify player is through methods.
 func hero():
@@ -244,25 +248,7 @@ func _on_dash_timer_timeout():
 	is_dashing = false
 	global.PLAYER_STAMINA -= dash_stamina_requirement
 	
-'''func _ready():
-	verify_save_directory(save_file_path)
 
-func verify_save_directory(path: String):
-	DirAccess.make_dir_absolute(path)
-
-
-func load_data():
-	playerData = ResourceLoader.load(save_file_path + save_file_name).duplicate(true)
-	print("loaded")
-	on_start_load()
-
-func  on_start_load():
-	self.position = playerData.SavePos
-	global.PLAYER_HP = playerData.PLAYER_HP
-
-func save():
-	ResourceSaver.save(playerData,save_file_path + save_file_name)
-	print("save")'''
 
 func xp_calc():
 	if global.PLAYER_XP >= global.PLAYER_MAX_XP:
@@ -277,3 +263,5 @@ func xpbar():
 	var xpbar_parameters = $XPbar
 	xpbar_parameters.max_value = global.PLAYER_MAX_XP
 	xpbar_parameters.value = global.PLAYER_XP
+	
+
