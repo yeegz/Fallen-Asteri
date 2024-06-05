@@ -1,6 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0adhlaso34h2"]
+[gd_scene load_steps=7 format=3 uid="uid://c0adhlaso34h2"]
 
 [ext_resource type="Script" path="res://Scenes/enemy_s_4_1.gd" id="1_3asf0"]
+[ext_resource type="Texture2D" uid="uid://bf26wq2jmumtn" path="res://Temporary Files/attack/crab_attack.png" id="2_5y7g4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mv103"]
+atlas = ExtResource("2_5y7g4")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vgqfd"]
 animations = [{
@@ -9,7 +14,10 @@ animations = [{
 "name": &"attack",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mv103")
+}],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
@@ -21,7 +29,10 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nhepw"]
-radius = 23.0868
+radius = 11.0454
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3q4jq"]
+height = 96.0
 
 [node name="enemy_s4_1" type="CharacterBody2D"]
 collision_layer = 4
@@ -30,7 +41,16 @@ script = ExtResource("1_3asf0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vgqfd")
-animation = &"attack"
+animation = &"idle"
 
 [node name="physics" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_nhepw")
+
+[node name="detection_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_3q4jq")
+
+[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
