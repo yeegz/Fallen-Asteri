@@ -57,3 +57,64 @@ func pathing(playerchase, delta, speed):
 			#player.position.x += -knockback * delta
 		#elif player.position > position and attack_range == true and attack_cooldown == true:
 			#player.position.x += knockback * delta
+
+
+
+func _on_cooldown_right_timeout():
+	attack_cooldown = false
+
+
+func _on_cooldown_left_timeout():
+	attack_cooldown_left = false
+
+
+func _on_pre_attack_enemy_cooldown_right_timeout():
+	enemy_attack()
+
+
+func _on_pre_attack_enemy_cooldown_left_timeout():
+	enemy_attack_left()
+
+
+func _on_enemy_hitbox_right_body_entered(body):
+	if body.has_method("hero"):
+		attack_range = true
+		if attack_range == true:
+			attack_cooldown = false
+		if attack_cooldown == false and attack_range == true:
+			$pre_attack_enemy_cooldown_right.start()
+
+
+func _on_enemy_hitbox_right_body_exited(body):
+	if body.has_method("hero"):
+		attack_range = false
+
+
+
+func _on_enemy_hitbox_left_body_entered(body):
+	if body.has_method("hero"):
+		attack_range_left = true
+		if attack_range_left == true:
+			attack_cooldown_left = false
+		if attack_cooldown_left == false and attack_range_left == true:
+			$pre_attack_enemy_cooldown_left.start()
+
+
+func _on_enemy_hitbox_left_body_exited(body):
+	if body.has_method("hero"):
+		attack_range_left = false
+
+func enemy_attack():
+	if attack_cooldown == false and attack_range == true:
+		global.PLAYER_HP -= 20
+		#audio_stream_player_2D.play()
+		attack_cooldown = true
+		$cooldown_right.start()
+
+func enemy_attack_left():
+	if attack_cooldown == false and attack_range_left == true:
+		global.PLAYER_HP -= 20
+		#audio_stream_player_2D.play()
+		attack_cooldown = true
+		$cooldown_left.start()
+
