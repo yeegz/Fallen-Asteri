@@ -5,12 +5,7 @@ extends Node2D
 
 func _on_restart_pressed():
 	global.PLAYER_HP = 200
-	if global.current_scene == "beach":
-		get_tree().change_scene_to_file("res://scene.tscn")
-	elif global.current_scene == "forest":
-		get_tree().change_scene_to_file("res://forest.tscn")
-	elif global.current_scene == "caves":
-		get_tree().change_scene_to_file("res://caveboss.tscn")
+	get_tree().change_scene_to_file(global.current_scene)
 
 
 
