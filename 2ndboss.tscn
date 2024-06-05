@@ -1,13 +1,16 @@
-[gd_scene load_steps=19 format=3 uid="uid://cpypgsd5e0fjb"]
+[gd_scene load_steps=22 format=3 uid="uid://cpypgsd5e0fjb"]
 
-[ext_resource type="Texture2D" uid="uid://fgsklojgsijf" path="res://Temporary Files/bg_cave.png" id="1_u71sb"]
-[ext_resource type="Texture2D" uid="uid://bc0ki6up3i3ol" path="res://Temporary Files/tile_cave_bg_crystal.png" id="2_01sci"]
-[ext_resource type="Texture2D" uid="uid://cfrcw1d7gbeog" path="res://Temporary Files/tile_cave_bg_fluo.png" id="3_ef5i3"]
-[ext_resource type="Texture2D" uid="uid://bpqic6egdfhds" path="res://Temporary Files/tile_cave_bg_rock.png" id="4_g7clr"]
-[ext_resource type="Texture2D" uid="uid://bmanslkmrio66" path="res://Temporary Files/tile_cave_rail.png" id="5_cx8yr"]
-[ext_resource type="Texture2D" uid="uid://dkhulvrbtnq6a" path="res://Temporary Files/tile_cave_bg_objects.png" id="6_wh65m"]
-[ext_resource type="Texture2D" uid="uid://cwipxaeav65na" path="res://Temporary Files/tile_cave_platform.png" id="7_fwwq4"]
+[ext_resource type="Texture2D" uid="uid://couowj4upygf1" path="res://Temporary Files/bg_cave.png" id="1_u71sb"]
+[ext_resource type="Texture2D" uid="uid://c4gel707qe1tv" path="res://Temporary Files/tile_cave_bg_crystal.png" id="2_01sci"]
+[ext_resource type="Texture2D" uid="uid://785ei6j1ao7y" path="res://Temporary Files/tile_cave_bg_fluo.png" id="3_ef5i3"]
+[ext_resource type="Texture2D" uid="uid://bfoiv15p6q7a5" path="res://Temporary Files/tile_cave_bg_rock.png" id="4_g7clr"]
+[ext_resource type="Texture2D" uid="uid://dmk5vwv5p7nui" path="res://Temporary Files/tile_cave_rail.png" id="5_cx8yr"]
+[ext_resource type="Texture2D" uid="uid://cysag0w2jdxb" path="res://Temporary Files/tile_cave_bg_objects.png" id="6_wh65m"]
+[ext_resource type="Texture2D" uid="uid://euqn135q6jqo" path="res://Temporary Files/tile_cave_platform.png" id="7_fwwq4"]
 [ext_resource type="PackedScene" uid="uid://c8br3cr26rf1a" path="res://Scenes/character_body_2d.tscn" id="8_m44t8"]
+[ext_resource type="PackedScene" uid="uid://c0adhlaso34h2" path="res://Scenes/enemy_s_4_1.tscn" id="9_2ud7f"]
+[ext_resource type="PackedScene" uid="uid://26e02e6o1nxk" path="res://Scenes/enemy_s_4_2.tscn" id="10_s0cct"]
+[ext_resource type="PackedScene" uid="uid://nxkd6hnqudn8" path="res://Scenes/enemy_s_4_3.tscn" id="11_4txed"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_swud8"]
 texture = ExtResource("2_01sci")
@@ -1562,3 +1565,9 @@ layer_0/tile_data = PackedInt32Array(262146, 196612, 8, 327682, 196612, 9, 32768
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("8_m44t8")]
 position = Vector2(674, 490)
+
+[node name="enemy_s4_1" parent="." instance=ExtResource("9_2ud7f")]
+
+[node name="enemy_s4_2" parent="." instance=ExtResource("10_s0cct")]
+
+[node name="enemy_s4_3" parent="." instance=ExtResource("11_4txed")]

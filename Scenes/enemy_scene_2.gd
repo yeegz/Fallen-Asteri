@@ -5,7 +5,6 @@ const GRAVITY_VALUE = 1100
 var SPEED = 70
 var JUMP = -500
 @onready var ENEMY_HP = 60
-
 var player = null
 var player_chase = false
 var attack_range = false
