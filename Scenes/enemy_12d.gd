@@ -55,6 +55,9 @@ func _on_enemy_hitbox_body_exited(body):
 #enemy attack, attack cooldown
 func enemy_attack():
 	if attack_cooldown == false and attack_range == true:
+		player.animation.modulate = Color.RED
+		await get_tree().create_timer(0.1).timeout
+		player.animation.modulate = Color.WHITE
 		global.PLAYER_HP -= 20
 		audio_stream_player_2D.play()
 		attack_cooldown = true
@@ -62,6 +65,9 @@ func enemy_attack():
 
 func enemy_attack_left():
 	if attack_cooldown == false and attack_range_left == true:
+		player.animation.modulate = Color.RED
+		await get_tree().create_timer(0.1).timeout
+		player.animation.modulate = Color.WHITE
 		global.PLAYER_HP -= 20
 		audio_stream_player_2D.play()
 		attack_cooldown = true
