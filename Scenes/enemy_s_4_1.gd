@@ -118,3 +118,26 @@ func enemy_attack_left():
 		attack_cooldown = true
 		$cooldown_left.start()
 
+'''func animations(player_chase):
+	#Animation
+	if player_chase == false:
+		animation.play("idle")
+	elif attack_range == true or attack_range_left:
+		animation.play("attack")
+	elif attack_cooldown == true:
+		animation.play("walk")'''
+
+func death():
+	if ENEMY_HP <= 0:
+		global.PLAYER_HP += 50
+		global.PLAYER_XP += global.SKELETON_ENEMY_XP_DROP
+		queue_free()
+		global.alive_status_s4_1 = false
+
+func enemy_healthbar():
+	var enemy_heathbar_parameters = $enemy_health
+	enemy_heathbar_parameters.value = ENEMY_HP
+
+func death_on_sceen_transition():
+	if global.alive_status_s4_1 == false:
+		queue_free()

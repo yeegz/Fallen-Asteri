@@ -30,10 +30,12 @@ extends Node
 #scene 3
 @onready var sideboss_dead = false
 
+#scene 4
+@onready var alive_status_s4_1 = true
+@onready var alive_status_s4_2 = true
+@onready var alive_status_s4_3 = true
 
-
-
-
+#save
 var data = [transitioned, current_scene, PLAYER_HP, PLAYER_MAX_HP, PLAYER_STAMINA, PLAYER_MAX_STAMINA, PLAYER_XP, PLAYER_MAX_XP, PLAYER_LEVEL, PLAYER_ATTACK_DAMAGE, STAMINA_RECOVERY, SKELETON_ENEMY_XP_DROP, SIDEBOSS_XP_DROP, alive_status_s1, alive_status_s2, sideboss_dead]
 
 
