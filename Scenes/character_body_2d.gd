@@ -66,11 +66,11 @@ func controls():
 	var direction = Input.get_axis("ui_left", "ui_right")
 	
 	#Jump
-	if is_on_floor() and Input.is_action_just_pressed("ui_accept"):
+	if is_on_floor() and Input.is_action_just_pressed("ui_accept") and attack_animation == false:
 		velocity.y = JUMP
 	
 	#Movement. 
-	if direction:
+	if direction and attack_animation == false:
 		velocity.x = SPEED * direction
 		if direction == 1:
 			$AnimatedSprite2D.flip_h = false
@@ -96,7 +96,7 @@ func gravity(delta):
 #animations
 func animations(control):
 	#Animation
-	if control and velocity.y == 0:
+	if control and velocity.y == 0 and attack_animation == false:
 		animation.play("run")
 	elif Input.is_action_just_pressed("ui_attack") and global.PLAYER_STAMINA >= stamina_requirement_attack and is_attacking_right == false and is_attacking_left == false:
 		attack_animation = true
@@ -104,7 +104,7 @@ func animations(control):
 		if attack_animation == true:
 			animation.play("attack")
 			combat_audio_stream_player_2D.play()
-	elif velocity.y != 0:
+	elif velocity.y != 0 and attack_animation == false:
 		animation.play("jump")
 	elif control == 0 or velocity.x == 0:
 		if attack_animation == false:
@@ -174,6 +174,9 @@ func staminabar():
 #able to sync attack to animation, player attack
 func _on_pre_attack_timeout():
 	if pre_attack_cooldown == true and player_attack_range == true:
+		enemy.animation.modulate = Color.RED
+		await get_tree().create_timer(0.1).timeout
+		enemy.animation.modulate = Color.WHITE
 		enemy.ENEMY_HP -= global.PLAYER_ATTACK_DAMAGE
 		
 	
@@ -185,7 +188,7 @@ func _on_attack_anim_timer_timeout():
 
 #handle audio
 func audio_functions():
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept") and attack_animation == false:
 		audio_stream_player_2D.play()
 
 #handle attacks to the left
@@ -222,6 +225,9 @@ func _on_player_cooldown_left_timeout():
 #handle attacks to the left
 func _on_pre_attack_left_timeout():
 	if pre_attack_cooldown_left == true and player_attack_range_left == true:
+		enemy.animation.modulate = Color.RED
+		await get_tree().create_timer(0.1).timeout
+		enemy.animation.modulate = Color.WHITE
 		enemy.ENEMY_HP -= global.PLAYER_ATTACK_DAMAGE
 		
 	

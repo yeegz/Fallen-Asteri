@@ -5,7 +5,6 @@ const GRAVITY_VALUE = 1100
 var SPEED = 70
 var JUMP = -500
 @onready var ENEMY_HP = 60
-
 var player = null
 var player_chase = false
 var attack_range = false
@@ -109,6 +108,9 @@ func _on_enemy_hitbox_left_body_exited(body):
 #enemy attack, attack cooldown
 func enemy_attack():
 	if attack_cooldown == false and attack_range == true:
+		player.animation.modulate = Color.RED
+		await get_tree().create_timer(0.1).timeout
+		player.animation.modulate = Color.WHITE
 		global.PLAYER_HP -= 20
 		#audio_stream_player_2D.play()
 		attack_cooldown = true
@@ -116,6 +118,9 @@ func enemy_attack():
 
 func enemy_attack_left():
 	if attack_cooldown == false and attack_range_left == true:
+		player.animation.modulate = Color.RED
+		await get_tree().create_timer(0.1).timeout
+		player.animation.modulate = Color.WHITE
 		global.PLAYER_HP -= 20
 		#audio_stream_player_2D.play()
 		attack_cooldown = true

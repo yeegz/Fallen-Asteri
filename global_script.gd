@@ -30,10 +30,12 @@ extends Node
 #scene 3
 @onready var sideboss_dead = false
 
+#scene 4
+@onready var alive_status_s4_1 = true
+@onready var alive_status_s4_2 = true
+@onready var alive_status_s4_3 = true
 
-
-
-
+#save
 var data = [transitioned, current_scene, PLAYER_HP, PLAYER_MAX_HP, PLAYER_STAMINA, PLAYER_MAX_STAMINA, PLAYER_XP, PLAYER_MAX_XP, PLAYER_LEVEL, PLAYER_ATTACK_DAMAGE, STAMINA_RECOVERY, SKELETON_ENEMY_XP_DROP, SIDEBOSS_XP_DROP, alive_status_s1, alive_status_s2, sideboss_dead]
 
 
@@ -43,13 +45,12 @@ func _physics_process(delta):
 		data = [transitioned, current_scene, PLAYER_HP, PLAYER_MAX_HP, PLAYER_STAMINA, PLAYER_MAX_STAMINA, PLAYER_XP, PLAYER_MAX_XP, PLAYER_LEVEL, PLAYER_ATTACK_DAMAGE, STAMINA_RECOVERY, SKELETON_ENEMY_XP_DROP, SIDEBOSS_XP_DROP, alive_status_s1, alive_status_s2, sideboss_dead]
 
 func save(info):
-	var file = FileAccess.open("user://saves/save.txt",FileAccess.WRITE)
+	var file = FileAccess.open("user://save.txt",FileAccess.WRITE)
 	file.store_var(info)
-	print(info)
 
 
 func load():
-	var file = FileAccess.open("user://saves/save.txt",FileAccess.READ)
+	var file = FileAccess.open("user://save.txt",FileAccess.READ)
 	var info = file.get_var()
 	current_scene = info[1]
 	get_tree().change_scene_to_file(current_scene)
