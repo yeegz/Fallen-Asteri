@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://odaqibm4bf52"]
 
-[ext_resource type="Texture2D" uid="uid://cfbbjc35jdjjd" path="res://Temporary Files/Sky textures/Clouds/Clouds 3/1.png" id="1_ar7fh"]
+[ext_resource type="Texture2D" uid="uid://lc8m7rkduach" path="res://Temporary Files/night_background.png" id="1_h282f"]
 [ext_resource type="Texture2D" uid="uid://cvno4bpes8p3y" path="res://Temporary Files/craftpix-net-801184-free-clouds-pixel-art-asset-pack/PNG/Clouds_gray/Shape3/cloud_shape3_1.png" id="2_dutpx"]
 [ext_resource type="Texture2D" uid="uid://cbn2ya3n4isi1" path="res://Temporary Files/craftpix-net-801184-free-clouds-pixel-art-asset-pack/PNG/Clouds_gray/Shape3/cloud_shape3_5.png" id="3_s2cbd"]
 [ext_resource type="Texture2D" uid="uid://cwt52k46yi5pk" path="res://Temporary Files/craftpix-net-801184-free-clouds-pixel-art-asset-pack/PNG/Clouds_gray/Shape3/cloud_shape3_4.png" id="4_7f4v6"]
@@ -4073,8 +4073,8 @@ sources/4 = SubResource("TileSetAtlasSource_hfbry")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1916.0
-offset_bottom = 1081.0
-texture = ExtResource("1_ar7fh")
+offset_bottom = 3062.0
+texture = ExtResource("1_h282f")
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1

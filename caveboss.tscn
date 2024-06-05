@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://c00fd6yetrwh7"]
 
-[ext_resource type="Texture2D" uid="uid://0qlhqa8quv6u" path="res://Temporary Files/844946240_preview_4a7d4ace46f6c0799a9758c3f8be4b2a1f562b50.jpg" id="1_ubeke"]
-[ext_resource type="Texture2D" uid="uid://v4pd66ekegkr" path="res://Temporary Files/cave_tileset.png" id="2_etqbr"]
+[ext_resource type="Texture2D" uid="uid://ctmhlc20vdqbn" path="res://Temporary Files/844946240_preview_4a7d4ace46f6c0799a9758c3f8be4b2a1f562b50.jpg" id="1_ubeke"]
+[ext_resource type="Texture2D" uid="uid://0q4nyy4xmr7i" path="res://Temporary Files/cave_tileset.png" id="2_etqbr"]
 [ext_resource type="PackedScene" uid="uid://d0kv8oi3d4d22" path="res://pause_menu.tscn" id="3_oyuij"]
 [ext_resource type="PackedScene" uid="uid://c8br3cr26rf1a" path="res://Scenes/character_body_2d.tscn" id="4_sh67c"]
 [ext_resource type="PackedScene" uid="uid://drpyr5g1rk2fw" path="res://Scenes/sideboss_2d.tscn" id="5_3pbj5"]
