@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://c8br3cr26rf1a"]
+[gd_scene load_steps=53 format=3 uid="uid://c8br3cr26rf1a"]
 
 [ext_resource type="Script" path="res://Scenes/character_body_2d.gd" id="1_vkjrs"]
 [ext_resource type="Texture2D" uid="uid://cpa2s6o0mee1u" path="res://Temporary Files/Individual Sprite/Attack/Warrior_Attack_1.png" id="2_0x37v"]
@@ -49,6 +49,7 @@
 [ext_resource type="Texture2D" uid="uid://cnjy0ejkgrl1l" path="res://Temporary Files/greenbar (3).png" id="40_p7skp"]
 [ext_resource type="AudioStream" uid="uid://c506mivt0bsxa" path="res://mixkit-swift-sword-strike-2166.wav" id="42_pirss"]
 [ext_resource type="AudioStream" uid="uid://c5lmohs1uy1gl" path="res://edit_Jumping on Dirt.mp3" id="48_ghfao"]
+[ext_resource type="Script" path="res://Scenes/lvl_count.gd" id="50_wyty1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ccfa5"]
 animations = [{
@@ -222,7 +223,7 @@ height = 72.0
 [node name="CharacterBody2D" type="CharacterBody2D"]
 texture_filter = 1
 collision_layer = 2
-collision_mask = 13
+collision_mask = 29
 script = ExtResource("1_vkjrs")
 
 [node name="SaveLoad" parent="." instance=ExtResource("2_qawxn")]
@@ -239,7 +240,7 @@ frame_progress = 0.12508
 shape = SubResource("CapsuleShape2D_wvvr1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.5, 2.5)
+zoom = Vector2(2.75, 2.75)
 
 [node name="player_attack_range" type="Area2D" parent="."]
 collision_layer = 2
@@ -255,15 +256,15 @@ autostart = true
 [node name="player_cooldown" type="Timer" parent="."]
 
 [node name="Greenbar(3)" type="Sprite2D" parent="."]
-position = Vector2(-303, -185)
+position = Vector2(-269, -162)
 texture = ExtResource("40_p7skp")
 
 [node name="health" type="ProgressBar" parent="."]
 modulate = Color(0, 0.631373, 0, 1)
-offset_left = -358.0
-offset_top = -206.0
-offset_right = -215.0
-offset_bottom = -196.0
+offset_left = -325.0
+offset_top = -183.0
+offset_right = -182.0
+offset_bottom = -173.0
 scale = Vector2(0.7, 0.7)
 max_value = 200.0
 show_percentage = false
@@ -314,12 +315,30 @@ one_shot = true
 
 [node name="XPbar" type="ProgressBar" parent="."]
 modulate = Color(0.501961, 0.0431373, 0.564706, 1)
-offset_left = -366.0
-offset_top = -195.0
-offset_right = -212.0
-offset_bottom = -185.0
+offset_left = -331.0
+offset_top = -170.0
+offset_right = -177.0
+offset_bottom = -160.0
 scale = Vector2(0.7, 0.7)
 show_percentage = false
+
+[node name="lvl_count" type="Label" parent="."]
+offset_left = -345.0
+offset_top = -175.0
+offset_right = -328.0
+offset_bottom = -152.0
+scale = Vector2(0.7, 0.7)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+horizontal_alignment = 1
+script = ExtResource("50_wyty1")
+
+[node name="ColorRect" type="ColorRect" parent="lvl_count"]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 24.0
+offset_bottom = 33.0
+scale = Vector2(0.7, 0.7)
+color = Color(0, 0, 0, 1)
 
 [connection signal="body_entered" from="player_attack_range" to="." method="_on_player_attack_range_body_entered"]
 [connection signal="body_exited" from="player_attack_range" to="." method="_on_player_attack_range_body_exited"]

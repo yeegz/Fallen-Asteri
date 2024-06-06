@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cpypgsd5e0fjb"]
+[gd_scene load_steps=21 format=3 uid="uid://cpypgsd5e0fjb"]
 
 [ext_resource type="Texture2D" uid="uid://peh6smp1sj6b" path="res://Temporary Files/bg_cave.png" id="1_u71sb"]
 [ext_resource type="Texture2D" uid="uid://8rvesxbksrfg" path="res://Temporary Files/tile_cave_bg_crystal.png" id="2_01sci"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://vothg2x607we" path="res://Temporary Files/tile_cave_platform.png" id="7_fwwq4"]
 [ext_resource type="PackedScene" uid="uid://c8br3cr26rf1a" path="res://Scenes/character_body_2d.tscn" id="8_m44t8"]
 [ext_resource type="PackedScene" uid="uid://c0adhlaso34h2" path="res://Scenes/enemy_s_4_1.tscn" id="9_2ud7f"]
+[ext_resource type="PackedScene" uid="uid://x45kdj4f0eov" path="res://Scenes/fall_death.tscn" id="10_g3lbi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_swud8"]
 texture = ExtResource("2_01sci")
@@ -1565,3 +1566,12 @@ layer_0/tile_data = PackedInt32Array(262146, 196612, 8, 327682, 196612, 9, 32768
 position = Vector2(674, 490)
 
 [node name="enemy_s4_1" parent="." instance=ExtResource("9_2ud7f")]
+texture_filter = 1
+position = Vector2(276, 377)
+
+[node name="physics" type="CharacterBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="physics"]
+polygon = PackedVector2Array(756, 566, 655, 567, 614, 553, 543, 527, 447, 495, 352, 464, 318, 464, 263, 428, 214, 379, 171, 411, 294, 524, 451, 576, 620, 625, 747, 629)
+
+[node name="fall_death" parent="." instance=ExtResource("10_g3lbi")]

@@ -1,7 +1,7 @@
 extends Area2D
 
 var player = null
-var scene = "res://caveboss.tscn"
+var scene = "res://forest.tscn"
 
 
 
@@ -15,7 +15,7 @@ func _on_body_exited(body):
 		player = null
 
 func _physics_process(delta):
-	if player != null:
+	if player != null and global.sideboss_dead == true:
+		global.transitioned = true
 		global.current_scene = scene
-		global.transitioned = false
 		get_tree().change_scene_to_file(scene)
