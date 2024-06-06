@@ -4078,7 +4078,7 @@ size = Vector2(50, 78)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_64ptf"]
 size = Vector2(55, 107)
 
-[node name="Node2D2" type="Node2D"]
+[node name="Node2D3" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1916.0
