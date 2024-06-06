@@ -239,7 +239,7 @@ frame_progress = 0.12508
 shape = SubResource("CapsuleShape2D_wvvr1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
+zoom = Vector2(3.5, 3.5)
 
 [node name="player_attack_range" type="Area2D" parent="."]
 collision_layer = 2
@@ -255,15 +255,15 @@ autostart = true
 [node name="player_cooldown" type="Timer" parent="."]
 
 [node name="Greenbar(3)" type="Sprite2D" parent="."]
-position = Vector2(-303, -185)
+position = Vector2(-200, -126)
 texture = ExtResource("40_p7skp")
 
 [node name="health" type="ProgressBar" parent="."]
 modulate = Color(0, 0.631373, 0, 1)
-offset_left = -358.0
-offset_top = -206.0
-offset_right = -215.0
-offset_bottom = -196.0
+offset_left = -255.0
+offset_top = -146.0
+offset_right = -112.0
+offset_bottom = -136.0
 scale = Vector2(0.7, 0.7)
 max_value = 200.0
 show_percentage = false
@@ -314,10 +314,10 @@ one_shot = true
 
 [node name="XPbar" type="ProgressBar" parent="."]
 modulate = Color(0.501961, 0.0431373, 0.564706, 1)
-offset_left = -366.0
-offset_top = -195.0
-offset_right = -212.0
-offset_bottom = -185.0
+offset_left = -261.0
+offset_top = -136.0
+offset_right = -107.0
+offset_bottom = -126.0
 scale = Vector2(0.7, 0.7)
 show_percentage = false
 
