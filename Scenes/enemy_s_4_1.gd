@@ -4,7 +4,7 @@ extends CharacterBody2D
 const GRAVITY_VALUE = 1100
 var SPEED = 70
 var JUMP = -500
-@onready var ENEMY_HP = 60
+@onready var ENEMY_HP = 260
 var player = null
 var player_chase = false
 var attack_range = false
@@ -15,7 +15,12 @@ var player_alive = true
 @onready var animation = $AnimatedSprite2D
 
 func _physics_process(delta):
-	pass
+	gravity(delta)
+	pathing(player_chase, delta, SPEED)
+	death()
+	enemy_healthbar()
+	death_on_sceen_transition()
+	animations(player_chase)
 
 func enemy():
 	pass
@@ -58,7 +63,14 @@ func pathing(playerchase, delta, speed):
 		#elif player.position > position and attack_range == true and attack_cooldown == true:
 			#player.position.x += knockback * delta
 
-
+func animations(player_chase):
+	#Animation
+	if player_chase == false:
+		animation.play("idle")
+	elif attack_range == true or attack_range_left:
+		animation.play("attack")
+	elif attack_cooldown == true:
+		animation.play("walk")
 
 func _on_cooldown_right_timeout():
 	attack_cooldown = false
@@ -109,7 +121,7 @@ func enemy_attack():
 		player.animation.modulate = Color.RED
 		await get_tree().create_timer(0.1).timeout
 		player.animation.modulate = Color.WHITE
-		global.PLAYER_HP -= 20
+		global.PLAYER_HP -= 50
 		#audio_stream_player_2D.play()
 		attack_cooldown = true
 		$cooldown_right.start()
@@ -119,7 +131,7 @@ func enemy_attack_left():
 		player.animation.modulate = Color.RED
 		await get_tree().create_timer(0.1).timeout
 		player.animation.modulate = Color.WHITE
-		global.PLAYER_HP -= 20
+		global.PLAYER_HP -= 50
 		#audio_stream_player_2D.play()
 		attack_cooldown = true
 		$cooldown_left.start()
@@ -143,6 +155,7 @@ func death():
 func enemy_healthbar():
 	var enemy_heathbar_parameters = $enemy_health
 	enemy_heathbar_parameters.value = ENEMY_HP
+	enemy_heathbar_parameters.max_value = 260
 
 func death_on_sceen_transition():
 	if global.alive_status_s4_1 == false:

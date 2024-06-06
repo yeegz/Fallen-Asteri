@@ -705,16 +705,16 @@ position = Vector2(417, 409)
 [node name="sideboss2D" parent="." instance=ExtResource("5_3pbj5")]
 position = Vector2(1561, 738)
 
-[node name="cloudlevel_transition" type="Area2D" parent="."]
+[node name="back_to_forest" type="Area2D" parent="."]
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("6_06i6d")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="cloudlevel_transition"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="back_to_forest"]
 position = Vector2(1809, 514.75)
 shape = SubResource("RectangleShape2D_tmrgo")
 
 [node name="fall_death" parent="." instance=ExtResource("7_8drfa")]
 
-[connection signal="body_entered" from="cloudlevel_transition" to="cloudlevel_transition" method="_on_body_entered"]
-[connection signal="body_exited" from="cloudlevel_transition" to="cloudlevel_transition" method="_on_body_exited"]
+[connection signal="body_entered" from="back_to_forest" to="back_to_forest" method="_on_body_entered"]
+[connection signal="body_exited" from="back_to_forest" to="back_to_forest" method="_on_body_exited"]
