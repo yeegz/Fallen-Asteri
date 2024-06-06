@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://c37apr1hy8c7e"]
+[gd_scene load_steps=41 format=3 uid="uid://c37apr1hy8c7e"]
 
 [ext_resource type="Texture2D" uid="uid://dv04nbx4g762m" path="res://Temporary Files/539c483ff16585f1014ce8bff226bc56.png" id="1_sfl31"]
 [ext_resource type="Texture2D" uid="uid://dlyqkf6rylsct" path="res://Temporary Files/forest/bush.png" id="2_5alm7"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" path="res://sideboss_area.gd" id="14_ommnm"]
 [ext_resource type="Texture2D" uid="uid://b5vjkkdo540w0" path="res://Temporary Files/craftpix-net-801184-free-clouds-pixel-art-asset-pack/PNG/Clouds_white/Shape3/cloud_shape3_4.png" id="17_gtxsh"]
 [ext_resource type="PackedScene" uid="uid://x45kdj4f0eov" path="res://Scenes/fall_death.tscn" id="18_4pmba"]
+[ext_resource type="Script" path="res://actual_cloud_level_transition.gd" id="19_tu7ua"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ut53t"]
 texture = ExtResource("2_5alm7")
@@ -991,6 +992,9 @@ height = 280.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xtx1w"]
 size = Vector2(124, 85)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e77wb"]
+size = Vector2(69, 771.5)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -1053,7 +1057,18 @@ texture = ExtResource("17_gtxsh")
 
 [node name="fall_death" parent="." instance=ExtResource("18_4pmba")]
 
+[node name="cloud_level_transition" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("19_tu7ua")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cloud_level_transition"]
+position = Vector2(2386.5, 516.75)
+shape = SubResource("RectangleShape2D_e77wb")
+
 [connection signal="body_entered" from="scene_transition_2_1" to="scene_transition_2_1" method="_on_body_entered"]
 [connection signal="body_exited" from="scene_transition_2_1" to="scene_transition_2_1" method="_on_body_exited"]
 [connection signal="body_entered" from="sideboss_area" to="sideboss_area" method="_on_body_entered"]
 [connection signal="body_exited" from="sideboss_area" to="sideboss_area" method="_on_body_exited"]
+[connection signal="body_entered" from="cloud_level_transition" to="cloud_level_transition" method="_on_body_entered"]
+[connection signal="body_exited" from="cloud_level_transition" to="cloud_level_transition" method="_on_body_exited"]

@@ -86,28 +86,28 @@ region = Rect2(224, 96, 32, 32)
 [sub_resource type="SpriteFrames" id="SpriteFrames_vgqfd"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_tfryi")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_o2dgn")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_c2bxc")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_eavg1")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_ut1tm")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_bempn")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_6tt2b")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_tvclv")
 }],
 "loop": true,
@@ -161,11 +161,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_nhepw"]
-radius = 23.0868
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k1scn"]
+radius = 14.0
+height = 48.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3q4jq"]
-height = 96.0
+radius = 52.0
+height = 394.0
 
 [node name="enemy_s4_1" type="CharacterBody2D"]
 collision_layer = 4
@@ -174,20 +176,22 @@ script = ExtResource("1_3asf0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(10, -13)
+position = Vector2(9.53674e-07, 0)
 scale = Vector2(1.625, 1.8125)
 sprite_frames = SubResource("SpriteFrames_vgqfd")
-animation = &"walk"
-frame_progress = 0.301096
+animation = &"attack"
+frame = 2
+frame_progress = 0.611874
 
 [node name="physics" type="CollisionShape2D" parent="."]
-position = Vector2(9, -9)
-shape = SubResource("CircleShape2D_nhepw")
+position = Vector2(0, 7)
+shape = SubResource("CapsuleShape2D_k1scn")
 
 [node name="detection_area" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
-position = Vector2(9, -9)
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_3q4jq")
 
@@ -200,20 +204,28 @@ shape = SubResource("CapsuleShape2D_3q4jq")
 [node name="pre_attack_enemy_cooldown_left" type="Timer" parent="."]
 
 [node name="enemy_hitbox_right" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="enemy_hitbox_right"]
-polygon = PackedVector2Array(22, -14, 28, 0, 41, -7, 30, -18)
+position = Vector2(-9, -2)
+polygon = PackedVector2Array(22, -14, 27, -2, 22.6888, 12.8639, 23, 25, 31, 20, 33, 10, 33, -6, 26, -17)
 
 [node name="enemy_hitbox_left" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="enemy_hitbox_left"]
-polygon = PackedVector2Array(-37, -3, -48, 6, -54, -11)
+polygon = PackedVector2Array(-10, 26, -22, 19, -26, 11, -26, 1, -22, -13, -15, -18, -15.4956, -7.59248, -16, 3, -14, 19)
 
 [node name="enemy_health" type="ProgressBar" parent="."]
-offset_left = 7.0
-offset_top = 17.0
-offset_right = 11.0
-offset_bottom = 44.0
+modulate = Color(1, 0, 0, 1)
+offset_left = -40.0
+offset_top = -35.0
+offset_right = 160.0
+offset_bottom = -8.0
+scale = Vector2(0.4, 0.4)
+show_percentage = false
 
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
