@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cpypgsd5e0fjb"]
+[gd_scene load_steps=23 format=3 uid="uid://cpypgsd5e0fjb"]
 
 [ext_resource type="Texture2D" uid="uid://peh6smp1sj6b" path="res://Temporary Files/bg_cave.png" id="1_u71sb"]
 [ext_resource type="Texture2D" uid="uid://8rvesxbksrfg" path="res://Temporary Files/tile_cave_bg_crystal.png" id="2_01sci"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c0adhlaso34h2" path="res://Scenes/enemy_s_4_1.tscn" id="9_2ud7f"]
 [ext_resource type="PackedScene" uid="uid://x45kdj4f0eov" path="res://Scenes/fall_death.tscn" id="10_g3lbi"]
 [ext_resource type="AudioStream" uid="uid://dr2k3nmolny7" path="res://Spooky Music  Nightfall Cavern.mp3" id="11_p2s86"]
+[ext_resource type="PackedScene" uid="uid://d0kv8oi3d4d22" path="res://pause_menu.tscn" id="12_77cp1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_swud8"]
 texture = ExtResource("2_01sci")
@@ -1582,3 +1583,8 @@ stream = ExtResource("11_p2s86")
 volume_db = 8.0
 autoplay = true
 bus = &"Music"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="pause_menu" parent="CanvasLayer" instance=ExtResource("12_77cp1")]
+visible = false
