@@ -1,12 +1,12 @@
 [gd_scene load_steps=20 format=3 uid="uid://cpypgsd5e0fjb"]
 
-[ext_resource type="Texture2D" uid="uid://fgsklojgsijf" path="res://Temporary Files/bg_cave.png" id="1_u71sb"]
-[ext_resource type="Texture2D" uid="uid://bc0ki6up3i3ol" path="res://Temporary Files/tile_cave_bg_crystal.png" id="2_01sci"]
-[ext_resource type="Texture2D" uid="uid://cfrcw1d7gbeog" path="res://Temporary Files/tile_cave_bg_fluo.png" id="3_ef5i3"]
-[ext_resource type="Texture2D" uid="uid://bpqic6egdfhds" path="res://Temporary Files/tile_cave_bg_rock.png" id="4_g7clr"]
-[ext_resource type="Texture2D" uid="uid://bmanslkmrio66" path="res://Temporary Files/tile_cave_rail.png" id="5_cx8yr"]
-[ext_resource type="Texture2D" uid="uid://dkhulvrbtnq6a" path="res://Temporary Files/tile_cave_bg_objects.png" id="6_wh65m"]
-[ext_resource type="Texture2D" uid="uid://cwipxaeav65na" path="res://Temporary Files/tile_cave_platform.png" id="7_fwwq4"]
+[ext_resource type="Texture2D" uid="uid://couowj4upygf1" path="res://Temporary Files/bg_cave.png" id="1_u71sb"]
+[ext_resource type="Texture2D" uid="uid://c4gel707qe1tv" path="res://Temporary Files/tile_cave_bg_crystal.png" id="2_01sci"]
+[ext_resource type="Texture2D" uid="uid://785ei6j1ao7y" path="res://Temporary Files/tile_cave_bg_fluo.png" id="3_ef5i3"]
+[ext_resource type="Texture2D" uid="uid://bfoiv15p6q7a5" path="res://Temporary Files/tile_cave_bg_rock.png" id="4_g7clr"]
+[ext_resource type="Texture2D" uid="uid://dmk5vwv5p7nui" path="res://Temporary Files/tile_cave_rail.png" id="5_cx8yr"]
+[ext_resource type="Texture2D" uid="uid://cysag0w2jdxb" path="res://Temporary Files/tile_cave_bg_objects.png" id="6_wh65m"]
+[ext_resource type="Texture2D" uid="uid://euqn135q6jqo" path="res://Temporary Files/tile_cave_platform.png" id="7_fwwq4"]
 [ext_resource type="PackedScene" uid="uid://c8br3cr26rf1a" path="res://Scenes/character_body_2d.tscn" id="8_m44t8"]
 [ext_resource type="PackedScene" uid="uid://c0adhlaso34h2" path="res://Scenes/enemy_s_4_1.tscn" id="9_2ud7f"]
 
@@ -1567,3 +1567,8 @@ position = Vector2(674, 490)
 [node name="enemy_s4_1" parent="." instance=ExtResource("9_2ud7f")]
 texture_filter = 1
 position = Vector2(43, 98)
+
+[node name="physics" type="CharacterBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="physics"]
+polygon = PackedVector2Array(756, 566, 655, 567, 614, 553, 543, 527, 447, 495, 352, 464, 318, 464, 263, 428, 214, 379, 171, 411, 294, 524, 451, 576, 620, 625, 747, 629)
