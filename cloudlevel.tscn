@@ -1,15 +1,15 @@
 [gd_scene load_steps=15 format=3 uid="uid://odaqibm4bf52"]
 
-[ext_resource type="Texture2D" uid="uid://lc8m7rkduach" path="res://Temporary Files/night_background.png" id="1_h282f"]
-[ext_resource type="Texture2D" uid="uid://cvno4bpes8p3y" path="res://Temporary Files/craftpix-net-801184-free-clouds-pixel-art-asset-pack/PNG/Clouds_gray/Shape3/cloud_shape3_1.png" id="2_dutpx"]
-[ext_resource type="Texture2D" uid="uid://cbn2ya3n4isi1" path="res://Temporary Files/craftpix-net-801184-free-clouds-pixel-art-asset-pack/PNG/Clouds_gray/Shape3/cloud_shape3_5.png" id="3_s2cbd"]
-[ext_resource type="Texture2D" uid="uid://cwt52k46yi5pk" path="res://Temporary Files/craftpix-net-801184-free-clouds-pixel-art-asset-pack/PNG/Clouds_gray/Shape3/cloud_shape3_4.png" id="4_7f4v6"]
-[ext_resource type="Texture2D" uid="uid://b35xgxrvw16y1" path="res://Temporary Files/[Base]BaseChip_pipo.png" id="4_yv1le"]
-[ext_resource type="Texture2D" uid="uid://dyyqrp53u4pi5" path="res://Temporary Files/craftpix-net-801184-free-clouds-pixel-art-asset-pack/PNG/Clouds_gray/Shape3/cloud_shape3_3.png" id="5_bru7e"]
+[ext_resource type="Texture2D" uid="uid://rvardrogc2nb" path="res://Temporary Files/night_background.png" id="1_h282f"]
+[ext_resource type="Texture2D" uid="uid://du1oe20pbislq" path="res://Temporary Files/craftpix-net-801184-free-clouds-pixel-art-asset-pack/PNG/Clouds_gray/Shape3/cloud_shape3_1.png" id="2_dutpx"]
+[ext_resource type="Texture2D" uid="uid://bvvyp3fvfgy0a" path="res://Temporary Files/craftpix-net-801184-free-clouds-pixel-art-asset-pack/PNG/Clouds_gray/Shape3/cloud_shape3_5.png" id="3_s2cbd"]
+[ext_resource type="Texture2D" uid="uid://citxsee24ljon" path="res://Temporary Files/craftpix-net-801184-free-clouds-pixel-art-asset-pack/PNG/Clouds_gray/Shape3/cloud_shape3_4.png" id="4_7f4v6"]
+[ext_resource type="Texture2D" uid="uid://cw2rq6284vma" path="res://Temporary Files/[Base]BaseChip_pipo.png" id="4_yv1le"]
+[ext_resource type="Texture2D" uid="uid://b3atp5tiko8sg" path="res://Temporary Files/craftpix-net-801184-free-clouds-pixel-art-asset-pack/PNG/Clouds_gray/Shape3/cloud_shape3_3.png" id="5_bru7e"]
 [ext_resource type="PackedScene" uid="uid://c8br3cr26rf1a" path="res://Scenes/character_body_2d.tscn" id="6_d2ien"]
-[ext_resource type="Texture2D" uid="uid://chljuwm20t1fc" path="res://Temporary Files/craftpix-net-801184-free-clouds-pixel-art-asset-pack/PNG/Clouds_gray/Shape2/cloud_shape2_5.png" id="7_c4vla"]
-[ext_resource type="Texture2D" uid="uid://cv8dvpeehiq0f" path="res://Temporary Files/craftpix-net-801184-free-clouds-pixel-art-asset-pack/PNG/Clouds_black/Shape3/cloud_shape3_5.png" id="9_ljywr"]
-[ext_resource type="Texture2D" uid="uid://s3mjbao4wo7q" path="res://Temporary Files/craftpix-net-801184-free-clouds-pixel-art-asset-pack/PNG/Clouds_white/Shape3/cloud_shape3_2.png" id="10_7jjeb"]
+[ext_resource type="Texture2D" uid="uid://sh3yvmvydwhc" path="res://Temporary Files/craftpix-net-801184-free-clouds-pixel-art-asset-pack/PNG/Clouds_gray/Shape2/cloud_shape2_5.png" id="7_c4vla"]
+[ext_resource type="Texture2D" uid="uid://bawbv6uxbr4ic" path="res://Temporary Files/craftpix-net-801184-free-clouds-pixel-art-asset-pack/PNG/Clouds_black/Shape3/cloud_shape3_5.png" id="9_ljywr"]
+[ext_resource type="Texture2D" uid="uid://dmt0ot4rrb2ja" path="res://Temporary Files/craftpix-net-801184-free-clouds-pixel-art-asset-pack/PNG/Clouds_white/Shape3/cloud_shape3_2.png" id="10_7jjeb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dtriq"]
 texture = ExtResource("2_dutpx")
@@ -4097,7 +4097,7 @@ texture = ExtResource("4_7f4v6")
 
 [node name="CloudShape33" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(1043, 498)
+position = Vector2(1047, 524)
 scale = Vector2(1.17677, 1.25)
 texture = ExtResource("5_bru7e")
 
@@ -4127,7 +4127,7 @@ scale = Vector2(2.38384, 2.76667)
 texture = ExtResource("5_bru7e")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("6_d2ien")]
-position = Vector2(537, 586)
+position = Vector2(524, 624)
 
 [node name="CloudShape38" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -4149,3 +4149,35 @@ texture = ExtResource("10_7jjeb")
 position = Vector2(961, 771)
 scale = Vector2(1.24747, 1.5)
 texture = ExtResource("5_bru7e")
+
+[node name="physics" type="CharacterBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="physics"]
+position = Vector2(520, 807)
+scale = Vector2(2.05882, 2.1582)
+polygon = PackedVector2Array(-80.6287, -13.9005, -32.0572, -48.1883, 20.4, -50.9684, 54.4001, -18.534, 80.6287, -9.26697, 155.429, -0.926697, 155.429, 22.2408, 80.6287, 25.0208, 3.88571, 57.4553, -46.6287, 50.0417, -71.8858, 26.8742)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="physics"]
+polygon = PackedVector2Array(910, 745, 976, 745, 1006, 763, 1018, 771, 952, 815, 904, 777)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="physics"]
+polygon = PackedVector2Array(1099, 700, 1141, 666, 1179, 664, 1197, 708, 1185, 722, 1125, 722)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="physics"]
+polygon = PackedVector2Array(1325, 630, 1341, 628, 1357, 606, 1391, 608, 1423, 624, 1431, 646, 1391, 668, 1331, 674)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="physics"]
+polygon = PackedVector2Array(1503, 618, 1535, 612, 1605, 544, 1713, 540, 1747, 646, 1577, 672)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="physics"]
+position = Vector2(2, 28)
+polygon = PackedVector2Array(991, 494, 1023, 474, 1053, 476, 1063, 484, 1087, 492, 1099, 512, 1043, 528)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="physics"]
+polygon = PackedVector2Array(751, 490, 781, 476, 799, 454, 861, 450, 871, 470, 891, 470, 903, 484, 845, 512, 803, 506)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="physics"]
+polygon = PackedVector2Array(585, 554, 623, 532, 659, 532, 679, 560, 665, 580, 609, 584)
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="physics"]
+polygon = PackedVector2Array(375, 490, 393, 490, 423, 474, 481, 468, 505, 498, 467, 530, 421, 542, 395, 518)
