@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c00fd6yetrwh7"]
+[gd_scene load_steps=14 format=3 uid="uid://c00fd6yetrwh7"]
 
 [ext_resource type="Texture2D" uid="uid://bcf2km7ms5hfc" path="res://Temporary Files/844946240_preview_4a7d4ace46f6c0799a9758c3f8be4b2a1f562b50.jpg" id="1_ubeke"]
 [ext_resource type="Texture2D" uid="uid://rl3feb1upknl" path="res://Temporary Files/cave_tileset.png" id="2_etqbr"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c8br3cr26rf1a" path="res://Scenes/character_body_2d.tscn" id="4_sh67c"]
 [ext_resource type="PackedScene" uid="uid://drpyr5g1rk2fw" path="res://Scenes/sideboss_2d.tscn" id="5_3pbj5"]
 [ext_resource type="Script" path="res://cloudlevel_transition.gd" id="6_06i6d"]
+[ext_resource type="PackedScene" uid="uid://x45kdj4f0eov" path="res://Scenes/fall_death.tscn" id="7_8drfa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2l0n8"]
 texture = ExtResource("2_etqbr")
@@ -712,6 +713,8 @@ script = ExtResource("6_06i6d")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cloudlevel_transition"]
 position = Vector2(1809, 514.75)
 shape = SubResource("RectangleShape2D_tmrgo")
+
+[node name="fall_death" parent="." instance=ExtResource("7_8drfa")]
 
 [connection signal="body_entered" from="cloudlevel_transition" to="cloudlevel_transition" method="_on_body_entered"]
 [connection signal="body_exited" from="cloudlevel_transition" to="cloudlevel_transition" method="_on_body_exited"]

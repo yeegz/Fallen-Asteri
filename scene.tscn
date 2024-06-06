@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://bplxua7pm7t3m"]
+[gd_scene load_steps=67 format=3 uid="uid://bplxua7pm7t3m"]
 
 [ext_resource type="Script" path="res://scene.gd" id="1_j5ugf"]
 [ext_resource type="Texture2D" uid="uid://byeqfi2rn1i6f" path="res://Sprite Assets/dirt.png" id="1_jjdho"]
@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://cifj03hn130v6" path="res://Temporary Files/pixil-frame-0-22.png" id="26_5i6pc"]
 [ext_resource type="AudioStream" uid="uid://dah1veqatvl1b" path="res://mists-in-the-elven-lands-127808.mp3" id="27_1e7a0"]
 [ext_resource type="Script" path="res://scene_transition.gd" id="28_u8cyk"]
+[ext_resource type="PackedScene" uid="uid://x45kdj4f0eov" path="res://Scenes/fall_death.tscn" id="30_isv6p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jovnk"]
 texture = ExtResource("1_jjdho")
@@ -2581,6 +2582,8 @@ script = ExtResource("28_u8cyk")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene_transition"]
 position = Vector2(1651, -76)
 shape = SubResource("CapsuleShape2D_hfnb5")
+
+[node name="fall_death" parent="." instance=ExtResource("30_isv6p")]
 
 [connection signal="body_entered" from="scene_transition" to="scene_transition" method="_on_body_entered"]
 [connection signal="body_exited" from="scene_transition" to="scene_transition" method="_on_body_exited"]

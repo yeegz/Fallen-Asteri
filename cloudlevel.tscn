@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://odaqibm4bf52"]
+[gd_scene load_steps=20 format=3 uid="uid://odaqibm4bf52"]
 
 [ext_resource type="Texture2D" uid="uid://rvardrogc2nb" path="res://Temporary Files/night_background.png" id="1_h282f"]
 [ext_resource type="Texture2D" uid="uid://du1oe20pbislq" path="res://Temporary Files/craftpix-net-801184-free-clouds-pixel-art-asset-pack/PNG/Clouds_gray/Shape3/cloud_shape3_1.png" id="2_dutpx"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dmt0ot4rrb2ja" path="res://Temporary Files/craftpix-net-801184-free-clouds-pixel-art-asset-pack/PNG/Clouds_white/Shape3/cloud_shape3_2.png" id="10_7jjeb"]
 [ext_resource type="Script" path="res://2ndscene_transition_scene.gd" id="11_jboar"]
 [ext_resource type="Script" path="res://3rdboss_transition.gd" id="12_ynshv"]
+[ext_resource type="PackedScene" uid="uid://x45kdj4f0eov" path="res://Scenes/fall_death.tscn" id="13_hlhul"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dtriq"]
 texture = ExtResource("2_dutpx")
@@ -4207,6 +4208,8 @@ script = ExtResource("12_ynshv")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="3rdboss_transition"]
 position = Vector2(832.5, 386.5)
 shape = SubResource("RectangleShape2D_64ptf")
+
+[node name="fall_death" parent="." instance=ExtResource("13_hlhul")]
 
 [connection signal="body_entered" from="2ndscene_transition" to="2ndscene_transition" method="_on_body_entered"]
 [connection signal="body_exited" from="2ndscene_transition" to="2ndscene_transition" method="_on_body_exited"]
