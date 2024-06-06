@@ -4159,32 +4159,32 @@ texture = ExtResource("5_bru7e")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="physics"]
 position = Vector2(520, 807)
 scale = Vector2(2.05882, 2.1582)
-polygon = PackedVector2Array(-80.6287, -13.9005, -32.0572, -48.1883, 20.4, -50.9684, 54.4001, -18.534, 80.6287, -9.26697, 155.429, -0.926697, 155.429, 22.2408, 80.6287, 25.0208, 3.88571, 57.4553, -46.6287, 50.0417, -71.8858, 26.8742)
+polygon = PackedVector2Array(-80.6287, -13.9005, -32.0572, -48.1883, 20.4, -50.9684, 54.4001, -18.534, 80.6287, -9.26697, 154.943, -5.56018, 155.429, 22.2408, 80.6287, 25.0208, 3.88571, 57.4553, -46.6287, 50.0417, -71.8858, 26.8742)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="physics"]
-polygon = PackedVector2Array(910, 745, 976, 745, 1006, 763, 1018, 771, 952, 815, 904, 777)
+polygon = PackedVector2Array(907, 758, 972, 756, 997, 757, 1021, 782, 952, 815, 904, 777)
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="physics"]
-polygon = PackedVector2Array(1099, 700, 1141, 666, 1179, 664, 1197, 708, 1185, 722, 1125, 722)
+polygon = PackedVector2Array(1099, 700, 1133, 681, 1179, 678, 1197, 708, 1185, 722, 1125, 722)
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="physics"]
-polygon = PackedVector2Array(1325, 630, 1341, 628, 1357, 606, 1391, 608, 1423, 624, 1431, 646, 1391, 668, 1331, 674)
+polygon = PackedVector2Array(1324, 639, 1337, 626, 1359, 620, 1389, 619, 1423, 624, 1431, 646, 1391, 668, 1331, 674)
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="physics"]
-polygon = PackedVector2Array(1503, 618, 1535, 612, 1605, 544, 1713, 540, 1747, 646, 1577, 672)
+polygon = PackedVector2Array(1503, 618, 1535, 612, 1601, 562, 1717, 558, 1747, 646, 1577, 672)
 
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="physics"]
 position = Vector2(2, 28)
-polygon = PackedVector2Array(991, 494, 1023, 474, 1053, 476, 1063, 484, 1087, 492, 1099, 512, 1043, 528)
+polygon = PackedVector2Array(991, 486, 1021, 481, 1050, 482, 1063, 484, 1086, 487, 1099, 512, 1043, 528)
 
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="physics"]
-polygon = PackedVector2Array(751, 490, 781, 476, 799, 454, 861, 450, 871, 470, 891, 470, 903, 484, 845, 512, 803, 506)
+polygon = PackedVector2Array(751, 490, 781, 476, 801, 461, 856, 457, 871, 470, 891, 478, 903, 484, 845, 512, 803, 506)
 
 [node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="physics"]
-polygon = PackedVector2Array(585, 554, 623, 532, 659, 532, 679, 560, 665, 580, 609, 584)
+polygon = PackedVector2Array(589, 544, 618, 538, 659, 538, 680, 550, 665, 580, 609, 584)
 
 [node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="physics"]
-polygon = PackedVector2Array(375, 490, 393, 490, 423, 474, 481, 468, 505, 498, 467, 530, 421, 542, 395, 518)
+polygon = PackedVector2Array(375, 490, 393, 490, 419, 483, 481, 479, 518, 498, 467, 530, 421, 542, 395, 518)
 
 [node name="2ndscene_transition" type="Area2D" parent="."]
 collision_layer = 8
