@@ -16,5 +16,6 @@ func _on_body_exited(body):
 
 func _physics_process(delta):
 	if player != null and global.sideboss_dead == true:
+		global.transitioned = true
 		global.current_scene = scene
 		get_tree().change_scene_to_file(scene)
