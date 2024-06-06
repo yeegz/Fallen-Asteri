@@ -1,11 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://bkacp6q5i4h8c"]
+[gd_scene load_steps=14 format=3 uid="uid://bkacp6q5i4h8c"]
 
-[ext_resource type="Texture2D" uid="uid://crt6q8hve10fm" path="res://Temporary Files/pixel-art-clouds-moon-reflection-dark-background-hd-wallpaper-preview.jpg" id="1_ejbt3"]
-[ext_resource type="Texture2D" uid="uid://dv4vvx5tvl4ip" path="res://Temporary Files/Final/Background_0.png" id="1_r6wia"]
+[ext_resource type="Texture2D" uid="uid://dx5qwowgnwq83" path="res://Temporary Files/pixel-art-clouds-moon-reflection-dark-background-hd-wallpaper-preview.jpg" id="1_ejbt3"]
+[ext_resource type="Texture2D" uid="uid://cgw8yq45d81cn" path="res://Temporary Files/Final/Background_0.png" id="1_r6wia"]
 [ext_resource type="PackedScene" uid="uid://c8br3cr26rf1a" path="res://Scenes/character_body_2d.tscn" id="3_kp3a4"]
-[ext_resource type="Texture2D" uid="uid://dntfl16mq3eo7" path="res://Temporary Files/Final/Tiles.png" id="4_kl0rx"]
-[ext_resource type="Texture2D" uid="uid://brgq1mvi3ebs" path="res://Temporary Files/Final/Salt.png" id="5_2dwpg"]
+[ext_resource type="Texture2D" uid="uid://bh24e86ngmftr" path="res://Temporary Files/Final/Tiles.png" id="4_kl0rx"]
+[ext_resource type="Texture2D" uid="uid://b3ldlxxne4see" path="res://Temporary Files/Final/Salt.png" id="5_2dwpg"]
 [ext_resource type="PackedScene" uid="uid://x45kdj4f0eov" path="res://Scenes/fall_death.tscn" id="6_f18tw"]
+[ext_resource type="AudioStream" uid="uid://b8gydekdhoigt" path="res://Graveyard.mp3" id="7_wfidn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5plc1"]
 texture = ExtResource("4_kl0rx")
@@ -907,3 +908,9 @@ shape = SubResource("RectangleShape2D_imku7")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="3rd_sideboss"]
 
 [node name="fall_death" parent="." instance=ExtResource("6_f18tw")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_wfidn")
+volume_db = 8.0
+autoplay = true
+bus = &"Music"
