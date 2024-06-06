@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://odaqibm4bf52"]
+[gd_scene load_steps=19 format=3 uid="uid://odaqibm4bf52"]
 
 [ext_resource type="Texture2D" uid="uid://rvardrogc2nb" path="res://Temporary Files/night_background.png" id="1_h282f"]
 [ext_resource type="Texture2D" uid="uid://du1oe20pbislq" path="res://Temporary Files/craftpix-net-801184-free-clouds-pixel-art-asset-pack/PNG/Clouds_gray/Shape3/cloud_shape3_1.png" id="2_dutpx"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bawbv6uxbr4ic" path="res://Temporary Files/craftpix-net-801184-free-clouds-pixel-art-asset-pack/PNG/Clouds_black/Shape3/cloud_shape3_5.png" id="9_ljywr"]
 [ext_resource type="Texture2D" uid="uid://dmt0ot4rrb2ja" path="res://Temporary Files/craftpix-net-801184-free-clouds-pixel-art-asset-pack/PNG/Clouds_white/Shape3/cloud_shape3_2.png" id="10_7jjeb"]
 [ext_resource type="Script" path="res://2ndscene_transition_scene.gd" id="11_jboar"]
+[ext_resource type="Script" path="res://3rdboss_transition.gd" id="12_ynshv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dtriq"]
 texture = ExtResource("2_dutpx")
@@ -4073,6 +4074,9 @@ sources/4 = SubResource("TileSetAtlasSource_hfbry")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8xyfw"]
 size = Vector2(50, 78)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_64ptf"]
+size = Vector2(55, 107)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -4175,7 +4179,7 @@ polygon = PackedVector2Array(1503, 618, 1535, 612, 1601, 562, 1717, 558, 1747, 6
 
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="physics"]
 position = Vector2(2, 28)
-polygon = PackedVector2Array(991, 486, 1021, 481, 1050, 482, 1063, 484, 1086, 487, 1099, 512, 1043, 528)
+polygon = PackedVector2Array(991, 486, 1021, 481, 1050, 482, 1063, 484, 1083, 490, 1099, 512, 1043, 528)
 
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="physics"]
 polygon = PackedVector2Array(751, 490, 781, 476, 801, 461, 856, 457, 871, 470, 891, 478, 903, 484, 845, 512, 803, 506)
@@ -4195,5 +4199,16 @@ script = ExtResource("11_jboar")
 position = Vector2(450, 405)
 shape = SubResource("RectangleShape2D_8xyfw")
 
+[node name="3rdboss_transition" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("12_ynshv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="3rdboss_transition"]
+position = Vector2(832.5, 386.5)
+shape = SubResource("RectangleShape2D_64ptf")
+
 [connection signal="body_entered" from="2ndscene_transition" to="2ndscene_transition" method="_on_body_entered"]
 [connection signal="body_exited" from="2ndscene_transition" to="2ndscene_transition" method="_on_body_exited"]
+[connection signal="body_entered" from="3rdboss_transition" to="3rdboss_transition" method="_on_body_entered"]
+[connection signal="body_exited" from="3rdboss_transition" to="3rdboss_transition" method="_on_body_exited"]
