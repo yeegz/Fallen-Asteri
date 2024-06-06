@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://c00fd6yetrwh7"]
+[gd_scene load_steps=13 format=3 uid="uid://c00fd6yetrwh7"]
 
-[ext_resource type="Texture2D" uid="uid://ctmhlc20vdqbn" path="res://Temporary Files/844946240_preview_4a7d4ace46f6c0799a9758c3f8be4b2a1f562b50.jpg" id="1_ubeke"]
-[ext_resource type="Texture2D" uid="uid://0q4nyy4xmr7i" path="res://Temporary Files/cave_tileset.png" id="2_etqbr"]
+[ext_resource type="Texture2D" uid="uid://bcf2km7ms5hfc" path="res://Temporary Files/844946240_preview_4a7d4ace46f6c0799a9758c3f8be4b2a1f562b50.jpg" id="1_ubeke"]
+[ext_resource type="Texture2D" uid="uid://rl3feb1upknl" path="res://Temporary Files/cave_tileset.png" id="2_etqbr"]
 [ext_resource type="PackedScene" uid="uid://d0kv8oi3d4d22" path="res://pause_menu.tscn" id="3_oyuij"]
 [ext_resource type="PackedScene" uid="uid://c8br3cr26rf1a" path="res://Scenes/character_body_2d.tscn" id="4_sh67c"]
 [ext_resource type="PackedScene" uid="uid://drpyr5g1rk2fw" path="res://Scenes/sideboss_2d.tscn" id="5_3pbj5"]
+[ext_resource type="Script" path="res://cloudlevel_transition.gd" id="6_06i6d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2l0n8"]
 texture = ExtResource("2_etqbr")
@@ -665,6 +666,9 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_sbwdf")
 sources/0 = SubResource("TileSetAtlasSource_gk5ai")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmrgo"]
+size = Vector2(61, 581.5)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -699,3 +703,15 @@ position = Vector2(417, 409)
 
 [node name="sideboss2D" parent="." instance=ExtResource("5_3pbj5")]
 position = Vector2(1561, 738)
+
+[node name="cloudlevel_transition" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("6_06i6d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cloudlevel_transition"]
+position = Vector2(1809, 514.75)
+shape = SubResource("RectangleShape2D_tmrgo")
+
+[connection signal="body_entered" from="cloudlevel_transition" to="cloudlevel_transition" method="_on_body_entered"]
+[connection signal="body_exited" from="cloudlevel_transition" to="cloudlevel_transition" method="_on_body_exited"]
