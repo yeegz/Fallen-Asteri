@@ -69,13 +69,13 @@ func knockback():
 		is_knockback_right = true
 		$knockback_timer_right.start()
 		if is_knockback_right == true:
-			player.velocity.y -= knockback_distance
+			player.velocity.x -= knockback_distance
 	
 	elif attack_range == true and attack_cooldown == true:
 		is_knockback_left = true
 		$knockback_timer_left.start()
 		if is_knockback_left == true:
-			player.velocity.y += knockback_distance
+			player.velocity.x += knockback_distance
 
 
 func animations(player_chase):
