@@ -131,9 +131,9 @@ func animations(player_chase):
 	#Animation
 	if player_chase == false:
 		animation.play("idle")
-	elif attack_range == true or attack_range_left:
+	elif attack_range == true or attack_range_left == true:
 		animation.play("attack")
-	elif attack_cooldown == true:
+	elif player_chase == true:
 		animation.play("walk")
 
 #handles enemy death. Essentially deletes the sprite off the scene if hp = 0 or less
