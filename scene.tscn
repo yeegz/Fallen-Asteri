@@ -2585,5 +2585,10 @@ shape = SubResource("CapsuleShape2D_hfnb5")
 
 [node name="fall_death" parent="." instance=ExtResource("30_isv6p")]
 
+[node name="invisible_walls" type="CharacterBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="invisible_walls"]
+polygon = PackedVector2Array(-329, 834, -324, -484, 1974, -489, 1974, 838, 2140, 834, 2112, -680, -500, -684, -524, 814)
+
 [connection signal="body_entered" from="scene_transition" to="scene_transition" method="_on_body_entered"]
 [connection signal="body_exited" from="scene_transition" to="scene_transition" method="_on_body_exited"]

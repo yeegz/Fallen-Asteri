@@ -989,7 +989,7 @@ sources/8 = SubResource("TileSetAtlasSource_e6xqi")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7ve3s"]
 radius = 101.0
-height = 280.0
+height = 486.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xtx1w"]
 size = Vector2(124, 85)
@@ -1032,7 +1032,7 @@ collision_mask = 2
 script = ExtResource("12_lhyj6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene_transition_2_1"]
-position = Vector2(351, 760)
+position = Vector2(324, 650)
 shape = SubResource("CapsuleShape2D_7ve3s")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

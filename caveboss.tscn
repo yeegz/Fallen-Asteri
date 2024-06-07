@@ -723,5 +723,10 @@ volume_db = 8.0
 autoplay = true
 bus = &"Music"
 
+[node name="invisible_wall" type="CharacterBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="invisible_wall"]
+polygon = PackedVector2Array(198, 1062, 205, 86, 1940, 89, 1940, 1073, 1866, 1073, 1866, 125, 262, 114, 248, 1069)
+
 [connection signal="body_entered" from="back_to_forest" to="back_to_forest" method="_on_body_entered"]
 [connection signal="body_exited" from="back_to_forest" to="back_to_forest" method="_on_body_exited"]
