@@ -91,7 +91,7 @@ func animations(player_chase):
 
 #pathfinding, knockback
 func pathing(playerchase, delta, speed):
-	if playerchase == true:
+	if playerchase == true and attack_range == false and attack_range_left == false:
 		
 		#move towards player if in detection area
 		position += (player.position - position)/ speed
