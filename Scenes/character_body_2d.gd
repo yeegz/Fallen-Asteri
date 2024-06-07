@@ -98,14 +98,12 @@ func animations(control):
 	#Animation
 	if control and velocity.y == 0 and attack_animation == false:
 		animation.play("run")
-	if Input.is_action_just_pressed("ui_attack") and global.PLAYER_STAMINA >= stamina_requirement_attack:
-		velocity.x = 0
-		if velocity.x == 0:
-			attack_animation = true
-			$attack_anim_timer.start()
-			if attack_animation == true:
-				animation.play("attack")
-				combat_audio_stream_player_2D.play()
+	if Input.is_action_just_pressed("ui_attack") and global.PLAYER_STAMINA >= stamina_requirement_attack and is_attacking_left == false and is_attacking_right == false:
+		attack_animation = true
+		$attack_anim_timer.start()
+		if attack_animation == true:
+			animation.play("attack")
+			combat_audio_stream_player_2D.play()
 	elif velocity.y != 0 and attack_animation == false:
 		animation.play("jump")
 	elif control == 0 or velocity.x == 0:
