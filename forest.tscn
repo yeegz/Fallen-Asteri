@@ -1,26 +1,26 @@
 [gd_scene load_steps=43 format=3 uid="uid://c37apr1hy8c7e"]
 
 [ext_resource type="Script" path="res://forest.gd" id="1_pkect"]
-[ext_resource type="Texture2D" uid="uid://dmtuoittu60yx" path="res://Temporary Files/539c483ff16585f1014ce8bff226bc56.png" id="1_sfl31"]
-[ext_resource type="Texture2D" uid="uid://bagiaajh5vwbi" path="res://Temporary Files/forest/bush.png" id="2_5alm7"]
-[ext_resource type="Texture2D" uid="uid://bbwqqjo5ag0yj" path="res://Temporary Files/forest/grass.png" id="3_v53lr"]
-[ext_resource type="Texture2D" uid="uid://ba5piec7dot3h" path="res://Temporary Files/forest/tilesetgrass.png" id="4_3j55e"]
-[ext_resource type="Texture2D" uid="uid://dxo3dwxqh1a66" path="res://Temporary Files/SideView_Grass.png" id="5_ae0qm"]
-[ext_resource type="Texture2D" uid="uid://c5a2fe881f06v" path="res://Temporary Files/forest/tree.png" id="5_ojf8r"]
+[ext_resource type="Texture2D" uid="uid://dv04nbx4g762m" path="res://Temporary Files/539c483ff16585f1014ce8bff226bc56.png" id="1_sfl31"]
+[ext_resource type="Texture2D" uid="uid://dlyqkf6rylsct" path="res://Temporary Files/forest/bush.png" id="2_5alm7"]
+[ext_resource type="Texture2D" uid="uid://blo44q4jpnowb" path="res://Temporary Files/forest/grass.png" id="3_v53lr"]
+[ext_resource type="Texture2D" uid="uid://br7kjjh6hmjbc" path="res://Temporary Files/forest/tilesetgrass.png" id="4_3j55e"]
+[ext_resource type="Texture2D" uid="uid://b53ycceno28he" path="res://Temporary Files/SideView_Grass.png" id="5_ae0qm"]
+[ext_resource type="Texture2D" uid="uid://ds1ehsgyxqkqf" path="res://Temporary Files/forest/tree.png" id="5_ojf8r"]
 [ext_resource type="PackedScene" uid="uid://c8br3cr26rf1a" path="res://Scenes/character_body_2d.tscn" id="6_f6nur"]
-[ext_resource type="Texture2D" uid="uid://byqu28jng4fao" path="res://Temporary Files/tree.png" id="6_yvl64"]
-[ext_resource type="Texture2D" uid="uid://cko471vwu1pv" path="res://Temporary Files/bush.png" id="8_14hvm"]
-[ext_resource type="Texture2D" uid="uid://t34al010trpa" path="res://Temporary Files/grass-2.png" id="9_8dq40"]
-[ext_resource type="Texture2D" uid="uid://dqlohhab6d1na" path="res://Temporary Files/pixil-frame-0 2.png" id="11_ewjtl"]
-[ext_resource type="Texture2D" uid="uid://bwmi8tujn1hct" path="res://Temporary Files/pixil-frame-0 copy.png" id="12_c8hke"]
+[ext_resource type="Texture2D" uid="uid://pmysu0b2w342" path="res://Temporary Files/tree.png" id="6_yvl64"]
+[ext_resource type="Texture2D" uid="uid://cybvcr8lmlspq" path="res://Temporary Files/bush.png" id="8_14hvm"]
+[ext_resource type="Texture2D" uid="uid://elmr7f5mls76" path="res://Temporary Files/grass-2.png" id="9_8dq40"]
+[ext_resource type="Texture2D" uid="uid://dsqnh27w30vij" path="res://Temporary Files/pixil-frame-0 2.png" id="11_ewjtl"]
+[ext_resource type="Texture2D" uid="uid://dx3q20de8udl3" path="res://Temporary Files/pixil-frame-0 copy.png" id="12_c8hke"]
 [ext_resource type="Script" path="res://scene_transition_scene_2-1.gd" id="12_lhyj6"]
 [ext_resource type="PackedScene" uid="uid://d0kv8oi3d4d22" path="res://pause_menu.tscn" id="13_tp65y"]
 [ext_resource type="PackedScene" uid="uid://5rxfhnekfkgs" path="res://Scenes/enemy_scene_2.tscn" id="14_0og2y"]
 [ext_resource type="Script" path="res://sideboss_area.gd" id="14_ommnm"]
-[ext_resource type="Texture2D" uid="uid://urumo6oat0kg" path="res://Temporary Files/craftpix-net-801184-free-clouds-pixel-art-asset-pack/PNG/Clouds_white/Shape3/cloud_shape3_4.png" id="17_gtxsh"]
+[ext_resource type="Texture2D" uid="uid://b5vjkkdo540w0" path="res://Temporary Files/craftpix-net-801184-free-clouds-pixel-art-asset-pack/PNG/Clouds_white/Shape3/cloud_shape3_4.png" id="17_gtxsh"]
 [ext_resource type="PackedScene" uid="uid://x45kdj4f0eov" path="res://Scenes/fall_death.tscn" id="18_4pmba"]
 [ext_resource type="Script" path="res://actual_cloud_level_transition.gd" id="19_tu7ua"]
-[ext_resource type="AudioStream" uid="uid://clredh7wolh27" path="res://Celtic Music  Echoing Woods.mp3" id="21_428g3"]
+[ext_resource type="AudioStream" uid="uid://be8oop2ryxacy" path="res://Celtic Music  Echoing Woods.mp3" id="21_428g3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ut53t"]
 texture = ExtResource("2_5alm7")
@@ -997,7 +997,7 @@ size = Vector2(124, 85)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e77wb"]
 size = Vector2(69, 771.5)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D3" type="Node2D"]
 script = ExtResource("1_pkect")
 
 [node name="TextureRect" type="TextureRect" parent="."]
