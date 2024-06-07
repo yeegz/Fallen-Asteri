@@ -12,9 +12,6 @@ var attack_range_left = false
 var attack_cooldown = true
 var attack_cooldown_left = true
 var player_alive = true
-var knockback_distance = 20
-var is_knockback_right = false
-var is_knockback_left = false
 @onready var animation = $AnimatedSprite2D
 
 func _physics_process(delta):
@@ -24,7 +21,6 @@ func _physics_process(delta):
 	enemy_healthbar()
 	death_on_sceen_transition()
 	animations(player_chase)
-	knockback()
 
 func enemy():
 	pass
@@ -63,19 +59,6 @@ func pathing(playerchase, delta, speed):
 		
 		
 
-func knockback():
-	#Knockback
-	if attack_range_left == true and attack_cooldown_left == true:
-		is_knockback_right = true
-		$knockback_timer_right.start()
-		if is_knockback_right == true:
-			player.velocity.x -= knockback_distance
-	
-	elif attack_range == true and attack_cooldown == true:
-		is_knockback_left = true
-		$knockback_timer_left.start()
-		if is_knockback_left == true:
-			player.velocity.x += knockback_distance
 
 
 func animations(player_chase):
@@ -137,6 +120,7 @@ func enemy_attack():
 		await get_tree().create_timer(0.1).timeout
 		player.animation.modulate = Color.WHITE
 		global.PLAYER_HP -= 50
+		player.knockback()
 		#audio_stream_player_2D.play()
 		attack_cooldown = true
 		$cooldown_right.start()
@@ -147,6 +131,7 @@ func enemy_attack_left():
 		await get_tree().create_timer(0.1).timeout
 		player.animation.modulate = Color.WHITE
 		global.PLAYER_HP -= 50
+		player.knockback()
 		#audio_stream_player_2D.play()
 		attack_cooldown = true
 		$cooldown_left.start()
@@ -176,10 +161,3 @@ func death_on_sceen_transition():
 	if global.alive_status_s4_1 == false:
 		queue_free()
 
-
-func _on_knockback_timer_right_timeout():
-	is_knockback_right = false
-
-
-func _on_knockback_timer_left_timeout():
-	is_knockback_left = false
