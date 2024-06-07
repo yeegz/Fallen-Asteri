@@ -1,12 +1,12 @@
 [gd_scene load_steps=15 format=3 uid="uid://bkacp6q5i4h8c"]
 
-[ext_resource type="Texture2D" uid="uid://dx5qwowgnwq83" path="res://Temporary Files/pixel-art-clouds-moon-reflection-dark-background-hd-wallpaper-preview.jpg" id="1_ejbt3"]
-[ext_resource type="Texture2D" uid="uid://cgw8yq45d81cn" path="res://Temporary Files/Final/Background_0.png" id="1_r6wia"]
+[ext_resource type="Texture2D" uid="uid://crt6q8hve10fm" path="res://Temporary Files/pixel-art-clouds-moon-reflection-dark-background-hd-wallpaper-preview.jpg" id="1_ejbt3"]
+[ext_resource type="Texture2D" uid="uid://dv4vvx5tvl4ip" path="res://Temporary Files/Final/Background_0.png" id="1_r6wia"]
 [ext_resource type="PackedScene" uid="uid://c8br3cr26rf1a" path="res://Scenes/character_body_2d.tscn" id="3_kp3a4"]
-[ext_resource type="Texture2D" uid="uid://bh24e86ngmftr" path="res://Temporary Files/Final/Tiles.png" id="4_kl0rx"]
-[ext_resource type="Texture2D" uid="uid://b3ldlxxne4see" path="res://Temporary Files/Final/Salt.png" id="5_2dwpg"]
+[ext_resource type="Texture2D" uid="uid://dntfl16mq3eo7" path="res://Temporary Files/Final/Tiles.png" id="4_kl0rx"]
+[ext_resource type="Texture2D" uid="uid://brgq1mvi3ebs" path="res://Temporary Files/Final/Salt.png" id="5_2dwpg"]
 [ext_resource type="PackedScene" uid="uid://x45kdj4f0eov" path="res://Scenes/fall_death.tscn" id="6_f18tw"]
-[ext_resource type="AudioStream" uid="uid://b8gydekdhoigt" path="res://Graveyard.mp3" id="7_wfidn"]
+[ext_resource type="AudioStream" uid="uid://ddps0vu1f5uqo" path="res://Graveyard.mp3" id="7_wfidn"]
 [ext_resource type="PackedScene" uid="uid://d0kv8oi3d4d22" path="res://pause_menu.tscn" id="8_0y0cc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5plc1"]
@@ -853,7 +853,7 @@ sources/2 = SubResource("TileSetAtlasSource_su0f4")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imku7"]
 size = Vector2(757.5, 76)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 texture_filter = 1
