@@ -41,7 +41,7 @@ func _on_detection_area_body_exited(body):
 
 #pathfinding, knockback
 func pathing(playerchase, delta, speed):
-	if playerchase == true:
+	if playerchase == true and attack_range == false and attack_range_left == false:
 		
 		#move towards player if in detection area
 		position += (player.position - position)/ speed
@@ -131,9 +131,9 @@ func animations(player_chase):
 	#Animation
 	if player_chase == false:
 		animation.play("idle")
-	elif attack_range == true or attack_range_left:
+	elif attack_range == true or attack_range_left == true:
 		animation.play("attack")
-	elif attack_cooldown == true:
+	elif player_chase == true:
 		animation.play("walk")
 
 #handles enemy death. Essentially deletes the sprite off the scene if hp = 0 or less

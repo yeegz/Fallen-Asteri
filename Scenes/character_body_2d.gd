@@ -1,8 +1,5 @@
 extends CharacterBody2D
 
-
-
-
 #variable declaration
 const JUMP = -550
 const SPEED = 320
@@ -27,10 +24,6 @@ var is_attacking_left = false
 @onready var  audio_stream_player_2D = $AudioStreamPlayer2D as AudioStreamPlayer2D
 @onready var  combat_audio_stream_player_2D = $AudioStreamPlayer2D2 as AudioStreamPlayer2D
 
-
-
-
-
 #main function
 func _process(delta):
 	var control = controls()
@@ -52,8 +45,6 @@ func _process(delta):
 		global.load()
 	xp_calc()
 	xpbar()
-	
-
 
 
 #Easiest way for enemy hitbox to identify player is through methods.
@@ -63,7 +54,16 @@ func hero():
 #player controls and sprite flipping according to direction
 func controls():
 	#Added buttons A and D to the left and right axis respectively
-	var direction = Input.get_axis("ui_left", "ui_right")
+	var direction = 0
+	if Input.is_action_pressed("ui_left") and is_attacking_right == false and is_attacking_left == false:
+		direction = -1
+	elif Input.is_action_pressed("ui_right") and is_attacking_right == false and is_attacking_left == false:
+		direction = 1
+	#elif Input.is_action_just_pressed("ui_left") or Input.is_action_just_pressed("ui_right") and attack_animation == true:
+		#direction = 0
+	else:
+		direction = 0
+	
 	
 	#Jump
 	if is_on_floor() and Input.is_action_just_pressed("ui_accept") and attack_animation == false:
@@ -98,7 +98,7 @@ func animations(control):
 	#Animation
 	if control and velocity.y == 0 and attack_animation == false:
 		animation.play("run")
-	elif Input.is_action_just_pressed("ui_attack") and global.PLAYER_STAMINA >= stamina_requirement_attack and is_attacking_right == false and is_attacking_left == false:
+	if Input.is_action_just_pressed("ui_attack") and global.PLAYER_STAMINA >= stamina_requirement_attack and is_attacking_left == false and is_attacking_right == false:
 		attack_animation = true
 		$attack_anim_timer.start()
 		if attack_animation == true:
@@ -253,7 +253,6 @@ func _on_dash_timer_timeout():
 	dash_cooldown = false
 	is_dashing = false
 	global.PLAYER_STAMINA -= dash_stamina_requirement
-	
 
 
 func xp_calc():
@@ -269,5 +268,4 @@ func xpbar():
 	var xpbar_parameters = $XPbar
 	xpbar_parameters.max_value = global.PLAYER_MAX_XP
 	xpbar_parameters.value = global.PLAYER_XP
-	
 
