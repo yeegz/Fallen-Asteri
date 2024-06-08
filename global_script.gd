@@ -37,13 +37,13 @@ extends Node
 @onready var second_sideboss_xp_drop = 30
 
 #save
-var data = [transitioned, current_scene, PLAYER_HP, PLAYER_MAX_HP, PLAYER_STAMINA, PLAYER_MAX_STAMINA, PLAYER_XP, PLAYER_MAX_XP, PLAYER_LEVEL, PLAYER_ATTACK_DAMAGE, STAMINA_RECOVERY, SKELETON_ENEMY_XP_DROP, SIDEBOSS_XP_DROP, alive_status_s1, alive_status_s2, sideboss_dead, alive_status_s4_1, second_sideboss_xp_drop]
+var data = [transitioned, current_scene, PLAYER_HP, PLAYER_MAX_HP, PLAYER_STAMINA, PLAYER_MAX_STAMINA, PLAYER_XP, PLAYER_MAX_XP, PLAYER_LEVEL, PLAYER_ATTACK_DAMAGE, STAMINA_RECOVERY, SKELETON_ENEMY_XP_DROP, SIDEBOSS_XP_DROP, alive_status_s1, alive_status_s2, sideboss_dead, alive_status_s4_1, second_sideboss_xp_drop, alive_status_s1_2, alive_status_s1_3]
 
 
 
 func _physics_process(delta):
 	for x in range(0,2):
-		data = [transitioned, current_scene, PLAYER_HP, PLAYER_MAX_HP, PLAYER_STAMINA, PLAYER_MAX_STAMINA, PLAYER_XP, PLAYER_MAX_XP, PLAYER_LEVEL, PLAYER_ATTACK_DAMAGE, STAMINA_RECOVERY, SKELETON_ENEMY_XP_DROP, SIDEBOSS_XP_DROP, alive_status_s1, alive_status_s2, sideboss_dead, alive_status_s4_1, second_sideboss_xp_drop]
+		data = [transitioned, current_scene, PLAYER_HP, PLAYER_MAX_HP, PLAYER_STAMINA, PLAYER_MAX_STAMINA, PLAYER_XP, PLAYER_MAX_XP, PLAYER_LEVEL, PLAYER_ATTACK_DAMAGE, STAMINA_RECOVERY, SKELETON_ENEMY_XP_DROP, SIDEBOSS_XP_DROP, alive_status_s1, alive_status_s2, sideboss_dead, alive_status_s4_1, second_sideboss_xp_drop, alive_status_s1_2, alive_status_s1_3]
 
 func save(info):
 	var file = FileAccess.open("user://save.txt",FileAccess.WRITE)
@@ -65,12 +65,14 @@ func load():
 	PLAYER_LEVEL = info[8]
 	PLAYER_ATTACK_DAMAGE = info[9]
 	STAMINA_RECOVERY = info[10]
-	SIDEBOSS_XP_DROP = info[11]
-	SKELETON_ENEMY_XP_DROP = info[12]
+	SKELETON_ENEMY_XP_DROP = info[11]
+	SIDEBOSS_XP_DROP = info[12]
 	alive_status_s1 = info[13]
 	alive_status_s2 = info[14]
 	sideboss_dead = info[15]
 	alive_status_s4_1 = info[16]
 	second_sideboss_xp_drop = info[17]
+	alive_status_s1_2 = info[18]
+	alive_status_s1_3 = info[19]
 
 

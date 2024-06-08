@@ -49,6 +49,7 @@ func _process(delta):
 		global.load()
 	xp_calc()
 	xpbar()
+	print(global.data)
 
 
 #Easiest way for enemy hitbox to identify player is through methods.
