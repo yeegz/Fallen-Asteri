@@ -879,7 +879,12 @@ texture = ExtResource("1_ejbt3")
 position = Vector2(637, 394)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-zoom = Vector2(2.75, 2.75)
+zoom = Vector2(3, 3)
+limit_left = 450
+limit_top = -50
+limit_right = 1160
+limit_bottom = 600
+editor_draw_limits = true
 
 [node name="TileMap2" type="TileMap" parent="."]
 texture_filter = 1
