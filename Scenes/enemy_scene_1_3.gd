@@ -4,7 +4,7 @@ extends CharacterBody2D
 const GRAVITY_VALUE = 1100
 var SPEED = 70
 var JUMP = -500
-@onready var ENEMY_HP = 110
+@onready var ENEMY_HP = 100
 var player = null
 var player_chase = false
 var attack_range = false
@@ -31,9 +31,11 @@ func gravity(delta):
 		velocity.y += GRAVITY_VALUE * delta
 	move_and_slide()
 
+
 func _on_detection_area_body_entered(body):
 	player = body
 	player_chase = true
+
 
 func _on_detection_area_body_exited(body):
 	player = null
@@ -70,7 +72,6 @@ func _on_pre_attack_enemy_cooldown_right_timeout():
 func _on_pre_attack_enemy_cooldown_left_timeout():
 	enemy_attack_left()
 
-
 func _on_enemy_hitbox_right_body_entered(body):
 	if body.has_method("hero"):
 		attack_range = true
@@ -91,7 +92,7 @@ func _on_enemy_hitbox_left_body_entered(body):
 		if attack_range_left == true:
 			attack_cooldown_left = false
 		if attack_cooldown_left == false and attack_range_left == true:
-			$pre_attack_enemy_cooldown_left.start()
+			$pre_attack_enemy_cooldown_left.start
 
 
 func _on_enemy_hitbox_left_body_exited(body):
@@ -135,13 +136,12 @@ func death():
 		global.PLAYER_HP += global.health_on_kill
 		global.PLAYER_XP += global.SKELETON_ENEMY_XP_DROP
 		queue_free()
-		global.alive_status_s2 = false
-
+		global.alive_status_s1_3 = false
 
 func enemy_healthbar():
 	var enemy_heathbar_parameters = $enemy_health
 	enemy_heathbar_parameters.value = ENEMY_HP
 
 func death_on_sceen_transition():
-	if global.alive_status_s2 == false:
+	if global.alive_status_s1_3 == false:
 		queue_free()

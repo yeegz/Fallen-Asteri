@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 #variable declaration
 const GRAVITY_VALUE = 1100
-@onready var ENEMY_HP = 30
+@onready var ENEMY_HP = 260
 var SPEED = 70
 var player = null
 var player_chase = false
@@ -134,7 +134,7 @@ func animations(player_chase):
 
 func death():
 	if ENEMY_HP <= 0:
-		global.PLAYER_HP += 50
+		global.PLAYER_HP += global.health_on_kill
 		global.PLAYER_XP += global.SIDEBOSS_XP_DROP
 		queue_free()
 		global.sideboss_dead = true

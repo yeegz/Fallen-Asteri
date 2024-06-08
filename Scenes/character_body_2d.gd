@@ -169,6 +169,8 @@ func staminabar():
 	staminabar_parameters.value = global.PLAYER_STAMINA
 	if global.PLAYER_STAMINA == global.PLAYER_MAX_STAMINA:
 		staminabar_parameters.visible = false
+	elif global.PLAYER_STAMINA > global.PLAYER_MAX_STAMINA:
+		global.PLAYER_STAMINA = global.PLAYER_MAX_STAMINA
 	else:
 		staminabar_parameters.visible = true
 
@@ -259,11 +261,13 @@ func _on_dash_timer_timeout():
 func xp_calc():
 	if global.PLAYER_XP >= global.PLAYER_MAX_XP:
 		global.PLAYER_LEVEL += 1
+		global.PLAYER_XP = global.PLAYER_XP - global.PLAYER_MAX_XP
 		global.PLAYER_MAX_XP += 5
+		global.PLAYER_MAX_HP += 10
 		global.PLAYER_ATTACK_DAMAGE += 10
 		global.PLAYER_MAX_STAMINA += 10
 		global.STAMINA_RECOVERY += 5
-		global.PLAYER_XP = 0
+		global.health_on_kill += 10
 
 func xpbar():
 	var xpbar_parameters = $XPbar
