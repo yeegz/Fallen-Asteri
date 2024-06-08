@@ -49,7 +49,6 @@ func _process(delta):
 		global.load()
 	xp_calc()
 	xpbar()
-	print(global.PLAYER_HP, "\t", global.health_on_kill, "\t", global.PLAYER_MAX_HP)
 
 
 #Easiest way for enemy hitbox to identify player is through methods.
@@ -170,6 +169,8 @@ func staminabar():
 	staminabar_parameters.value = global.PLAYER_STAMINA
 	if global.PLAYER_STAMINA == global.PLAYER_MAX_STAMINA:
 		staminabar_parameters.visible = false
+	elif global.PLAYER_STAMINA > global.PLAYER_MAX_STAMINA:
+		global.PLAYER_STAMINA = global.PLAYER_MAX_STAMINA
 	else:
 		staminabar_parameters.visible = true
 
