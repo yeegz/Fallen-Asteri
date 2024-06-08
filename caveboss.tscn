@@ -703,6 +703,15 @@ visible = false
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_sh67c")]
 position = Vector2(417, 409)
 
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(-2, 2)
+zoom = Vector2(2.75, 2.75)
+limit_left = -25
+limit_top = -50
+limit_right = 1850
+limit_bottom = 1000
+editor_draw_limits = true
+
 [node name="sideboss2D" parent="." instance=ExtResource("5_3pbj5")]
 position = Vector2(1561, 738)
 
