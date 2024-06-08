@@ -8,3 +8,5 @@ func _physics_process(delta):
 		player.position.x = coordinates.player_posx_on_transition
 		player.position.y = coordinates.player_posy_on_transition
 		global.transitioned = false
+		
+		

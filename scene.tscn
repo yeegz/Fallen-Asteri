@@ -3,31 +3,31 @@
 [ext_resource type="Script" path="res://scene.gd" id="1_j5ugf"]
 [ext_resource type="Texture2D" uid="uid://byeqfi2rn1i6f" path="res://Sprite Assets/dirt.png" id="1_jjdho"]
 [ext_resource type="Texture2D" uid="uid://dtu1hwjhxyxuo" path="res://Sprite Assets/grass.png" id="2_nfj14"]
-[ext_resource type="Texture2D" uid="uid://droje06hakmto" path="res://Temporary Files/TileCraftGroundSetVersion2.png" id="3_chleh"]
-[ext_resource type="Texture2D" uid="uid://dwqot13e58857" path="res://Temporary Files/pixil-frame-0-12.png" id="3_mfda8"]
-[ext_resource type="Texture2D" uid="uid://cw6t886w8tk3f" path="res://Temporary Files/pixil-frame-0.png" id="4_36fch"]
-[ext_resource type="Texture2D" uid="uid://csd01ckfeu0il" path="res://Temporary Files/Tree only/tree001.png" id="4_ttnju"]
+[ext_resource type="Texture2D" uid="uid://bkew02lpauc1i" path="res://Temporary Files/TileCraftGroundSetVersion2.png" id="3_chleh"]
+[ext_resource type="Texture2D" uid="uid://bp323ddxndkco" path="res://Temporary Files/pixil-frame-0-12.png" id="3_mfda8"]
+[ext_resource type="Texture2D" uid="uid://qlbgwdylyusy" path="res://Temporary Files/pixil-frame-0.png" id="4_36fch"]
+[ext_resource type="Texture2D" uid="uid://csl6yr3yckoov" path="res://Temporary Files/Tree only/tree001.png" id="4_ttnju"]
 [ext_resource type="PackedScene" uid="uid://c8br3cr26rf1a" path="res://Scenes/character_body_2d.tscn" id="4_uge1f"]
-[ext_resource type="Texture2D" uid="uid://b3smx0vfrtesq" path="res://Temporary Files/pixil-frame-0-10.png" id="5_kso4v"]
-[ext_resource type="Texture2D" uid="uid://blf2lyrnpphgy" path="res://Temporary Files/Tree only/bush 0011.png" id="5_lmtss"]
+[ext_resource type="Texture2D" uid="uid://6jffmmqpdqk2" path="res://Temporary Files/pixil-frame-0-10.png" id="5_kso4v"]
+[ext_resource type="Texture2D" uid="uid://ds2rub8h2mymj" path="res://Temporary Files/Tree only/bush 0011.png" id="5_lmtss"]
 [ext_resource type="PackedScene" uid="uid://bbttsnhtdb1k5" path="res://Scenes/enemy_12d.tscn" id="5_qhj3c"]
-[ext_resource type="Texture2D" uid="uid://tcx1g8y655b6" path="res://Temporary Files/pixil-frame-0-11.png" id="6_4p2ce"]
+[ext_resource type="Texture2D" uid="uid://dqdul3cgh8ayr" path="res://Temporary Files/pixil-frame-0-11.png" id="6_4p2ce"]
 [ext_resource type="PackedScene" uid="uid://d0kv8oi3d4d22" path="res://pause_menu.tscn" id="6_61ind"]
-[ext_resource type="Texture2D" uid="uid://dct2lx2hmy5ji" path="res://Temporary Files/Tree only/bush 0021.png" id="6_fqyec"]
-[ext_resource type="Texture2D" uid="uid://b51hr02ba1suu" path="res://Temporary Files/bush 0031.png" id="7_q6niq"]
-[ext_resource type="Texture2D" uid="uid://fkuqxotktqa3" path="res://Temporary Files/Tree only/bush 0041.png" id="8_878ux"]
-[ext_resource type="Texture2D" uid="uid://bvx6pjhsmpil3" path="res://Temporary Files/pixil-frame-0-13.png" id="9_tmmfb"]
-[ext_resource type="Texture2D" uid="uid://cw7om2vsowy2c" path="res://Temporary Files/pixil-frame-0-17.png" id="10_igqc5"]
-[ext_resource type="Texture2D" uid="uid://b53ycceno28he" path="res://Temporary Files/SideView_Grass.png" id="10_o6wlq"]
-[ext_resource type="Texture2D" uid="uid://bcnjatoxiv3ae" path="res://Temporary Files/pixil-frame-0-14.png" id="10_udav4"]
-[ext_resource type="Texture2D" uid="uid://bilig81ydlxbf" path="res://Temporary Files/pixil-frame-0-18.png" id="13_jsepk"]
-[ext_resource type="Texture2D" uid="uid://xa52w81ds24b" path="res://Temporary Files/pixil-frame-0-16.png" id="14_q8vim"]
-[ext_resource type="Texture2D" uid="uid://brgh00tbjc7td" path="res://Temporary Files/pixil-frame-0-19.png" id="15_brjeq"]
-[ext_resource type="Texture2D" uid="uid://cpeyv3buwmm0q" path="res://Temporary Files/tf_beach_tileset/beach_tileset.png" id="16_ehwxa"]
-[ext_resource type="Texture2D" uid="uid://c4hnukiesichs" path="res://Temporary Files/Sky textures/Clouds/Clouds 7/1.png" id="23_inlfi"]
-[ext_resource type="Texture2D" uid="uid://nf5etlyi0qpj" path="res://Temporary Files/pixil-frame-0-23.png" id="25_gyok2"]
-[ext_resource type="Texture2D" uid="uid://cifj03hn130v6" path="res://Temporary Files/pixil-frame-0-22.png" id="26_5i6pc"]
-[ext_resource type="AudioStream" uid="uid://dah1veqatvl1b" path="res://mists-in-the-elven-lands-127808.mp3" id="27_1e7a0"]
+[ext_resource type="Texture2D" uid="uid://jxaigf6ri8sq" path="res://Temporary Files/Tree only/bush 0021.png" id="6_fqyec"]
+[ext_resource type="Texture2D" uid="uid://bhctrinkcjjxg" path="res://Temporary Files/bush 0031.png" id="7_q6niq"]
+[ext_resource type="Texture2D" uid="uid://3t8bqfwyeio4" path="res://Temporary Files/Tree only/bush 0041.png" id="8_878ux"]
+[ext_resource type="Texture2D" uid="uid://bsc0swnsuwue" path="res://Temporary Files/pixil-frame-0-13.png" id="9_tmmfb"]
+[ext_resource type="Texture2D" uid="uid://du30ix25um8aw" path="res://Temporary Files/pixil-frame-0-17.png" id="10_igqc5"]
+[ext_resource type="Texture2D" uid="uid://cahh5thndeqt6" path="res://Temporary Files/SideView_Grass.png" id="10_o6wlq"]
+[ext_resource type="Texture2D" uid="uid://b7e1ah81daocp" path="res://Temporary Files/pixil-frame-0-14.png" id="10_udav4"]
+[ext_resource type="Texture2D" uid="uid://cludaowqnjpdc" path="res://Temporary Files/pixil-frame-0-18.png" id="13_jsepk"]
+[ext_resource type="Texture2D" uid="uid://cjnls4aw15pyn" path="res://Temporary Files/pixil-frame-0-16.png" id="14_q8vim"]
+[ext_resource type="Texture2D" uid="uid://bbpuwgixfmpsl" path="res://Temporary Files/pixil-frame-0-19.png" id="15_brjeq"]
+[ext_resource type="Texture2D" uid="uid://dsoom67e1n22v" path="res://Temporary Files/tf_beach_tileset/beach_tileset.png" id="16_ehwxa"]
+[ext_resource type="Texture2D" uid="uid://cy425a70tv8r1" path="res://Temporary Files/Sky textures/Clouds/Clouds 7/1.png" id="23_inlfi"]
+[ext_resource type="Texture2D" uid="uid://c8bc8nchlpcrj" path="res://Temporary Files/pixil-frame-0-23.png" id="25_gyok2"]
+[ext_resource type="Texture2D" uid="uid://cpicvyy0xyp7c" path="res://Temporary Files/pixil-frame-0-22.png" id="26_5i6pc"]
+[ext_resource type="AudioStream" uid="uid://brrmxgatfayow" path="res://mists-in-the-elven-lands-127808.mp3" id="27_1e7a0"]
 [ext_resource type="Script" path="res://scene_transition.gd" id="28_u8cyk"]
 [ext_resource type="PackedScene" uid="uid://x45kdj4f0eov" path="res://Scenes/fall_death.tscn" id="30_isv6p"]
 [ext_resource type="PackedScene" uid="uid://cmdna62bseypl" path="res://Scenes/enemy_scene_1_2.tscn" id="31_bel2k"]
@@ -2546,7 +2546,16 @@ texture = ExtResource("23_inlfi")
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_uge1f")]
 position = Vector2(164, 527)
 
+[node name="Camera2D2" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(1, 1)
+zoom = Vector2(2.75, 2.75)
+limit_left = -300
+limit_top = -700
+limit_right = 1500
+limit_bottom = 800
+
 [node name="enemy_scene_1" parent="." instance=ExtResource("5_qhj3c")]
+visible = false
 texture_filter = 1
 position = Vector2(830, 538)
 
