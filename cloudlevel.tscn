@@ -4083,13 +4083,11 @@ size = Vector2(55, 107)
 [node name="Node2D3" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-visible = false
 offset_right = 1916.0
 offset_bottom = 3062.0
 texture = ExtResource("1_h282f")
 
 [node name="TileMap" type="TileMap" parent="."]
-visible = false
 texture_filter = 1
 scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_kgdh4")
@@ -4097,49 +4095,42 @@ format = 2
 layer_0/tile_data = PackedInt32Array(1048629, 720900, 163, 983093, 720900, 162, 917557, 720900, 161, 852021, 720900, 160, 852020, 655364, 160, 917556, 655364, 161, 983092, 655364, 162, 1048628, 655364, 163, 852019, 589828, 160, 917555, 589828, 161, 983091, 589828, 162, 1048627, 589828, 163, 1048626, 524292, 163, 983090, 524292, 162, 917554, 524292, 161, 852018, 524292, 160, 851994, 983044, 123, 851993, 917508, 123, 786458, 983044, 122, 786457, 917508, 122, 720922, 983044, 121, 720921, 917508, 121, 655386, 983044, 120, 655385, 917508, 120, 917518, 983044, 119, 917517, 917508, 119, 851982, 983044, 118, 851981, 917508, 118, 786446, 983044, 117, 786445, 917508, 117, 720909, 917508, 116, 720910, 983044, 116)
 
 [node name="CloudShape35" type="Sprite2D" parent="."]
-visible = false
 texture_filter = 1
 position = Vector2(1148, 695)
 scale = Vector2(2.32979, 2.2)
 texture = ExtResource("3_s2cbd")
 
 [node name="CloudShape34" type="Sprite2D" parent="."]
-visible = false
 texture_filter = 1
 position = Vector2(1375, 636)
 scale = Vector2(1.63889, 1.71569)
 texture = ExtResource("4_7f4v6")
 
 [node name="CloudShape33" type="Sprite2D" parent="."]
-visible = false
 texture_filter = 1
 position = Vector2(1047, 524)
 scale = Vector2(1.17677, 1.25)
 texture = ExtResource("5_bru7e")
 
 [node name="CloudShape36" type="Sprite2D" parent="."]
-visible = false
 texture_filter = 1
 position = Vector2(446, 493)
 scale = Vector2(2.16667, 2.13725)
 texture = ExtResource("4_7f4v6")
 
 [node name="CloudShape25" type="Sprite2D" parent="."]
-visible = false
 texture_filter = 1
 position = Vector2(600, 790.5)
 scale = Vector2(7.81538, 12.5625)
 texture = ExtResource("7_c4vla")
 
 [node name="CloudShape31" type="Sprite2D" parent="."]
-visible = false
 texture_filter = 1
 position = Vector2(520, 807)
 scale = Vector2(2.05882, 2.1582)
 texture = ExtResource("2_dutpx")
 
 [node name="CloudShape37" type="Sprite2D" parent="."]
-visible = false
 texture_filter = 1
 position = Vector2(1664, 629)
 scale = Vector2(2.38384, 2.76667)
@@ -4151,34 +4142,34 @@ position = Vector2(524, 624)
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(-1, 0)
 zoom = Vector2(2.75, 2.75)
+limit_left = 10
+limit_top = 10
+limit_right = 1800
+limit_bottom = 1000
+editor_draw_limits = true
 
 [node name="CloudShape38" type="Sprite2D" parent="."]
-visible = false
 texture_filter = 1
 position = Vector2(1633.5, 604.188)
 scale = Vector2(5.76596, 5.6125)
 texture = ExtResource("9_ljywr")
 
 [node name="CloudShape39" type="Sprite2D" parent="."]
-visible = false
 texture_filter = 1
 position = Vector2(634, 548)
 scale = Vector2(2.18617, 2.51667)
 texture = ExtResource("3_s2cbd")
 
 [node name="CloudShape32" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(828, 473)
 texture = ExtResource("10_7jjeb")
 
 [node name="CloudShape40" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(961, 771)
 scale = Vector2(1.24747, 1.5)
 texture = ExtResource("5_bru7e")
 
 [node name="physics" type="CharacterBody2D" parent="."]
-visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="physics"]
 position = Vector2(520, 807)
@@ -4211,29 +4202,24 @@ polygon = PackedVector2Array(589, 544, 618, 538, 659, 538, 680, 550, 665, 580, 6
 polygon = PackedVector2Array(375, 490, 393, 490, 419, 483, 481, 479, 518, 498, 467, 530, 421, 542, 395, 518)
 
 [node name="2ndscene_transition" type="Area2D" parent="."]
-visible = false
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("11_jboar")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="2ndscene_transition"]
-visible = false
 position = Vector2(450, 405)
 shape = SubResource("RectangleShape2D_8xyfw")
 
 [node name="3rdboss_transition" type="Area2D" parent="."]
-visible = false
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("12_ynshv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="3rdboss_transition"]
-visible = false
 position = Vector2(832.5, 386.5)
 shape = SubResource("RectangleShape2D_64ptf")
 
 [node name="fall_death" parent="." instance=ExtResource("13_hlhul")]
-visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_ukfeg")
@@ -4245,7 +4231,6 @@ bus = &"Music"
 visible = false
 
 [node name="pause_menu" parent="CanvasLayer" instance=ExtResource("15_fyi1p")]
-visible = false
 
 [connection signal="body_entered" from="2ndscene_transition" to="2ndscene_transition" method="_on_body_entered"]
 [connection signal="body_exited" from="2ndscene_transition" to="2ndscene_transition" method="_on_body_exited"]
