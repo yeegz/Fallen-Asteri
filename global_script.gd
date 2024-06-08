@@ -22,6 +22,8 @@ extends Node
 
 #scene 1
 @onready var alive_status_s1 = true
+@onready var alive_status_s1_2 = true
+@onready var alive_status_s1_3 = true
 
 
 #scene 2

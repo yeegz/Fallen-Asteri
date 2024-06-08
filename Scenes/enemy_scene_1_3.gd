@@ -57,8 +57,6 @@ func pathing(playerchase, delta, speed):
 			$AnimatedSprite2D.flip_h = false
 
 
-
-
 func _on_cooldown_right_timeout():
 	attack_cooldown = false
 
@@ -73,9 +71,6 @@ func _on_pre_attack_enemy_cooldown_right_timeout():
 
 func _on_pre_attack_enemy_cooldown_left_timeout():
 	enemy_attack_left()
-
-
-
 
 func _on_enemy_hitbox_right_body_entered(body):
 	if body.has_method("hero"):
@@ -97,7 +92,7 @@ func _on_enemy_hitbox_left_body_entered(body):
 		if attack_range_left == true:
 			attack_cooldown_left = false
 		if attack_cooldown_left == false and attack_range_left == true:
-			$pre_attack_enemy_cooldown_left.start()
+			$pre_attack_enemy_cooldown_left.start
 
 
 func _on_enemy_hitbox_left_body_exited(body):
@@ -141,14 +136,12 @@ func death():
 		global.PLAYER_HP += 50
 		global.PLAYER_XP += global.SKELETON_ENEMY_XP_DROP
 		queue_free()
-		global.alive_status_s1_2 = false
+		global.alive_status_s1_3 = false
 
 func enemy_healthbar():
 	var enemy_heathbar_parameters = $enemy_health
 	enemy_heathbar_parameters.value = ENEMY_HP
 
 func death_on_sceen_transition():
-	if global.alive_status_s1_2 == false:
+	if global.alive_status_s1_3 == false:
 		queue_free()
-
-
