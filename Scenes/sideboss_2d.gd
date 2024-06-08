@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 #variable declaration
 const GRAVITY_VALUE = 1100
-@onready var ENEMY_HP = 300
+@onready var ENEMY_HP = 30
 var SPEED = 70
 var player = null
 var player_chase = false

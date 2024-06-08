@@ -325,14 +325,17 @@ position = Vector2(3.8147e-06, 3.8147e-06)
 scale = Vector2(1.96485, 2.05469)
 sprite_frames = SubResource("SpriteFrames_ex4hy")
 animation = &"enemy_attack"
+frame = 4
+frame_progress = 0.109597
+flip_h = true
 
 [node name="enemy_hitbox" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="enemy_hitbox"]
-position = Vector2(-50, -59)
-polygon = PackedVector2Array(68, 69, 78, 67, 92, 63, 101, 58, 110, 52, 115, 43, 112, 28, 103, 20, 89, 15, 75, 11, 60, 7, 51, 4, 39, 4, 32, 6, 24, 9, 21, 15, 22, 21, 25, 25, 29, 26, 34, 26, 37, 25, 43, 24, 52, 23, 61, 25, 79, 27, 89, 31, 97, 38, 97, 44, 92, 51, 82, 57)
+position = Vector2(-58, -54)
+polygon = PackedVector2Array(68, 69, 78, 67, 92, 63, 101, 58, 110, 52, 115, 43, 112, 28, 103, 20, 89, 15, 75, 11, 68, 10, 64, 17, 66, 24, 79, 27, 89, 31, 97, 38, 97, 44, 92, 51, 82, 57)
 
 [node name="cooldown" type="Timer" parent="."]
 wait_time = 0.9
@@ -364,8 +367,8 @@ collision_layer = 4
 collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="enemy_hitbox_left"]
-position = Vector2(-20, -58)
-polygon = PackedVector2Array(8, 64, 3, 72, -8, 70, -22, 67, -33, 60, -42, 47, -38, 33, -30, 21, -17, 11, 0, 6, 21, 5, 20, 25, -8, 29, -23, 37, -14, 52, -2, 57)
+position = Vector2(-14, -56)
+polygon = PackedVector2Array(-21, 65, -30, 61, -42, 47, -38, 33, -29, 22, -16, 17, -7, 14, 1, 17, -6, 28, -20, 29, -27, 42, -18, 59)
 
 [node name="pre_attack_enemy_cooldown_left" type="Timer" parent="."]
 wait_time = 0.5

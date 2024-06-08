@@ -20,6 +20,10 @@ var dash_stamina_requirement = 50
 var is_dashing = false
 var is_attacking_right = false
 var is_attacking_left = false
+var direction = 0
+var knockback_right = false
+var knockback_left = false
+var knockback_distance = 1000
 @onready var animation = $AnimatedSprite2D
 @onready var  audio_stream_player_2D = $AudioStreamPlayer2D as AudioStreamPlayer2D
 @onready var  combat_audio_stream_player_2D = $AudioStreamPlayer2D2 as AudioStreamPlayer2D
@@ -54,13 +58,10 @@ func hero():
 #player controls and sprite flipping according to direction
 func controls():
 	#Added buttons A and D to the left and right axis respectively
-	var direction = 0
 	if Input.is_action_pressed("ui_left") and is_attacking_right == false and is_attacking_left == false:
 		direction = -1
 	elif Input.is_action_pressed("ui_right") and is_attacking_right == false and is_attacking_left == false:
 		direction = 1
-	#elif Input.is_action_just_pressed("ui_left") or Input.is_action_just_pressed("ui_right") and attack_animation == true:
-		#direction = 0
 	else:
 		direction = 0
 	
@@ -268,4 +269,28 @@ func xpbar():
 	var xpbar_parameters = $XPbar
 	xpbar_parameters.max_value = global.PLAYER_MAX_XP
 	xpbar_parameters.value = global.PLAYER_XP
+
+func knockback():
+	if facing_right == true:
+		knockback_left = true
+		$knockback_left_timer.start()
+		if knockback_left == true:
+			velocity.x -= knockback_distance
+			move_and_slide()
+	
+	elif facing_right == false:
+		knockback_right = true
+		$knockback_right_timer.start()
+		if knockback_right == true:
+			velocity.x += knockback_distance
+			move_and_slide()
+
+
+func _on_knockback_right_timer_timeout():
+	knockback_right = false
+
+
+func _on_knockback_left_timer_timeout():
+	knockback_left = false
+
 

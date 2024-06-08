@@ -1,8 +1,7 @@
-[gd_scene load_steps=53 format=3 uid="uid://c8br3cr26rf1a"]
+[gd_scene load_steps=52 format=3 uid="uid://c8br3cr26rf1a"]
 
 [ext_resource type="Script" path="res://Scenes/character_body_2d.gd" id="1_vkjrs"]
 [ext_resource type="Texture2D" uid="uid://cpa2s6o0mee1u" path="res://Temporary Files/Individual Sprite/Attack/Warrior_Attack_1.png" id="2_0x37v"]
-[ext_resource type="PackedScene" uid="uid://bi35ay7yj46fe" path="res://SaveLoad.tscn" id="2_qawxn"]
 [ext_resource type="Texture2D" uid="uid://dulq384m5qpta" path="res://Temporary Files/Individual Sprite/Attack/Warrior_Attack_2.png" id="3_5qr61"]
 [ext_resource type="Texture2D" uid="uid://brjcfxcvt4ha" path="res://Temporary Files/Individual Sprite/idle/Warrior_Idle_1.png" id="3_ai7xo"]
 [ext_resource type="Texture2D" uid="uid://d041mishxyv15" path="res://Temporary Files/Individual Sprite/Attack/Warrior_Attack_3.png" id="4_enwpg"]
@@ -226,9 +225,6 @@ collision_layer = 2
 collision_mask = 29
 script = ExtResource("1_vkjrs")
 
-[node name="SaveLoad" parent="." instance=ExtResource("2_qawxn")]
-visible = false
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(9, -8)
 scale = Vector2(1.77319, 2.03125)
@@ -338,6 +334,14 @@ offset_bottom = 33.0
 scale = Vector2(0.7, 0.7)
 color = Color(0, 0, 0, 1)
 
+[node name="knockback_right_timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="knockback_left_timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
 [connection signal="body_entered" from="player_attack_range" to="." method="_on_player_attack_range_body_entered"]
 [connection signal="body_exited" from="player_attack_range" to="." method="_on_player_attack_range_body_exited"]
 [connection signal="timeout" from="player_stamina" to="." method="_on_player_stamina_timeout"]
@@ -349,3 +353,5 @@ color = Color(0, 0, 0, 1)
 [connection signal="timeout" from="player_cooldown_left" to="." method="_on_player_cooldown_left_timeout"]
 [connection signal="timeout" from="pre_attack_left" to="." method="_on_pre_attack_left_timeout"]
 [connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="knockback_right_timer" to="." method="_on_knockback_right_timer_timeout"]
+[connection signal="timeout" from="knockback_left_timer" to="." method="_on_knockback_left_timer_timeout"]

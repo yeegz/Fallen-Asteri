@@ -299,8 +299,8 @@ position = Vector2(2.86102e-06, 0)
 scale = Vector2(1.965, 2.055)
 sprite_frames = SubResource("SpriteFrames_duxi7")
 animation = &"attack"
-frame = 2
-frame_progress = 0.318033
+frame = 1
+frame_progress = 0.50095
 
 [node name="detection_area" type="Area2D" parent="."]
 collision_layer = 4
@@ -328,16 +328,16 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="enemy_hitbox_right"]
-position = Vector2(4, -7)
-polygon = PackedVector2Array(14, 16, 27, 15, 35, 13, 42, 11, 49, 6, 54, 0, 57, -5, 56, -12, 52, -19, 45, -28, 34, -34, 19, -38, 8, -41, 0, -42, -10, -41, -17, -41, -21, -35, -18, -31, -11, -28, -5, -29, 4, -29, 13, -26, 22, -24, 38, -20, 41, -14, 45, -9, 45, -6, 43, -2, 39, 2, 31, 5, 23, 10)
+position = Vector2(-5, -5)
+polygon = PackedVector2Array(44, 9, 49, 6, 54, 0, 57, -5, 56, -12, 52, -19, 45, -28, 34, -34, 19, -38, 13, -26, 22, -24, 38, -20, 42, -15, 45, -9, 45, -6, 43, -2, 40, 4, 38, 10)
 
 [node name="enemy_hitbox_left" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="enemy_hitbox_left"]
-position = Vector2(6, -8)
-polygon = PackedVector2Array(-25, 17, -34, 15, -44, 14, -52, 11, -62, 6, -68, -1, -69, -11, -66, -20, -58, -26, -50, -32, -40, -34, -26, -39, -11, -41, -4, -41, 4, -41, 10, -39, 10, -30, 5, -27, 0, -28, -4, -29, -12, -30, -24, -27, -34, -25, -42, -23, -50, -18, -55, -9, -56, -1, -47, 5)
+position = Vector2(16, -4)
+polygon = PackedVector2Array(-52, 11, -62, 5, -67, -3, -66, -11, -63, -19, -58, -26, -50, -32, -40, -36, -24, -38, -24, -27, -34, -25, -42, -23, -50, -18, -55, -9, -56, -1)
 
 [node name="enemy_health" type="ProgressBar" parent="."]
 modulate = Color(1, 0, 0, 1)

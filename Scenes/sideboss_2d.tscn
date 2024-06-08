@@ -229,6 +229,7 @@ sprite_frames = SubResource("SpriteFrames_yejgm")
 animation = &"attack"
 frame = 9
 frame_progress = 0.216785
+flip_h = true
 
 [node name="sideboss_physics" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, 24.5)
@@ -261,14 +262,16 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="enemy_hitbox_right"]
-polygon = PackedVector2Array(11, -68, 54, -49, 69, -33, 72, -16, 72, 24, 61, 33, 50, 39, 36, 41, 36, 74, 49, 73, 66, 65, 80, 55, 91, 44, 98, 31, 98, -16, 91, -31, 79, -47, 55, -64)
+position = Vector2(-19, 1)
+polygon = PackedVector2Array(54, -49, 69, -33, 72, -16, 72, 24, 61, 33, 50, 39, 36, 41, 36, 74, 49, 73, 66, 65, 80, 55, 91, 44, 98, 31, 98, -16, 91, -31, 79, -47, 58, -64, 35, -68)
 
 [node name="enemy_hitbox_left" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="enemy_hitbox_left"]
-polygon = PackedVector2Array(-5, -70, -52, -49, -70, -28, -70, 27, -55, 38, -37, 41, -37, 74, -50, 71, -67, 64, -78, 56, -89, 45, -95, 32, -95, -22, -86, -39, -68, -53, -45, -66)
+position = Vector2(16, 1)
+polygon = PackedVector2Array(-25, -66, -52, -49, -70, -28, -70, 27, -55, 38, -37, 41, -37, 74, -50, 71, -67, 64, -78, 56, -89, 45, -95, 32, -95, -22, -86, -39, -68, -53, -45, -66)
 
 [node name="enemy_health" type="ProgressBar" parent="."]
 modulate = Color(1, 0, 0, 1)

@@ -57,11 +57,9 @@ func pathing(playerchase, delta, speed):
 		elif player.position > position:
 			$AnimatedSprite2D.flip_h = false
 		
-		#Knockback
-		#if player.position < position and attack_range == true and attack_cooldown == true:
-			#player.position.x += -knockback * delta
-		#elif player.position > position and attack_range == true and attack_cooldown == true:
-			#player.position.x += knockback * delta
+		
+
+
 
 func animations(player_chase):
 	#Animation
@@ -122,6 +120,7 @@ func enemy_attack():
 		await get_tree().create_timer(0.1).timeout
 		player.animation.modulate = Color.WHITE
 		global.PLAYER_HP -= 50
+		player.knockback()
 		#audio_stream_player_2D.play()
 		attack_cooldown = true
 		$cooldown_right.start()
@@ -132,6 +131,7 @@ func enemy_attack_left():
 		await get_tree().create_timer(0.1).timeout
 		player.animation.modulate = Color.WHITE
 		global.PLAYER_HP -= 50
+		player.knockback()
 		#audio_stream_player_2D.play()
 		attack_cooldown = true
 		$cooldown_left.start()
@@ -160,3 +160,4 @@ func enemy_healthbar():
 func death_on_sceen_transition():
 	if global.alive_status_s4_1 == false:
 		queue_free()
+
