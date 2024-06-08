@@ -298,9 +298,7 @@ texture_filter = 1
 position = Vector2(2.86102e-06, 0)
 scale = Vector2(1.965, 2.055)
 sprite_frames = SubResource("SpriteFrames_duxi7")
-animation = &"attack"
-frame = 1
-frame_progress = 0.50095
+animation = &"walk"
 
 [node name="detection_area" type="Area2D" parent="."]
 collision_layer = 4

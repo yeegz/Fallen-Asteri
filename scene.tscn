@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://bplxua7pm7t3m"]
+[gd_scene load_steps=70 format=3 uid="uid://bplxua7pm7t3m"]
 
 [ext_resource type="Script" path="res://scene.gd" id="1_j5ugf"]
 [ext_resource type="Texture2D" uid="uid://byeqfi2rn1i6f" path="res://Sprite Assets/dirt.png" id="1_jjdho"]
@@ -30,6 +30,9 @@
 [ext_resource type="AudioStream" uid="uid://dah1veqatvl1b" path="res://mists-in-the-elven-lands-127808.mp3" id="27_1e7a0"]
 [ext_resource type="Script" path="res://scene_transition.gd" id="28_u8cyk"]
 [ext_resource type="PackedScene" uid="uid://x45kdj4f0eov" path="res://Scenes/fall_death.tscn" id="30_isv6p"]
+[ext_resource type="PackedScene" uid="uid://cmdna62bseypl" path="res://Scenes/enemy_scene_1_2.tscn" id="31_bel2k"]
+[ext_resource type="PackedScene" uid="uid://b8c2nstgw253c" path="res://Scenes/enemy_scene_1_3.tscn" id="32_88650"]
+[ext_resource type="PackedScene" uid="uid://bnvcx8ttf8omb" path="res://Scenes/enemyscene_1_4.tscn" id="33_viiyy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jovnk"]
 texture = ExtResource("1_jjdho")
@@ -2589,6 +2592,13 @@ shape = SubResource("CapsuleShape2D_hfnb5")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="invisible_walls"]
 polygon = PackedVector2Array(-329, 834, -324, -484, 1974, -489, 1974, 838, 2140, 834, 2112, -680, -500, -684, -524, 814)
+
+[node name="enemy_scene_1_2" parent="." instance=ExtResource("31_bel2k")]
+position = Vector2(1084, 253)
+
+[node name="enemy_scene_1_3" parent="." instance=ExtResource("32_88650")]
+
+[node name="enemyscene_1_4" parent="." instance=ExtResource("33_viiyy")]
 
 [connection signal="body_entered" from="scene_transition" to="scene_transition" method="_on_body_entered"]
 [connection signal="body_exited" from="scene_transition" to="scene_transition" method="_on_body_exited"]

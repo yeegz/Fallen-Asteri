@@ -31,9 +31,11 @@ func gravity(delta):
 		velocity.y += GRAVITY_VALUE * delta
 	move_and_slide()
 
+
 func _on_detection_area_body_entered(body):
 	player = body
 	player_chase = true
+
 
 func _on_detection_area_body_exited(body):
 	player = null
@@ -55,6 +57,8 @@ func pathing(playerchase, delta, speed):
 			$AnimatedSprite2D.flip_h = false
 
 
+
+
 func _on_cooldown_right_timeout():
 	attack_cooldown = false
 
@@ -69,6 +73,8 @@ func _on_pre_attack_enemy_cooldown_right_timeout():
 
 func _on_pre_attack_enemy_cooldown_left_timeout():
 	enemy_attack_left()
+
+
 
 
 func _on_enemy_hitbox_right_body_entered(body):
@@ -137,7 +143,6 @@ func death():
 		queue_free()
 		global.alive_status_s2 = false
 
-
 func enemy_healthbar():
 	var enemy_heathbar_parameters = $enemy_health
 	enemy_heathbar_parameters.value = ENEMY_HP
@@ -145,3 +150,5 @@ func enemy_healthbar():
 func death_on_sceen_transition():
 	if global.alive_status_s2 == false:
 		queue_free()
+
+
