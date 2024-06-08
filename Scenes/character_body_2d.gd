@@ -49,7 +49,7 @@ func _process(delta):
 		global.load()
 	xp_calc()
 	xpbar()
-	print(global.data)
+	print(global.PLAYER_XP)
 
 
 #Easiest way for enemy hitbox to identify player is through methods.
@@ -260,11 +260,11 @@ func _on_dash_timer_timeout():
 func xp_calc():
 	if global.PLAYER_XP >= global.PLAYER_MAX_XP:
 		global.PLAYER_LEVEL += 1
+		global.PLAYER_XP = global.PLAYER_XP - global.PLAYER_MAX_XP
 		global.PLAYER_MAX_XP += 5
 		global.PLAYER_ATTACK_DAMAGE += 10
 		global.PLAYER_MAX_STAMINA += 10
 		global.STAMINA_RECOVERY += 5
-		global.PLAYER_XP = 0
 
 func xpbar():
 	var xpbar_parameters = $XPbar
