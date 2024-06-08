@@ -49,7 +49,7 @@ func _process(delta):
 		global.load()
 	xp_calc()
 	xpbar()
-	print(global.PLAYER_XP)
+	print(global.PLAYER_HP, "\t", global.health_on_kill, "\t", global.PLAYER_MAX_HP)
 
 
 #Easiest way for enemy hitbox to identify player is through methods.
@@ -262,9 +262,11 @@ func xp_calc():
 		global.PLAYER_LEVEL += 1
 		global.PLAYER_XP = global.PLAYER_XP - global.PLAYER_MAX_XP
 		global.PLAYER_MAX_XP += 5
+		global.PLAYER_MAX_HP += 10
 		global.PLAYER_ATTACK_DAMAGE += 10
 		global.PLAYER_MAX_STAMINA += 10
 		global.STAMINA_RECOVERY += 5
+		global.health_on_kill += 10
 
 func xpbar():
 	var xpbar_parameters = $XPbar

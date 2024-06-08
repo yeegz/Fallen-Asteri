@@ -4,7 +4,7 @@ extends CharacterBody2D
 const GRAVITY_VALUE = 1100
 var SPEED = 70
 var JUMP = -500
-@onready var ENEMY_HP = 60
+@onready var ENEMY_HP = 300
 var player = null
 var player_chase = false
 var attack_range = false
@@ -147,7 +147,7 @@ func enemy_attack_left():
 
 func death():
 	if ENEMY_HP <= 0:
-		global.PLAYER_HP += 50
+		global.PLAYER_HP += global.health_on_kill
 		global.PLAYER_XP += global.second_sideboss_xp_drop
 		queue_free()
 		global.alive_status_s4_1 = false

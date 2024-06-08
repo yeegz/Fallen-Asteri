@@ -118,7 +118,7 @@ func _on_cooldown_timeout():
 func death():
 	if ENEMY_HP <= 0:
 		global.alive_status_s1 = false
-		global.PLAYER_HP += 50
+		global.PLAYER_HP += global.health_on_kill
 		global.PLAYER_XP += global.SKELETON_ENEMY_XP_DROP
 		queue_free()
 

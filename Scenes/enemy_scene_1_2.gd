@@ -138,7 +138,7 @@ func animations(player_chase):
 #handles enemy death. Essentially deletes the sprite off the scene if hp = 0 or less
 func death():
 	if ENEMY_HP <= 0:
-		global.PLAYER_HP += 50
+		global.PLAYER_HP += global.health_on_kill
 		global.PLAYER_XP += global.SKELETON_ENEMY_XP_DROP
 		queue_free()
 		global.alive_status_s1_2 = false
