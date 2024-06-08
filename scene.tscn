@@ -2555,7 +2555,6 @@ limit_right = 1500
 limit_bottom = 800
 
 [node name="enemy_scene_1" parent="." instance=ExtResource("5_qhj3c")]
-visible = false
 texture_filter = 1
 position = Vector2(830, 538)
 
