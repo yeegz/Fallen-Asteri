@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bkacp6q5i4h8c"]
+[gd_scene load_steps=36 format=3 uid="uid://bkacp6q5i4h8c"]
 
 [ext_resource type="Texture2D" uid="uid://cnww1rlfjho8c" path="res://Temporary Files/pixel-art-clouds-moon-reflection-dark-background-hd-wallpaper-preview.jpg" id="1_ejbt3"]
 [ext_resource type="Texture2D" uid="uid://8vlhgwy6l5hl" path="res://Temporary Files/Final/Background_0.png" id="1_r6wia"]
@@ -6,9 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://bckqj1yvgv7w8" path="res://Temporary Files/Final/Tiles.png" id="4_kl0rx"]
 [ext_resource type="Texture2D" uid="uid://gec5n4mnklr7" path="res://Temporary Files/Final/Salt.png" id="5_2dwpg"]
 [ext_resource type="Texture2D" uid="uid://c6kg62v8h2sd1" path="res://Temporary Files/samurai sprites/IDLE.png" id="6_6uwj5"]
+[ext_resource type="Texture2D" uid="uid://cq4cvbdj3thac" path="res://Temporary Files/samurai sprites/ATTACK 1.png" id="6_asgrr"]
 [ext_resource type="PackedScene" uid="uid://x45kdj4f0eov" path="res://Scenes/fall_death.tscn" id="6_f18tw"]
 [ext_resource type="AudioStream" uid="uid://do1o20tnk7buc" path="res://Graveyard.mp3" id="7_wfidn"]
 [ext_resource type="PackedScene" uid="uid://d0kv8oi3d4d22" path="res://pause_menu.tscn" id="8_0y0cc"]
+[ext_resource type="Texture2D" uid="uid://c2ogc72tuoc3l" path="res://Temporary Files/samurai sprites/RUN.png" id="8_msili"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5plc1"]
 texture = ExtResource("4_kl0rx")
@@ -854,6 +856,22 @@ sources/2 = SubResource("TileSetAtlasSource_su0f4")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imku7"]
 size = Vector2(757.5, 76)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4b2l"]
+atlas = ExtResource("6_asgrr")
+region = Rect2(0, 0, 77, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_el4gg"]
+atlas = ExtResource("6_asgrr")
+region = Rect2(231, 0, 77, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oiuth"]
+atlas = ExtResource("6_asgrr")
+region = Rect2(308, 0, 77, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyxrt"]
+atlas = ExtResource("6_asgrr")
+region = Rect2(385, 0, 77, 112)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_oyecy"]
 atlas = ExtResource("6_6uwj5")
 region = Rect2(0, 0, 93, 112)
@@ -874,8 +892,57 @@ region = Rect2(279, 0, 93, 112)
 atlas = ExtResource("6_6uwj5")
 region = Rect2(372, 0, 93, 112)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmw6h"]
+atlas = ExtResource("8_msili")
+region = Rect2(0, 0, 93, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4uk16"]
+atlas = ExtResource("8_msili")
+region = Rect2(93, 0, 93, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56twm"]
+atlas = ExtResource("8_msili")
+region = Rect2(186, 0, 93, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h670h"]
+atlas = ExtResource("8_msili")
+region = Rect2(279, 0, 93, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqbov"]
+atlas = ExtResource("8_msili")
+region = Rect2(372, 0, 93, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7bnan"]
+atlas = ExtResource("8_msili")
+region = Rect2(465, 0, 93, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfaf2"]
+atlas = ExtResource("8_msili")
+region = Rect2(558, 0, 93, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3rqi"]
+atlas = ExtResource("8_msili")
+region = Rect2(651, 0, 93, 112)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_g3nio"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4b2l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_el4gg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oiuth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yyxrt")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oyecy")
@@ -894,6 +961,35 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_tmw6h")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_4uk16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56twm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h670h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqbov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7bnan")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfaf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3rqi")
+}],
+"loop": true,
+"name": &"run",
 "speed": 5.0
 }]
 
@@ -963,7 +1059,8 @@ texture_filter = 1
 position = Vector2(1112, 322)
 scale = Vector2(2.62903, 2.97321)
 sprite_frames = SubResource("SpriteFrames_g3nio")
-animation = &"idle"
+animation = &"run"
+frame_progress = 0.15051
 
 [node name="fall_death" parent="." instance=ExtResource("6_f18tw")]
 
