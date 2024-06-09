@@ -802,7 +802,6 @@ visible = false
 position = Vector2(757, 652)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-visible = false
 position = Vector2(2, 5)
 scale = Vector2(4, 4)
 zoom = Vector2(2.75, 2.75)
