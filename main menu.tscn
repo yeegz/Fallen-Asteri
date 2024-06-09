@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://main menu.gd" id="1_g3b4x"]
 [ext_resource type="Theme" uid="uid://cyr3cl0yytsk6" path="res://themes.tres" id="2_wk16h"]
-[ext_resource type="Texture2D" uid="uid://dki3vuh5y7lw" path="res://Temporary Files/awesomeCavePixelArt.png" id="3_7s6aa"]
-[ext_resource type="Texture2D" uid="uid://bjehs0yllb3tk" path="res://image/Press Start 2P (2).png" id="5_lor76"]
-[ext_resource type="Texture2D" uid="uid://uvebjj3ntnmr" path="res://image/Press Start 2P (1).png" id="6_flofn"]
-[ext_resource type="Texture2D" uid="uid://d1mlf8q565r4d" path="res://image/Press Start 2P (3).png" id="6_tdopv"]
-[ext_resource type="Texture2D" uid="uid://camrenpfsqabp" path="res://Sprite Assets/Logo.png" id="7_kuc6t"]
-[ext_resource type="AudioStream" uid="uid://bvpc0xudf6kau" path="res://waiting-time-175800.mp3" id="8_tbhuk"]
+[ext_resource type="Texture2D" uid="uid://b8wyehumyjp3p" path="res://Temporary Files/awesomeCavePixelArt.png" id="3_7s6aa"]
+[ext_resource type="Texture2D" uid="uid://ctclbybs556og" path="res://image/Press Start 2P (2).png" id="5_lor76"]
+[ext_resource type="Texture2D" uid="uid://bta7a68re2gs1" path="res://image/Press Start 2P (1).png" id="6_flofn"]
+[ext_resource type="Texture2D" uid="uid://bga00r7ghauis" path="res://image/Press Start 2P (3).png" id="6_tdopv"]
+[ext_resource type="Texture2D" uid="uid://lbhalx04ggvf" path="res://Sprite Assets/Logo.png" id="7_kuc6t"]
+[ext_resource type="AudioStream" uid="uid://bxwh1i4knn03v" path="res://waiting-time-175800.mp3" id="8_tbhuk"]
 
 [node name="main menu" type="Control"]
 layout_mode = 3
@@ -80,10 +80,26 @@ texture = ExtResource("6_tdopv")
 modulate = Color(1, 1, 1, 0)
 visibility_layer = 512
 layout_mode = 2
-offset_left = 144.0
+offset_left = 141.0
 offset_top = 380.0
-offset_right = 410.0
+offset_right = 407.0
 offset_bottom = 440.0
+size_flags_horizontal = 5
+size_flags_vertical = 4
+focus_neighbor_top = NodePath(".")
+focus_neighbor_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+text = "Start"
+
+[node name="LoadButton" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+visibility_layer = 512
+layout_mode = 2
+offset_left = 130.0
+offset_top = 675.0
+offset_right = 396.0
+offset_bottom = 735.0
 size_flags_horizontal = 5
 size_flags_vertical = 4
 focus_neighbor_top = NodePath(".")
@@ -132,5 +148,6 @@ stream = ExtResource("8_tbhuk")
 autoplay = true
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="LoadButton" to="." method="_on_load_button_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="options" to="." method="_on_options_pressed"]

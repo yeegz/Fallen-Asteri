@@ -43,10 +43,6 @@ func _process(delta):
 	audio_functions()
 	if global.sideboss_dead == true:
 		dash(facing_right)
-	if Input.is_action_just_pressed("save"):
-		global.save(global.data)
-	if Input.is_action_just_pressed("load"):
-		global.load()
 	xp_calc()
 	xpbar()
 

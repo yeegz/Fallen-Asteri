@@ -11,11 +11,8 @@ func _on_restart_pressed():
 
 
 
-func music():
-	death_sound.play()
 
-func _physics_process(delta):
-	music()
+
 
 
 func _on_main_menu_pressed():

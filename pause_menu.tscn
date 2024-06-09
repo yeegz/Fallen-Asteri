@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://d0kv8oi3d4d22"]
 
 [ext_resource type="Script" path="res://pause_menu.gd" id="1_qd0wf"]
-[ext_resource type="Texture2D" uid="uid://dki3vuh5y7lw" path="res://Temporary Files/awesomeCavePixelArt.png" id="2_80c7h"]
-[ext_resource type="AudioStream" uid="uid://w7hddanlj7ju" path="res://Awkward Pause Stop  Sound Effect FX for Gaming YouTubers Content Creators for Edits.mp3" id="3_h5fee"]
-[ext_resource type="FontFile" uid="uid://ow343njqyr0a" path="res://Early GameBoy.ttf" id="4_y2pyg"]
-[ext_resource type="Texture2D" uid="uid://nym4qfwcee13" path="res://resume for pause menu.png" id="5_2i2w1"]
-[ext_resource type="Texture2D" uid="uid://cvya6s01i6qhp" path="res://main menu for pause menu.png" id="6_sfswf"]
+[ext_resource type="Texture2D" uid="uid://b8wyehumyjp3p" path="res://Temporary Files/awesomeCavePixelArt.png" id="2_80c7h"]
+[ext_resource type="AudioStream" uid="uid://cudk1e55fwh54" path="res://Awkward Pause Stop  Sound Effect FX for Gaming YouTubers Content Creators for Edits.mp3" id="3_h5fee"]
+[ext_resource type="FontFile" uid="uid://b80ckb0gxxnmv" path="res://Early GameBoy.ttf" id="4_y2pyg"]
+[ext_resource type="Texture2D" uid="uid://dt6xk57gjfrxl" path="res://resume for pause menu.png" id="5_2i2w1"]
+[ext_resource type="Texture2D" uid="uid://bgy5hd2vprwo1" path="res://main menu for pause menu.png" id="6_sfswf"]
 
 [node name="pause_menu" type="Control"]
 process_mode = 3
@@ -53,17 +53,25 @@ volume_db = 11.303
 [node name="Resume" type="Button" parent="."]
 layout_mode = 2
 offset_left = 794.0
-offset_top = 613.0
+offset_top = 610.0
 offset_right = 1186.0
-offset_bottom = 686.0
+offset_bottom = 689.0
+text = "Resume Game"
+
+[node name="SaveButton" type="Button" parent="."]
+layout_mode = 2
+offset_left = 799.0
+offset_top = 886.0
+offset_right = 1191.0
+offset_bottom = 965.0
 text = "Resume Game"
 
 [node name="Main Menu" type="Button" parent="."]
 layout_mode = 2
-offset_left = 796.0
-offset_top = 765.0
-offset_right = 1199.0
-offset_bottom = 840.0
+offset_left = 788.0
+offset_top = 757.0
+offset_right = 1202.0
+offset_bottom = 843.0
 text = "Main Menu"
 
 [node name="Label" type="Label" parent="."]
@@ -77,8 +85,8 @@ theme_override_font_sizes/font_size = 140
 text = "Game Paused"
 
 [node name="ResumeForPauseMenu" type="Sprite2D" parent="."]
-position = Vector2(998, 650)
-scale = Vector2(1.48684, 1.125)
+position = Vector2(989, 653)
+scale = Vector2(1.46993, 1.125)
 texture = ExtResource("5_2i2w1")
 
 [node name="MainMenuForPauseMenu" type="Sprite2D" parent="."]
@@ -87,4 +95,5 @@ scale = Vector2(1.58846, 1.24648)
 texture = ExtResource("6_sfswf")
 
 [connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="Main Menu" to="." method="_on_main_menu_pressed"]
