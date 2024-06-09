@@ -1,16 +1,16 @@
 [gd_scene load_steps=36 format=3 uid="uid://bkacp6q5i4h8c"]
 
-[ext_resource type="Texture2D" uid="uid://cnww1rlfjho8c" path="res://Temporary Files/pixel-art-clouds-moon-reflection-dark-background-hd-wallpaper-preview.jpg" id="1_ejbt3"]
-[ext_resource type="Texture2D" uid="uid://8vlhgwy6l5hl" path="res://Temporary Files/Final/Background_0.png" id="1_r6wia"]
+[ext_resource type="Texture2D" uid="uid://dx5qwowgnwq83" path="res://Temporary Files/pixel-art-clouds-moon-reflection-dark-background-hd-wallpaper-preview.jpg" id="1_ejbt3"]
+[ext_resource type="Texture2D" uid="uid://cgw8yq45d81cn" path="res://Temporary Files/Final/Background_0.png" id="1_r6wia"]
 [ext_resource type="PackedScene" uid="uid://c8br3cr26rf1a" path="res://Scenes/character_body_2d.tscn" id="3_kp3a4"]
-[ext_resource type="Texture2D" uid="uid://bckqj1yvgv7w8" path="res://Temporary Files/Final/Tiles.png" id="4_kl0rx"]
-[ext_resource type="Texture2D" uid="uid://gec5n4mnklr7" path="res://Temporary Files/Final/Salt.png" id="5_2dwpg"]
-[ext_resource type="Texture2D" uid="uid://c6kg62v8h2sd1" path="res://Temporary Files/samurai sprites/IDLE.png" id="6_6uwj5"]
-[ext_resource type="Texture2D" uid="uid://cq4cvbdj3thac" path="res://Temporary Files/samurai sprites/ATTACK 1.png" id="6_asgrr"]
+[ext_resource type="Texture2D" uid="uid://bh24e86ngmftr" path="res://Temporary Files/Final/Tiles.png" id="4_kl0rx"]
+[ext_resource type="Texture2D" uid="uid://b3ldlxxne4see" path="res://Temporary Files/Final/Salt.png" id="5_2dwpg"]
+[ext_resource type="Texture2D" uid="uid://c1uvbnjchavt4" path="res://Temporary Files/samurai sprites/IDLE.png" id="6_6uwj5"]
+[ext_resource type="Texture2D" uid="uid://dudkgko81oho0" path="res://Temporary Files/samurai sprites/ATTACK 1.png" id="6_asgrr"]
 [ext_resource type="PackedScene" uid="uid://x45kdj4f0eov" path="res://Scenes/fall_death.tscn" id="6_f18tw"]
-[ext_resource type="AudioStream" uid="uid://do1o20tnk7buc" path="res://Graveyard.mp3" id="7_wfidn"]
+[ext_resource type="AudioStream" uid="uid://b8gydekdhoigt" path="res://Graveyard.mp3" id="7_wfidn"]
 [ext_resource type="PackedScene" uid="uid://d0kv8oi3d4d22" path="res://pause_menu.tscn" id="8_0y0cc"]
-[ext_resource type="Texture2D" uid="uid://c2ogc72tuoc3l" path="res://Temporary Files/samurai sprites/RUN.png" id="8_msili"]
+[ext_resource type="Texture2D" uid="uid://c7t5oh5gbmyfx" path="res://Temporary Files/samurai sprites/RUN.png" id="8_msili"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5plc1"]
 texture = ExtResource("4_kl0rx")
@@ -1068,7 +1068,6 @@ frame_progress = 0.681354
 stream = ExtResource("7_wfidn")
 volume_db = 8.0
 autoplay = true
-bus = &"Music"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

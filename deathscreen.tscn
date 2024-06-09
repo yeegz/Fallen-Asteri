@@ -1,19 +1,20 @@
 [gd_scene load_steps=5 format=3 uid="uid://blrguiuqp03i5"]
 
-[ext_resource type="Texture2D" uid="uid://dctipjb5a4d5y" path="res://Temporary Files/pixil-frame-0-21.png" id="1_vrthn"]
+[ext_resource type="Texture2D" uid="uid://c3m4scfe0477t" path="res://Temporary Files/pixil-frame-0-21.png" id="1_vrthn"]
 [ext_resource type="Script" path="res://deathscreen.gd" id="1_w602i"]
-[ext_resource type="Texture2D" uid="uid://bs044yee62jsi" path="res://Temporary Files/Daco_4932087.png" id="2_uufp0"]
-[ext_resource type="AudioStream" uid="uid://i10j5jqj8eyh" path="res://Dark Souls ' You Died ' Sound Effect.mp3" id="4_iruns"]
+[ext_resource type="Texture2D" uid="uid://coo0er8lul35a" path="res://Temporary Files/Daco_4932087.png" id="2_uufp0"]
+[ext_resource type="AudioStream" uid="uid://ihtbc8qjbv1d" path="res://Dark Souls ' You Died ' Sound Effect.mp3" id="4_iruns"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_w602i")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 1920.0
+offset_left = -1.0
+offset_right = 1919.0
 offset_bottom = 1084.0
 texture = ExtResource("1_vrthn")
 
-[node name="Quit" type="Button" parent="."]
+[node name="Main Menu" type="Button" parent="."]
 anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.5
@@ -24,7 +25,7 @@ offset_right = 933.0
 offset_bottom = 539.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "QUIT"
+text = "MAIN MENU"
 
 [node name="you died" type="Sprite2D" parent="."]
 position = Vector2(968, 301)
@@ -39,9 +40,9 @@ text = "RESTART"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_iruns")
-volume_db = 5.0
+volume_db = 8.0
 autoplay = true
-bus = &"SFX"
+bus = &"Musics"
 
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Main Menu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
