@@ -927,7 +927,7 @@ region = Rect2(651, 0, 93, 112)
 [sub_resource type="SpriteFrames" id="SpriteFrames_g3nio"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 0.9,
 "texture": SubResource("AtlasTexture_e4b2l")
 }, {
 "duration": 0.8,
@@ -1060,7 +1060,7 @@ position = Vector2(1112, 322)
 scale = Vector2(2.62903, 2.97321)
 sprite_frames = SubResource("SpriteFrames_g3nio")
 animation = &"attack"
-frame_progress = 0.933235
+frame_progress = 0.694992
 
 [node name="fall_death" parent="." instance=ExtResource("6_f18tw")]
 
