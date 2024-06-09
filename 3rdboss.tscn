@@ -964,16 +964,16 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 0.6,
+"duration": 0.3,
 "texture": SubResource("AtlasTexture_tmw6h")
 }, {
-"duration": 0.6,
+"duration": 0.3,
 "texture": SubResource("AtlasTexture_4uk16")
 }, {
-"duration": 1.0,
+"duration": 0.3,
 "texture": SubResource("AtlasTexture_56twm")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_h670h")
 }, {
 "duration": 1.0,
@@ -1060,7 +1060,7 @@ position = Vector2(1112, 322)
 scale = Vector2(2.62903, 2.97321)
 sprite_frames = SubResource("SpriteFrames_g3nio")
 animation = &"run"
-frame_progress = 0.15051
+frame_progress = 0.92108
 
 [node name="fall_death" parent="." instance=ExtResource("6_f18tw")]
 
