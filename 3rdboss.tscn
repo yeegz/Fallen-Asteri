@@ -1060,7 +1060,7 @@ position = Vector2(1112, 322)
 scale = Vector2(2.62903, 2.97321)
 sprite_frames = SubResource("SpriteFrames_g3nio")
 animation = &"attack"
-frame_progress = 0.733693
+frame_progress = 0.681354
 
 [node name="fall_death" parent="." instance=ExtResource("6_f18tw")]
 

@@ -4156,7 +4156,7 @@ texture = ExtResource("9_ljywr")
 
 [node name="CloudShape39" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(634, 548)
+position = Vector2(642, 580)
 scale = Vector2(2.18617, 2.51667)
 texture = ExtResource("3_s2cbd")
 
@@ -4196,6 +4196,7 @@ polygon = PackedVector2Array(991, 486, 1021, 481, 1050, 482, 1063, 484, 1083, 49
 polygon = PackedVector2Array(751, 490, 781, 476, 801, 461, 856, 457, 871, 470, 891, 478, 903, 484, 845, 512, 803, 506)
 
 [node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="physics"]
+position = Vector2(12, 26)
 polygon = PackedVector2Array(589, 544, 618, 538, 659, 538, 680, 550, 665, 580, 609, 584)
 
 [node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="physics"]
