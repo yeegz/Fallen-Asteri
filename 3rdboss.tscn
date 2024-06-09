@@ -930,13 +930,13 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_e4b2l")
 }, {
-"duration": 1.0,
+"duration": 0.8,
 "texture": SubResource("AtlasTexture_el4gg")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_oiuth")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_yyxrt")
 }],
 "loop": true,
@@ -947,16 +947,16 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oyecy")
 }, {
-"duration": 1.0,
+"duration": 0.9,
 "texture": SubResource("AtlasTexture_oh2wj")
 }, {
-"duration": 1.0,
+"duration": 0.9,
 "texture": SubResource("AtlasTexture_70yik")
 }, {
-"duration": 1.0,
+"duration": 0.9,
 "texture": SubResource("AtlasTexture_37rdo")
 }, {
-"duration": 1.0,
+"duration": 0.9,
 "texture": SubResource("AtlasTexture_p680r")
 }],
 "loop": true,
@@ -1059,8 +1059,8 @@ texture_filter = 1
 position = Vector2(1112, 322)
 scale = Vector2(2.62903, 2.97321)
 sprite_frames = SubResource("SpriteFrames_g3nio")
-animation = &"run"
-frame_progress = 0.0846703
+animation = &"attack"
+frame_progress = 0.933235
 
 [node name="fall_death" parent="." instance=ExtResource("6_f18tw")]
 
