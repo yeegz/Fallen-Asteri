@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://bkacp6q5i4h8c"]
+[gd_scene load_steps=22 format=3 uid="uid://bkacp6q5i4h8c"]
 
 [ext_resource type="Texture2D" uid="uid://cnww1rlfjho8c" path="res://Temporary Files/pixel-art-clouds-moon-reflection-dark-background-hd-wallpaper-preview.jpg" id="1_ejbt3"]
 [ext_resource type="Texture2D" uid="uid://8vlhgwy6l5hl" path="res://Temporary Files/Final/Background_0.png" id="1_r6wia"]
 [ext_resource type="PackedScene" uid="uid://c8br3cr26rf1a" path="res://Scenes/character_body_2d.tscn" id="3_kp3a4"]
 [ext_resource type="Texture2D" uid="uid://bckqj1yvgv7w8" path="res://Temporary Files/Final/Tiles.png" id="4_kl0rx"]
 [ext_resource type="Texture2D" uid="uid://gec5n4mnklr7" path="res://Temporary Files/Final/Salt.png" id="5_2dwpg"]
+[ext_resource type="Texture2D" uid="uid://c6kg62v8h2sd1" path="res://Temporary Files/samurai sprites/IDLE.png" id="6_6uwj5"]
 [ext_resource type="PackedScene" uid="uid://x45kdj4f0eov" path="res://Scenes/fall_death.tscn" id="6_f18tw"]
 [ext_resource type="AudioStream" uid="uid://do1o20tnk7buc" path="res://Graveyard.mp3" id="7_wfidn"]
 [ext_resource type="PackedScene" uid="uid://d0kv8oi3d4d22" path="res://pause_menu.tscn" id="8_0y0cc"]
@@ -853,9 +854,44 @@ sources/2 = SubResource("TileSetAtlasSource_su0f4")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imku7"]
 size = Vector2(757.5, 76)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyecy"]
+atlas = ExtResource("6_6uwj5")
+region = Rect2(0, 0, 93, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oh2wj"]
+atlas = ExtResource("6_6uwj5")
+region = Rect2(93, 0, 93, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70yik"]
+atlas = ExtResource("6_6uwj5")
+region = Rect2(186, 0, 93, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37rdo"]
+atlas = ExtResource("6_6uwj5")
+region = Rect2(279, 0, 93, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p680r"]
+atlas = ExtResource("6_6uwj5")
+region = Rect2(372, 0, 93, 112)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_g3nio"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oyecy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oh2wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_70yik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37rdo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p680r")
+}],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
@@ -923,6 +959,9 @@ shape = SubResource("RectangleShape2D_imku7")
 [node name="3rd_sideboss" type="CharacterBody2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="3rd_sideboss"]
+texture_filter = 1
+position = Vector2(1112, 322)
+scale = Vector2(2.62903, 2.97321)
 sprite_frames = SubResource("SpriteFrames_g3nio")
 animation = &"idle"
 
