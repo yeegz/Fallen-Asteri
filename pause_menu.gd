@@ -32,3 +32,11 @@ func _on_main_menu_pressed():
 	get_tree().change_scene_to_file("res://alert.tscn")
 
 
+
+
+
+
+
+
+func _on_save_button_pressed():
+		global.save(global.data)

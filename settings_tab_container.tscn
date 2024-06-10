@@ -1,19 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://v4ag1ndob1rb"]
+[gd_scene load_steps=6 format=3 uid="uid://v4ag1ndob1rb"]
 
 [ext_resource type="PackedScene" uid="uid://d2biacf8e1lwq" path="res://audio_sliders.tscn" id="1_5mnx8"]
 [ext_resource type="PackedScene" uid="uid://bmexm3typrptj" path="res://window_mode_button.tscn" id="1_qwxlb"]
+[ext_resource type="FontFile" uid="uid://b80ckb0gxxnmv" path="res://Early GameBoy.ttf" id="1_xcac5"]
 [ext_resource type="PackedScene" uid="uid://ma3pxnk85j10" path="res://resolution_mode_button.tscn" id="2_6lcci"]
-[ext_resource type="Texture2D" uid="uid://bkdridqtkr8ix" path="res://tii (1).png" id="3_1jslh"]
+[ext_resource type="Texture2D" uid="uid://dtx53kife8q1a" path="res://keyboard.png" id="5_u6vp4"]
 
 [node name="Settings_Tab_Container" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -84.0
-offset_top = -10.0
-offset_right = -12.0
-offset_bottom = -4.0
+offset_left = -1.0
+offset_top = -4.0
+offset_right = 71.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -28,12 +29,21 @@ offset_right = -561.584
 offset_bottom = -95.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hovered_color = Color(0, 0, 0, 1)
+theme_override_colors/font_unselected_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/drop_mark_color = Color(0.368627, 0.368627, 0.368627, 1)
+theme_override_fonts/font = ExtResource("1_xcac5")
 tab_alignment = 1
 current_tab = 2
+tabs_rearrange_group = 0
 
 [node name="Sound" type="TabBar" parent="TabContainer"]
 visible = false
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_xcac5")
+tab_alignment = 1
 drag_to_rearrange_enabled = true
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Sound"]
@@ -41,10 +51,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 6.0
-offset_top = 3.0
-offset_right = 6.0
-offset_bottom = 3.0
+offset_left = -4.0
+offset_top = 2.0
+offset_right = -4.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 24
@@ -53,27 +63,31 @@ theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
 [node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Sound/MarginContainer"]
+clip_contents = false
 layout_mode = 2
-follow_focus = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Sound/MarginContainer/ScrollContainer"]
 layout_mode = 2
-theme_override_constants/separation = 64
+theme_override_constants/separation = 108
 
 [node name="AudioSliders" parent="TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_5mnx8")]
 layout_mode = 2
+mouse_force_pass_scroll_events = false
 
 [node name="AudioSliders2" parent="TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_5mnx8")]
 layout_mode = 2
+mouse_force_pass_scroll_events = false
 bus_name = "Music"
 
 [node name="AudioSliders3" parent="TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_5mnx8")]
 layout_mode = 2
+mouse_force_pass_scroll_events = false
 bus_name = "SFX"
 
 [node name="Graphics" type="TabBar" parent="TabContainer"]
 visible = false
 layout_mode = 2
+tab_alignment = 1
 drag_to_rearrange_enabled = true
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Graphics"]
@@ -81,10 +95,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 465.0
-offset_top = 35.0
-offset_right = 79.2358
-offset_bottom = 23.0
+offset_left = 211.0
+offset_top = 1.0
+offset_right = -185.768
+offset_bottom = -11.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 24
@@ -94,6 +108,7 @@ theme_override_constants/margin_bottom = 24
 
 [node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Graphics/MarginContainer"]
 layout_mode = 2
+follow_focus = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Graphics/MarginContainer/ScrollContainer"]
 layout_mode = 2
@@ -109,11 +124,6 @@ layout_mode = 2
 [node name="Control" type="TabBar" parent="TabContainer"]
 layout_mode = 2
 drag_to_rearrange_enabled = true
-
-[node name="Tii(1)" type="Sprite2D" parent="TabContainer/Control"]
-position = Vector2(799.5, 420.5)
-scale = Vector2(0.830729, 0.776852)
-texture = ExtResource("3_1jslh")
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Control"]
 layout_mode = 1
@@ -132,6 +142,11 @@ theme_override_constants/margin_bottom = 24
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Control/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 64
+
+[node name="Keyboard" type="Sprite2D" parent="TabContainer/Control/MarginContainer/VBoxContainer"]
+position = Vector2(809, 383)
+scale = Vector2(1.44331, 1.76914)
+texture = ExtResource("5_u6vp4")
 
 [node name="Label" type="Label" parent="TabContainer/Control/MarginContainer/VBoxContainer"]
 layout_mode = 2

@@ -1,16 +1,16 @@
 [gd_scene load_steps=25 format=3 uid="uid://cpypgsd5e0fjb"]
 
-[ext_resource type="Texture2D" uid="uid://fgsklojgsijf" path="res://Temporary Files/bg_cave.png" id="1_u71sb"]
-[ext_resource type="Texture2D" uid="uid://bc0ki6up3i3ol" path="res://Temporary Files/tile_cave_bg_crystal.png" id="2_01sci"]
-[ext_resource type="Texture2D" uid="uid://cfrcw1d7gbeog" path="res://Temporary Files/tile_cave_bg_fluo.png" id="3_ef5i3"]
-[ext_resource type="Texture2D" uid="uid://bpqic6egdfhds" path="res://Temporary Files/tile_cave_bg_rock.png" id="4_g7clr"]
-[ext_resource type="Texture2D" uid="uid://bmanslkmrio66" path="res://Temporary Files/tile_cave_rail.png" id="5_cx8yr"]
-[ext_resource type="Texture2D" uid="uid://dkhulvrbtnq6a" path="res://Temporary Files/tile_cave_bg_objects.png" id="6_wh65m"]
-[ext_resource type="Texture2D" uid="uid://cwipxaeav65na" path="res://Temporary Files/tile_cave_platform.png" id="7_fwwq4"]
+[ext_resource type="Texture2D" uid="uid://peh6smp1sj6b" path="res://Temporary Files/bg_cave.png" id="1_u71sb"]
+[ext_resource type="Texture2D" uid="uid://8rvesxbksrfg" path="res://Temporary Files/tile_cave_bg_crystal.png" id="2_01sci"]
+[ext_resource type="Texture2D" uid="uid://d1kh2iugle4wt" path="res://Temporary Files/tile_cave_bg_fluo.png" id="3_ef5i3"]
+[ext_resource type="Texture2D" uid="uid://g0su5vj2jt57" path="res://Temporary Files/tile_cave_bg_rock.png" id="4_g7clr"]
+[ext_resource type="Texture2D" uid="uid://bcrwfceof536r" path="res://Temporary Files/tile_cave_rail.png" id="5_cx8yr"]
+[ext_resource type="Texture2D" uid="uid://k1efwbbl6y05" path="res://Temporary Files/tile_cave_bg_objects.png" id="6_wh65m"]
+[ext_resource type="Texture2D" uid="uid://vothg2x607we" path="res://Temporary Files/tile_cave_platform.png" id="7_fwwq4"]
 [ext_resource type="PackedScene" uid="uid://c8br3cr26rf1a" path="res://Scenes/character_body_2d.tscn" id="8_m44t8"]
 [ext_resource type="PackedScene" uid="uid://c0adhlaso34h2" path="res://Scenes/enemy_s_4_1.tscn" id="9_2ud7f"]
 [ext_resource type="PackedScene" uid="uid://x45kdj4f0eov" path="res://Scenes/fall_death.tscn" id="10_g3lbi"]
-[ext_resource type="AudioStream" uid="uid://pnidwqrqp74k" path="res://Spooky Music  Nightfall Cavern.mp3" id="11_p2s86"]
+[ext_resource type="AudioStream" uid="uid://dr2k3nmolny7" path="res://Spooky Music  Nightfall Cavern.mp3" id="11_p2s86"]
 [ext_resource type="PackedScene" uid="uid://d0kv8oi3d4d22" path="res://pause_menu.tscn" id="12_77cp1"]
 [ext_resource type="Script" path="res://cloud_level_transition_2.gd" id="13_rjhys"]
 
@@ -1595,7 +1595,6 @@ polygon = PackedVector2Array(756, 566, 655, 567, 614, 553, 543, 527, 447, 495, 3
 stream = ExtResource("11_p2s86")
 volume_db = 8.0
 autoplay = true
-bus = &"Music"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
