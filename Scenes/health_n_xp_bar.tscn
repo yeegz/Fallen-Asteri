@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://2favo703g3ax"]
+
+[node name="health_n_xp_bar" type="Camera2D"]
+
+[node name="XPbar" type="ProgressBar" parent="."]
+modulate = Color(0.501961, 0.0431373, 0.564706, 1)
+offset_left = -331.0
+offset_top = -170.0
+offset_right = -177.0
+offset_bottom = -160.0
+scale = Vector2(0.7, 0.7)
+show_percentage = false
+
+[node name="health" type="ProgressBar" parent="."]
+modulate = Color(0, 0.631373, 0, 1)
+offset_left = -325.0
+offset_top = -183.0
+offset_right = -182.0
+offset_bottom = -173.0
+scale = Vector2(0.7, 0.7)
+max_value = 200.0
+show_percentage = false

@@ -38,13 +38,15 @@ func _process(delta):
 	elif facing_right == false:
 		player_attack_left()
 	death()
-	healthbar()
+	#healthbar()
 	staminabar()
 	audio_functions()
 	if global.sideboss_dead == true:
 		dash(facing_right)
 	xp_calc()
-	xpbar()
+	#xpbar()
+	update_position()
+	print(global.PLAYER_POSITION)
 
 
 #Easiest way for enemy hitbox to identify player is through methods.
@@ -151,12 +153,12 @@ func death():
 
 
 #function to link healthbar GUI to PLAYER_HP
-func healthbar():
+'''func healthbar():
 	var healthbar_parameters = $health
 	healthbar_parameters.max_value = global.PLAYER_MAX_HP
 	healthbar_parameters.value = global.PLAYER_HP
 	if global.PLAYER_HP > global.PLAYER_MAX_HP:
-		global.PLAYER_HP = global.PLAYER_MAX_HP
+		global.PLAYER_HP = global.PLAYER_MAX_HP'''
 
 #function to link staminabar GUI to PLAYER_STAMINA
 func staminabar():
@@ -265,10 +267,10 @@ func xp_calc():
 		global.STAMINA_RECOVERY += 5
 		global.health_on_kill += 10
 
-func xpbar():
+'''func xpbar():
 	var xpbar_parameters = $XPbar
 	xpbar_parameters.max_value = global.PLAYER_MAX_XP
-	xpbar_parameters.value = global.PLAYER_XP
+	xpbar_parameters.value = global.PLAYER_XP'''
 
 func knockback():
 	if facing_right == true:
@@ -293,4 +295,5 @@ func _on_knockback_right_timer_timeout():
 func _on_knockback_left_timer_timeout():
 	knockback_left = false
 
-
+func update_position():
+	global.PLAYER_POSITION = position
