@@ -9,10 +9,6 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 1.0
-offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_p67h5")
@@ -20,20 +16,24 @@ bus_name = "Master"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_right = 1044.0
+offset_right = 1092.0
 offset_bottom = 44.0
 theme_override_constants/separation = 42
 alignment = 1
 
 [node name="audio_name_lbl" type="Label" parent="HBoxContainer"]
-custom_minimum_size = Vector2(300, 0)
+texture_filter = 1
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
 theme_override_fonts/font = ExtResource("2_es8mc")
 theme_override_font_sizes/font_size = 32
-text = "MASTER AUDIO"
+text = "MASTER VOLUME"
+visible_characters_behavior = 1
 
 [node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 20
 
 [node name="HSlider" type="HSlider" parent="HBoxContainer"]
 custom_minimum_size = Vector2(200, 32)
@@ -49,6 +49,7 @@ layout_mode = 2
 [node name="Audio_Num_Lbl" type="Label" parent="HBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_es8mc")
 theme_override_font_sizes/font_size = 32
-text = "100 %"
+text = "100%"

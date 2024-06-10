@@ -16,10 +16,10 @@ func _ready():
 	set_slider_value()
 	
 func set_name_label_text() -> void:
-	audio_name_lbl.text =str(bus_name) + "Volume" + "%"
+	audio_name_lbl.text =str(bus_name) +" Volume"
 	
 func set_audio_num_label_text() -> void:
-	audio_num_lbl.text = str(h_slider.value * 100)
+	audio_num_lbl.text = str(h_slider.value * 100 , "%")
 
 
 func get_bus_name_by_index() -> void:
