@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://v4ag1ndob1rb"]
+[gd_scene load_steps=6 format=3 uid="uid://v4ag1ndob1rb"]
 
 [ext_resource type="PackedScene" uid="uid://d2biacf8e1lwq" path="res://audio_sliders.tscn" id="1_5mnx8"]
 [ext_resource type="PackedScene" uid="uid://bmexm3typrptj" path="res://window_mode_button.tscn" id="1_qwxlb"]
 [ext_resource type="FontFile" uid="uid://b80ckb0gxxnmv" path="res://Early GameBoy.ttf" id="1_xcac5"]
 [ext_resource type="PackedScene" uid="uid://ma3pxnk85j10" path="res://resolution_mode_button.tscn" id="2_6lcci"]
+[ext_resource type="Texture2D" uid="uid://dtx53kife8q1a" path="res://keyboard.png" id="5_u6vp4"]
 
 [node name="Settings_Tab_Container" type="Control"]
 layout_mode = 3
@@ -35,9 +36,11 @@ theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/drop_mark_color = Color(0.368627, 0.368627, 0.368627, 1)
 theme_override_fonts/font = ExtResource("1_xcac5")
 tab_alignment = 1
+current_tab = 2
 tabs_rearrange_group = 0
 
 [node name="Sound" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_xcac5")
 tab_alignment = 1
@@ -119,7 +122,6 @@ size_flags_vertical = 4
 layout_mode = 2
 
 [node name="Control" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 drag_to_rearrange_enabled = true
 
@@ -140,6 +142,11 @@ theme_override_constants/margin_bottom = 24
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Control/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 64
+
+[node name="Keyboard" type="Sprite2D" parent="TabContainer/Control/MarginContainer/VBoxContainer"]
+position = Vector2(809, 383)
+scale = Vector2(1.44331, 1.76914)
+texture = ExtResource("5_u6vp4")
 
 [node name="Label" type="Label" parent="TabContainer/Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
