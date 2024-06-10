@@ -5,8 +5,10 @@
 [node name="player_camera" type="Camera2D"]
 position = Vector2(1, 1)
 zoom = Vector2(2.75, 2.75)
-limit_left = -300
-limit_top = -700
-limit_right = 1500
-limit_bottom = 800
 script = ExtResource("1_diuwc")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -293.0
+offset_top = -187.0
+offset_right = -123.0
+offset_bottom = -160.0
