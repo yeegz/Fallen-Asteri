@@ -4,6 +4,7 @@
 
 [node name="player_camera" type="Camera2D"]
 position = Vector2(1, 1)
+ignore_rotation = false
 zoom = Vector2(2.75, 2.75)
 script = ExtResource("1_diuwc")
 
