@@ -1,7 +1,8 @@
-[gd_scene load_steps=33 format=3 uid="uid://drpyr5g1rk2fw"]
+[gd_scene load_steps=34 format=3 uid="uid://drpyr5g1rk2fw"]
 
 [ext_resource type="Script" path="res://Scenes/sideboss_2d.gd" id="1_7a2so"]
 [ext_resource type="Texture2D" uid="uid://jstlfdmdj7w2" path="res://Temporary Files/NightBorne/NightBorne.png" id="1_fb4xm"]
+[ext_resource type="AudioStream" uid="uid://do67er5c3d6bd" path="res://sideboss.mp3" id="3_e7gq2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x0nah"]
 atlas = ExtResource("1_fb4xm")
@@ -282,6 +283,12 @@ offset_bottom = -0.999998
 scale = Vector2(0.4, 0.4)
 max_value = 260.0
 show_percentage = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_e7gq2")
+volume_db = 12.0
+autoplay = true
+bus = &"SFX"
 
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]

@@ -1069,7 +1069,7 @@ script = ExtResource("19_tu7ua")
 position = Vector2(2386.5, 516.75)
 shape = SubResource("RectangleShape2D_e77wb")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("21_428g3")
 volume_db = 8.0
 autoplay = true
