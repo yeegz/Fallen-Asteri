@@ -1,16 +1,14 @@
-[gd_scene load_steps=37 format=3 uid="uid://bkacp6q5i4h8c"]
+[gd_scene load_steps=17 format=3 uid="uid://bkacp6q5i4h8c"]
 
 [ext_resource type="Texture2D" uid="uid://crt6q8hve10fm" path="res://Temporary Files/pixel-art-clouds-moon-reflection-dark-background-hd-wallpaper-preview.jpg" id="1_ejbt3"]
 [ext_resource type="Texture2D" uid="uid://dv4vvx5tvl4ip" path="res://Temporary Files/Final/Background_0.png" id="1_r6wia"]
 [ext_resource type="PackedScene" uid="uid://c8br3cr26rf1a" path="res://Scenes/character_body_2d.tscn" id="3_kp3a4"]
 [ext_resource type="Texture2D" uid="uid://dntfl16mq3eo7" path="res://Temporary Files/Final/Tiles.png" id="4_kl0rx"]
 [ext_resource type="Texture2D" uid="uid://brgq1mvi3ebs" path="res://Temporary Files/Final/Salt.png" id="5_2dwpg"]
-[ext_resource type="Texture2D" uid="uid://dshm2si4yqncm" path="res://Temporary Files/samurai sprites/IDLE.png" id="6_6uwj5"]
-[ext_resource type="Texture2D" uid="uid://cb28dlly6ic7m" path="res://Temporary Files/samurai sprites/ATTACK 1.png" id="6_asgrr"]
+[ext_resource type="PackedScene" uid="uid://c77d1swbpxq5j" path="res://Scenes/3_rd_sideboss.tscn" id="6_70168"]
 [ext_resource type="PackedScene" uid="uid://x45kdj4f0eov" path="res://Scenes/fall_death.tscn" id="6_f18tw"]
 [ext_resource type="AudioStream" uid="uid://ddps0vu1f5uqo" path="res://Graveyard.mp3" id="7_wfidn"]
 [ext_resource type="PackedScene" uid="uid://d0kv8oi3d4d22" path="res://pause_menu.tscn" id="8_0y0cc"]
-[ext_resource type="Texture2D" uid="uid://ckce8ifw3qdct" path="res://Temporary Files/samurai sprites/RUN.png" id="8_msili"]
 [ext_resource type="PackedScene" uid="uid://dlihu8d2jsx88" path="res://Scenes/camera_2d_2.tscn" id="12_dmoeb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5plc1"]
@@ -857,143 +855,6 @@ sources/2 = SubResource("TileSetAtlasSource_su0f4")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imku7"]
 size = Vector2(757.5, 76)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_e4b2l"]
-atlas = ExtResource("6_asgrr")
-region = Rect2(0, 0, 77, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_el4gg"]
-atlas = ExtResource("6_asgrr")
-region = Rect2(231, 0, 77, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oiuth"]
-atlas = ExtResource("6_asgrr")
-region = Rect2(308, 0, 77, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yyxrt"]
-atlas = ExtResource("6_asgrr")
-region = Rect2(385, 0, 77, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oyecy"]
-atlas = ExtResource("6_6uwj5")
-region = Rect2(0, 0, 93, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oh2wj"]
-atlas = ExtResource("6_6uwj5")
-region = Rect2(93, 0, 93, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_70yik"]
-atlas = ExtResource("6_6uwj5")
-region = Rect2(186, 0, 93, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_37rdo"]
-atlas = ExtResource("6_6uwj5")
-region = Rect2(279, 0, 93, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p680r"]
-atlas = ExtResource("6_6uwj5")
-region = Rect2(372, 0, 93, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tmw6h"]
-atlas = ExtResource("8_msili")
-region = Rect2(0, 0, 93, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4uk16"]
-atlas = ExtResource("8_msili")
-region = Rect2(93, 0, 93, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_56twm"]
-atlas = ExtResource("8_msili")
-region = Rect2(186, 0, 93, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h670h"]
-atlas = ExtResource("8_msili")
-region = Rect2(279, 0, 93, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gqbov"]
-atlas = ExtResource("8_msili")
-region = Rect2(372, 0, 93, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7bnan"]
-atlas = ExtResource("8_msili")
-region = Rect2(465, 0, 93, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lfaf2"]
-atlas = ExtResource("8_msili")
-region = Rect2(558, 0, 93, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f3rqi"]
-atlas = ExtResource("8_msili")
-region = Rect2(651, 0, 93, 112)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_g3nio"]
-animations = [{
-"frames": [{
-"duration": 0.9,
-"texture": SubResource("AtlasTexture_e4b2l")
-}, {
-"duration": 0.8,
-"texture": SubResource("AtlasTexture_el4gg")
-}, {
-"duration": 0.6,
-"texture": SubResource("AtlasTexture_oiuth")
-}, {
-"duration": 0.6,
-"texture": SubResource("AtlasTexture_yyxrt")
-}],
-"loop": true,
-"name": &"attack",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oyecy")
-}, {
-"duration": 0.9,
-"texture": SubResource("AtlasTexture_oh2wj")
-}, {
-"duration": 0.9,
-"texture": SubResource("AtlasTexture_70yik")
-}, {
-"duration": 0.9,
-"texture": SubResource("AtlasTexture_37rdo")
-}, {
-"duration": 0.9,
-"texture": SubResource("AtlasTexture_p680r")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 0.6,
-"texture": SubResource("AtlasTexture_tmw6h")
-}, {
-"duration": 0.6,
-"texture": SubResource("AtlasTexture_4uk16")
-}, {
-"duration": 0.6,
-"texture": SubResource("AtlasTexture_56twm")
-}, {
-"duration": 0.6,
-"texture": SubResource("AtlasTexture_h670h")
-}, {
-"duration": 0.6,
-"texture": SubResource("AtlasTexture_gqbov")
-}, {
-"duration": 0.6,
-"texture": SubResource("AtlasTexture_7bnan")
-}, {
-"duration": 0.6,
-"texture": SubResource("AtlasTexture_lfaf2")
-}, {
-"duration": 0.6,
-"texture": SubResource("AtlasTexture_f3rqi")
-}],
-"loop": true,
-"name": &"run",
-"speed": 5.0
-}]
-
 [node name="Node2D2" type="Node2D"]
 
 [node name="TextureRect2" type="TextureRect" parent="."]
@@ -1045,15 +906,8 @@ layer_0/tile_data = PackedInt32Array(983053, 327680, 2, 983054, 851968, 6, 98305
 position = Vector2(800, 504)
 shape = SubResource("RectangleShape2D_imku7")
 
-[node name="3rd_sideboss" type="CharacterBody2D" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="3rd_sideboss"]
-texture_filter = 1
-position = Vector2(1112, 322)
-scale = Vector2(2.62903, 2.97321)
-sprite_frames = SubResource("SpriteFrames_g3nio")
-animation = &"attack"
-frame_progress = 0.681354
+[node name="3rd_sideboss" parent="." instance=ExtResource("6_70168")]
+position = Vector2(1111, 402)
 
 [node name="fall_death" parent="." instance=ExtResource("6_f18tw")]
 

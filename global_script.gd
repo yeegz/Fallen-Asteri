@@ -23,21 +23,24 @@ extends Node
 @onready var SIDEBOSS_XP_DROP = 20
 @onready var health_on_kill = 50
 
-#scene 1
+#scene 1 / beach
 @onready var alive_status_s1 = true
 @onready var alive_status_s1_2 = true
 @onready var alive_status_s1_3 = true
 
 
-#scene 2
+#scene 2 / forest
 @onready var alive_status_s2 = true
 
-#scene 3
+#scene 3/ caveboss
 @onready var sideboss_dead = false
 
-#scene 4
+#scene 4 / 2ndboss
 @onready var alive_status_s4_1 = true
 @onready var second_sideboss_xp_drop = 30
+
+#scene 5 / 3rdboss
+@onready var alive_status_third_boss = true
 
 #save
 var data = [transitioned, current_scene, PLAYER_HP, PLAYER_MAX_HP, PLAYER_STAMINA, PLAYER_MAX_STAMINA, PLAYER_XP, PLAYER_MAX_XP, PLAYER_LEVEL, PLAYER_ATTACK_DAMAGE, STAMINA_RECOVERY, SKELETON_ENEMY_XP_DROP, SIDEBOSS_XP_DROP, alive_status_s1, alive_status_s2, sideboss_dead, alive_status_s4_1, second_sideboss_xp_drop, alive_status_s1_2, alive_status_s1_3, health_on_kill]
