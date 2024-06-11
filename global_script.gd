@@ -3,6 +3,7 @@ extends Node
 
 @onready var transitioned = false
 @onready var current_scene = "res://scene.tscn"
+
 #Player variables
 @onready var PLAYER_HP = 200
 @onready var PLAYER_MAX_HP = 200
@@ -13,6 +14,7 @@ extends Node
 @onready var PLAYER_LEVEL = 1
 @onready var PLAYER_ATTACK_DAMAGE = 20
 @onready var STAMINA_RECOVERY = 10
+@onready var PLAYER_POSITION = Vector2()
 
 
 #enemy variables

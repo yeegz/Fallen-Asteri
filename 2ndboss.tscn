@@ -1,18 +1,19 @@
-[gd_scene load_steps=25 format=3 uid="uid://cpypgsd5e0fjb"]
+[gd_scene load_steps=26 format=3 uid="uid://cpypgsd5e0fjb"]
 
-[ext_resource type="Texture2D" uid="uid://peh6smp1sj6b" path="res://Temporary Files/bg_cave.png" id="1_u71sb"]
-[ext_resource type="Texture2D" uid="uid://8rvesxbksrfg" path="res://Temporary Files/tile_cave_bg_crystal.png" id="2_01sci"]
-[ext_resource type="Texture2D" uid="uid://d1kh2iugle4wt" path="res://Temporary Files/tile_cave_bg_fluo.png" id="3_ef5i3"]
-[ext_resource type="Texture2D" uid="uid://g0su5vj2jt57" path="res://Temporary Files/tile_cave_bg_rock.png" id="4_g7clr"]
-[ext_resource type="Texture2D" uid="uid://bcrwfceof536r" path="res://Temporary Files/tile_cave_rail.png" id="5_cx8yr"]
-[ext_resource type="Texture2D" uid="uid://k1efwbbl6y05" path="res://Temporary Files/tile_cave_bg_objects.png" id="6_wh65m"]
-[ext_resource type="Texture2D" uid="uid://vothg2x607we" path="res://Temporary Files/tile_cave_platform.png" id="7_fwwq4"]
+[ext_resource type="Texture2D" uid="uid://couowj4upygf1" path="res://Temporary Files/bg_cave.png" id="1_u71sb"]
+[ext_resource type="Texture2D" uid="uid://c4gel707qe1tv" path="res://Temporary Files/tile_cave_bg_crystal.png" id="2_01sci"]
+[ext_resource type="Texture2D" uid="uid://785ei6j1ao7y" path="res://Temporary Files/tile_cave_bg_fluo.png" id="3_ef5i3"]
+[ext_resource type="Texture2D" uid="uid://bfoiv15p6q7a5" path="res://Temporary Files/tile_cave_bg_rock.png" id="4_g7clr"]
+[ext_resource type="Texture2D" uid="uid://dmk5vwv5p7nui" path="res://Temporary Files/tile_cave_rail.png" id="5_cx8yr"]
+[ext_resource type="Texture2D" uid="uid://cysag0w2jdxb" path="res://Temporary Files/tile_cave_bg_objects.png" id="6_wh65m"]
+[ext_resource type="Texture2D" uid="uid://euqn135q6jqo" path="res://Temporary Files/tile_cave_platform.png" id="7_fwwq4"]
 [ext_resource type="PackedScene" uid="uid://c8br3cr26rf1a" path="res://Scenes/character_body_2d.tscn" id="8_m44t8"]
 [ext_resource type="PackedScene" uid="uid://c0adhlaso34h2" path="res://Scenes/enemy_s_4_1.tscn" id="9_2ud7f"]
 [ext_resource type="PackedScene" uid="uid://x45kdj4f0eov" path="res://Scenes/fall_death.tscn" id="10_g3lbi"]
-[ext_resource type="AudioStream" uid="uid://dr2k3nmolny7" path="res://Spooky Music  Nightfall Cavern.mp3" id="11_p2s86"]
+[ext_resource type="AudioStream" uid="uid://b3wm4hyrr24xy" path="res://Spooky Music  Nightfall Cavern.mp3" id="11_p2s86"]
 [ext_resource type="PackedScene" uid="uid://d0kv8oi3d4d22" path="res://pause_menu.tscn" id="12_77cp1"]
 [ext_resource type="Script" path="res://cloud_level_transition_2.gd" id="13_rjhys"]
+[ext_resource type="PackedScene" uid="uid://dlihu8d2jsx88" path="res://Scenes/camera_2d_2.tscn" id="14_rnvyi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_swud8"]
 texture = ExtResource("2_01sci")
@@ -1544,7 +1545,7 @@ sources/4 = SubResource("TileSetAtlasSource_58an1")
 sources/5 = SubResource("TileSetAtlasSource_nihfa")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dirwp"]
-size = Vector2(292.5, 398)
+size = Vector2(43, 429)
 
 [node name="Node2D" type="Node2D"]
 
@@ -1571,15 +1572,6 @@ layer_0/tile_data = PackedInt32Array(262146, 196612, 8, 327682, 196612, 9, 32768
 [node name="CharacterBody2D" parent="." instance=ExtResource("8_m44t8")]
 position = Vector2(699, 512)
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(1, 2)
-zoom = Vector2(2.75, 2.75)
-limit_left = 100
-limit_top = 10
-limit_right = 1000
-limit_bottom = 800
-editor_draw_limits = true
-
 [node name="enemy_s4_1" parent="." instance=ExtResource("9_2ud7f")]
 texture_filter = 1
 position = Vector2(470, 450)
@@ -1587,7 +1579,7 @@ position = Vector2(470, 450)
 [node name="physics" type="CharacterBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="physics"]
-polygon = PackedVector2Array(756, 566, 655, 567, 614, 553, 543, 527, 447, 495, 352, 464, 318, 464, 263, 428, 214, 379, 171, 411, 294, 524, 451, 576, 620, 625, 747, 629)
+polygon = PackedVector2Array(756, 566, 655, 567, 614, 553, 543, 527, 447, 495, 352, 464, 318, 464, 263, 428, 238, 378, 202, 368, 168, 342, 170, 293, 158, 280, 145, 260, 120, 285, 113, 348, 38, 360, 9, 383, 189, 389, 294, 524, 451, 576, 620, 625, 747, 629)
 
 [node name="fall_death" parent="." instance=ExtResource("10_g3lbi")]
 
@@ -1607,8 +1599,10 @@ collision_mask = 2
 script = ExtResource("13_rjhys")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cloud_level_transition_2"]
-position = Vector2(148.75, 199)
+position = Vector2(59, 168)
 shape = SubResource("RectangleShape2D_dirwp")
+
+[node name="player_camera" parent="." instance=ExtResource("14_rnvyi")]
 
 [connection signal="body_entered" from="cloud_level_transition_2" to="cloud_level_transition_2" method="_on_body_entered"]
 [connection signal="body_exited" from="cloud_level_transition_2" to="cloud_level_transition_2" method="_on_body_exited"]
