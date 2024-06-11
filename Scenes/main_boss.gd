@@ -13,7 +13,6 @@ var attack_cooldown = true
 var attack_cooldown_left = true
 var player_alive = true
 @onready var animation = $AnimatedSprite2D
-@onready var audio_stream_player_2D = $AudioStreamPlayer2D
 
 func _physics_process(delta):
 	gravity(delta)
@@ -32,15 +31,17 @@ func gravity(delta):
 		velocity.y += GRAVITY_VALUE * delta
 	move_and_slide()
 
+
 func _on_detection_area_body_entered(body):
 	player = body
 	player_chase = true
+
 
 func _on_detection_area_body_exited(body):
 	player = null
 	player_chase = false
 
-#pathfinding, knockback
+#pathfinding
 func pathing(playerchase, delta, speed):
 	if playerchase == true and attack_range == false and attack_range_left == false:
 		
@@ -106,7 +107,7 @@ func enemy_attack():
 		await get_tree().create_timer(0.1).timeout
 		player.animation.modulate = Color.WHITE
 		global.PLAYER_HP -= 20
-		audio_stream_player_2D.play()
+		#audio_stream_player_2D.play()
 		attack_cooldown = true
 		$cooldown_right.start()
 
@@ -116,7 +117,7 @@ func enemy_attack_left():
 		await get_tree().create_timer(0.1).timeout
 		player.animation.modulate = Color.WHITE
 		global.PLAYER_HP -= 20
-		audio_stream_player_2D.play()
+		#audio_stream_player_2D.play()
 		attack_cooldown = true
 		$cooldown_left.start()
 
@@ -138,7 +139,6 @@ func death():
 		queue_free()
 		global.alive_status_s2 = false
 
-
 func enemy_healthbar():
 	var enemy_heathbar_parameters = $enemy_health
 	enemy_heathbar_parameters.value = ENEMY_HP
@@ -146,3 +146,4 @@ func enemy_healthbar():
 func death_on_sceen_transition():
 	if global.alive_status_s2 == false:
 		queue_free()
+

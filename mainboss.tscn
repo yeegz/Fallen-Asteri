@@ -818,4 +818,4 @@ editor_draw_limits = true
 polygon = PackedVector2Array(661, 709, 834, 709, 1084, 835, 1253, 835, 1722, 836, 1721, 900, 1083, 903, 834, 774, 641, 766, 642, 709)
 
 [node name="main_boss" parent="." instance=ExtResource("4_8ipqb")]
-position = Vector2(1522, 776)
+position = Vector2(1539, 720)

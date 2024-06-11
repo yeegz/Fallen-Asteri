@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://rsihfjvqo7qk"]
+[gd_scene load_steps=9 format=3 uid="uid://rsihfjvqo7qk"]
 
 [ext_resource type="Texture2D" uid="uid://bf26wq2jmumtn" path="res://Temporary Files/attack/crab_attack.png" id="1_mgump"]
+[ext_resource type="Script" path="res://Scenes/main_boss.gd" id="1_xdhmn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dma54"]
 atlas = ExtResource("1_mgump")
@@ -44,9 +45,14 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_307h1"]
 radius = 41.0488
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gta8y"]
+radius = 58.0
+height = 456.0
+
 [node name="main_boss" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 3
+script = ExtResource("1_xdhmn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -57,3 +63,57 @@ animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_307h1")
+
+[node name="detection_area" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_gta8y")
+
+[node name="cooldown_right" type="Timer" parent="."]
+wait_time = 0.9
+autostart = true
+
+[node name="cooldown_left" type="Timer" parent="."]
+wait_time = 0.9
+
+[node name="pre_attack_enemy_cooldown_right" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="pre_attack_enemy_cooldown_left" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="enemy_hitbox_right" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="enemy_hitbox_right"]
+polygon = PackedVector2Array(35, -27, 43, -5, 40, 24, 31, 30, 55, 34, 55, 12, 55, -13, 51, -27)
+
+[node name="enemy_hitbox_left" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="enemy_hitbox_left"]
+polygon = PackedVector2Array(-36, -23, -43, -5, -43, 7, -40, 23, -50, 24, -54, 3, -54, -25)
+
+[node name="enemy_health" type="ProgressBar" parent="."]
+modulate = Color(1, 0, 0, 1)
+offset_left = -124.0
+offset_top = -74.0
+offset_right = 124.0
+offset_bottom = -47.0
+show_percentage = false
+
+[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
+[connection signal="timeout" from="cooldown_right" to="." method="_on_cooldown_right_timeout"]
+[connection signal="timeout" from="cooldown_left" to="." method="_on_cooldown_left_timeout"]
+[connection signal="timeout" from="pre_attack_enemy_cooldown_right" to="." method="_on_pre_attack_enemy_cooldown_right_timeout"]
+[connection signal="timeout" from="pre_attack_enemy_cooldown_left" to="." method="_on_pre_attack_enemy_cooldown_left_timeout"]
+[connection signal="body_entered" from="enemy_hitbox_right" to="." method="_on_enemy_hitbox_right_body_entered"]
+[connection signal="body_exited" from="enemy_hitbox_right" to="." method="_on_enemy_hitbox_right_body_exited"]
+[connection signal="body_entered" from="enemy_hitbox_left" to="." method="_on_enemy_hitbox_left_body_entered"]
+[connection signal="body_exited" from="enemy_hitbox_left" to="." method="_on_enemy_hitbox_left_body_exited"]
