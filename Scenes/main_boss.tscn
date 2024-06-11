@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://rsihfjvqo7qk"]
+
+[ext_resource type="Texture2D" uid="uid://bf26wq2jmumtn" path="res://Temporary Files/attack/crab_attack.png" id="1_mgump"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dma54"]
+atlas = ExtResource("1_mgump")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttrbb"]
+atlas = ExtResource("1_mgump")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v8p1"]
+atlas = ExtResource("1_mgump")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4fqg4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dma54")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttrbb")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3v8p1")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_307h1"]
+radius = 41.0488
+
+[node name="main_boss" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 1.90735e-06)
+scale = Vector2(2.875, 3)
+sprite_frames = SubResource("SpriteFrames_4fqg4")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_307h1")

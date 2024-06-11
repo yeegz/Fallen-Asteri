@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bpa63n1iigob"]
+[gd_scene load_steps=9 format=3 uid="uid://bpa63n1iigob"]
 
 [ext_resource type="Texture2D" uid="uid://crt6q8hve10fm" path="res://Temporary Files/pixel-art-clouds-moon-reflection-dark-background-hd-wallpaper-preview.jpg" id="1_5d47y"]
 [ext_resource type="Texture2D" uid="uid://dntfl16mq3eo7" path="res://Temporary Files/Final/Tiles.png" id="2_fpho3"]
 [ext_resource type="PackedScene" uid="uid://c8br3cr26rf1a" path="res://Scenes/character_body_2d.tscn" id="3_afjws"]
+[ext_resource type="PackedScene" uid="uid://rsihfjvqo7qk" path="res://Scenes/main_boss.tscn" id="4_8ipqb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_goc1u"]
 texture = ExtResource("2_fpho3")
@@ -815,3 +816,6 @@ editor_draw_limits = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="physics"]
 polygon = PackedVector2Array(661, 709, 834, 709, 1084, 835, 1253, 835, 1722, 836, 1721, 900, 1083, 903, 834, 774, 641, 766, 642, 709)
+
+[node name="main_boss" parent="." instance=ExtResource("4_8ipqb")]
+position = Vector2(1522, 776)
