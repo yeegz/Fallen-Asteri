@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxpb07s5rx04a"]
+
+[ext_resource type="Texture2D" uid="uid://dterf2fl354ka" path="res://dialogue_box.png" id="1_nqmay"]
+
+[node name="Dialogue" type="CanvasLayer"]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+texture_filter = 1
+offset_left = 481.0
+offset_top = 900.0
+offset_right = 1458.0
+offset_bottom = 1072.0
+texture = ExtResource("1_nqmay")
+region_rect = Rect2(1.50298, 0.671875, 28.9415, 30.6595)
+
+[node name="chat" type="RichTextLabel" parent="NinePatchRect"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.343
+anchor_bottom = 0.555
+offset_left = 155.0
+offset_top = 61.0
+offset_right = 503.889
+offset_bottom = 44.54
+text = "chat
+"
+
+[node name="name" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 15.0
+offset_right = 145.0
+offset_bottom = 42.0
+text = "name"
