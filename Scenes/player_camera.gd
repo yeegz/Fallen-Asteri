@@ -37,3 +37,12 @@ func camera_tracking():
 			position.x = 1508
 		elif position.x >= 1411 and global.sideboss_dead == true:
 			position.x = 1411
+		
+	elif scene == "res://cloudlevel.tscn":
+		if position.x <= 364:
+			position.x = 364
+		elif position.x >= 1559:
+			position.x = 1559
+		
+		if position.y >= 866:
+			position.y = 866
