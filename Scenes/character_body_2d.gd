@@ -152,14 +152,6 @@ func death():
 		get_tree().change_scene_to_file("res://deathscreen.tscn")
 
 
-#function to link healthbar GUI to PLAYER_HP
-'''func healthbar():
-	var healthbar_parameters = $health
-	healthbar_parameters.max_value = global.PLAYER_MAX_HP
-	healthbar_parameters.value = global.PLAYER_HP
-	if global.PLAYER_HP > global.PLAYER_MAX_HP:
-		global.PLAYER_HP = global.PLAYER_MAX_HP'''
-
 #function to link staminabar GUI to PLAYER_STAMINA
 func staminabar():
 	var staminabar_parameters = $stamina
@@ -266,11 +258,6 @@ func xp_calc():
 		global.PLAYER_MAX_STAMINA += 10
 		global.STAMINA_RECOVERY += 5
 		global.health_on_kill += 10
-
-'''func xpbar():
-	var xpbar_parameters = $XPbar
-	xpbar_parameters.max_value = global.PLAYER_MAX_XP
-	xpbar_parameters.value = global.PLAYER_XP'''
 
 func knockback():
 	if facing_right == true:
