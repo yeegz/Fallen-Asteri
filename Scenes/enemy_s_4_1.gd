@@ -4,7 +4,7 @@ extends CharacterBody2D
 const GRAVITY_VALUE = 1100
 var SPEED = 70
 var JUMP = -500
-@onready var ENEMY_HP = 300
+@onready var ENEMY_HP = 30
 var player = null
 var player_chase = false
 var attack_range = false
@@ -136,14 +136,6 @@ func enemy_attack_left():
 		attack_cooldown = true
 		$cooldown_left.start()
 
-'''func animations(player_chase):
-	#Animation
-	if player_chase == false:
-		animation.play("idle")
-	elif attack_range == true or attack_range_left:
-		animation.play("attack")
-	elif attack_cooldown == true:
-		animation.play("walk")'''
 
 func death():
 	if ENEMY_HP <= 0:
