@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://bpa63n1iigob"]
 
-[ext_resource type="Texture2D" uid="uid://cnww1rlfjho8c" path="res://Temporary Files/pixel-art-clouds-moon-reflection-dark-background-hd-wallpaper-preview.jpg" id="1_5d47y"]
+[ext_resource type="Texture2D" uid="uid://ciyk2iox6uv25" path="res://Temporary Files/Pixel Art Moon Reflection.jpg" id="1_r5opg"]
 [ext_resource type="Texture2D" uid="uid://bckqj1yvgv7w8" path="res://Temporary Files/Final/Tiles.png" id="2_fpho3"]
 [ext_resource type="PackedScene" uid="uid://c8br3cr26rf1a" path="res://Scenes/character_body_2d.tscn" id="3_afjws"]
 [ext_resource type="PackedScene" uid="uid://rsihfjvqo7qk" path="res://Scenes/main_boss.tscn" id="4_8ipqb"]
@@ -787,7 +787,7 @@ sources/0 = SubResource("TileSetAtlasSource_uxftj")
 texture_filter = 1
 offset_right = 1922.0
 offset_bottom = 1080.0
-texture = ExtResource("1_5d47y")
+texture = ExtResource("1_r5opg")
 
 [node name="TileMap2" type="TileMap" parent="."]
 texture_filter = 1
