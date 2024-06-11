@@ -63,6 +63,8 @@ func camera_tracking():
 			position.x = 361
 		elif position.x >= 1544:
 			position.x = 1544
+		elif position.x >= 812 and global.alive_status_third_boss == false:
+			position.x = 812
 		
 		if position.y >= 560:
 			position.y = 560
