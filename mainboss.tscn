@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bpa63n1iigob"]
+[gd_scene load_steps=11 format=3 uid="uid://bpa63n1iigob"]
 
-[ext_resource type="Texture2D" uid="uid://cnww1rlfjho8c" path="res://Temporary Files/pixel-art-clouds-moon-reflection-dark-background-hd-wallpaper-preview.jpg" id="1_5d47y"]
-[ext_resource type="Texture2D" uid="uid://bckqj1yvgv7w8" path="res://Temporary Files/Final/Tiles.png" id="2_fpho3"]
+[ext_resource type="Texture2D" uid="uid://crt6q8hve10fm" path="res://Temporary Files/pixel-art-clouds-moon-reflection-dark-background-hd-wallpaper-preview.jpg" id="1_5d47y"]
+[ext_resource type="Texture2D" uid="uid://dntfl16mq3eo7" path="res://Temporary Files/Final/Tiles.png" id="2_fpho3"]
 [ext_resource type="PackedScene" uid="uid://c8br3cr26rf1a" path="res://Scenes/character_body_2d.tscn" id="3_afjws"]
+[ext_resource type="PackedScene" uid="uid://rsihfjvqo7qk" path="res://Scenes/main_boss.tscn" id="4_8ipqb"]
+[ext_resource type="PackedScene" uid="uid://x45kdj4f0eov" path="res://Scenes/fall_death.tscn" id="5_00sqk"]
+[ext_resource type="PackedScene" uid="uid://dlihu8d2jsx88" path="res://Scenes/camera_2d_2.tscn" id="6_ilfj6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_goc1u"]
 texture = ExtResource("2_fpho3")
@@ -779,6 +782,7 @@ sources/0 = SubResource("TileSetAtlasSource_uxftj")
 [node name="Node2D" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
 offset_right = 1922.0
 offset_bottom = 1080.0
 texture = ExtResource("1_5d47y")
@@ -800,12 +804,14 @@ layer_0/tile_data = PackedInt32Array(655370, 262144, 15, 655371, 327680, 15, 655
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_afjws")]
 position = Vector2(757, 652)
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(2, 5)
-scale = Vector2(4, 4)
-zoom = Vector2(2.75, 2.75)
-limit_left = 500
-limit_top = -120
-limit_right = 1700
-limit_bottom = 950
-editor_draw_limits = true
+[node name="physics" type="CharacterBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="physics"]
+polygon = PackedVector2Array(645, 706, 834, 709, 1084, 835, 1253, 835, 1722, 836, 1721, 900, 1083, 903, 834, 774, 641, 766, 347, 617, 644, 621)
+
+[node name="main_boss" parent="." instance=ExtResource("4_8ipqb")]
+position = Vector2(1539, 720)
+
+[node name="fall_death" parent="." instance=ExtResource("5_00sqk")]
+
+[node name="player_camera" parent="." instance=ExtResource("6_ilfj6")]
