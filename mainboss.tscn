@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bpa63n1iigob"]
 
-[ext_resource type="Texture2D" uid="uid://cnww1rlfjho8c" path="res://Temporary Files/pixel-art-clouds-moon-reflection-dark-background-hd-wallpaper-preview.jpg" id="1_5d47y"]
-[ext_resource type="Texture2D" uid="uid://bckqj1yvgv7w8" path="res://Temporary Files/Final/Tiles.png" id="2_fpho3"]
+[ext_resource type="Texture2D" uid="uid://crt6q8hve10fm" path="res://Temporary Files/pixel-art-clouds-moon-reflection-dark-background-hd-wallpaper-preview.jpg" id="1_5d47y"]
+[ext_resource type="Texture2D" uid="uid://dntfl16mq3eo7" path="res://Temporary Files/Final/Tiles.png" id="2_fpho3"]
 [ext_resource type="PackedScene" uid="uid://c8br3cr26rf1a" path="res://Scenes/character_body_2d.tscn" id="3_afjws"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_goc1u"]
@@ -779,6 +779,7 @@ sources/0 = SubResource("TileSetAtlasSource_uxftj")
 [node name="Node2D" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
 offset_right = 1922.0
 offset_bottom = 1080.0
 texture = ExtResource("1_5d47y")
@@ -809,3 +810,8 @@ limit_top = -120
 limit_right = 1700
 limit_bottom = 950
 editor_draw_limits = true
+
+[node name="physics" type="CharacterBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="physics"]
+polygon = PackedVector2Array(661, 709, 834, 709, 1084, 835, 1253, 835, 1722, 836, 1721, 900, 1083, 903, 834, 774, 641, 766, 642, 709)
