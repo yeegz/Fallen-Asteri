@@ -1545,7 +1545,7 @@ sources/4 = SubResource("TileSetAtlasSource_58an1")
 sources/5 = SubResource("TileSetAtlasSource_nihfa")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dirwp"]
-size = Vector2(96, 429)
+size = Vector2(43, 429)
 
 [node name="Node2D" type="Node2D"]
 
@@ -1579,7 +1579,7 @@ position = Vector2(470, 450)
 [node name="physics" type="CharacterBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="physics"]
-polygon = PackedVector2Array(756, 566, 655, 567, 614, 553, 543, 527, 447, 495, 352, 464, 318, 464, 263, 428, 238, 378, 202, 368, 174, 356, 175, 291, 144, 254, 115, 282, 6, 199, 9, 383, 189, 389, 294, 524, 451, 576, 620, 625, 747, 629)
+polygon = PackedVector2Array(756, 566, 655, 567, 614, 553, 543, 527, 447, 495, 352, 464, 318, 464, 263, 428, 238, 378, 202, 368, 168, 342, 170, 293, 158, 280, 145, 260, 120, 285, 113, 348, 38, 360, 9, 383, 189, 389, 294, 524, 451, 576, 620, 625, 747, 629)
 
 [node name="fall_death" parent="." instance=ExtResource("10_g3lbi")]
 
@@ -1599,7 +1599,7 @@ collision_mask = 2
 script = ExtResource("13_rjhys")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cloud_level_transition_2"]
-position = Vector2(216, 214.5)
+position = Vector2(59, 168)
 shape = SubResource("RectangleShape2D_dirwp")
 
 [node name="player_camera" parent="." instance=ExtResource("14_rnvyi")]
