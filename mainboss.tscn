@@ -827,4 +827,3 @@ visible = false
 stream = ExtResource("8_icsrr")
 volume_db = 8.0
 autoplay = true
-bus = &"Music"
