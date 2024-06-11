@@ -815,4 +815,3 @@ position = Vector2(1539, 720)
 [node name="fall_death" parent="." instance=ExtResource("5_00sqk")]
 
 [node name="player_camera" parent="." instance=ExtResource("6_ilfj6")]
-position = Vector2(1158, 757)
