@@ -83,7 +83,7 @@ grow_vertical = 2
 text = "NO"
 
 [node name="YesForAlertScreen" type="Sprite2D" parent="."]
-position = Vector2(1211, 568)
+position = Vector2(1211, 575)
 scale = Vector2(0.325701, 0.258532)
 texture = ExtResource("5_72xc7")
 
