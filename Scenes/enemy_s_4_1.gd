@@ -13,7 +13,7 @@ var attack_cooldown = true
 var attack_cooldown_left = true
 var player_alive = true
 @onready var animation = $AnimatedSprite2D
-
+@onready var audio_stream_player_2D = $AudioStreamPlayer2D
 func _physics_process(delta):
 	gravity(delta)
 	pathing(player_chase, delta, SPEED)
@@ -121,7 +121,7 @@ func enemy_attack():
 		player.animation.modulate = Color.WHITE
 		global.PLAYER_HP -= 50
 		player.knockback()
-		#audio_stream_player_2D.play()
+		audio_stream_player_2D.play()
 		attack_cooldown = true
 		$cooldown_right.start()
 

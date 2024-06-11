@@ -12,6 +12,7 @@ var attack_cooldown = true
 var attack_cooldown_left = true
 var player_alive = true
 @onready var animation = $AnimatedSprite2D2
+@onready var audio_stream_player_2D = $AudioStreamPlayer2D
 
 func _physics_process(delta):
 	gravity(delta)
@@ -109,7 +110,7 @@ func enemy_attack():
 		await get_tree().create_timer(0.1).timeout
 		player.animation.modulate = Color.WHITE
 		global.PLAYER_HP -= 40
-		#audio_stream_player_2D.play()
+		audio_stream_player_2D.play()
 		attack_cooldown = true
 		$cooldown_right.start()
 
@@ -119,7 +120,7 @@ func enemy_attack_left():
 		await get_tree().create_timer(0.1).timeout
 		player.animation.modulate = Color.WHITE
 		global.PLAYER_HP -= 40
-		#audio_stream_player_2D.play()
+		audio_stream_player_2D.play()
 		attack_cooldown = true
 		$cooldown_left.start()
 

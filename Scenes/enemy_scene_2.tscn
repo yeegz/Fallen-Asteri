@@ -1,7 +1,8 @@
-[gd_scene load_steps=42 format=3 uid="uid://5rxfhnekfkgs"]
+[gd_scene load_steps=43 format=3 uid="uid://5rxfhnekfkgs"]
 
-[ext_resource type="Texture2D" uid="uid://cdh1luy8dx62h" path="res://Temporary Files/Skeleton enemy.png" id="1_c7uam"]
+[ext_resource type="Texture2D" uid="uid://csb1y42ookare" path="res://Temporary Files/Skeleton enemy.png" id="1_c7uam"]
 [ext_resource type="Script" path="res://Scenes/enemy_scene_2.gd" id="1_cdm1a"]
+[ext_resource type="AudioStream" uid="uid://3ltu8q8rfi2u" path="res://sword-slash-and-swing-185432.mp3" id="3_57g20"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v1mo6"]
 radius = 36.0
@@ -345,6 +346,12 @@ offset_right = 197.0
 offset_bottom = -28.0
 scale = Vector2(0.4, 0.4)
 show_percentage = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_57g20")
+volume_db = 8.0
+autoplay = true
+bus = &"SFX"
 
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]

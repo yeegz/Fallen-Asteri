@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://alert.gd" id="1_hvg77"]
 [ext_resource type="Texture2D" uid="uid://dxqud3jwah24b" path="res://alert screen.jpg" id="2_psudv"]
 [ext_resource type="FontFile" uid="uid://b80ckb0gxxnmv" path="res://Early GameBoy.ttf" id="3_q8ku2"]
-[ext_resource type="Texture2D" uid="uid://dxvi27bq8j2aq" path="res://no for alert screen.png" id="4_xoq3m"]
-[ext_resource type="Texture2D" uid="uid://bn8d2ioiaf7lo" path="res://yes for alert screen.png" id="5_72xc7"]
+[ext_resource type="Texture2D" uid="uid://10e27mb0vty" path="res://no for alert screen.png" id="4_xoq3m"]
+[ext_resource type="Texture2D" uid="uid://duntvffgonld8" path="res://yes for alert screen.png" id="5_72xc7"]
 
 [node name="Alert" type="Control"]
 layout_mode = 3
@@ -59,9 +59,9 @@ anchor_left = 0.493
 anchor_top = 0.399
 anchor_right = 0.493
 anchor_bottom = 0.399
-offset_left = 94.44
+offset_left = 91.44
 offset_top = 102.08
-offset_right = 438.44
+offset_right = 436.44
 offset_bottom = 176.08
 grow_horizontal = 2
 grow_vertical = 2
@@ -75,22 +75,22 @@ anchor_top = 0.545
 anchor_right = 0.557
 anchor_bottom = 0.545
 offset_left = -537.44
-offset_top = -53.6
+offset_top = -55.6
 offset_right = -193.44
-offset_bottom = 20.4
+offset_bottom = 16.4
 grow_horizontal = 2
 grow_vertical = 2
 text = "NO"
 
-[node name="NoForAlertScreen" type="Sprite2D" parent="."]
-position = Vector2(1212, 570)
-scale = Vector2(1.34221, 1.15278)
-texture = ExtResource("4_xoq3m")
-
 [node name="YesForAlertScreen" type="Sprite2D" parent="."]
-position = Vector2(705, 571)
-scale = Vector2(1.33588, 1.15333)
+position = Vector2(1211, 568)
+scale = Vector2(0.325701, 0.258532)
 texture = ExtResource("5_72xc7")
+
+[node name="NoForAlertScreen" type="Sprite2D" parent="."]
+position = Vector2(703, 568)
+scale = Vector2(0.320845, 0.244966)
+texture = ExtResource("4_xoq3m")
 
 [connection signal="pressed" from="Yes" to="." method="_on_yes_pressed"]
 [connection signal="pressed" from="NO" to="." method="_on_no_pressed"]

@@ -1,9 +1,9 @@
 [gd_scene load_steps=46 format=3 uid="uid://bbttsnhtdb1k5"]
 
 [ext_resource type="Script" path="res://Scenes/enemy_12d.gd" id="1_685w0"]
-[ext_resource type="Texture2D" uid="uid://bdrn15gp760df" path="res://Temporary Files/Skeleton enemy.png" id="5_btf1u"]
-[ext_resource type="Texture2D" uid="uid://ccelllrtrqtip" path="res://Temporary Files/greenbar (3).png" id="6_t4rbb"]
-[ext_resource type="AudioStream" uid="uid://5cbmarf1svbo" path="res://mixkit-fantasy-sword-slide-2798.wav" id="7_06u5b"]
+[ext_resource type="Texture2D" uid="uid://csb1y42ookare" path="res://Temporary Files/Skeleton enemy.png" id="5_btf1u"]
+[ext_resource type="Texture2D" uid="uid://dgtf60sedulcu" path="res://Temporary Files/greenbar (3).png" id="6_t4rbb"]
+[ext_resource type="AudioStream" uid="uid://qnhpodeutgiv" path="res://mixkit-fantasy-sword-slide-2798.wav" id="7_06u5b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1g2fj"]
 radius = 33.0151
@@ -358,6 +358,7 @@ show_percentage = false
 stream = ExtResource("7_06u5b")
 volume_db = 2.0
 autoplay = true
+bus = &"SFX"
 
 [node name="pre_attack_enemy_cooldown" type="Timer" parent="."]
 wait_time = 0.5
