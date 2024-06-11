@@ -55,3 +55,12 @@ func camera_tracking():
 		
 		if position.y >= 537:
 			position.y = 537
+		
+	elif scene == "res://3rdboss.tscn":
+		if position.x <= 361:
+			position.x = 361
+		elif position.x >= 1544:
+			position.x = 1544
+		
+		if position.y >= 560:
+			position.y = 560
