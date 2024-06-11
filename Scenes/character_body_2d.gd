@@ -38,15 +38,12 @@ func _process(delta):
 	elif facing_right == false:
 		player_attack_left()
 	death()
-	#healthbar()
 	staminabar()
 	audio_functions()
 	if global.sideboss_dead == true:
 		dash(facing_right)
 	xp_calc()
-	#xpbar()
 	update_position()
-	print(global.PLAYER_POSITION)
 
 
 #Easiest way for enemy hitbox to identify player is through methods.
