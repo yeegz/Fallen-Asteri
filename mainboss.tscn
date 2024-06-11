@@ -819,9 +819,9 @@ position = Vector2(1539, 720)
 [node name="player_camera" parent="." instance=ExtResource("6_ilfj6")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="pause_menu" parent="CanvasLayer" instance=ExtResource("7_mx84k")]
+visible = false
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_icsrr")
