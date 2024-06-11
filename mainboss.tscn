@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://bpa63n1iigob"]
 
-[ext_resource type="Texture2D" uid="uid://crt6q8hve10fm" path="res://Temporary Files/pixel-art-clouds-moon-reflection-dark-background-hd-wallpaper-preview.jpg" id="1_5d47y"]
-[ext_resource type="Texture2D" uid="uid://dntfl16mq3eo7" path="res://Temporary Files/Final/Tiles.png" id="2_fpho3"]
+[ext_resource type="Texture2D" uid="uid://dx5qwowgnwq83" path="res://Temporary Files/pixel-art-clouds-moon-reflection-dark-background-hd-wallpaper-preview.jpg" id="1_5d47y"]
+[ext_resource type="Texture2D" uid="uid://bh24e86ngmftr" path="res://Temporary Files/Final/Tiles.png" id="2_fpho3"]
 [ext_resource type="PackedScene" uid="uid://c8br3cr26rf1a" path="res://Scenes/character_body_2d.tscn" id="3_afjws"]
 [ext_resource type="PackedScene" uid="uid://rsihfjvqo7qk" path="res://Scenes/main_boss.tscn" id="4_8ipqb"]
 [ext_resource type="PackedScene" uid="uid://x45kdj4f0eov" path="res://Scenes/fall_death.tscn" id="5_00sqk"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://rsihfjvqo7qk"]
 
-[ext_resource type="Texture2D" uid="uid://bf26wq2jmumtn" path="res://Temporary Files/attack/crab_attack.png" id="1_mgump"]
+[ext_resource type="Texture2D" uid="uid://c4o7gc5ssaic2" path="res://Temporary Files/attack/crab_attack.png" id="1_mgump"]
 [ext_resource type="Script" path="res://Scenes/main_boss.gd" id="1_xdhmn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dma54"]
