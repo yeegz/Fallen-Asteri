@@ -173,8 +173,8 @@ animations = [{
 radius = 41.0488
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gta8y"]
-radius = 58.0
-height = 456.0
+radius = 123.0
+height = 582.0
 
 [node name="main_boss" type="CharacterBody2D"]
 collision_layer = 4
