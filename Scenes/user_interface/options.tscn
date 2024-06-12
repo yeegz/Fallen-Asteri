@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=3 uid="uid://earvxfl8soch"]
+
+[ext_resource type="Script" path="res://scripts/user_interface/options.gd" id="1_c026u"]
+[ext_resource type="PackedScene" uid="uid://v4ag1ndob1rb" path="res://Scenes/user_interface/settings_tab_container.tscn" id="2_jpafd"]
+[ext_resource type="Texture2D" uid="uid://die0a3vqoswls" path="res://Temporary Files/awesomeCavePixelArt.png" id="2_yxxav"]
+[ext_resource type="Texture2D" uid="uid://dphwaiwpe24wg" path="res://image/back button.png" id="4_b7b4o"]
+[ext_resource type="Texture2D" uid="uid://bfsfji5hvlj8p" path="res://Sprite Assets/Logo.png" id="5_ph0yx"]
+[ext_resource type="AudioStream" uid="uid://dxsvmbrtop5pk" path="res://audio_files/MAin menu.mp3" id="6_ijdds"]
+
+[node name="Options_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c026u")
+metadata/_edit_horizontal_guides_ = [-1339.0]
+
+[node name="Options" type="Sprite2D" parent="."]
+position = Vector2(960.5, 540.5)
+scale = Vector2(1.49922, 1.49861)
+texture = ExtResource("2_yxxav")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = -48
+
+[node name="Settings_Tab_Container" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_jpafd")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BackButton" type="Sprite2D" parent="."]
+position = Vector2(1029, 1023)
+scale = Vector2(1.10075, 0.960526)
+texture = ExtResource("4_b7b4o")
+
+[node name="Back_Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0.180392)
+layout_mode = 2
+offset_left = 883.0
+offset_top = 993.0
+offset_right = 1172.0
+offset_bottom = 1056.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Back"
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(157, 100)
+scale = Vector2(0.413542, 0.412963)
+texture = ExtResource("5_ph0yx")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ijdds")
+volume_db = 0.065
+autoplay = true
+
+[connection signal="pressed" from="Back_Button" to="." method="_on_back_button_pressed"]

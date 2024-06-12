@@ -1,0 +1,159 @@
+[gd_scene load_steps=10 format=3 uid="uid://dlqcqmwpdvmbd"]
+
+[ext_resource type="Script" path="res://scripts/user_interface/main menu.gd" id="1_g3b4x"]
+[ext_resource type="Theme" uid="uid://cyr3cl0yytsk6" path="res://themes.tres" id="2_wk16h"]
+[ext_resource type="Texture2D" uid="uid://die0a3vqoswls" path="res://Temporary Files/awesomeCavePixelArt.png" id="3_7s6aa"]
+[ext_resource type="Texture2D" uid="uid://d35r5uy5co8h2" path="res://image/Press Start 2P (2).png" id="5_lor76"]
+[ext_resource type="Texture2D" uid="uid://iqsd1s7mm2tq" path="res://image/Press Start 2P (1).png" id="6_flofn"]
+[ext_resource type="Texture2D" uid="uid://dwlomg66s6uvr" path="res://image/Press Start 2P (3).png" id="6_tdopv"]
+[ext_resource type="Texture2D" uid="uid://bfsfji5hvlj8p" path="res://Sprite Assets/Logo.png" id="7_kuc6t"]
+[ext_resource type="AudioStream" uid="uid://clvmll45w7fs8" path="res://audio_files/waiting-time-175800.mp3" id="8_tbhuk"]
+[ext_resource type="Texture2D" uid="uid://ynflhgco83ks" path="res://image/load game.png" id="9_fauga"]
+
+[node name="main menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g3b4x")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0509804, 0.0509804, 0.0509804, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.0105704
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("2_wk16h")
+theme_override_font_sizes/font_size = 32
+text = "Fallen asteri"
+horizontal_alignment = 1
+
+[node name="Buttons_v_box" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="BackImage2" type="Sprite2D" parent="."]
+position = Vector2(960, 537.5)
+scale = Vector2(1.5, 1.50139)
+texture = ExtResource("3_7s6aa")
+
+[node name="PressStart2p(2)" type="Sprite2D" parent="."]
+position = Vector2(271, 600)
+scale = Vector2(0.395833, 0.398553)
+texture = ExtResource("5_lor76")
+
+[node name="PressStart2p(1)" type="Sprite2D" parent="."]
+position = Vector2(269.5, 504)
+scale = Vector2(0.397396, 0.355093)
+texture = ExtResource("6_flofn")
+
+[node name="PressStart2p(3)" type="Sprite2D" parent="."]
+position = Vector2(271, 412)
+scale = Vector2(0.404687, 0.383796)
+texture = ExtResource("6_tdopv")
+
+[node name="Start" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+visibility_layer = 512
+layout_mode = 2
+offset_left = 141.0
+offset_top = 380.0
+offset_right = 407.0
+offset_bottom = 440.0
+size_flags_horizontal = 5
+size_flags_vertical = 4
+focus_neighbor_top = NodePath(".")
+focus_neighbor_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+text = "Start"
+
+[node name="LoadButton" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+visibility_layer = 512
+layout_mode = 2
+offset_left = 125.0
+offset_top = 658.0
+offset_right = 421.0
+offset_bottom = 721.0
+size_flags_horizontal = 5
+size_flags_vertical = 4
+focus_neighbor_top = NodePath(".")
+focus_neighbor_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+text = "Start"
+
+[node name="quit" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+offset_left = 148.0
+offset_top = 476.0
+offset_right = 398.0
+offset_bottom = 536.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../options")
+focus_neighbor_bottom = NodePath("../options")
+focus_next = NodePath("../options")
+focus_previous = NodePath("../options")
+text = "exit"
+icon_alignment = 2
+
+[node name="options" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0.0392157)
+layout_mode = 2
+offset_left = 130.0
+offset_top = 562.0
+offset_right = 410.0
+offset_bottom = 627.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../quit")
+focus_neighbor_bottom = NodePath("../quit")
+focus_next = NodePath("../quit")
+focus_previous = NodePath("../quit")
+text = "Options"
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(1521, 253)
+texture = ExtResource("7_kuc6t")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_tbhuk")
+autoplay = true
+
+[node name="LoadGame" type="Sprite2D" parent="."]
+position = Vector2(272, 690)
+scale = Vector2(0.716667, 0.671171)
+texture = ExtResource("9_fauga")
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="LoadButton" to="." method="_on_load_button_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="options" to="." method="_on_options_pressed"]

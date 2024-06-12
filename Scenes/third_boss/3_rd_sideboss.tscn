@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cxnuqnpbgqsvt"]
+[gd_scene load_steps=27 format=3 uid="uid://c77d1swbpxq5j"]
 
 [ext_resource type="Script" path="res://scripts/third_boss/3_rd_sideboss.gd" id="1_2jfvu"]
 [ext_resource type="Texture2D" uid="uid://cb28dlly6ic7m" path="res://Temporary Files/samurai sprites/ATTACK 1.png" id="1_ql3pk"]
@@ -215,7 +215,7 @@ offset_top = -71.0
 offset_right = 198.0
 offset_bottom = -44.0
 scale = Vector2(0.4, 0.4)
-max_value = 350.0
+max_value = 300.0
 show_percentage = false
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
