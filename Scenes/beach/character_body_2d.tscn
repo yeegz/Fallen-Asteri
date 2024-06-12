@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://md2k16ryg6ue"]
+[gd_scene load_steps=50 format=3 uid="uid://c8br3cr26rf1a"]
 
 [ext_resource type="Script" path="res://scripts/beach/character_body_2d.gd" id="1_vkjrs"]
 [ext_resource type="Texture2D" uid="uid://cpa2s6o0mee1u" path="res://Temporary Files/Individual Sprite/Attack/Warrior_Attack_1.png" id="2_0x37v"]

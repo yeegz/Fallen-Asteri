@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bi35ay7yj46fe"]
-
-[ext_resource type="Script" path="res://SaveLoad.gd" id="1_23pyh"]
-
-[node name="SaveLoad" type="Node2D"]
-script = ExtResource("1_23pyh")

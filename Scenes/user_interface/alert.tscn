@@ -1,0 +1,96 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7liwlmlyl408"]
+
+[ext_resource type="Script" path="res://scripts/user_interface/alert.gd" id="1_hvg77"]
+[ext_resource type="Texture2D" uid="uid://bjca24j6poca" path="res://image/alert screen.jpg" id="2_psudv"]
+[ext_resource type="FontFile" uid="uid://cf5tto34dafg7" path="res://font/Early GameBoy.ttf" id="3_q8ku2"]
+[ext_resource type="Texture2D" uid="uid://bqckrwxeq10vw" path="res://image/no for alert screen.png" id="4_xoq3m"]
+[ext_resource type="Texture2D" uid="uid://ocp5j6toe1w5" path="res://image/yes for alert screen.png" id="5_72xc7"]
+
+[node name="Alert" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hvg77")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="AlertScreen" type="Sprite2D" parent="."]
+position = Vector2(962, 543)
+scale = Vector2(2.61685, 1.46739)
+texture = ExtResource("2_psudv")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.483
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1199.0
+offset_top = -302.64
+offset_right = 1216.0
+offset_bottom = 127.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_q8ku2")
+theme_override_font_sizes/font_size = 50
+text = "ALL UNSAVED PROGRESS WILL BE LOST
+ARE YOU SURE TO RETURN TO MAIN MENU!!!
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Yes" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.493
+anchor_top = 0.399
+anchor_right = 0.493
+anchor_bottom = 0.399
+offset_left = 91.44
+offset_top = 102.08
+offset_right = 436.44
+offset_bottom = 176.08
+grow_horizontal = 2
+grow_vertical = 2
+text = "YES"
+
+[node name="NO" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.557
+anchor_top = 0.545
+anchor_right = 0.557
+anchor_bottom = 0.545
+offset_left = -537.44
+offset_top = -55.6
+offset_right = -193.44
+offset_bottom = 16.4
+grow_horizontal = 2
+grow_vertical = 2
+text = "NO"
+
+[node name="YesForAlertScreen" type="Sprite2D" parent="."]
+position = Vector2(1211, 575)
+scale = Vector2(0.325701, 0.258532)
+texture = ExtResource("5_72xc7")
+
+[node name="NoForAlertScreen" type="Sprite2D" parent="."]
+position = Vector2(703, 568)
+scale = Vector2(0.320845, 0.244966)
+texture = ExtResource("4_xoq3m")
+
+[connection signal="pressed" from="Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="NO" to="." method="_on_no_pressed"]

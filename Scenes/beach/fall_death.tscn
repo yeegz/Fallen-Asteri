@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddthxjhjmg5dh"]
+
+[ext_resource type="Script" path="res://scripts/beach/fall_death.gd" id="1_curs0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o4p8q"]
+size = Vector2(3843, 8.5)
+
+[node name="fall_death" type="Area2D"]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_curs0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1243.5, 1136.75)
+shape = SubResource("RectangleShape2D_o4p8q")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
