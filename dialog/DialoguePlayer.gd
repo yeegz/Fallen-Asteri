@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-export(String, FILE, "*.json") var d_file
+@export (String, FILE, "*.json") var d_file
 
 var dialogue = []
 
