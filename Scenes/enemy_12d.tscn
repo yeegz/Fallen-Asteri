@@ -1,9 +1,9 @@
 [gd_scene load_steps=46 format=3 uid="uid://bbttsnhtdb1k5"]
 
 [ext_resource type="Script" path="res://Scenes/enemy_12d.gd" id="1_685w0"]
-[ext_resource type="Texture2D" uid="uid://bdrn15gp760df" path="res://Temporary Files/Skeleton enemy.png" id="5_btf1u"]
-[ext_resource type="Texture2D" uid="uid://ccelllrtrqtip" path="res://Temporary Files/greenbar (3).png" id="6_t4rbb"]
-[ext_resource type="AudioStream" uid="uid://5cbmarf1svbo" path="res://mixkit-fantasy-sword-slide-2798.wav" id="7_06u5b"]
+[ext_resource type="Texture2D" uid="uid://cdh1luy8dx62h" path="res://Temporary Files/Skeleton enemy.png" id="5_btf1u"]
+[ext_resource type="Texture2D" uid="uid://cnjy0ejkgrl1l" path="res://Temporary Files/greenbar (3).png" id="6_t4rbb"]
+[ext_resource type="AudioStream" uid="uid://c4nump3juocgh" path="res://mixkit-fantasy-sword-slide-2798.wav" id="7_06u5b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1g2fj"]
 radius = 33.0151
@@ -324,10 +324,9 @@ texture_filter = 1
 position = Vector2(3.8147e-06, 3.8147e-06)
 scale = Vector2(1.96485, 2.05469)
 sprite_frames = SubResource("SpriteFrames_ex4hy")
-animation = &"enemy_attack"
-frame = 4
-frame_progress = 0.109597
-flip_h = true
+animation = &"enemy_dead"
+frame = 10
+frame_progress = 0.757546
 
 [node name="enemy_hitbox" type="Area2D" parent="."]
 collision_layer = 4

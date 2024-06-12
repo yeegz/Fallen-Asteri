@@ -1,10 +1,10 @@
 [gd_scene load_steps=27 format=3 uid="uid://c77d1swbpxq5j"]
 
 [ext_resource type="Script" path="res://Scenes/3_rd_sideboss.gd" id="1_2jfvu"]
-[ext_resource type="Texture2D" uid="uid://cq4cvbdj3thac" path="res://Temporary Files/samurai sprites/ATTACK 1.png" id="1_ql3pk"]
-[ext_resource type="Texture2D" uid="uid://c6kg62v8h2sd1" path="res://Temporary Files/samurai sprites/IDLE.png" id="2_fh7nx"]
-[ext_resource type="Texture2D" uid="uid://c2ogc72tuoc3l" path="res://Temporary Files/samurai sprites/RUN.png" id="3_05i7s"]
-[ext_resource type="AudioStream" uid="uid://dtufbgmalrs6o" path="res://sword-from-sheath-6910.mp3" id="5_32csd"]
+[ext_resource type="Texture2D" uid="uid://cb28dlly6ic7m" path="res://Temporary Files/samurai sprites/ATTACK 1.png" id="1_ql3pk"]
+[ext_resource type="Texture2D" uid="uid://dshm2si4yqncm" path="res://Temporary Files/samurai sprites/IDLE.png" id="2_fh7nx"]
+[ext_resource type="Texture2D" uid="uid://ckce8ifw3qdct" path="res://Temporary Files/samurai sprites/RUN.png" id="3_05i7s"]
+[ext_resource type="AudioStream" uid="uid://dc3teeobkwo12" path="res://sword-from-sheath-6910.mp3" id="5_32csd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rpwdv"]
 atlas = ExtResource("1_ql3pk")
@@ -168,7 +168,7 @@ position = Vector2(-10, -101)
 scale = Vector2(2.62903, 2.98661)
 sprite_frames = SubResource("SpriteFrames_g3nio")
 animation = &"attack"
-frame_progress = 0.529567
+frame_progress = 0.763054
 
 [node name="physics" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_7d30b")
@@ -189,24 +189,24 @@ autostart = true
 wait_time = 0.9
 
 [node name="pre_attack_enemy_cooldown_right" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.3
 
 [node name="pre_attack_enemy_cooldown_left" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.3
 
 [node name="enemy_hitbox_right" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="enemy_hitbox_right"]
-polygon = PackedVector2Array(54, -38, 62, 6, 54, 37, 86, 38, 102, 8, 89, -29)
+polygon = PackedVector2Array(44, -46, 62, 6, 54, 37, 86, 38, 89, -4, 84, -35)
 
 [node name="enemy_hitbox_left" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="enemy_hitbox_left"]
-polygon = PackedVector2Array(-55, -28, -66, 7, -54, 40, -90, 48, -104, 7)
+polygon = PackedVector2Array(-46, -39, -66, 7, -54, 40, -87, 42, -95, 6, -91, -30)
 
 [node name="enemy_health" type="ProgressBar" parent="."]
 modulate = Color(1, 0, 0, 1)
@@ -215,6 +215,7 @@ offset_top = -71.0
 offset_right = 198.0
 offset_bottom = -44.0
 scale = Vector2(0.4, 0.4)
+max_value = 350.0
 show_percentage = false
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

@@ -1,8 +1,8 @@
 [gd_scene load_steps=28 format=3 uid="uid://rsihfjvqo7qk"]
 
 [ext_resource type="Script" path="res://Scenes/main_boss.gd" id="1_xdhmn"]
-[ext_resource type="Texture2D" uid="uid://ccvp7m0jwhpj5" path="res://Temporary Files/DarkSamurai (64x64).png" id="2_rdbyq"]
-[ext_resource type="AudioStream" uid="uid://d13jrfwn7wpnh" path="res://main bos crab.mp3" id="3_40xeq"]
+[ext_resource type="Texture2D" uid="uid://dchfyiddxi8v1" path="res://Temporary Files/DarkSamurai (64x64).png" id="2_rdbyq"]
+[ext_resource type="AudioStream" uid="uid://dm20f8y8mc5i2" path="res://main bos crab.mp3" id="3_40xeq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jlq27"]
 atlas = ExtResource("2_rdbyq")
@@ -165,7 +165,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_8ttov")
 }],
 "loop": true,
-"name": &"run",
+"name": &"walk",
 "speed": 5.0
 }]
 
@@ -173,8 +173,8 @@ animations = [{
 radius = 41.0488
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gta8y"]
-radius = 58.0
-height = 456.0
+radius = 123.0
+height = 582.0
 
 [node name="main_boss" type="CharacterBody2D"]
 collision_layer = 4
@@ -186,8 +186,8 @@ texture_filter = 1
 position = Vector2(0, 1.90735e-06)
 scale = Vector2(2.875, 3)
 sprite_frames = SubResource("SpriteFrames_4fqg4")
-animation = &"run"
-frame_progress = 0.953272
+animation = &"walk"
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_307h1")
@@ -218,14 +218,14 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="enemy_hitbox_right"]
-polygon = PackedVector2Array(35, -27, 43, -5, 40, 24, 31, 30, 55, 34, 55, 12, 55, -13, 51, -27)
+polygon = PackedVector2Array(35, -27, 43, -5, 40, 24, 31, 30, 48, 37, 58, 29, 68, 17, 67, -22, 51, -27)
 
 [node name="enemy_hitbox_left" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="enemy_hitbox_left"]
-polygon = PackedVector2Array(-36, -23, -43, -5, -43, 7, -40, 23, -50, 24, -54, 3, -54, -25)
+polygon = PackedVector2Array(-33, -27, -43, -5, -43, 7, -40, 23, -57, 30, -64, 23, -68, 1, -61, -26)
 
 [node name="enemy_health" type="ProgressBar" parent="."]
 modulate = Color(1, 0, 0, 1)

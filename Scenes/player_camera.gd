@@ -11,8 +11,8 @@ func camera_tracking():
 	position = global.PLAYER_POSITION
 	if scene == "res://scene.tscn":
 		#x position
-		if position.x <= 13:
-			position.x = 13
+		if position.x <= 30:
+			position.x = 30
 		elif position.x >= 1097.9:
 			position.x = 1097.9
 		

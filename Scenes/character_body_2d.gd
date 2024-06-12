@@ -255,6 +255,9 @@ func xp_calc():
 		global.PLAYER_MAX_STAMINA += 10
 		global.STAMINA_RECOVERY += 5
 		global.health_on_kill += 10
+		animation.modulate = Color.GREEN
+		await get_tree().create_timer(0.2).timeout
+		animation.modulate = Color.WHITE
 
 func knockback():
 	if facing_right == true:
@@ -281,3 +284,5 @@ func _on_knockback_left_timer_timeout():
 
 func update_position():
 	global.PLAYER_POSITION = position
+
+
