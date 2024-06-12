@@ -1,13 +1,13 @@
 [gd_scene load_steps=13 format=3 uid="uid://bpa63n1iigob"]
 
-[ext_resource type="Texture2D" uid="uid://ciyk2iox6uv25" path="res://Temporary Files/Pixel Art Moon Reflection.jpg" id="1_r5opg"]
-[ext_resource type="Texture2D" uid="uid://bckqj1yvgv7w8" path="res://Temporary Files/Final/Tiles.png" id="2_fpho3"]
+[ext_resource type="Texture2D" uid="uid://ch4voi2qmx1eh" path="res://Temporary Files/Pixel Art Moon Reflection.jpg" id="1_r5opg"]
+[ext_resource type="Texture2D" uid="uid://dntfl16mq3eo7" path="res://Temporary Files/Final/Tiles.png" id="2_fpho3"]
 [ext_resource type="PackedScene" uid="uid://c8br3cr26rf1a" path="res://Scenes/character_body_2d.tscn" id="3_afjws"]
 [ext_resource type="PackedScene" uid="uid://rsihfjvqo7qk" path="res://Scenes/main_boss.tscn" id="4_8ipqb"]
 [ext_resource type="PackedScene" uid="uid://x45kdj4f0eov" path="res://Scenes/fall_death.tscn" id="5_00sqk"]
 [ext_resource type="PackedScene" uid="uid://dlihu8d2jsx88" path="res://Scenes/camera_2d_2.tscn" id="6_ilfj6"]
 [ext_resource type="PackedScene" uid="uid://d0kv8oi3d4d22" path="res://pause_menu.tscn" id="7_mx84k"]
-[ext_resource type="AudioStream" uid="uid://cwtt4sksi0s3x" path="res://RPG Boss Battle Music  Hydra.mp3" id="8_icsrr"]
+[ext_resource type="AudioStream" uid="uid://dhqwaofr501th" path="res://RPG Boss Battle Music  Hydra.mp3" id="8_icsrr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_goc1u"]
 texture = ExtResource("2_fpho3")
