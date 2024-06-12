@@ -107,7 +107,7 @@ func enemy_attack():
 		player.animation.modulate = Color.RED
 		await get_tree().create_timer(0.1).timeout
 		player.animation.modulate = Color.WHITE
-		global.PLAYER_HP -= 20
+		global.PLAYER_HP -= 45
 		#audio_stream_player_2D.play()
 		attack_cooldown = true
 		$cooldown_right.start()
@@ -117,7 +117,7 @@ func enemy_attack_left():
 		player.animation.modulate = Color.RED
 		await get_tree().create_timer(0.1).timeout
 		player.animation.modulate = Color.WHITE
-		global.PLAYER_HP -= 20
+		global.PLAYER_HP -= 45
 		audio_stream_player_2D.play()
 		attack_cooldown = true
 		$cooldown_left.start()

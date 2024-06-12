@@ -216,6 +216,7 @@ offset_top = -71.0
 offset_right = 198.0
 offset_bottom = -44.0
 scale = Vector2(0.4, 0.4)
+max_value = 350.0
 show_percentage = false
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
