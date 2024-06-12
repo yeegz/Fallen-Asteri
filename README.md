@@ -10,8 +10,6 @@ Note: This is a student project
 - [Features](#features)
 - [Installation](#installation)
 - [Controls](#controls)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
@@ -34,3 +32,10 @@ In this game, players will embark on a journey through a treacherous world fille
 ## Installation
 
 To play the game, visit our page on itch.io: https://yeegz.itch.io/fallenasteri
+
+## Controls
+- Right : D
+- Left : A
+- Jump : Space 
+- Dash : J
+- Attack : L
