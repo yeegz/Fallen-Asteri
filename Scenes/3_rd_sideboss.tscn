@@ -168,8 +168,7 @@ position = Vector2(-10, -101)
 scale = Vector2(2.62903, 2.98661)
 sprite_frames = SubResource("SpriteFrames_g3nio")
 animation = &"attack"
-frame = 1
-frame_progress = 0.573046
+frame_progress = 0.763054
 
 [node name="physics" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_7d30b")
@@ -200,14 +199,14 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="enemy_hitbox_right"]
-polygon = PackedVector2Array(54, -38, 62, 6, 54, 37, 86, 38, 102, 8, 89, -29)
+polygon = PackedVector2Array(44, -46, 62, 6, 54, 37, 86, 38, 89, -4, 84, -35)
 
 [node name="enemy_hitbox_left" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="enemy_hitbox_left"]
-polygon = PackedVector2Array(-55, -28, -66, 7, -54, 40, -90, 48, -104, 7)
+polygon = PackedVector2Array(-46, -39, -66, 7, -54, 40, -87, 42, -95, 6, -91, -30)
 
 [node name="enemy_health" type="ProgressBar" parent="."]
 modulate = Color(1, 0, 0, 1)
