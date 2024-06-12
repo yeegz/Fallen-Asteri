@@ -1,8 +1,8 @@
 [gd_scene load_steps=27 format=3 uid="uid://c0adhlaso34h2"]
 
 [ext_resource type="Script" path="res://Scenes/enemy_s_4_1.gd" id="1_3asf0"]
-[ext_resource type="Texture2D" uid="uid://dieoc8ym07vnd" path="res://Temporary Files/AnimationSheet_Character.png" id="2_6b3f2"]
-[ext_resource type="AudioStream" uid="uid://cn3pfggxeuij0" path="res://mixkit-lightning-whip-1508.mp3" id="3_ju12g"]
+[ext_resource type="Texture2D" uid="uid://g36378w1fv0v" path="res://Temporary Files/AnimationSheet_Character.png" id="2_6b3f2"]
+[ext_resource type="AudioStream" uid="uid://c81l0nw0xk0ur" path="res://mixkit-lightning-whip-1508.mp3" id="3_ju12g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tfryi"]
 atlas = ExtResource("2_6b3f2")
