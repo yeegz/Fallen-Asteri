@@ -35,8 +35,10 @@ func on_options_pressed() -> void:
 	options_menu.set_process(false) 
 	
 func _on_start_pressed():
+	global.current_scene = "res://Scenes/beach/scene.tscn"
 	get_tree().change_scene_to_file("res://Scenes/beach/scene.tscn")
-	
+
+
 func on_exit_options_menu() -> void:
 	margin_container.visible = true
 	options_menu.visible = false

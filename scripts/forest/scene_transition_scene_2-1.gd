@@ -17,4 +17,4 @@ func _physics_process(delta):
 	if player != null:
 		global.transitioned = true
 		global.current_scene = scene
-		get_tree().change_scene_to_file("res://scene.tscn")
+		get_tree().change_scene_to_file(scene)
