@@ -1,10 +1,10 @@
 [gd_scene load_steps=27 format=3 uid="uid://cxnuqnpbgqsvt"]
 
 [ext_resource type="Script" path="res://scripts/third_boss/3_rd_sideboss.gd" id="1_2jfvu"]
-[ext_resource type="Texture2D" uid="uid://cb28dlly6ic7m" path="res://Temporary Files/samurai sprites/ATTACK 1.png" id="1_ql3pk"]
-[ext_resource type="Texture2D" uid="uid://dshm2si4yqncm" path="res://Temporary Files/samurai sprites/IDLE.png" id="2_fh7nx"]
-[ext_resource type="Texture2D" uid="uid://ckce8ifw3qdct" path="res://Temporary Files/samurai sprites/RUN.png" id="3_05i7s"]
-[ext_resource type="AudioStream" uid="uid://crjb2vdvyha3a" path="res://audio_files/sword-from-sheath-6910.mp3" id="5_32csd"]
+[ext_resource type="Texture2D" uid="uid://cq4cvbdj3thac" path="res://Temporary Files/samurai sprites/ATTACK 1.png" id="1_ql3pk"]
+[ext_resource type="Texture2D" uid="uid://c6kg62v8h2sd1" path="res://Temporary Files/samurai sprites/IDLE.png" id="2_fh7nx"]
+[ext_resource type="Texture2D" uid="uid://c2ogc72tuoc3l" path="res://Temporary Files/samurai sprites/RUN.png" id="3_05i7s"]
+[ext_resource type="AudioStream" uid="uid://b5xrxofm8qayt" path="res://audio_files/sword-from-sheath-6910.mp3" id="5_32csd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rpwdv"]
 atlas = ExtResource("1_ql3pk")
