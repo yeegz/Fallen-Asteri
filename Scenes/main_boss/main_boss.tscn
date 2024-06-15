@@ -1,8 +1,8 @@
 [gd_scene load_steps=28 format=3 uid="uid://wymd2jmfr5q"]
 
 [ext_resource type="Script" path="res://scripts/main_boss/main_boss.gd" id="1_xdhmn"]
-[ext_resource type="Texture2D" uid="uid://dchfyiddxi8v1" path="res://Temporary Files/DarkSamurai (64x64).png" id="2_rdbyq"]
-[ext_resource type="AudioStream" uid="uid://dm20f8y8mc5i2" path="res://audio_files/main bos crab.mp3" id="3_40xeq"]
+[ext_resource type="Texture2D" uid="uid://ccvp7m0jwhpj5" path="res://Temporary Files/DarkSamurai (64x64).png" id="2_rdbyq"]
+[ext_resource type="AudioStream" uid="uid://chlicamt3vuvy" path="res://audio_files/main bos crab.mp3" id="3_40xeq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jlq27"]
 atlas = ExtResource("2_rdbyq")
