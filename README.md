@@ -8,7 +8,7 @@ Note: This is a student project
 - [Introduction](#introduction)
 - [Gameplay](#gameplay)
 - [Features](#features)
-- [Installation](#installation)
+- [To Play Our Game](#To_Play_Our_Game)
 - [Controls](#controls)
 
 ## Introduction
@@ -29,7 +29,7 @@ In this game, players will embark on a journey through a treacherous world fille
 - **Boss Fight:** A final, epic boss battle to test your skills.
 - **2D Art and Animation:** Enjoy beautifully crafted 2D visuals and animations.
 
-## Installation
+## To Play Our Game
 
 To play the game, visit our page on itch.io: https://yeegz.itch.io/fallenasteri
 
