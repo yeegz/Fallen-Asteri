@@ -8,7 +8,7 @@ Note: This is a student project
 - [Introduction](#introduction)
 - [Gameplay](#gameplay)
 - [Features](#features)
-- [To Play Our Game](#To_Play_Our_Game)
+- [To Play Our Game](#To)
 - [Controls](#controls)
 
 ## Introduction
